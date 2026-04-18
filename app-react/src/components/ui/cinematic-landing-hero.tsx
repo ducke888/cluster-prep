@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
+import { ShaderBackground } from "@/components/ui/shader-background";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -102,7 +103,7 @@ const INJECTED_STYLES = `
       transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   }
   .btn-purple-primary {
-      background: linear-gradient(180deg, #a78bfa 0%, #7c3aed 100%);
+      background: linear-gradient(135deg, #22d3ee 0%, #a78bfa 45%, #7c3aed 100%);
       color: #ffffff;
       box-shadow:
           0 0 0 1px rgba(167,139,250,0.4),
@@ -142,6 +143,18 @@ const INJECTED_STYLES = `
       stroke-dashoffset: 402;
       stroke-linecap: round;
   }
+
+  /* Scroll hint (bottom-center mouse + chevron on first frame) */
+  @keyframes scroll-dot-bounce {
+      0%, 20%   { transform: translateY(0);   opacity: 1;   }
+      80%, 100% { transform: translateY(16px); opacity: 0;  }
+  }
+  @keyframes scroll-chevron-pulse {
+      0%, 100% { transform: translateY(0);   opacity: 0.6; }
+      50%      { transform: translateY(4px); opacity: 1;   }
+  }
+  .scroll-dot { animation: scroll-dot-bounce 1.6s cubic-bezier(.65,.05,.36,1) infinite; }
+  .scroll-chevron { animation: scroll-chevron-pulse 1.6s ease-in-out infinite; }
 `;
 
 export interface CinematicHeroProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -243,6 +256,7 @@ export function CinematicHero({
 
       scrollTl
         .to([".hero-text-wrapper"], { scale: 1.15, filter: "blur(20px)", opacity: 0.2, ease: "power2.inOut", duration: 2 }, 0)
+        .to(".scroll-hint", { autoAlpha: 0, y: 40, duration: 1, ease: "power2.out" }, 0)
         .to(".main-card", { y: 0, ease: "power3.inOut", duration: 2 }, 0)
         .to(".main-card", { width: "100%", height: "100%", borderRadius: "0px", ease: "power3.inOut", duration: 1.5 })
         .fromTo(".mockup-scroll-wrapper",
@@ -289,6 +303,15 @@ export function CinematicHero({
       <style dangerouslySetInnerHTML={{ __html: INJECTED_STYLES }} />
       <div className="film-grain" aria-hidden="true" />
 
+      {/* Eyebrow tag — inside the hero so GSAP fades it with the hero text
+          (prevents it from sitting on top of the card mid-scroll). */}
+      <div className="hero-text-wrapper absolute top-8 left-1/2 -translate-x-1/2 z-20 pointer-events-none">
+        <span className="hero-eyebrow inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-violet-300/25 backdrop-blur-md text-[10px] md:text-xs font-semibold tracking-[0.3em] uppercase text-violet-200/90">
+          <span className="w-1.5 h-1.5 rounded-full bg-violet-300 animate-pulse" aria-hidden="true" />
+          Built for DECA · Marketing Cluster
+        </span>
+      </div>
+
       {/* BACKGROUND LAYER: Hero Texts */}
       <div className="hero-text-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 will-change-transform">
         <h1 className="text-track gsap-reveal text-3d-matte text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tight mb-2">
@@ -299,22 +322,52 @@ export function CinematicHero({
         </h1>
       </div>
 
-      {/* BACKGROUND LAYER 2: CTAs after scroll */}
-      <div className="cta-wrapper absolute z-10 flex flex-col items-center justify-center text-center w-screen px-4 gsap-reveal pointer-events-auto will-change-transform">
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-silver-matte">
-          {ctaHeading}
-        </h2>
-        <p className="text-lg md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed" style={{ color: "#a8a2c2" }}>
-          {ctaDescription}
-        </p>
-        <div className="flex flex-col sm:flex-row gap-6">
-          <button onClick={onPrimaryCTA} className="btn-purple-primary flex items-center justify-center gap-3 px-8 py-4 rounded-[1.25rem] text-lg font-bold" style={{ border: 0, cursor: "pointer" }}>
-            Start studying now
-            <span aria-hidden="true">→</span>
-          </button>
-          <button onClick={onSecondaryCTA} className="btn-purple-ghost flex items-center justify-center gap-3 px-8 py-4 rounded-[1.25rem] text-lg font-bold" style={{ cursor: "pointer" }}>
-            Browse practice tests
-          </button>
+      {/* Scroll hint — pulses at the bottom of the screen on the opening frame
+          so users understand the page is scroll-driven. GSAP fades it out
+          once the card drops in. */}
+      <div className="scroll-hint absolute bottom-8 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-2 pointer-events-none select-none">
+        <span className="text-[10px] uppercase tracking-[0.4em] font-semibold text-violet-200/70">
+          Scroll
+        </span>
+        <div className="relative w-7 h-11 rounded-full border border-violet-300/40 bg-white/5 backdrop-blur-sm flex items-start justify-center pt-2">
+          <span className="scroll-dot block w-1.5 h-1.5 rounded-full bg-violet-200" />
+        </div>
+        <svg className="w-4 h-4 text-violet-200/60 scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </div>
+
+      {/* BACKGROUND LAYER 2: CTAs after scroll.
+          Gets its own shader background (grid + plasma lines) so the final
+          frame feels distinct from the opening violet wash. */}
+      <div className="cta-wrapper absolute inset-0 z-10 flex flex-col items-center justify-center text-center w-screen gsap-reveal pointer-events-auto will-change-transform">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <ShaderBackground />
+          {/* Vignette + softening overlay so CTA text stays crisp over the shader */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(ellipse at center, rgba(10,7,20,0.35) 0%, rgba(10,7,20,0.78) 65%, rgba(10,7,20,0.92) 100%)",
+            }}
+          />
+        </div>
+        <div className="relative z-10 flex flex-col items-center px-4">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-silver-matte">
+            {ctaHeading}
+          </h2>
+          <p className="text-lg md:text-xl mb-12 max-w-xl mx-auto font-light leading-relaxed" style={{ color: "#c9c1e6" }}>
+            {ctaDescription}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6">
+            <button onClick={onPrimaryCTA} className="btn-purple-primary flex items-center justify-center gap-3 px-8 py-4 rounded-[1.25rem] text-lg font-bold" style={{ border: 0, cursor: "pointer" }}>
+              Start studying now
+              <span aria-hidden="true">→</span>
+            </button>
+            <button onClick={onSecondaryCTA} className="btn-purple-ghost flex items-center justify-center gap-3 px-8 py-4 rounded-[1.25rem] text-lg font-bold" style={{ cursor: "pointer" }}>
+              Browse practice tests
+            </button>
+          </div>
         </div>
       </div>
 
@@ -326,44 +379,43 @@ export function CinematicHero({
         >
           <div className="card-sheen" aria-hidden="true" />
 
-          <div className="relative w-full h-full max-w-7xl mx-auto px-4 lg:px-12 flex flex-col justify-evenly lg:grid lg:grid-cols-[1.1fr_1fr] items-center lg:gap-16 z-10 py-6 lg:py-0">
-            {/* Right side: stat pills + subtle brand wordmark.
-                Replaced the giant 8rem "MARKETING" text that was overpowering
-                the stats mockup with a cleaner column: cluster pill,
-                compact stat chips, and a small ghost wordmark. */}
-            <div className="card-right-text gsap-reveal order-1 lg:order-2 flex flex-col items-center lg:items-start justify-center gap-4 lg:gap-5 z-20 w-full">
+          <div className="relative w-full h-full max-w-5xl mx-auto px-4 lg:px-8 flex flex-col justify-evenly lg:grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] items-center lg:gap-6 xl:gap-8 z-10 py-6 lg:py-0 overflow-hidden">
+            {/* Right side: cluster pill + brand wordmark + stat chips.
+                Uses min-w-0 so the column can actually shrink inside the grid
+                — without it the MARKETING word forces overflow past the card. */}
+            <div className="card-right-text gsap-reveal order-1 lg:order-2 flex flex-col items-center lg:items-start justify-center gap-4 lg:gap-5 z-20 w-full min-w-0 max-w-md lg:max-w-none">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-violet-300/20 backdrop-blur-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-violet-300 animate-pulse" aria-hidden="true" />
-                <span className="text-[11px] tracking-[0.24em] uppercase font-semibold text-violet-200/90">
+                <span className="text-[10px] lg:text-[11px] tracking-[0.24em] uppercase font-semibold text-violet-200/90">
                   ICDC Marketing Cluster
                 </span>
               </div>
-              <h2 className="hidden lg:block text-[5rem] xl:text-[6rem] leading-[0.9] font-black uppercase tracking-tighter"
+              <h2 className="hidden lg:block text-[2.75rem] xl:text-[3.5rem] leading-[0.95] font-black uppercase tracking-tight truncate max-w-full"
                   style={{
-                    background: "linear-gradient(180deg, #ede9fe 0%, #a78bfa 55%, rgba(167,139,250,0.35) 100%)",
+                    background: "linear-gradient(135deg, #67e8f9 0%, #ede9fe 35%, #a78bfa 70%, #f0abfc 100%)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                   }}>
                 {brandName}
               </h2>
-              <div className="grid grid-cols-3 gap-2 lg:gap-3 w-full max-w-xs lg:max-w-sm">
+              <div className="grid grid-cols-3 gap-2 lg:gap-2.5 w-full max-w-xs lg:max-w-[20rem]">
                 {[
-                  { k: "38", l: "practice tests" },
-                  { k: "3.8k+", l: "questions" },
-                  { k: "20", l: "topic guides" },
+                  { k: "38", l: "practice tests", border: "border-cyan-300/30", bg: "bg-cyan-400/[0.06]", num: "text-cyan-50", lab: "text-cyan-200/70" },
+                  { k: "3.8k+", l: "questions",  border: "border-violet-300/30", bg: "bg-violet-400/[0.08]", num: "text-white", lab: "text-violet-200/70" },
+                  { k: "20", l: "topic guides", border: "border-pink-300/30", bg: "bg-pink-400/[0.06]", num: "text-pink-50", lab: "text-pink-200/70" },
                 ].map((s) => (
                   <div key={s.l}
-                       className="rounded-xl border border-violet-300/15 bg-white/[0.03] px-3 py-3 text-center backdrop-blur-[2px]">
-                    <div className="text-white font-extrabold text-xl lg:text-2xl leading-none tracking-tight">{s.k}</div>
-                    <div className="text-[9px] lg:text-[10px] mt-1.5 uppercase tracking-[0.14em] text-violet-200/60 font-semibold">{s.l}</div>
+                       className={`rounded-xl border ${s.border} ${s.bg} px-2 py-2.5 text-center backdrop-blur-[2px]`}>
+                    <div className={`${s.num} font-extrabold text-lg lg:text-xl leading-none tracking-tight`}>{s.k}</div>
+                    <div className={`text-[8px] lg:text-[9px] mt-1.5 uppercase tracking-[0.12em] ${s.lab} font-semibold`}>{s.l}</div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Stats mockup — now the anchor of the card */}
-            <div className="mockup-scroll-wrapper order-2 lg:order-1 relative w-full h-[380px] lg:h-[560px] flex items-center justify-center z-10" style={{ perspective: "1000px" }}>
+            {/* Stats mockup — anchor of the card */}
+            <div className="mockup-scroll-wrapper order-2 lg:order-1 relative w-full min-w-0 h-[360px] lg:h-[480px] flex items-center justify-center z-10" style={{ perspective: "1000px" }}>
               <div className="relative w-full h-full flex items-center justify-center transform scale-[0.7] md:scale-90 lg:scale-100">
                 <div
                   ref={mockupRef}
@@ -372,10 +424,15 @@ export function CinematicHero({
                   <div className="relative w-full h-full flex flex-col text-white">
                     <div className="phone-widget flex justify-between items-center mb-6">
                       <div className="flex flex-col">
-                        <span className="text-[10px] text-violet-300 uppercase tracking-widest font-bold mb-1">Today · Rohit</span>
+                        <span className="text-[10px] text-violet-300 uppercase tracking-widest font-bold mb-1">Your Dashboard</span>
                         <span className="text-lg font-bold tracking-tight text-white drop-shadow-md">Study progress</span>
                       </div>
-                      <div className="w-9 h-9 rounded-full bg-violet-500/20 text-white flex items-center justify-center font-bold text-sm border border-violet-400/30">RO</div>
+                      <div className="w-9 h-9 rounded-full bg-violet-500/20 text-white flex items-center justify-center font-bold text-sm border border-violet-400/30" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+                          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                          <circle cx="12" cy="7" r="4" />
+                        </svg>
+                      </div>
                     </div>
 
                     {/* % Ready progress ring */}
@@ -392,55 +449,39 @@ export function CinematicHero({
 
                     <div className="space-y-2">
                       <div className="phone-widget widget-depth rounded-xl p-3 flex items-center">
-                        <span className="text-xs font-mono bg-violet-500/20 text-violet-200 px-2 py-1 rounded mr-3">IM</span>
+                        <span className="text-xs font-mono bg-cyan-500/25 text-cyan-200 px-2 py-1 rounded mr-3">IM</span>
                         <span className="text-xs text-violet-100/80 flex-1">Marketing-Information Management</span>
-                        <span className="text-xs text-violet-200 font-bold">23 wrongs</span>
+                        <span className="text-xs text-cyan-200 font-bold">23 wrongs</span>
                       </div>
                       <div className="phone-widget widget-depth rounded-xl p-3 flex items-center">
-                        <span className="text-xs font-mono bg-violet-500/20 text-violet-200 px-2 py-1 rounded mr-3">PM</span>
+                        <span className="text-xs font-mono bg-pink-500/25 text-pink-200 px-2 py-1 rounded mr-3">PM</span>
                         <span className="text-xs text-violet-100/80 flex-1">Product/Service Management</span>
-                        <span className="text-xs text-violet-200 font-bold">19 wrongs</span>
+                        <span className="text-xs text-pink-200 font-bold">19 wrongs</span>
                       </div>
                       <div className="phone-widget widget-depth rounded-xl p-3 flex items-center">
-                        <span className="text-xs font-mono bg-violet-500/20 text-violet-200 px-2 py-1 rounded mr-3">PR</span>
+                        <span className="text-xs font-mono bg-amber-500/25 text-amber-200 px-2 py-1 rounded mr-3">PR</span>
                         <span className="text-xs text-violet-100/80 flex-1">Promotion</span>
-                        <span className="text-xs text-violet-200 font-bold">16 wrongs</span>
+                        <span className="text-xs text-amber-200 font-bold">16 wrongs</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Floating badges */}
-                <div className="floating-badge absolute flex top-6 lg:top-8 left-[-10px] lg:left-[-70px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 items-center gap-3 z-30">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-b from-violet-500/30 to-violet-900/10 flex items-center justify-center border border-violet-400/40">
-                    <span className="text-lg drop-shadow-lg" aria-hidden="true">🎯</span>
-                  </div>
-                  <div>
-                    <p className="text-white text-xs font-bold tracking-tight">95% target</p>
-                    <p className="text-violet-200/60 text-[10px]">ICDC-ready</p>
-                  </div>
-                </div>
-
-                <div className="floating-badge absolute flex bottom-10 lg:bottom-16 right-[-10px] lg:right-[-70px] floating-ui-badge rounded-xl lg:rounded-2xl p-3 items-center gap-3 z-30">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-b from-cyan-500/30 to-cyan-900/10 flex items-center justify-center border border-cyan-400/40">
-                    <span className="text-lg drop-shadow-lg" aria-hidden="true">🧠</span>
-                  </div>
-                  <div>
-                    <p className="text-white text-xs font-bold tracking-tight">AI Tutor</p>
-                    <p className="text-violet-200/60 text-[10px]">Interactive study</p>
-                  </div>
-                </div>
               </div>
             </div>
 
-            {/* Tagline block — now spans the full card width under the two
-                columns above. On desktop the grid has only two columns, so
-                this block re-enters below as a full-width row via col-span-2. */}
-            <div className="card-left-text gsap-reveal order-3 lg:order-3 lg:col-span-2 flex flex-col justify-center items-center text-center z-20 w-full px-4 lg:px-0 lg:pt-2">
-              <h3 className="text-white text-2xl md:text-3xl lg:text-[2.5rem] font-bold mb-3 lg:mb-4 tracking-tight leading-[1.1]">
+            {/* Tagline block — spans the full card width under both columns. */}
+            <div className="card-left-text gsap-reveal order-3 lg:order-3 lg:col-span-2 flex flex-col justify-center items-center text-center z-20 w-full px-4 lg:px-0 lg:pt-4 xl:pt-6">
+              <h3 className="text-white text-3xl md:text-4xl lg:text-[3rem] xl:text-[3.5rem] font-bold mb-4 lg:mb-5 tracking-tight leading-[1.05]"
+                  style={{
+                    background: "linear-gradient(180deg, #ffffff 0%, #c4b5fd 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}>
                 {cardHeading}
               </h3>
-              <p className="hidden md:block text-violet-100/70 text-sm md:text-base lg:text-lg font-normal leading-relaxed max-w-2xl">
+              <p className="hidden md:block text-violet-100/75 text-sm md:text-base lg:text-lg font-normal leading-relaxed max-w-2xl">
                 {cardDescription}
               </p>
             </div>

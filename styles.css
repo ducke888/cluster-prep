@@ -2260,3 +2260,193 @@ main { max-width: 1100px; }
   .lb-window-tabs { width: 100%; justify-content: space-between; }
   .lb-tab { flex: 1; padding: 6px 4px; font-size: .72rem; }
 }
+
+/* ============================================================
+   ICDC Countdown page — reached via the topbar ICDC pill.
+   Big ticking D/H/M/S + animated skyblue grid (ported from the
+   21st.dev counter-loader styled-components component).
+   ============================================================ */
+.countdown-page {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: radial-gradient(ellipse at top, #1a0d3d 0%, #0a0714 60%, #050208 100%);
+  border-radius: 18px;
+}
+.countdown-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.cd-orb {
+  position: absolute; border-radius: 50%; filter: blur(80px);
+  opacity: 0.55; animation: cd-float 12s ease-in-out infinite;
+}
+.cd-orb-1 { width: 420px; height: 420px; background: #7c3aed; top: -100px; left: -80px; }
+.cd-orb-2 { width: 320px; height: 320px; background: #22d3ee; bottom: -80px; right: -60px; animation-delay: -4s; }
+.cd-orb-3 { width: 260px; height: 260px; background: #f472b6; top: 40%; right: 20%; animation-delay: -8s; opacity: 0.35; }
+@keyframes cd-float {
+  0%,100% { transform: translate(0,0) scale(1); }
+  50%     { transform: translate(30px,-40px) scale(1.1); }
+}
+
+.countdown-inner {
+  position: relative; z-index: 2;
+  max-width: 920px; width: 100%;
+  text-align: center;
+  color: #fff;
+}
+.countdown-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(167,139,250,0.3);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ddd6fe;
+  backdrop-filter: blur(8px);
+}
+.cd-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 12px #22d3ee;
+  animation: cd-pulse 1.5s ease-in-out infinite;
+}
+@keyframes cd-pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50%     { opacity: 0.5; transform: scale(0.85); }
+}
+.countdown-title {
+  margin: 28px 0 36px;
+  font-size: clamp(1.6rem, 3.4vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #fff 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.countdown-grid {
+  display: inline-flex; align-items: flex-start; gap: clamp(6px, 2vw, 20px);
+  padding: 28px 32px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(167,139,250,0.25);
+  box-shadow:
+    0 0 0 1px rgba(167,139,250,0.08),
+    0 30px 80px -20px rgba(91,33,182,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+}
+.cd-unit { display: flex; flex-direction: column; align-items: center; min-width: clamp(64px, 13vw, 120px); }
+.cd-num {
+  font-size: clamp(2.8rem, 8vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: #fff;
+  background: linear-gradient(180deg, #f5f3ff 0%, #c4b5fd 55%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 30px rgba(124,58,237,0.4);
+  transition: transform 0.18s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.cd-num-seconds.cd-tick { animation: cd-tick 0.5s ease-out; }
+@keyframes cd-tick {
+  0%   { transform: scale(1.12); filter: brightness(1.3); }
+  100% { transform: scale(1);    filter: brightness(1);   }
+}
+.cd-lbl {
+  margin-top: 12px;
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(196,181,253,0.75);
+  font-weight: 700;
+}
+.cd-sep {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  color: rgba(167,139,250,0.4);
+  line-height: 1;
+  padding-top: clamp(6px, 1.5vw, 14px);
+  animation: cd-sep-blink 1s ease-in-out infinite;
+}
+@keyframes cd-sep-blink {
+  0%,100% { opacity: 0.25; }
+  50%     { opacity: 0.8; }
+}
+.countdown-target {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: rgba(221,214,254,0.7);
+  letter-spacing: 0.05em;
+}
+.countdown-cta-row {
+  margin-top: 36px;
+  display: inline-flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---- counter-loader grid (animated skyblue dots) ---- */
+.counter-loader {
+  margin: 40px auto 0;
+  display: flex; justify-content: center; align-items: center;
+  height: 180px;
+}
+.counter-loader .cl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 25px);
+  grid-template-rows: repeat(5, 25px);
+  gap: 10px;
+  grid-template-areas:
+    "div1 div2 div3"
+    "div4 div5 div6"
+    "div7 div8 div9"
+    "div10 div11 div12"
+    "div13 div14 div15";
+}
+.counter-loader .cl-cell { background-color: #22d3ee; border-radius: 5px; box-shadow: 0 0 12px rgba(34,211,238,0.5); }
+.counter-loader .cl-hidden { display: none; }
+
+#cl-div1  { grid-area: div1;  animation: cl-d1  10s both infinite; }
+#cl-div2  { grid-area: div2;  animation: cl-d2  10s both infinite; }
+#cl-div3  { grid-area: div3; }
+#cl-div4  { grid-area: div4;  animation: cl-d4  10s both infinite; }
+#cl-div5  { grid-area: div5; }
+#cl-div6  { grid-area: div6;  animation: cl-d6  10s both infinite; }
+#cl-div7  { grid-area: div7;  animation: cl-d7  10s both infinite; }
+#cl-div8  { grid-area: div8;  animation: cl-d8  10s both infinite; }
+#cl-div9  { grid-area: div9; }
+#cl-div10 { grid-area: div10; animation: cl-d10 10s both infinite; }
+#cl-div11 { grid-area: div11; }
+#cl-div12 { grid-area: div12; animation: cl-d12 10s both infinite; }
+#cl-div13 { grid-area: div13; animation: cl-d13 10s both infinite; }
+#cl-div14 { grid-area: div14; animation: cl-d14 10s both infinite; }
+#cl-div15 { grid-area: div15; }
+
+@keyframes cl-d1  { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } }
+@keyframes cl-d2  { 10% { transform: translateX(35px); } 20% { transform: translateX(0); } 40% { transform: translateX(35px); } 50% { transform: translateX(0); } }
+@keyframes cl-d4  { 10% { transform: translateX(70px); } 20%,30% { transform: translateX(70px); } 40% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } }
+@keyframes cl-d6  { 50%,60% { transform: translateX(-70px); } 70% { transform: translateX(0); } }
+@keyframes cl-d7  { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } }
+@keyframes cl-d8  { 0%,10% { transform: translateX(35px); } 20% { transform: translateX(0); } 70% { transform: translateX(35px); } 80% { transform: translateX(0); } 100% { transform: translateX(35px); } }
+@keyframes cl-d10 { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } 30%,40%,50% { transform: translateX(70px); } 60% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } 90% { transform: translateX(70px); } 100% { transform: translateX(0); } }
+@keyframes cl-d12 { 20% { transform: translateX(-70px); } 30% { transform: translateX(0); } }
+@keyframes cl-d13 { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } 40% { transform: translateX(70px); } 50% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } }
+@keyframes cl-d14 { 10% { transform: translateX(35px); } 20% { transform: translateX(0); } 40% { transform: translateX(35px); } 50% { transform: translateX(0); } 70% { transform: translateX(35px); } 80% { transform: translateX(0); } }
+
+/* Make the topbar ICDC pill feel clickable. */
+a.icdc-pill { cursor: pointer; text-decoration: none; }
+a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
+
+@media (max-width: 640px) {
+  .countdown-grid { padding: 18px 14px; gap: 4px; }
+  .cd-lbl { font-size: 0.6rem; letter-spacing: 0.18em; }
+}

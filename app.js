@@ -177,6 +177,8 @@ async function render() {
   } else if (route === "welcome") {
     renderWelcome();
     return;
+  } else if (route === "countdown") {
+    renderCountdown();
   } else {
     // Welcome page is no longer auto-shown. The React landing at :5173 is the
     // canonical intro; arriving at the vanilla app means the user already
@@ -1708,20 +1710,124 @@ function countdownParts() {
 function countdownBadgeHtml() {
   const p = countdownParts();
   if (p.done) {
-    return `<span class="icdc-pill" title="DECA ICDC Marketing Cluster Exam">
+    return `<a href="#/countdown" class="icdc-pill" title="DECA ICDC Marketing Cluster Exam">
       <span class="icdc-ico">🏆</span>
       <span class="icdc-txt">ICDC — good luck!</span>
-    </span>`;
+    </a>`;
   }
   const urgent = p.d <= 7 ? "urgent" : "";
-  return `<span class="icdc-pill ${urgent}" title="Time until the DECA ICDC Marketing Cluster Exam (Sun Apr 26 2026, 8:00 AM EDT)">
+  return `<a href="#/countdown" class="icdc-pill ${urgent}" title="Click for full countdown to the DECA ICDC Marketing Cluster Exam (Sun Apr 26 2026, 8:00 AM EDT)">
     <span class="icdc-ico">⏱</span>
     <span class="icdc-txt">ICDC in <strong>${p.d}d ${p.h}h ${p.m}m</strong></span>
-  </span>`;
+  </a>`;
 }
 function refreshCountdownUI() {
   const slot = document.getElementById("countdown-slot");
   if (slot) slot.innerHTML = countdownBadgeHtml();
+}
+
+// Full-page countdown view. Big ticking digits (D / H / M / S) + animated
+// skyblue grid (ported from the 21st.dev counter-loader).
+let _countdownTickId = null;
+function renderCountdown() {
+  const app = document.getElementById("app");
+  const render = () => {
+    const target = new Date(ICDC_EXAM_ISO).getTime();
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      return {
+        done: true, d: 0, h: 0, m: 0, s: 0,
+      };
+    }
+    return {
+      done: false,
+      d: Math.floor(diff / 86400000),
+      h: Math.floor((diff % 86400000) / 3600000),
+      m: Math.floor((diff % 3600000) / 60000),
+      s: Math.floor((diff % 60000) / 1000),
+    };
+  };
+  const pad = (n) => String(n).padStart(2, "0");
+
+  const initial = render();
+  app.innerHTML = `
+    <div class="countdown-page">
+      <div class="countdown-bg" aria-hidden="true">
+        <div class="cd-orb cd-orb-1"></div>
+        <div class="cd-orb cd-orb-2"></div>
+        <div class="cd-orb cd-orb-3"></div>
+      </div>
+      <div class="countdown-inner">
+        <div class="countdown-eyebrow">
+          <span class="cd-dot"></span>
+          <span>DECA ICDC 2026 · Orlando, FL</span>
+        </div>
+        <h1 class="countdown-title">
+          ${initial.done ? "It's go time." : "Marketing Cluster Exam in"}
+        </h1>
+        <div class="countdown-grid">
+          <div class="cd-unit"><div class="cd-num" id="cd-d">${initial.d}</div><div class="cd-lbl">days</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><div class="cd-num" id="cd-h">${pad(initial.h)}</div><div class="cd-lbl">hours</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><div class="cd-num" id="cd-m">${pad(initial.m)}</div><div class="cd-lbl">minutes</div></div>
+          <div class="cd-sep">:</div>
+          <div class="cd-unit"><div class="cd-num cd-num-seconds" id="cd-s">${pad(initial.s)}</div><div class="cd-lbl">seconds</div></div>
+        </div>
+        <div class="countdown-target">
+          Target: Sun, Apr 26 2026 · 8:00 AM EDT
+        </div>
+        <div class="counter-loader" aria-hidden="true">
+          <div class="cl-grid">
+            <div id="cl-div1" class="cl-cell"></div>
+            <div id="cl-div2" class="cl-cell"></div>
+            <div id="cl-div3" class="cl-cell"></div>
+            <div id="cl-div4" class="cl-cell"></div>
+            <div id="cl-div5" class="cl-cell cl-hidden"></div>
+            <div id="cl-div6" class="cl-cell"></div>
+            <div id="cl-div7" class="cl-cell"></div>
+            <div id="cl-div8" class="cl-cell"></div>
+            <div id="cl-div9" class="cl-cell"></div>
+            <div id="cl-div10" class="cl-cell"></div>
+            <div id="cl-div11" class="cl-cell cl-hidden"></div>
+            <div id="cl-div12" class="cl-cell"></div>
+            <div id="cl-div13" class="cl-cell"></div>
+            <div id="cl-div14" class="cl-cell"></div>
+            <div id="cl-div15" class="cl-cell"></div>
+          </div>
+        </div>
+        <div class="countdown-cta-row">
+          <a href="#/" class="btn primary">Back to tests</a>
+          <a href="#/study" class="btn ghost">Study now</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  if (_countdownTickId) clearInterval(_countdownTickId);
+  _countdownTickId = setInterval(() => {
+    // If user navigated away, stop ticking.
+    if (!document.querySelector(".countdown-page")) {
+      clearInterval(_countdownTickId);
+      _countdownTickId = null;
+      return;
+    }
+    const p = render();
+    const dEl = document.getElementById("cd-d");
+    const hEl = document.getElementById("cd-h");
+    const mEl = document.getElementById("cd-m");
+    const sEl = document.getElementById("cd-s");
+    if (dEl) dEl.textContent = p.d;
+    if (hEl) hEl.textContent = pad(p.h);
+    if (mEl) mEl.textContent = pad(p.m);
+    if (sEl) {
+      sEl.textContent = pad(p.s);
+      // Pulse the seconds cell every tick.
+      sEl.classList.remove("cd-tick");
+      void sEl.offsetWidth;
+      sEl.classList.add("cd-tick");
+    }
+  }, 1000);
 }
 // Tick the countdown once a minute so the UI stays fresh without spamming.
 setInterval(() => { refreshCountdownUI(); }, 60000);
@@ -3563,6 +3669,38 @@ function renderStudyTutorPanel(topic) {
     </details>
   ` : "";
 
+  // Prevent the "scroll all the way up then back down" jump on every message
+  // send. Two things combine to cause it:
+  //  1. Rebuilding host.innerHTML momentarily empties the panel → document
+  //     shrinks → browser clamps scrollY to the new (smaller) max.
+  //  2. Browser scroll-anchoring can't track identity across a full innerHTML
+  //     replace, so it gives up and the clamped scrollY sticks.
+  // Fix: lock the host's height to its current rendered height before the
+  // rebuild so the document never shrinks, AND lock window.scrollY across
+  // the next several frames as a belt-and-suspenders guarantee.
+  const prevScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  const prevHeight = host.offsetHeight;
+  if (prevHeight > 0) {
+    host.style.minHeight = prevHeight + "px";
+  }
+  const prevScrollBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = "auto";
+  const lockScroll = () => {
+    let frames = 0;
+    const tick = () => {
+      if (Math.abs(window.scrollY - prevScrollY) > 1) {
+        window.scrollTo({ top: prevScrollY, left: 0, behavior: "auto" });
+      }
+      if (++frames < 12) requestAnimationFrame(tick);
+      else {
+        host.style.minHeight = "";
+        document.documentElement.style.scrollBehavior = prevScrollBehavior;
+      }
+    };
+    requestAnimationFrame(tick);
+  };
+  lockScroll();
+
   host.innerHTML = `
     <div class="st-card">
       <div class="st-head">
@@ -3630,7 +3768,17 @@ function renderStudyTutorPanel(topic) {
   }
 
   const body = host.querySelector("#st-body");
-  if (body) body.scrollTop = body.scrollHeight;
+  if (body) {
+    // Jump to bottom *instantly*. The panel has `scroll-behavior: smooth` in
+    // CSS, which on a fresh innerHTML rebuild would animate scrollTop from 0
+    // → scrollHeight — making the conversation appear to "scroll all the way
+    // up then back down" on every message send. Temporarily override it.
+    const prev = body.style.scrollBehavior;
+    body.style.scrollBehavior = "auto";
+    body.scrollTop = body.scrollHeight;
+    // Restore on next frame so future user-initiated scrolls stay smooth.
+    requestAnimationFrame(() => { body.style.scrollBehavior = prev; });
+  }
 }
 
 function onStudyTutorAction(topic, action) {
@@ -4053,6 +4201,34 @@ function setStudyState(slug, qNum, patch) {
   if (!all[slug]) all[slug] = {};
   all[slug][qNum] = { ...(all[slug][qNum] || {}), ...patch };
   localStorage.setItem(studyKey(), JSON.stringify(all));
+
+  // Mirror an actual answer (chosen letter) into the main `progress:` bucket
+  // so Study-tab / Review-wrongs attempts count toward Site-progress stats.
+  // We only mirror when a letter is picked (not for reveals) and we never
+  // overwrite an existing selection — first answer wins to preserve history.
+  if (patch && patch.chosen) {
+    try {
+      const pKey = progressKey(slug);
+      const prev = (() => {
+        try { return JSON.parse(localStorage.getItem(pKey) || "{}"); }
+        catch { return {}; }
+      })();
+      const selections = prev.selections || {};
+      if (!selections[qNum]) {
+        selections[qNum] = patch.chosen;
+        const timestamps = prev.timestamps || {};
+        timestamps[qNum] = patch.answeredAt || Date.now();
+        const revealed = prev.revealed || {};
+        revealed[qNum] = true; // study mode always reveals after answering
+        localStorage.setItem(pKey, JSON.stringify({
+          ...prev,
+          selections,
+          revealed,
+          timestamps,
+        }));
+      }
+    } catch { /* quota or parse — ignore */ }
+  }
 }
 
 function updateStudyQuestion(slug, qNum) {

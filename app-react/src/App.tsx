@@ -1,6 +1,5 @@
 import { CinematicHero } from "@/components/ui/cinematic-landing-hero";
 import { ShaderAnimation } from "@/components/ui/shader-animation";
-import { ShimmerText } from "@/components/ui/shimmer-text";
 
 /**
  * DECA Marketing Cluster landing page — combines two 21st.dev components:
@@ -35,17 +34,10 @@ export default function App() {
         />
       </div>
 
-      {/* Shimmer eyebrow — fixed at top */}
-      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
-        <ShimmerText
-          variant="violet"
-          className="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase"
-        >
-          Built for DECA · Marketing Cluster
-        </ShimmerText>
-      </div>
-
-      {/* Layer 2: cinematic hero with scroll timeline */}
+      {/* Layer 2: cinematic hero with scroll timeline.
+          The "Built for DECA" eyebrow is rendered inside the hero so it
+          fades out with the rest of the hero text on scroll instead of
+          sitting on top of the card. */}
       <div className="relative z-10">
         <CinematicHero
           onPrimaryCTA={() => { window.location.href = VANILLA_APP_URL; }}
