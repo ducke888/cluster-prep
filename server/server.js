@@ -65,14 +65,45 @@ const EPOCH_FILE = path.join(__dirname, "reset-epoch.json");
 const PROFILES_FILE = path.join(__dirname, "profiles.json");
 const ADMIN_TOKEN = process.env.TUTOR_ADMIN_TOKEN || "deca-admin";
 
-function loadBudget() {
+// ---- Firestore admin init (persistent budget tracking) ----
+// On Render, FIREBASE_SERVICE_ACCOUNT holds the service-account JSON. When
+// present, budgets are written to Firestore so caps survive redeploys (the
+// free tier wipes the local disk on every deploy). When absent (local dev),
+// we fall back to the old budget.json file — same semantics, ephemeral.
+let fsdb = null;
+let fieldValue = null;
+try {
+  const raw = process.env.FIREBASE_SERVICE_ACCOUNT;
+  if (raw && raw.trim().startsWith("{")) {
+    const admin = require("firebase-admin");
+    const svc = JSON.parse(raw);
+    if (!admin.apps.length) {
+      admin.initializeApp({ credential: admin.credential.cert(svc) });
+    }
+    fsdb = admin.firestore();
+    fieldValue = admin.firestore.FieldValue;
+    console.log(`[budget] firestore ready (project ${svc.project_id})`);
+  } else {
+    console.warn("[budget] FIREBASE_SERVICE_ACCOUNT not set — using local budget.json (ephemeral on Render)");
+  }
+} catch (e) {
+  console.error("[budget] firestore init failed, falling back to budget.json:", e.message);
+  fsdb = null;
+}
+
+// --- File-based fallbacks (used when Firestore is not configured) ---
+function _fileLoadBudget() {
   try { return JSON.parse(fs.readFileSync(BUDGET_FILE, "utf8")); }
   catch { return {}; }
 }
-function saveBudget(b) {
+function _fileSaveBudget(b) {
   try { fs.writeFileSync(BUDGET_FILE, JSON.stringify(b, null, 2)); }
   catch (e) { console.error("budget write failed", e); }
 }
+// Kept as no-op synchronous aliases for legacy callers (/api/admin/reset-all).
+// For Firestore mode, resetBudgets() is the async path.
+function loadBudget() { return _fileLoadBudget(); }
+function saveBudget(b) { return _fileSaveBudget(b); }
 function loadLeaderboard() {
   try { return JSON.parse(fs.readFileSync(LEADERBOARD_FILE, "utf8")); }
   catch { return {}; }
@@ -101,26 +132,79 @@ function todayKey() {
   const d = new Date();
   return d.toISOString().slice(0, 10);
 }
-function spentUSDToday(user) {
-  const b = loadBudget();
-  return ((b[user] && b[user][todayKey()]) || 0);
-}
-function totalSpentUSDToday() {
-  const b = loadBudget();
-  const t = todayKey();
-  let sum = 0;
-  for (const u of Object.keys(b)) {
-    sum += (b[u] && b[u][t]) || 0;
+// All budget ops are async so Firestore (when configured) can be awaited.
+// Doc layout in Firestore:
+//   budgets/{user}  → { days: { "YYYY-MM-DD": <usd number> } }
+//   budgets/_site   → same shape; aggregates everyone for the site-wide cap.
+async function spentUSDToday(user) {
+  if (!fsdb) {
+    const b = _fileLoadBudget();
+    return (b[user] && b[user][todayKey()]) || 0;
   }
-  return sum;
+  try {
+    const snap = await fsdb.doc(`budgets/${user}`).get();
+    const days = (snap.exists && snap.data().days) || {};
+    return days[todayKey()] || 0;
+  } catch (e) {
+    console.error("[budget] firestore read failed, falling back:", e.message);
+    const b = _fileLoadBudget();
+    return (b[user] && b[user][todayKey()]) || 0;
+  }
 }
-function addSpendUSD(user, usd) {
-  const b = loadBudget();
-  b[user] = b[user] || {};
+async function totalSpentUSDToday() {
+  if (!fsdb) {
+    const b = _fileLoadBudget();
+    const t = todayKey();
+    let sum = 0;
+    for (const u of Object.keys(b)) sum += (b[u] && b[u][t]) || 0;
+    return sum;
+  }
+  try {
+    const snap = await fsdb.doc("budgets/_site").get();
+    const days = (snap.exists && snap.data().days) || {};
+    return days[todayKey()] || 0;
+  } catch (e) {
+    console.error("[budget] firestore total read failed:", e.message);
+    return 0;
+  }
+}
+async function addSpendUSD(user, usd) {
+  if (!fsdb) {
+    const b = _fileLoadBudget();
+    b[user] = b[user] || {};
+    const t = todayKey();
+    b[user][t] = (b[user][t] || 0) + usd;
+    _fileSaveBudget(b);
+    return b[user][t];
+  }
   const t = todayKey();
-  b[user][t] = (b[user][t] || 0) + usd;
-  saveBudget(b);
-  return b[user][t];
+  try {
+    const inc = fieldValue.increment(usd);
+    await Promise.all([
+      fsdb.doc(`budgets/${user}`).set({ days: { [t]: inc } }, { merge: true }),
+      fsdb.doc("budgets/_site").set({ days: { [t]: inc } }, { merge: true }),
+    ]);
+    // Read back the new user total so we can return it to the client.
+    const snap = await fsdb.doc(`budgets/${user}`).get();
+    const days = (snap.exists && snap.data().days) || {};
+    return days[t] || 0;
+  } catch (e) {
+    console.error("[budget] firestore write failed:", e.message);
+    return 0;
+  }
+}
+// Admin reset — wipes all Firestore budget docs (and the local file).
+async function resetBudgets() {
+  _fileSaveBudget({});
+  if (!fsdb) return;
+  try {
+    const snap = await fsdb.collection("budgets").get();
+    const batch = fsdb.batch();
+    snap.docs.forEach(d => batch.delete(d.ref));
+    await batch.commit();
+  } catch (e) {
+    console.error("[budget] reset failed:", e.message);
+  }
 }
 
 const DECA_SYSTEM_PROMPT = `You are a focused DECA Marketing Cluster Exam tutor for the ICDC Marketing Cluster Exam (IMCE).
@@ -292,7 +376,7 @@ const requestListener = async (req, res) => {
     const token = url.searchParams.get("token") || "";
     if (token !== ADMIN_TOKEN) return sendJSON(res, 403, { error: "bad token" });
     saveLeaderboard({});
-    saveBudget({});
+    await resetBudgets();
     saveProfiles({});
     const next = loadEpoch() + 1;
     saveEpoch(next);
@@ -302,11 +386,14 @@ const requestListener = async (req, res) => {
   if (req.method === "GET" && req.url.startsWith("/api/tutor/budget")) {
     const url = new URL(req.url, "http://x");
     const user = (url.searchParams.get("user") || "_guest").slice(0, 80);
-    const totalSpent = totalSpentUSDToday();
+    const [userSpent, totalSpent] = await Promise.all([
+      spentUSDToday(user),
+      totalSpentUSDToday(),
+    ]);
     return sendJSON(res, 200, {
       user, cap: DAILY_CAP_USD,
-      spent: Number(spentUSDToday(user).toFixed(4)),
-      remaining: Number(Math.max(0, DAILY_CAP_USD - spentUSDToday(user)).toFixed(4)),
+      spent: Number(userSpent.toFixed(4)),
+      remaining: Number(Math.max(0, DAILY_CAP_USD - userSpent).toFixed(4)),
       totalCap: TOTAL_DAILY_CAP_USD,
       totalSpent: Number(totalSpent.toFixed(4)),
       totalRemaining: Number(Math.max(0, TOTAL_DAILY_CAP_USD - totalSpent).toFixed(4)),
@@ -336,7 +423,7 @@ const requestListener = async (req, res) => {
     if (messages.length === 0) return sendJSON(res, 400, { error: "no messages" });
 
     // Per-user cap
-    const spent = spentUSDToday(user);
+    const spent = await spentUSDToday(user);
     if (spent >= DAILY_CAP_USD) {
       return sendJSON(res, 429, {
         error: "daily_budget_exceeded",
@@ -345,7 +432,7 @@ const requestListener = async (req, res) => {
       });
     }
     // Account-wide cap (protects against many users hitting their caps at once)
-    const totalSpent = totalSpentUSDToday();
+    const totalSpent = await totalSpentUSDToday();
     if (totalSpent >= TOTAL_DAILY_CAP_USD) {
       return sendJSON(res, 429, {
         error: "account_budget_exceeded",
@@ -377,7 +464,7 @@ const requestListener = async (req, res) => {
     const cost =
       (usage.input_tokens / 1e6) * PRICE_IN_PER_MTOK +
       (usage.output_tokens / 1e6) * PRICE_OUT_PER_MTOK;
-    const newSpent = addSpendUSD(user, cost);
+    const newSpent = await addSpendUSD(user, cost);
 
     const text = (anthropic.json.content || [])
       .filter(c => c.type === "text")
@@ -407,6 +494,7 @@ if (require.main === module) {
     console.log(`  daily cap: $${DAILY_CAP_USD.toFixed(2)}/user · $${TOTAL_DAILY_CAP_USD.toFixed(2)} site-wide`);
     console.log(`  pricing:  $${PRICE_IN_PER_MTOK}/M input · $${PRICE_OUT_PER_MTOK}/M output (Haiku 4.5)`);
     console.log(`  api key: ${API_KEY ? "set ✓" : "MISSING ✗  — set ANTHROPIC_API_KEY"}`);
+    console.log(`  budget backend: ${fsdb ? "firestore (persistent)" : "budget.json (ephemeral)"}`);
     console.log(`  reset epoch: ${loadEpoch()}`);
     console.log(`  endpoints: POST /api/tutor · GET /api/tutor/budget · GET /api/leaderboard · POST /api/leaderboard/report · GET /api/reset-epoch · POST /api/admin/reset-all?token=…`);
   });

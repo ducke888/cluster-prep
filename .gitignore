@@ -2,4 +2,7 @@
 # API keys / secrets — never commit
 .env
 server/.env
+# Firebase service-account keys (any filename pattern)
+*firebase-adminsdk*.json
+serviceAccount*.json
 
