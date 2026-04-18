@@ -1693,7 +1693,7 @@ function refreshStreakUI() {
 }
 
 // --------- ICDC 2026 countdown ---------
-// DECA ICDC 2026 runs Apr 25–28, 2026 in Orlando. The Marketing Cluster Exam
+// DECA ICDC 2026 runs Apr 25–28, 2026 in Atlanta, GA. The Marketing Cluster Exam
 // (IMCE) is typically administered Sunday morning of competition. We target
 // Sun Apr 26, 2026 at 8:00 AM Eastern (12:00 UTC) as the exam moment.
 // If the published schedule differs, update ICDC_EXAM_ISO below.
@@ -1760,7 +1760,7 @@ function renderCountdown() {
       <div class="countdown-inner">
         <div class="countdown-eyebrow">
           <span class="cd-dot"></span>
-          <span>DECA ICDC 2026 · Orlando, FL</span>
+          <span>DECA ICDC 2026 · Atlanta, GA</span>
         </div>
         <h1 class="countdown-title">
           ${initial.done ? "It's go time." : "Marketing Cluster Exam in"}
