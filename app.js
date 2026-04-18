@@ -1286,6 +1286,7 @@ const ICDC_WEIGHT_TABLE = {
 const SEED_FILES = {
   aryan: "data/seed-aryan.json",
   rohit: "data/seed-rohit.json",
+  shreyas: "data/seed-shreyas.json",
 };
 
 // One-shot cleanup: wipe the auto-imported rohit-codes manualCodes entries that
@@ -4170,7 +4171,7 @@ async function applyResetEpochIfChanged() {
   // user so that maybeImportSeed() doesn't immediately re-fill the log-test
   // bucket from data/seed-*.json. Without this, wiping is pointless because
   // the next init() would just re-import Rohit's 896 starting answers etc.
-  const seedFiles = { aryan: "data/seed-aryan.json", rohit: "data/seed-rohit.json" };
+  const seedFiles = { aryan: "data/seed-aryan.json", rohit: "data/seed-rohit.json", shreyas: "data/seed-shreyas.json" };
   for (const [user, path] of Object.entries(seedFiles)) {
     localStorage.setItem(`deca-imce:user:${user}:seedImported:${path}:v6`, "reset-" + target);
     // also older flag forms, just in case
