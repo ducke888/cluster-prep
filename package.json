@@ -1,0 +1,13 @@
+{
+  "name": "deca-study",
+  "version": "1.0.0",
+  "description": "DECA Marketing Cluster study site (static + Node API proxy).",
+  "private": true,
+  "main": "unified-serve.js",
+  "scripts": {
+    "start": "node unified-serve.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
