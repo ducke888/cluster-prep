@@ -1,0 +1,32 @@
+{
+  "rohit": {
+    "score": 0,
+    "answered": 0,
+    "correct": 0,
+    "accuracy": 0,
+    "streak": 0,
+    "tests": 0,
+    "wrongsFixed": 0,
+    "updatedAt": 1776540965402
+  },
+  "aryan": {
+    "score": 0,
+    "answered": 0,
+    "correct": 0,
+    "accuracy": 0,
+    "streak": 0,
+    "tests": 0,
+    "wrongsFixed": 0,
+    "updatedAt": 1776540977334
+  },
+  "shreyas": {
+    "score": 0,
+    "answered": 0,
+    "correct": 0,
+    "accuracy": 0,
+    "streak": 0,
+    "tests": 0,
+    "wrongsFixed": 0,
+    "updatedAt": 1776540973173
+  }
+}

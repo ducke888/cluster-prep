@@ -1,0 +1,36 @@
+# Render.com deploy config. One service, two roles:
+#   (a) serves the static site (index.html + landing-assets + app.html + app.js
+#       + styles.css + data/) as plain HTTP
+#   (b) exposes the Node sync/leaderboard/tutor API under /api/*
+#
+# Deploy steps:
+#   1. Push this repo to GitHub.
+#   2. On https://render.com → New → Web Service → connect the repo.
+#   3. Render auto-detects this render.yaml. Click Apply.
+#   4. Add env var ANTHROPIC_API_KEY (optional — only needed if you want the
+#      AI tutor live; leaderboard + profile sync work without it).
+#   5. Once deployed you get a URL like https://deca-marketing.onrender.com.
+#      The vanilla client's LB_BASE auto-detects same-origin, so sync + leaderboard
+#      just work. Cross-device sync goes through Render instead of your laptop.
+#
+# Before deploy: run `./scripts/build-landing.sh` locally so index.html +
+# landing-assets/ are committed to the repo. Render doesn't run npm install
+# inside app-react/.
+
+services:
+  - type: web
+    name: deca-marketing
+    runtime: node
+    plan: free
+    buildCommand: cd server && npm install --production || true
+    # unified-serve.js wraps server/server.js and adds static file serving
+    # for everything at project root.
+    startCommand: node unified-serve.js
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: TUTOR_DAILY_CAP_USD
+        value: "1.00"
+      # ANTHROPIC_API_KEY — set manually in Render dashboard (marked secret).
+      - key: PORT
+        value: "3001"

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DECA Marketing Cluster Study</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <a href="#/" class="logo-link" aria-label="Home">
+      <svg class="logo" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+        <defs>
+          <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#a78bfa"/>
+            <stop offset="1" stop-color="#5b21b6"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="40" height="40" rx="9" fill="url(#logoGrad)"/>
+        <polyline points="8,28 16,20 22,24 32,10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="32" cy="10" r="2.8" fill="#fff"/>
+      </svg>
+    </a>
+    <div>
+      <h1>DECA Marketing</h1>
+      <p class="sub">Marketing Cluster Exam practice &mdash; 38 tests, ~3,800 questions</p>
+    </div>
+  </div>
+  <nav id="nav">
+    <button id="nav-home" class="nav-btn active" data-route="home">All Tests</button>
+    <button id="nav-stats" class="nav-btn" data-route="stats">My Stats</button>
+    <button id="nav-study" class="nav-btn" data-route="study">Study</button>
+    <span id="countdown-slot"></span>
+    <span id="streak-slot"></span>
+    <div id="auth-slot" class="auth-slot">
+      <button id="login-btn" class="nav-btn login">Log in</button>
+    </div>
+  </nav>
+</header>
+
+<main id="app">
+  <!-- Populated by JS -->
+</main>
+
+<!-- Login modal -->
+<div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box">
+    <h3 id="login-title">Log in with a username</h3>
+    <p class="modal-sub">
+      No password needed. Pick any name (e.g. <code>aryank</code>). Your answers
+      and stats are saved under this name on this browser.
+    </p>
+    <form id="login-form" class="login-form">
+      <input id="login-input" type="text" maxlength="40" placeholder="Your username"
+             autocomplete="off" autocapitalize="off" spellcheck="false" required />
+      <button type="submit" class="btn primary">Enter</button>
+    </form>
+    <div id="known-users" class="known-users"></div>
+    <button class="btn ghost modal-close" data-close>Cancel</button>
+  </div>
+</div>
+
+<footer class="foot">
+  <span>Content is from MBA Research Center sample exams. For personal study use.</span>
+</footer>
+
+<!--
+  Firebase bootstrap — loads Firestore as an ES module and exposes a small
+  window.decaSync object that app.js consumes for cross-device profile,
+  leaderboard, and reset-epoch sync. Must run BEFORE app.js so the sync
+  hooks are available. app.js waits for window.decaSync to appear before
+  its first pull.
+-->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+  import {
+    getFirestore, doc, getDoc, setDoc, collection, getDocs, serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDWh9Wq-4pswsba-geYoooYqVBlq9MmWSk",
+    authDomain: "deca-exam-f1d31.firebaseapp.com",
+    projectId: "deca-exam-f1d31",
+    storageBucket: "deca-exam-f1d31.firebasestorage.app",
+    messagingSenderId: "1007392953074",
+    appId: "1:1007392953074:web:794a77099276fa6b8ab66b",
+  };
+
+  try {
+    const fbApp = initializeApp(firebaseConfig);
+    const db = getFirestore(fbApp);
+
+    window.decaSync = {
+      ready: true,
+      backend: "firestore",
+      async getProfile(user) {
+        const snap = await getDoc(doc(db, "profiles", user));
+        return snap.exists() ? snap.data() : null;
+      },
+      async putProfile(user, payload) {
+        // payload: { mtime: number, data: {lsKey: lsValue} }
+        await setDoc(doc(db, "profiles", user), {
+          ...payload,
+          updatedAt: serverTimestamp(),
+        });
+      },
+      async listProfiles() {
+        const snap = await getDocs(collection(db, "profiles"));
+        return snap.docs.map(d => d.id);
+      },
+      async getLeaderboardAll() {
+        const snap = await getDocs(collection(db, "leaderboard"));
+        return snap.docs.map(d => ({ user: d.id, ...d.data() }));
+      },
+      async putLeaderboardEntry(user, entry) {
+        await setDoc(doc(db, "leaderboard", user), {
+          ...entry,
+          updatedAt: serverTimestamp(),
+        });
+      },
+      async getResetEpoch() {
+        const snap = await getDoc(doc(db, "meta", "reset-epoch"));
+        return snap.exists() ? (snap.data().epoch || 1) : 1;
+      },
+    };
+    console.log("[firebase] sync ready (projectId:", firebaseConfig.projectId + ")");
+    window.dispatchEvent(new Event("deca-sync-ready"));
+  } catch (err) {
+    console.error("[firebase] init failed:", err);
+    window.decaSync = { ready: false, error: String(err) };
+    window.dispatchEvent(new Event("deca-sync-ready"));
+  }
+</script>
+<script src="app.js"></script>
+</body>
+</html>

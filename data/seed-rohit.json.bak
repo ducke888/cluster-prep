@@ -1,0 +1,4522 @@
+{
+  "state-1": {
+    "1": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "3": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "4": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "nigga i just went to o fast ts easy"
+    },
+    "5": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "6": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "shi went tro fast too, product would attract custmors, credit would get them to buy"
+    },
+    "14": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "17": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "i was stuck inbetween the 2, having imports exceed exports creets a deficit, it hought it was the other way around, ofc having more resources would increase gdp"
+    },
+    "18": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "19": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "20": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "22": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "intiative is the ability to think or act without being told, being responsible would make you accountable"
+    },
+    "25": {
+      "chosen": "A",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "26": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "28": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "31": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "sunk costs are costs that are already chalked, the company will try to prove it decision even if its bad, none of the other ones makes snse"
+    },
+    "33": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "37": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "39": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "40": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "43": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "44": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "45": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "tactics are specific things, strategies are more broads that have tactics"
+    },
+    "49": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "54": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "55": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "ong this stupid i just didn't read this answer choice"
+    },
+    "57": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "63": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "i thought corporations were like grocery stores, but neighborhood business are those slocal stuff ig"
+    },
+    "64": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "65": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "shi iwas stuck inbetween the two, but ig distrubtion channel is the route the product takes to get to the customer, they worried about the money, geographic is like the physical; thing, which in this case it dont matter, its talking aobut produtcs mainly so the channel option makes sense"
+    },
+    "67": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "68": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "69": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "70": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "72": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "74": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "75": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "REVIEW PRODUCT LIFE CYCLE"
+    },
+    "76": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "- i knew this shit too, i was just rushing and wasn't thinking, the product/serveicen management doesn't increase revenue, they monitor inventory, but i was just thinking what would technology do thats the most helpful"
+    },
+    "77": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "78": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "79": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "80": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "81": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "loyalty and universal branding not a thing, corporate branding is like Disney ofc its gonna stuck it, everything is related to it"
+    },
+    "82": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "i was correct it was a strageting, but to me more indepth its a position stragenzing, they using the positions that they hella cheap to reun this sale which gets them more shi"
+    },
+    "83": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "84": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ", idk what patronage is, its a promitoin designed to promote a firms features or presiteng. the feature being sold here was the free shit. public service is like actual human public service, not what they are giving"
+    },
+    "85": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "86": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "- catalogs sent straight to consumer thru  direct mail"
+    },
+    "87": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "super markets il;lustrual usually show jjust the products, a furtnite ad would should products in a appropriate setting"
+    },
+    "88": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "89": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "90": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "91": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "92": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "93": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ", idk what a pull sales promotion stragety is, but its a promitons tratgegy involves a proudte promitng its products directly to a consumer, so a buy one get on free is promitng its product directly"
+    },
+    "94": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "95": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "96": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "97": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "98": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "99": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "100": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    }
+  },
+  "icdc-2014": {
+    "1": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "2": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "3": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "4": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "5": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "6": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "8": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "17": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "18": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "19": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "20": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "21": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "22": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "26": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "27": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "28": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "31": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "33": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "37": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "39": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "40": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "43": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "45": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "49": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "51": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "54": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "55": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "57": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "61": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "63": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "64": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "65": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "67": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "68": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "69": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "70": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "72": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "74": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "75": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "76": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "77": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "78": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "79": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "80": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "81": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "82": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "83": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "84": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "85": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "86": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "87": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "88": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "89": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "90": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "91": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "92": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "93": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "94": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "95": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "96": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "97": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "98": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "99": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "100": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    }
+  },
+  "icdc-2018": {
+    "1": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "3": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "4": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "IG IN THIS INDUSTRY THERE IS JUUST A LOT OF OPTIONS"
+    },
+    "5": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "6": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "THIS IS JUST WHAT IT IS, ITS A ALLOWANCE TO SLOT YOUR PRODUCT MANY CALL THIS UNETHICAL"
+    },
+    "7": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "IG NATURAL RESOURCES MAKE IT SO SHIT DONT WORK AND YTOU WONT HAVE AS MUCH STUFF SO IT COSTS A LOT OF MONEY TO START IN THE CITY, MAKES SENSE WHEN YOU THINK ABOUT IT"
+    },
+    "16": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "-CHANNEL MANGEMETN IS ANALYZE A COMPANYS DISTRUBUTION STUFF, WHICH IS EXACTLY WHAT THE GUY IS DOING, HE IS NOT DOING THE FINANCIALS AND LOKING FOR A FINANCIAL GOAL, HE IOS JUST SEEING WHAT WORKS"
+    },
+    "17": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "18": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "19": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "20": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "22": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "28": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "31": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "33": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "37": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "39": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "conviernce is where you select respondents based on opportunity, not random, simple random is probably every has equal chance, is this scenario its just those who gets stopped"
+    },
+    "40": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "43": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "-descriptive statistcs are used to describe the basic features of the data in a study, so the one that makes the most sense is to help to summarize data in a manageable way"
+    },
+    "45": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "- the only variable here was the voluntareering, i didn't read that so i got theat wrong"
+    },
+    "46": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "-idk how i got this one wrong, it makes sense that to get more people to have ityou would lower prices"
+    },
+    "49": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "54": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "its talking about the current area, os moving this information is thebest waym, you can back the stuff up"
+    },
+    "55": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "57": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "63": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "tal;ks about in the workplace, the guy is not getting stuff in the workplace, but more likely he is getting this from ongoing education"
+    },
+    "64": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "65": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "67": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "68": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "you have to know where it should go before choosing the prices to get there"
+    },
+    "69": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "70": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "72": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "74": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "75": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "no indication that she got any the other options, but theyre Bluetooth headphones so its implied that the Bluetooth would work"
+    },
+    "76": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "77": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "78": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "79": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "80": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "he is positiong the company that they should buy from here and not somebody else"
+    },
+    "81": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "82": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "patronage =promite a firms prestige, like a sponshorship"
+    },
+    "83": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-direct marketing is traight from the producer to the consumer withought mass media, os catalogs is essentially that"
+    },
+    "84": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "- more interatctivty with customers mean more things ykwim yea you got it, they can say both positive and negative things about you"
+    },
+    "85": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "86": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "87": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "88": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "89": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "90": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "91": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "92": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "93": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "94": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "95": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "96": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "97": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "98": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "its unqiue for the product ig, ovious is like something osmeboydu wouldn't have to explain, hidden is something somebody would have to explain, and noticeable isn't a term used to describe"
+    },
+    "99": {
+      "chosen": "D",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "100": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    }
+  },
+  "state-5": {
+    "1": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "3": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "-didnty realise that thing was channel mannagement"
+    },
+    "4": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "5": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "6": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "- he should adapt to the culturle rather then tryhing to imbue his American accent on them"
+    },
+    "15": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "17": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "18": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-everything else isn't liablity insurance, theyre all something else, since personal injury is a person to person thing thats why its the answer"
+    },
+    "19": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "20": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "- no indication of anything else happening other than the inflation"
+    },
+    "21": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "- really stupid, ofc if there is a gray market the people who ists supposed to go isn't going to get the thing"
+    },
+    "22": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "the best choice is do things when he most productive, none of thje other options help"
+    },
+    "28": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "31": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "33": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "37": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "39": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "40": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "43": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "qualitive data can bring u more detail, however usually in research it is only for smaller target markets, you cant get this data from everywhere so size is a factor"
+    },
+    "45": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "49": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "TO BROAD, all the things help, a variety would be most helpful"
+    },
+    "52": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "selling policies is liek credit stuff and delivery terms, those are examples, so if you cant explain that then ofc u would lose a customer"
+    },
+    "53": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "54": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "55": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "57": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "63": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "64": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "ig they saying that this is happening during the business so its bad, so i guess c makes sense"
+    },
+    "65": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "67": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "68": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "69": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "70": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-i thought everybody does this shit so it doesn't matter, but i guess they dont so yea it would be unethical if your like forcing the thing on to them"
+    },
+    "72": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "74": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "shit review the PRDOCUT LIFE CYCLE, it makes sense if you know it"
+    },
+    "75": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "- the term mass customizastion means that you can change something to affect a group of people,  like having technology change the shuipping bags for different distrubutors, provides personalized goods at a higher rate"
+    }
+  },
+  "sample-exam-6": {
+    "1": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "3": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "4": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "5": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "- this does not imp[rove distrubtion process"
+    },
+    "6": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "ig flash cards are more for a exam and stuff, note cards are for a presentation"
+    },
+    "12": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "if they better understand their policies, then they will have satisidfed customer,s and therefore build a clinetile"
+    },
+    "17": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "ig just klnow this,explain good service as many times as u need to is th ebest way to deal with sus cusotmers, mirror is for slow cusotmers, bnever pressing is leave me a lone, and dont jump to quick conclusions is dishonest"
+    },
+    "18": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "19": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "yea this makes sdense and television sets is like tvs i thought like the filim stuff, but yea demand wont ever change even if price increasde"
+    },
+    "20": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "producing goods and servecies is what operations management is"
+    },
+    "22": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "i thougth u can just iamgeine urself have a thing and u did it , but ig it takes time and practice"
+    },
+    "27": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "28": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "potentialty, but in most cirucmstances nah, they would get a rec letter for a hjob change, applying for new shit"
+    },
+    "30": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "ig saying most is the key words, cuase some problems u cant take time, but having time is a pretty good option"
+    },
+    "31": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "33": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "37": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "39": {
+      "chosen": "C",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "40": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "they are prepared for a fiscial yuear, then broke down for liek qauwrater, jkey words prepared"
+    },
+    "43": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "the one that makes the most sense is delveop new products, marketing ifnromation will tell you whats popiung and shi"
+    },
+    "45": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "i think the key is ot support your idea in this case, the wyas to support ur idea, it would be best to get ifnromation tfrom the thing i get it"
+    },
+    "46": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "47": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "0 i get this, the method of data anaylsis, if you have to anylsis by hand it would take a lot longer, none the other make sense"
+    },
+    "49": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ", credibliltyh think of liek the library shit, in order to make sure the source is credible u need to check the timelienses and shi"
+    },
+    "54": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "55": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "price makes sense, if the price is right the customer would buy, product is what goods will be offered and promotion is just communication information"
+    },
+    "57": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "63": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "ig i was thinking this wrong, if they know all this information, they will choose and award apruchasing contract to the buisnmess that is the best byt comaprinsion"
+    },
+    "64": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "not economic factor brooo just read"
+    },
+    "65": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "67": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "i was debating, but ig future poroblems would not allow you to schedule employees around them, control costs would ebt he best cause u can account for what the future has ins tore and make sure oyu have enough for something to hapopen"
+    },
+    "68": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "69": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "other options dont makes ense, go through them more,  the best edge that poruchasing creates is keeping their prices down, pmaixinimg ingventory would increase expense, less compteitieve"
+    },
+    "70": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "72": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "74": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "75": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "76": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "77": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "78": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "ig radio isn't used as much  socheaper goods are on that bih"
+    },
+    "79": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "80": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "81": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "82": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "83": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "no injury was like called or talked about, so the best course of action is recalling that product"
+    },
+    "84": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "85": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "trade characrters are brand makrtks that have been personified or made to seem, the primairy reason is to create favorable impression"
+    },
+    "86": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "duh nga read the question better brands are wehat u pericieve them, i percievie balneciaga as drip"
+    },
+    "87": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "88": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "89": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "90": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "91": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "92": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "93": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "94": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "95": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "96": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "97": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "98": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "99": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "100": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    }
+  },
+  "sample-exam-7": {
+    "1": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "yea i was thinking this, its not C causetheres not enough information provided to decide this"
+    },
+    "3": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "4": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "5": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "6": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "read this shit better it says gestures , not verbal shit"
+    },
+    "10": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "- it wasn't reallyt a cultural thing, innovation amngemets is where everybody works together"
+    },
+    "17": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "-oligigopoly is where there are relatively few sellers, industry leaders determine prices, i didn't know what it was"
+    },
+    "18": {
+      "chosen": "C",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "19": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ", demand exceeds withj suppl;y, i would've choose C if i knew that, so inflation = demand exceeds supply, it takes more money to buiy same item"
+    },
+    "20": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "D",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "22": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "subculture oculd influence it, but it wouldn't determine it, the truth is is that the second dminesinos of diversty cange change aty any times of lfie"
+    },
+    "23": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "-m,umtual fund,l mad people put money and a fund manager invests it, know this deifnition"
+    },
+    "28": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "31": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "thsio woikrs, b ut some business would bte able to make adjustmentse and shi, money olays a part, so the best thing you can do with it is determine where the business is on target adn wehre eit is not"
+    },
+    "32": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "conflict of interest is where one party has a personal stake in the action, and there was no culture bias thisone is easy"
+    },
+    "33": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "37": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "- this is easy, strategy is liek how can we od something, thats a staretegy, making a new strategy. discovery is liek wahat or why"
+    },
+    "39": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "-cauisual research is cause and effect, testse what if, explorarotyr helps define something, descriptiove involves gathering information based on athe issue/situation"
+    },
+    "40": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "43": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "45": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "49": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-NF078:yea lopwk none of the shi makes sense, the intranet would have specific stuff related to the company things, everything else dont make sense"
+    },
+    "54": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "55": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "**NF001:**shi so fucking dumb ngas really talking about the floppy disk liek what the fuck is wrong with these stupid niggas ever since 2001 as long asd u had a usb stick u can use it anywhere stupid aass fuck niggas fuck this question"
+    },
+    "57": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "PD009on god this some fucking bull shit too nigga like if you fucking store your parpers it ameks them more organized like it says depnidng ont he fucking job depending on my fucking cock u can fucking suck it brooo like what is this fucking bullshit ti said fucking routine if the paper is outdated that shi takes some time and shit its not like a day to dya thing, oohh what if depending on your job you need these papers on  ur fuckig desk"
+    },
+    "63": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "64": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "65": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "67": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "PI02 trougth and peak not stages, and in maturity stage the price would be stabilized, in growth they would still tamper with the shi"
+    },
+    "68": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "69": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "70": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "PM:127 snecitics is idea generation techniques that invnovled a process gathering ideas in purposely illogical ways, atrtribe listening is where u list atriributes then find a way to improve artrtibutes, thjis is progrmamed"
+    },
+    "72": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "74": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "75": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "76": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "PM041: this is easy, product placement is a form of adverisitment that uses product as props, that tdoesnt make sense, marketing would cost less dont over think"
+    },
+    "77": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "78": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "79": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "80": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "81": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "PR:003: dont focus too much on the personal selling, it salse consumer markets and like to large,, adverstie to large about, promote the sales and oublicity are good ways"
+    },
+    "82": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "83": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "**PR:101:**this is just what a consent order is, a cease and desist is where markets to stop running it until it goes to court, correct is where they fix trhe thing, and affirmative discuoluse is where they have to include information in the next one"
+    },
+    "84": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "85": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "86": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "87": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ":**PR:249:**push money is where cash incentives are offered, sweepstakes is where u can play games where u could win money"
+    },
+    "88": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "-Copy is like the text, tag line is slogan, and headline is the attention grabber"
+    },
+    "89": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "90": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "91": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "92": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "93": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ":**SE:828:**ig keyu word is immediately, it shouldn't beimmediatly, having a goodf return pooilicy will be good and reassuring to the person"
+    },
+    "94": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "95": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "96": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "limited partenership agreement is where  aparetner is only liable to the amount invested, recpirictory wocfcurse when one company agrees to buy poroducts from a second company only when they frist agree"
+    },
+    "97": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "98": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "99": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "100": {
+      "chosen": "D",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    }
+  },
+  "sample-exam-8": {
+    "1": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "3": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "4": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "5": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "6": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ":**CO:017:-**i just didn't know what this meant but yea none of the other things makes sense so yea thinking about this one it makes sense"
+    },
+    "9": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "17": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "18": {
+      "chosen": "B",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "19": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "20": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "22": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "28": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "A",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "30": {
+      "chosen": "D",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "31": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "33": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "37": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "IM 289 Think about lkike scanners at super markets, it lets ythe company know when u buy something and shi at the poiunt of purchase, this method can track large amounts of shi"
+    },
+    "39": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "40": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "i just thought C was too broad not indepth enough so i didn't choose it good marketing rese3arhc brief should define the problem and states the objectives. THe question about sales is like teh reason the brief was created, but not what likie the plan or what the IM:290"
+    },
+    "42": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "43": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "45": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "propducc t has nothing to do with moneyu,ofc this one deals with money and shi"
+    },
+    "48": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "49": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "54": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "55": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "-NMAH THIUS ONE SO EASY JUST THINK OFC THIS IS A AUTORESPONDER"
+    },
+    "56": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "57": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "B",
+      "wrong": true,
+      "note": "PD077X OK IG, you would need to make sure that evertything you have is correct, adnt ehn analyze the information, cause if u assume soemthign wrong then u cant ananlyze correctly"
+    },
+    "63": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "64": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-just think on thius bull shit oms dis opne mad easy like tf"
+    },
+    "65": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "67": {
+      "chosen": "C",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "68": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "69": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "70": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "72": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "duh just think they are modifinign the product in order improve it PM:128"
+    },
+    "74": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "dis one is simple too, safety policiecs is soemthign liuek teh company would have, grades is the govenremnt PM:019"
+    },
+    "75": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    }
+  },
+  "sample-16": {
+    "1": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-OBTAINING WITNESS IS PRETARIAL, IN DUE PROCESS THE BEST THING TO DO BEFORE IS JUST TELL THEM , PROBVIDE NOTICE, DO SOMETHING LEGAL BEFORE U GO AND INVESTIAGET"
+    },
+    "3": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-ig just know this one, share risk is like the  like the only thing thats happening, theres like a lot of processsesers so"
+    },
+    "4": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "5": {
+      "chosen": "C",
+      "wrong": true,
+      "note": "-i just didn't know what it is, you just attach the rfid thing to the box so then when it arraives u canm scan it and know what sin the box"
+    },
+    "6": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "13": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "17": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "18": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "19": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "20": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "22": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "28": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "31": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "33": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "i was thinking of screening but i chopse this one, prosepecting is a sales activity where u indeintify a p[ersonm with the potential to buy a product"
+    },
+    "37": {
+      "chosen": "D",
+      "wrong": true,
+      "note": "i knew thisum, makes ure you know what marketing ifromastion management system is"
+    },
+    "38": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "39": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "40": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "43": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "C",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "45": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "49": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "A",
+      "wrong": true,
+      "note": "-CUSTOMER SATFICSCAITON IS A BETTER S CALE, CUSTOMER ATTITUDE IS APART OF CUSTOMER SATISFACTION"
+    }
+  },
+  "sample-exam-9": {
+    "1": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "3": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "4": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "5": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "6": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "13": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "14": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "15": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "16": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "17": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "18": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "19": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "20": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "22": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "24": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "25": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "28": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "31": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "33": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "34": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "35": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "36": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "37": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "39": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "40": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "43": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "45": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "49": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "54": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "55": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "57": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "59": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "63": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "64": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "65": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "66": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "67": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "68": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "69": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "70": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "72": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "73": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "74": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "75": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "76": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "77": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "78": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "79": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "80": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "81": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "82": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "83": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "84": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "85": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "86": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "87": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "88": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "89": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "90": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "91": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "92": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "93": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "94": {
+      "chosen": "A",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "95": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "96": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "97": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "98": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "99": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "100": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    }
+  },
+  "icdc-2016": {
+    "1": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "2": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "3": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "4": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "5": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "6": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "7": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "8": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "9": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "10": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "11": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "12": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "13": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "14": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "15": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "16": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "17": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "18": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "19": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "20": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "21": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "22": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "23": {
+      "chosen": "C",
+      "wrong": true,
+      "note": ""
+    },
+    "24": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "25": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "26": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "27": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "28": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "29": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "30": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "31": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "32": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "33": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "34": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "35": {
+      "chosen": "A",
+      "wrong": true,
+      "note": " [auto-detected wrong]"
+    },
+    "36": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "37": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "38": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "39": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "40": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "41": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "42": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "43": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "44": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "45": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "46": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "47": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "48": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "49": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "50": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "51": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "52": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "53": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "54": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "55": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "56": {
+      "chosen": "B",
+      "wrong": true,
+      "note": ""
+    },
+    "57": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "58": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "59": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "60": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "61": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "62": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "63": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "64": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "65": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "66": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "67": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "68": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "69": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "70": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "71": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "72": {
+      "chosen": "D",
+      "wrong": true,
+      "note": ""
+    },
+    "73": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "74": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "75": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "76": {
+      "chosen": "A",
+      "wrong": true,
+      "note": ""
+    },
+    "77": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "78": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "79": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "80": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "81": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "82": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "83": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "84": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "85": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "86": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "87": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "88": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "89": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "90": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "91": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "92": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "93": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "94": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "95": {
+      "chosen": "B",
+      "wrong": false,
+      "note": ""
+    },
+    "96": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    },
+    "97": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "98": {
+      "chosen": "D",
+      "wrong": false,
+      "note": ""
+    },
+    "99": {
+      "chosen": "A",
+      "wrong": false,
+      "note": ""
+    },
+    "100": {
+      "chosen": "C",
+      "wrong": false,
+      "note": ""
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "deca-imce-tutor-proxy",
+  "version": "0.1.0",
+  "description": "Proxy to Anthropic for the DECA IMCE study-site AI tutor.",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

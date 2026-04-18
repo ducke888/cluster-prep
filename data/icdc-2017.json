@@ -1,0 +1,1608 @@
+{
+  "file": "2017 HS ICDC Tests and Keys (all clusters).pdf",
+  "title": "ICDC 2017 (Marketing)",
+  "question_count": 100,
+  "answered_count": 100,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which form of business ownership represents the minority of business in the U.S. yet makes up the majority of sales?",
+      "options": {
+        "A": "LLCs",
+        "B": "Sole proprietorships",
+        "C": "Partnerships",
+        "D": "Corporations"
+      },
+      "answer": "D",
+      "explanation": "Corporations. In the U.S., corporations are in the minority as a form of business ownership, but they also generate the majority of sales. There are many more sole proprietorships, partnerships, and LLCs in the U.S., but they do not generate near as many sales as corporations.",
+      "sources": [
+        "SOURCE: BL:003",
+        "SOURCE: LAP-BL-001—Own It Your Way (Types of Business Ownership)"
+      ]
+    },
+    {
+      "number": 2,
+      "question": "What are import quotas or tariffs designed to do?",
+      "options": {
+        "A": "Prevent harmful substances from entering a country",
+        "B": "Protect a country's economy from foreign competition",
+        "C": "Prevent illegal immigration across national borders",
+        "D": "Eliminate the movement of illegal merchandise"
+      },
+      "answer": "B",
+      "explanation": "Protect a country's economy from foreign competition. By imposing tariffs or quotas on commodities entering a country, the country can reduce the economic impact of imported products. Quotas or tariffs do not prevent harmful substances or illegal merchandise from entering a country. Quotas and tariffs do not have an impact on illegal immigration. http://www.economicsdiscussion.net/difference-between/difference-between-tariff-and- quotas-with-diagram/6437",
+      "sources": [
+        "SOURCE: BL:126",
+        "SOURCE: Dutta, N. (n.d.). Difference between tariff and quotas. Retrieved August 23, 2016, from"
+      ]
+    },
+    {
+      "number": 3,
+      "question": "Two retailers compete with each other, distributing the same product. This is an example of __________ conflict.",
+      "options": {
+        "A": "economic",
+        "B": "horizontal",
+        "C": "distributive",
+        "D": "vertical"
+      },
+      "answer": "B",
+      "explanation": "Horizontal. Two retailers competing is an example of horizontal conflict, or conflict between two members at the same level of a channel of distribution. Vertical conflict occurs between members at different levels of the same channel (e.g., a manufacturer and a wholesaler). Economic and distributive are not types of conflict in channels of distribution.",
+      "sources": [
+        "SOURCE: CM:001",
+        "SOURCE: LAP-CM-002—Chart Your Channels (Channel Management)"
+      ]
+    },
+    {
+      "number": 4,
+      "question": "A channel of distribution ends when the product reaches its ultimate consumer or when",
+      "options": {
+        "A": "changes are made to the product.",
+        "B": "an intermediary goes out of business.",
+        "C": "it leaves the producer.",
+        "D": "it reaches a wholesaler."
+      },
+      "answer": "A",
+      "explanation": "Changes are made to the product. A channel of distribution ends when the product reaches its ultimate consumer or when changes are made to the product (e.g., when flour becomes bread or when components become an engine). An intermediary may go out of business, but there will always be other intermediaries to step in and complete the channel. A channel does not end when it leaves the producer or reaches a wholesaler—it isn't over until the product reaches the consumer.",
+      "sources": [
+        "SOURCE: CM:003",
+        "SOURCE: LAP-CM-001—Channel It (Channels of Distribution)"
+      ]
+    },
+    {
+      "number": 5,
+      "question": "Warehouse management systems are mainly used to __________, while enterprise resource planning software provides __________.",
+      "options": {
+        "A": "manage supply chain; customer service training",
+        "B": "manage inventory; automated processes across departments",
+        "C": "keep costs low; complex inventory optimization",
+        "D": "integrate all management; real-time optimization information"
+      },
+      "answer": "B",
+      "explanation": "Manage inventory; automated processes across departments. Warehouse management systems (WMS) and enterprise resource planning software (ERP) are both important to distribution and channel management, but they differ in functionality. The main purpose of WMS is to manage inventory, including tracking items as they are picked, packed, shipped, and received. WMS are generally stand-alone, meaning that they solely provide inventory management. On the other hand, ERP software automates business processes in various departments, including not only inventory management, but also many others, such as accounting and customer relationship management. Both WMS and ERP manage supply chain, and ERP software does not necessarily provide customer service training. WMS is not used primarily to keep costs low; in fact, it can be more expensive than other types of channel management technology. Also, WMS provides complex inventory training; ERP does not. WMS is not used to integrate all management; this is a function of ERP software. Finally, real-time optimization is a function of WMS rather than ERP software. systems. Retrieved August 16, 2016, from http://learnmore.bluelinkerp.com/blog- 0/bid/52440/The-Difference-Between-Warehouse-Management-and-ERP-Software-Systems 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 15",
+      "sources": [
+        "SOURCE: CM:004",
+        "SOURCE: Woo, G. (2012, June 5). The difference between warehouse management and ERP software"
+      ]
+    },
+    {
+      "number": 6,
+      "question": "One of the world's biggest technology companies only allows one type of Web browsing application to function on its devices. This is an example of",
+      "options": {
+        "A": "a closed territory.",
+        "B": "full line forcing.",
+        "C": "a tying agreement.",
+        "D": "intellectual property."
+      },
+      "answer": "C",
+      "explanation": "A tying agreement. A tying agreement occurs when a channel member's product is exclusively tied to the mandatory purchase of another product. Tying agreements are illegal when they reduce competition or create monopolies. In this case, if one of the biggest technology companies only allows one type of Web browsing application to function on its devices, other Web browsing applications cannot fairly compete in the market. Therefore, it is a tying agreement. Full line forcing is when a producer or supplier insists that the dealer must carry the full range of products in a line. There is no indication that full line forcing is occurring here. Closed territories occur when producers restrict their distributors to certain geographic regions. That is not occurring in this case. Finally, intellectual property is any work or creation that is protected by rights, such as copyright, patent, or trademark rights. Western, Cengage Learning.",
+      "sources": [
+        "SOURCE: CM:005",
+        "SOURCE: Kurtz, D. (2013). Contemporary marketing: 2013 edition (p. 424). Mason, OH: South-"
+      ]
+    },
+    {
+      "number": 7,
+      "question": "Tanya's Treats is a baked goods company that traditionally partners with local cafés to sell its products. However, Tanya's Treats decided to open its own café directly across the street from one of its biggest retailers. This is an example of",
+      "options": {
+        "A": "exclusive distribution.",
+        "B": "horizontal conflict.",
+        "C": "a tying agreement.",
+        "D": "vertical conflict."
+      },
+      "answer": "D",
+      "explanation": "Vertical conflict. Vertical conflict is channel conflict that exists between channel members at different levels. One example of common vertical conflict occurs when producers develop their own retail stores that compete with their retailers, as is the case with Tanya's Treats and its retailers. Horizontal conflict occurs between channel members at the same level, such as two wholesalers or retailers. A tying agreement occurs when a channel member's product is exclusively tied to the mandatory purchase of another product. Exclusive distribution occurs when a producer grants exclusive rights to a wholesaler or retailer to sell its products in a specific geographic region. Western, Cengage Learning.",
+      "sources": [
+        "SOURCE: CM:008",
+        "SOURCE: Kurtz, D. (2013). Contemporary marketing: 2013 edition (p. 426). Mason, OH: South-"
+      ]
+    },
+    {
+      "number": 8,
+      "question": "Which of the following is an example of an affinity partnership:",
+      "options": {
+        "A": "An airline offers frequent flyer miles to travelers.",
+        "B": "A credit card company offers cards with sports teams' logos.",
+        "C": "A restaurant gives discounts to those who join its rewards program.",
+        "D": "A bank pays to have its name on a local concert venue. 2017 HS ICDC MARKETING CLUSTER EXAM 2"
+      },
+      "answer": "B",
+      "explanation": "A credit card company offers cards with sports teams' logos. Affinity marketing is a strategy in which an organization solicits responses from a group that shares a common interest or activity. If a credit card has a sports team's logo on it, fans of that team might be more likely to choose that particular company. An airline that offers frequent flyer miles is not an affinity partnership because there is no relationship between the airline and another organization; rather, this is an example of frequency marketing. A restaurant giving discounts to members of its rewards program is also an example of a frequency marketing strategy. Finally, a bank that pays to have its name on a local concert venue is engaged in a sponsorship, rather than an affinity partnership. Western, Cengage Learning.",
+      "sources": [
+        "SOURCE: CM:021",
+        "SOURCE: Kurtz, D. (2013). Contemporary marketing: 2013 edition (p. 319). Mason, OH: South-"
+      ]
+    },
+    {
+      "number": 9,
+      "question": "Katie has developed a new product idea and plans to share it at the next staff meeting. Katie knows that some coworkers will object to her idea. When her coworkers share concerns that her idea won't work, Katie should",
+      "options": {
+        "A": "remind her coworkers that they are sharing opinions, not facts.",
+        "B": "explain that there is no proof her idea wouldn't work.",
+        "C": "acknowledge their concerns and respond in a respectful manner.",
+        "D": "repeat her proposal because it is based on quality research."
+      },
+      "answer": "C",
+      "explanation": "Acknowledge their concerns and respond in a respectful manner. To objectively defend an idea, it is important to acknowledge any concerns, consider them, and respond in a respectful manner. Stating that there is no proof that the idea wouldn't work does little to defend the idea and does not demonstrate an objective attitude. While it may be true that Katie's coworkers are only sharing opinions, their opinions may be based on years of experience and should be considered. Information based on quality research can provide good insight, but repeating the information does little to defend against concerns and does not demonstrate objectivity. 2016 from https://hbr.org/2010/04/defend-yourself-without-being 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 16",
+      "sources": [
+        "SOURCE: CO:061",
+        "SOURCE: Baldoni, J. (2010, April 22). Defend your idea without being defensive. Retrieved August 11,"
+      ]
+    },
+    {
+      "number": 10,
+      "question": "To take effective written notes during a presentation, it's important to",
+      "options": {
+        "A": "write down everything that the presenter says and does.",
+        "B": "write the notes in your own words.",
+        "C": "clearly understand the information before writing it down.",
+        "D": "use good grammar and spelling."
+      },
+      "answer": "B",
+      "explanation": "Write the notes in your own words. It is important to write the notes in your own words whenever possible so you can easily understand them later. It is impossible to write down everything a presenter says and does; words, phrases, and abbreviations should be used to take notes quickly. It's not likely that you will understand everything presented, but by taking good notes you can review them later to gain understanding or to study further. Using good grammar and spelling in your notes is helpful but not essential, since they are only meant for your use. http://faculty.chass.ncsu.edu/slatta/hi216/takenotes.htm",
+      "sources": [
+        "SOURCE: CO:085",
+        "SOURCE: Slatta, R.W. (n.d.). Notetaking. Retrieved August 11, 2016, from"
+      ]
+    },
+    {
+      "number": 11,
+      "question": "Digital communications such as email may put a business at more risk than memos or letters stored as paper records because",
+      "options": {
+        "A": "email users may use slang or make embarrassing remarks.",
+        "B": "email users may make careless spelling errors.",
+        "C": "email communications are more difficult to secure.",
+        "D": "email communications contain confidential information."
+      },
+      "answer": "C",
+      "explanation": "Email communications are more difficult to secure. Email messages can be intercepted by unscrupulous people in a number of different ways, both physically (if either the sending or receiving device is stolen or lacking effective security features) and digitally (such as through hacking). Paper records, on the other hand, can be more easily protected using locked, fireproof cabinets and other physical storage. Poor spelling, slang, and inappropriate remarks can occur in any form of communication or documentation and should be avoided. Any business communication can contain confidential information, but the inability to effectively secure email puts any private information contained in email messages at risk. Retrieved August 12, 2016, from http://www.digitaltrends.com/computing/can-email-ever-be- secure/#ixzz4H8g1HSEp",
+      "sources": [
+        "SOURCE: CO:202",
+        "SOURCE: Duncan, G. (2013, August 24). Here's why your email is insecure and likely to stay that way."
+      ]
+    },
+    {
+      "number": 12,
+      "question": "When posting to social media, business employees should understand that",
+      "options": {
+        "A": "social media posts do not have the same legal protection as private conversations.",
+        "B": "there is no need to keep their personal and business lives separate.",
+        "C": "their personal messages have no effect on their employer.",
+        "D": "employers using social media to make employment decisions are protected by law."
+      },
+      "answer": "A",
+      "explanation": "Social media posts do not have the same legal protection as private conversations. Conversations that are shared publicly online are not considered private and can be used as evidence of unethical behavior or crime. It is recommended that individuals make an attempt to keep their private and business social media accounts separate, although it is nearly impossible to do so. If employees make negative or inappropriate public comments and people know where they work, their employers may be negatively affected. If companies make employment decisions based on certain personal information shared on social media (e.g., age, race, or religious affiliation), they can be accused of discrimination. Retrieved August 11, 2016 from http://www.cleveland.com/business/index.ssf/2014/02/tips_on_avoiding_social_media_faux- pas_in_the_workplace.html",
+      "sources": [
+        "SOURCE: CO:206",
+        "SOURCE: Cho. J. (2014, February 9). Tips on avoiding social media faux-pas in the workplace."
+      ]
+    },
+    {
+      "number": 13,
+      "question": "While attending a staff meeting and listening to a coworker present information on the legal use of copyrighted images, Darrell realizes some of the information may not be accurate. What should he do?",
+      "options": {
+        "A": "Ask for permission to bring the company's attorney to the meeting",
+        "B": "Explain that the information is incorrect",
+        "C": "Ask questions to clarify the information",
+        "D": "Don't say anything because it would embarrass his coworker"
+      },
+      "answer": "C",
+      "explanation": "Ask questions to clarify the information. It is better to ask a question to clarify information than to point out that someone is wrong. Besides, Darrell may not be aware of recent changes in copyright law. Inviting another person to a meeting to prove his point would be considered rude, and others might doubt his ability to trust their judgment or support them in the future. It's important to avoid embarrassing coworkers, but if Darrell has valid concerns, politely sharing them is the best course of action. 2015, from http://work.chron.com/six-tips-participate-meeting-2014.html",
+      "sources": [
+        "SOURCE: CO:063",
+        "SOURCE: Ashe-Edmunds, S. (n.d.). Six tips on how to participate in a meeting. Retrieved August 11,"
+      ]
+    },
+    {
+      "number": 14,
+      "question": "Customer complaints can eat into a business's profits by",
+      "options": {
+        "A": "increasing its overall sales volume.",
+        "B": "making employees unhappy.",
+        "C": "forcing it to sell returned items at reduced prices.",
+        "D": "reducing its marketing budget."
+      },
+      "answer": "C",
+      "explanation": "Forcing it to sell returned items at reduced prices. Customer complaints can eat into a business's profits by forcing it to sell returned items at reduced prices. When a complaint can't be resolved and a customer returns an item, it is unlikely that the business will recover the full amount of expected profit. Unhappy employees do not necessarily affect profitability. An increase in sales volume would likely boost profitability, not cause it to go down. Customer complaints do not necessarily cause a business to reduce its marketing budget. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 17",
+      "sources": [
+        "SOURCE: CR:010",
+        "SOURCE: LAP-CR-010—Righting Wrongs (Handling Customer Complaints)"
+      ]
+    },
+    {
+      "number": 15,
+      "question": "An organization's structure should ensure that customers' experiences with the business are",
+      "options": {
+        "A": "time-consuming.",
+        "B": "profitable.",
+        "C": "endless.",
+        "D": "seamless."
+      },
+      "answer": "D",
+      "explanation": "Seamless. An organization's structure should ensure that customers' experiences with the business are seamless. This can sometimes be difficult because different departments may have different methods of reaching business goals. Departments must work together to keep CRM a priority. Businesses want customer experiences to result in profit, but organizational structure does not necessarily ensure this. Businesses do not want customers' experiences to be endless or time-consuming.",
+      "sources": [
+        "SOURCE: CR:016",
+        "SOURCE: LAP-CR-016—Know When to Hold 'Em (Nature of Customer Relations Management)"
+      ]
+    },
+    {
+      "number": 16,
+      "question": "Societies must determine how to allocate resources between production of __________ and __________ goods.",
+      "options": {
+        "A": "natural resources; capital",
+        "B": "capital goods; consumer",
+        "C": "natural resources; consumer",
+        "D": "services; consumer 2017 HS ICDC MARKETING CLUSTER EXAM 3"
+      },
+      "answer": "B",
+      "explanation": "Capital goods; consumer. Because resources are limited, they must be divided between capital and consumer goods. Natural resources are not produced. Individuals as well as businesses consume services.",
+      "sources": [
+        "SOURCE: EC:001",
+        "SOURCE: LAP-EC-006—Are You Satisfied? (Economics and Economic Activities)"
+      ]
+    },
+    {
+      "number": 17,
+      "question": "Which of the following makes globalization more difficult:",
+      "options": {
+        "A": "New technologies",
+        "B": "Stronger infrastructures",
+        "C": "Terrorist threats",
+        "D": "Faster transportation"
+      },
+      "answer": "C",
+      "explanation": "Terrorist threats. Terrorist threats can make globalization more difficult and costly. International trade is dampened when the safety of people and operations is in question. Stronger infrastructures, new technologies, and faster transportation are all factors that aid globalization.",
+      "sources": [
+        "SOURCE: EC:104",
+        "SOURCE: LAP-EC-104—Stretch Your Boundaries (The Global Business Environment)"
+      ]
+    },
+    {
+      "number": 18,
+      "question": "Why are consumer goods often poor quality in a communist command economy?",
+      "options": {
+        "A": "People in a communist command economy consume everything that they produce.",
+        "B": "People in a communist command economy do not need quality consumer goods.",
+        "C": "High taxes take resources away from producers.",
+        "D": "The government pays workers based on quantity rather than quality."
+      },
+      "answer": "D",
+      "explanation": "The government pays workers based on quantity rather than quality. In a communist command economy, most resources are allocated toward industrial goods rather than consumer goods. The few consumer goods that are available are often poor quality because the government pays workers based on the quantity, not the quality, of what they produce. People in communist command economies need consumer goods as much as those in other economic systems do. High taxes do not necessarily have a direct effect on production of consumer goods. Finally, people in a communist command economy do not consume everything that they produce; this is instead a characteristic of a traditional economy.",
+      "sources": [
+        "SOURCE: EC:007",
+        "SOURCE: LAP-EC-017—Who's the Boss? (Economic Systems)"
+      ]
+    },
+    {
+      "number": 19,
+      "question": "Which of the following examples best illustrates the law of diminishing returns:",
+      "options": {
+        "A": "A company's manufacturing costs increased, resulting in higher costs and significantly lower profits.",
+        "B": "A declining economy and decreased demand for its products and services caused a company to reduce its production levels.",
+        "C": "Falling interest rates led to an increase in new housing, factory expansions, and construction projects.",
+        "D": "A factory added employees to increase production but experienced higher costs due to reduced production output per employee."
+      },
+      "answer": "D",
+      "explanation": "A factory added employees to increase production but experienced higher costs due to reduced production output per employee. The law of diminishing returns is an economic concept that states that if one input (e.g., employees) increases while others (e.g., facilities, equipment, supplies) remain constant, the increases in output will eventually decline. A company that hires more employees without adding additional resources such as equipment experiences the law of diminishing returns. A company reducing production due to a declining economy and lower demand is responding to the law of supply and demand. Lower interest rates leading to an increase in construction projects represents growth. An increase in the cost of materials would impact profits but does not represent the law of diminishing returns. http://www.amosweb.com/cgi- bin/awb_nav.pl?s=wpd&c=dsp&k=law+of+diminishing+marginal+returns 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 18",
+      "sources": [
+        "SOURCE: EC:023",
+        "SOURCE: AmosWEB. (n.d.). Law of diminishing marginal returns. Retrieved August 15, 2016, from"
+      ]
+    },
+    {
+      "number": 20,
+      "question": "Which of the following should be included in GDP:",
+      "options": {
+        "A": "A tractor purchased by a farmer to use for his crops",
+        "B": "Wheat sold to a baker for his bread",
+        "C": "Cement used to build a new office building",
+        "D": "Government welfare payments"
+      },
+      "answer": "A",
+      "explanation": "A tractor purchased by a farmer to use for his crops. A tractor that a farmer purchases to use for his crops is an example of gross private domestic investment. Gross private domestic investment includes purchases by the business sector and is included in GDP. It is a capital good that the farmer uses in his business. Wheat that a baker purchases to make bread, which he then sells to customers, should not be included in GDP because it is an intermediate product. Intermediate products are those that are part of other finished products. Cement used to build a new office building is also an intermediate product. Intermediate products should not be counted because they would overinflate GDP. Government welfare payments are not included in GDP because they are transfer payments, which are payments of tax dollars to recipients who have not produced goods or services.",
+      "sources": [
+        "SOURCE: EC:017",
+        "SOURCE: LAP-EC-001—Measure Up? (Gross Domestic Product)"
+      ]
+    },
+    {
+      "number": 21,
+      "question": "Which of the following statements regarding requirements for international business travel is accurate:",
+      "options": {
+        "A": "An official passport is typically required to visit and conduct business in foreign countries.",
+        "B": "An official passport and visa are typically required to visit and conduct business in foreign countries.",
+        "C": "An official passport, visa, and vaccinations are typically required to visit foreign countries.",
+        "D": "Only a visa is typically required to visit and conduct business in foreign countries."
+      },
+      "answer": "A",
+      "explanation": "An official passport is typically required to visit and conduct business in foreign countries. Visa regulations change often and may or may not be required for business travel. Vaccination requirements also change frequently and may or may not be required depending on the countries being visited. A visa typically cannot be obtained without a passport, and usually individuals traveling internationally are required to have an official passport. https://new.export.gov/basic-guide/16-travel-abroad",
+      "sources": [
+        "SOURCE: EC:141",
+        "SOURCE: BusinessUSA.gov. (n.d.). Business travel abroad. Retrieved August 15, 2016, from"
+      ]
+    },
+    {
+      "number": 22,
+      "question": "At the end of each day, Brayden asks himself if he is proud of his actions at work. Which step of developing ethical work habits is he illustrating?",
+      "options": {
+        "A": "Speaking up when necessary",
+        "B": "Evaluating his behavior",
+        "C": "Treating others fairly",
+        "D": "Associating with ethical people"
+      },
+      "answer": "B",
+      "explanation": "Evaluating his behavior. Each day you may be faced with many different situations that force you to make a clear choice about how you will behave. At the end of the day, it may be helpful to evaluate those decisions. One way that Brayden can do this is by asking himself if he's proud of his actions at work. Speaking up when necessary, treating others fairly, and associating with ethical people are all steps toward developing ethical work habits, but they are not illustrated in this example.",
+      "sources": [
+        "SOURCE: EI:004",
+        "SOURCE: LAP-EI-004—Work Right (Ethical Work Habits)"
+      ]
+    },
+    {
+      "number": 23,
+      "question": "When faced with a significant change in your position or role at work, it is important to",
+      "options": {
+        "A": "keep all your fears about the situation private so you appear confident at all times.",
+        "B": "avoid asking your boss too many questions about the change because it shows insecurity.",
+        "C": "quit working on current projects and focus on the skills needed for the new position.",
+        "D": "evaluate your strengths and weaknesses and learn what the new position requires. 2017 HS ICDC MARKETING CLUSTER EXAM 4"
+      },
+      "answer": "D",
+      "explanation": "Evaluate your strengths and weaknesses and learn what the new position requires. Evaluating strengths and weaknesses and learning about the new position is a good way to face and prepare for a new role at work. It is important to ask questions about the change because it will help prepare you for the new position or role. If you don't ask any questions, your boss may wonder if you have other plans—like leaving the company. By continuing to work on your current projects, you are demonstrating a good work ethic and attitude, which may impress a future boss. Projecting false confidence will do little to help you deal with the change, but talking about concerns with your boss, friends, or colleagues who have gone through similar changes can provide helpful advice. August 15, 2016, from http://www.techrepublic.com/blog/10-things/10-tips-for-dealing-with- change-in-the-workplace/",
+      "sources": [
+        "SOURCE: EI:026",
+        "SOURCE: Sun, C. (2007, October 22). 10 tips for dealing with change in the workplace. Retrieved"
+      ]
+    },
+    {
+      "number": 24,
+      "question": "Aaron is the new manager of the accounting department. He plans to meet with each employee individually and ask them for feedback about his performance so that he can improve his weaknesses. Which of the following approaches is most likely to result in honest feedback from his staff:",
+      "options": {
+        "A": "Aaron could anticipate concerns his employees are likely to have about his management style and prepare possible explanations.",
+        "B": "Aaron could simply ask employees if they believe he is effectively leading the accounting department.",
+        "C": "Aaron could admit a weakness that he is working on and ask if there are any other things he needs to improve.",
+        "D": "Aaron could ask his employees to compare his leadership with the leadership of the former department manager."
+      },
+      "answer": "C",
+      "explanation": "Aaron could admit a weakness that he is working on and ask if there are any other things he needs to improve. By admitting a personal flaw, Aaron is demonstrating that he can handle criticism so employees are encouraged to respond honestly. Simply asking for opinions about his leadership may seem like Aaron is looking for compliments, and employees may not offer helpful advice. Even if Aaron anticipates concerns, he should focus on listening to the feedback, not on providing explanations for his behavior. Asking employees to compare Aaron to the former manager may only lead to comparisons of his and their former manager's personality or style with little insight into how Aaron could improve. August 15, 2016, from http://careeradvancementblog.com/how-others-perceive 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 19",
+      "sources": [
+        "SOURCE: EI:106",
+        "SOURCE: Garfinkle, J. (2015). How do others perceive you? All you have to do is ask. Retrieved"
+      ]
+    },
+    {
+      "number": 25,
+      "question": "Emma has been asked to develop a new training program for her department to improve customer service. She has a tight deadline. A coworker named Logan, who has a habit of asking Emma to complete projects that are his responsibility, just left another of his projects on her desk to finish. Emma is afraid to confront Logan because he has been known to sabotage coworkers he does not like. What should Emma do?",
+      "options": {
+        "A": "Emma should complete Logan's project as well as the new training program to maintain a positive working relationship with Logan.",
+        "B": "Emma should inform their supervisor of Logan's attempts to reduce his work load and let the supervisor deal with him.",
+        "C": "Emma should share her situation with other employees and ask them if they have had similar encounters with Logan.",
+        "D": "Emma should inform Logan that she can't complete his work because she is developing a new training program for their department."
+      },
+      "answer": "D",
+      "explanation": "Emma should inform Logan that she can't complete his work because she is developing a new training program for their department. It would be better for Emma to simply inform Logan of her responsibilities because it is an honest and assertive approach. Informing Logan's supervisor may cause Logan to dislike Emma because it puts him in a negative light. Sharing her situation with others does nothing to solve the problem and would only spread office gossip creating a negative work environment. If Emma does Logan's work as well as her own, she will reinforce Logan's belief that she will do his work for him, and she will be overworked and possibly overwhelmed. https://www.mindtools.com/pages/article/newCDV_85.htm",
+      "sources": [
+        "SOURCE: EI:109",
+        "SOURCE: MindTools. (1996-2016). Dealing with office politics. Retrieved August 15, 2016, from"
+      ]
+    },
+    {
+      "number": 26,
+      "question": "Which of the following examples describes a team, as opposed to a group:",
+      "options": {
+        "A": "All of the students who are new to a school attend a welcome event together with teachers.",
+        "B": "Participants at a medical conference are separated by their disciplines.",
+        "C": "A manager tells her employees to prepare slides that will be combined for a presentation.",
+        "D": "Volunteers divide up the tasks needed to build a community garden."
+      },
+      "answer": "D",
+      "explanation": "Volunteers divide up the tasks needed to build a community garden. Volunteers who work together to determine what they need to do to build a community garden are team members, working together toward a common goal and sharing responsibilities. This example describes a team. Participants at a medical conference who have been separated by discipline have been grouped by common factors, rather than by a common purpose or a sense of interconnectedness. This categorizes them as a group rather than a team. Employees who have been directed by their manager to individually create slides for a presentation are not a team because they are following an assigned leader, working separately, and, coordinating individual efforts. These are actions that describe a group rather than a team. Finally, students who are new to a school attending a welcome event together with teachers are not a team because they are grouped by common factors rather than a shared purpose.",
+      "sources": [
+        "SOURCE: EI:045",
+        "SOURCE: LAP-EI-045—Team Up (Participating as a Team Member)"
+      ]
+    },
+    {
+      "number": 27,
+      "question": "Mitali always does what she says she's going to do. Her coachees can count on her because she is",
+      "options": {
+        "A": "humble.",
+        "B": "dependable.",
+        "C": "flexible.",
+        "D": "enthusiastic."
+      },
+      "answer": "B",
+      "explanation": "Dependable. Dependability means you're reliable. In other words, you do what you say you will do. Humility is a lack of pride. Flexibility is the ability to adapt to changes as they occur. Enthusiasm is intense interest or excitement.",
+      "sources": [
+        "SOURCE: EI:041",
+        "SOURCE: LAP-EI-024—Bring Out the Best (Coaching Others)"
+      ]
+    },
+    {
+      "number": 28,
+      "question": "Which of the following is a reason that a company might decide to offer credit:",
+      "options": {
+        "A": "To purchase expensive items",
+        "B": "To take advantage of convenience",
+        "C": "To save more money",
+        "D": "To gain new customers"
+      },
+      "answer": "D",
+      "explanation": "To gain new customers. All businesses lose customers from time to time due to factors such as relocation, illness or death, or loss of employment. Therefore, to be successful, businesses must continually attract new customers. One way to do this is by offering credit. Convenience, saving money, and purchasing expensive items are all benefits that businesses or consumers may get from using credit. Offering credit will likely not be convenient for a business, and it will probably cost the business more money.",
+      "sources": [
+        "SOURCE: FI:002",
+        "SOURCE: LAP-FI-002—Give Credit Where Credit Is Due (Credit and Its Importance)"
+      ]
+    },
+    {
+      "number": 29,
+      "question": "Nala, who is preparing a personal budget, is determining her fixed and variable expenses. Which of the following is most likely to represent a fixed expense:",
+      "options": {
+        "A": "Groceries",
+        "B": "Electric bill",
+        "C": "Car payment",
+        "D": "Gasoline"
+      },
+      "answer": "C",
+      "explanation": "Car payment. Car payments are typically set up as a fixed monthly payment amount. Electric bills can vary depending on the amount of energy used. The amount spent on groceries can vary greatly depending on the types of food purchased. The amount spent on gasoline would vary depending on the amount of travel. Cengage Learning. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 20",
+      "sources": [
+        "SOURCE: FI:066",
+        "SOURCE: Ryan, J.S. (2012). Personal finance literacy (2nd ed.) [p. 128]. Mason, OH: South-Western"
+      ]
+    },
+    {
+      "number": 30,
+      "question": "To protect yourself from becoming a victim of identity theft you should",
+      "options": {
+        "A": "never use a credit card to purchase products or services online.",
+        "B": "arrange to have a fraud alert placed on your credit report by a credit reporting agency.",
+        "C": "apply for a new social security card every five years.",
+        "D": "never give your social security number to companies that do not legally need it. 2017 HS ICDC MARKETING CLUSTER EXAM 5"
+      },
+      "answer": "D",
+      "explanation": "Never give your social security number to companies that do not legally need it. You should only give your social security number to institutions that are legally required to have it. Frequently providing your social security number to others puts you at more risk of identity theft. A fraud alert is typically placed on your credit report after your identity has been stolen; placing one prior to that would make it very difficult to use your personal credit. There is no reason to apply for a new social security card unless you have lost it or your identity has been compromised by fraud. As long as a website is reputable, it should be safe to pay online with a credit card because the information is usually encrypted and fraudulent credit card charges can be disputed if necessary. Cengage Learning.",
+      "sources": [
+        "SOURCE: FI:073",
+        "SOURCE: Ryan, J.S. (2012). Personal financial literacy (2nd ed.) [p. 304]. Mason, OH: South-Western,"
+      ]
+    },
+    {
+      "number": 31,
+      "question": "Which of the following statements accurately explains the concept of homeowner's insurance?",
+      "options": {
+        "A": "Homeowners' insurance is protection purchased by a risk-sharing firm or insurance company from individual homeowners.",
+        "B": "Homeowners' insurance is purchased following a disaster to provide financial reimbursement for losses sustained.",
+        "C": "Homeowner's insurance protects the homeowner from associated risks such as damage or injuries to others.",
+        "D": "Homeowner's insurance protects an owner from the loss of his/her home if s/he should become disabled and have to claim bankruptcy."
+      },
+      "answer": "C",
+      "explanation": "Homeowner's insurance protects the homeowner from associated risks such as damage or injuries to others. To be reimbursed for losses, insurance must be purchased before a loss or a disaster. In addition, some disasters like floods and earthquakes are not covered by traditional homeowner's policies. Homeowner's insurance is not purchased from individual homeowners; it is sold to them by a risk-sharing firm. Homeowner's insurance does not protect a homeowner from losses resulting from bankruptcy or a disability; disability insurance can be purchased to help cover expenses due to a personal disability. finance (pp. 316-319). New York: Glencoe/McGraw-Hill.",
+      "sources": [
+        "SOURCE: FI:081",
+        "SOURCE: Kapoor, J.R., Dlabay, L.R., Hughes, R.J., & Hoyt, W.B. (2005). Business and personal"
+      ]
+    },
+    {
+      "number": 32,
+      "question": "Why is marketing research important for companies who sell consumer products like clothing or laundry detergent?",
+      "options": {
+        "A": "It provides companies with clear, specific steps to improve sales.",
+        "B": "It allows companies to get proprietary information from competitors.",
+        "C": "It eliminates the need for other marketing activities such as sales promotions and store displays.",
+        "D": "It provides consumer feedback and allows marketers to assess the level of demand for products."
+      },
+      "answer": "D",
+      "explanation": "It provides consumer feedback and allows marketers to assess the level of demand for products. Consumer preferences and behaviors change constantly. Marketing research gives companies insight into what consumers want and what trends are occurring, so that they can create products that are popular and in-demand. While marketing research does give companies some information about competitors, it cannot reveal proprietary (secret) data or practices. Marketing research is meant to inform and guide all other marketing practices, not replace them. An effective marketing strategy involves both research and other practices such as sales promotions and store displays. Finally, research itself can only reveal problems and trends; it does not prescribe solutions or recommend courses of action. It is up to the marketers themselves to translate their findings into actionable solutions. Retrieved on July 29, 2016, from http://businesscasestudies.co.uk/jd-sports/using-market- research-to-support-decision-making/what-is-market-research.html#axzz34XKF3D00",
+      "sources": [
+        "SOURCE: IM:012",
+        "SOURCE: Business Case Studies. (2016). Using market research to support decision making."
+      ]
+    },
+    {
+      "number": 33,
+      "question": "To create information, you must have access to",
+      "options": {
+        "A": "data.",
+        "B": "ideas.",
+        "C": "the Internet.",
+        "D": "an internal server."
+      },
+      "answer": "A",
+      "explanation": "Data. To create information, you must have access to data-facts and figures. Information is data in a useful form. You do not need to have ideas, the Internet, or an internal server to create information.",
+      "sources": [
+        "SOURCE: IM:001",
+        "SOURCE: LAP-IM-002—Get the Facts Straight (Marketing-Information Management)"
+      ]
+    },
+    {
+      "number": 34,
+      "question": "Which of the following statements about market research is true:",
+      "options": {
+        "A": "Research must be conducted and evaluated in an objective manner to obtain good results.",
+        "B": "Research must contain primary and secondary sources of data to be reliable.",
+        "C": "Research must be conducted in several different methods to obtain significant data.",
+        "D": "Research must prove the original hypothesis stated to be true and accurate."
+      },
+      "answer": "A",
+      "explanation": "Research must be conducted and evaluated in an objective manner to obtain good results. Market research must be objective in order for companies to have accurate and unbiased data on which to base future decisions. Research may or may not include primary and secondary sources of data. While primary data are typically more up to date and relevant, secondary data can be accessed inexpensively and sometimes are sufficient to meet the needs of the research. It is not necessary for research to include both types of data. The goals of the research will determine the method(s) of research used. Research is performed to determine the validity of the hypothesis. As a result of the research, the hypothesis may be proved to be true or untrue. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 21",
+      "sources": [
+        "SOURCE: IM:010",
+        "SOURCE: LAP-IM-010—Seek and Find (Marketing Research)"
+      ]
+    },
+    {
+      "number": 35,
+      "question": "Joseph is working on a marketing-research project for his company. To gain insight into industry trends, he consults trade association reports and databases. What type of data is Joseph collecting?",
+      "options": {
+        "A": "Primary data",
+        "B": "Internal data",
+        "C": "External data",
+        "D": "Qualitative data"
+      },
+      "answer": "C",
+      "explanation": "External data. External data are secondary data that already exist outside of the organization. Sources of data include government statistics and databases, trade association reports and databases, business directories, reports from industry experts, and general media data. Internal data are secondary data that already exist within the organization's “in-house” information system. Primary data are data collected for the first time through original research efforts. Qualitative data are subjective, based on thoughts, feelings, opinions, and experiences.",
+      "sources": [
+        "SOURCE: IM:281",
+        "SOURCE: LAP-IM-015—What's the Source? (Obtaining Marketing-Research Data)"
+      ]
+    },
+    {
+      "number": 36,
+      "question": "Kevin has been instructed to do marketing research for his company on a recently released product. Before he begins, he asks his manager what kind of data he should gather, how much data to gather, and how the data will be used. In other words, Kevin would like to know the research",
+      "options": {
+        "A": "problem.",
+        "B": "objectives.",
+        "C": "question.",
+        "D": "hypothesis."
+      },
+      "answer": "B",
+      "explanation": "Objectives. Research objectives state exactly what the research study will achieve, including what kind of data will be gathered, how much data will be gathered, and how the data will be used. A research problem explains the issue or concern that researchers hope to gain clarity on through research. A research question is an inquiry that the researchers hope to answer during their research activities, and a research hypothesis is the assumption or “educated guess” to that question (usually specified as an “if, then” statement).",
+      "sources": [
+        "SOURCE: IM:282",
+        "SOURCE: LAP-IM-013—What's the Problem? (Marketing-Research Problems)"
+      ]
+    },
+    {
+      "number": 37,
+      "question": "Kaitlin is working on a research project for her college marketing course. She creates a survey and distributes it to every student living in her dorm. What type of sample design is Kaitlin using?",
+      "options": {
+        "A": "Convenience sampling",
+        "B": "Judgment sampling",
+        "C": "Quota sampling",
+        "D": "Snowball sampling"
+      },
+      "answer": "A",
+      "explanation": "Convenience sampling. Convenience sampling is a type of non-probability sampling that collects data from people who are conveniently available. Judgment sampling requires researchers to \"hand-pick\" respondents based on their knowledge or expertise. Quota sampling ensures that specific groups within a target population will be represented within the sample. Snowball sampling, also called referral sampling, is a method in which researchers ask respondents to help them identify and recruit additional respondents for the study. Kaitlin did not hand-pick respondents, target specific groups, or ask respondents to identify other respondents—she simply distributed her survey to the students conveniently available to her.",
+      "sources": [
+        "SOURCE: IM:285",
+        "SOURCE: LAP-IM-016—Take Your Pick (Nature of Sampling Plans)"
+      ]
+    },
+    {
+      "number": 38,
+      "question": "After Samsung announced a new phone with a 5-inch screen, Apple decided to design a phone with a 5.5-inch screen. Apple used __________ data in making this decision.",
+      "options": {
+        "A": "sales",
+        "B": "competitor",
+        "C": "economic",
+        "D": "customer 2017 HS ICDC MARKETING CLUSTER EXAM 6"
+      },
+      "answer": "B",
+      "explanation": "Competitor. When a company bases its marketing decisions on what others in the industry are doing, it is using competitor data. Sales data and customer data are internal to a company and do not relate to other companies. Economic data are related to the health of the economy as a whole, rather than one specific company's marketing strategy.",
+      "sources": [
+        "SOURCE: IM:184",
+        "SOURCE: LAP-IM-184—Data Diving (Identifying Marketing Data)"
+      ]
+    },
+    {
+      "number": 39,
+      "question": "Which of the following is a disadvantage of the experiment method of data collection:",
+      "options": {
+        "A": "Experiments are prone to technical difficulties.",
+        "B": "Experiments do not show cause and effect.",
+        "C": "Experiments can be difficult to design for marketing purposes.",
+        "D": "Experiments raise concerns about privacy."
+      },
+      "answer": "C",
+      "explanation": "Experiments can be difficult to design for marketing purposes. Experiments can be difficult to design for marketing purposes since marketers must take human behavior (which is very complex) into account. Experiments do, however, show cause and effect. They are not necessarily prone to technical difficulties and do not necessarily raise concerns about privacy.",
+      "sources": [
+        "SOURCE: IM:289",
+        "SOURCE: LAP-IM-017—Hunting and Gathering (Data-Collection Methods)"
+      ]
+    },
+    {
+      "number": 40,
+      "question": "Neutral survey items are simple, non-threatening questions that establish rapport and put the respondent at ease. Neutral questions should be placed",
+      "options": {
+        "A": "in a separate post-survey questionnaire.",
+        "B": "in the middle of the survey.",
+        "C": "at the end of the survey.",
+        "D": "at the beginning of the survey."
+      },
+      "answer": "D",
+      "explanation": "At the beginning of the survey. By establishing rapport early on, respondents will be more comfortable answering more probing questions later in the survey. Neutral questions should not be placed at the middle, at the end, or in a separate post-survey questionnaire—their effect would be significantly reduced. http://www.quickmba.com/marketing/research/qdesign/ 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 22",
+      "sources": [
+        "SOURCE: IM:418",
+        "SOURCE: QuickMBA.com. (2010). Questionnaire design. Retrieved August 1, 2016, from"
+      ]
+    },
+    {
+      "number": 41,
+      "question": "When Rebecca's research for her school project is complete, she's not quite sure what to do with her data. Her friend Allison suggests coding the data, and she decides to give it a try. Why should Rebecca use coding to organize her research findings?",
+      "options": {
+        "A": "It is the only method to interpret data in a meaningful way.",
+        "B": "It turns large amounts of data into a form that is more easily understood.",
+        "C": "It prevents data entry mistakes such as omissions or duplications.",
+        "D": "It saves time by eliminating the need to check the data for flaws and errors."
+      },
+      "answer": "B",
+      "explanation": "It turns large amounts of data into a form that is more easily understood. To make sense of large amounts of data, the data must be analyzed. Coding can be an extremely useful tool for data analysis by grouping and assigning value to various responses from the survey. While coding is one way to interpret data in a meaningful way, it is not the only way. Coding does not prevent data entry mistakes. In many cases, it is still humans who assign the coding system and manually enter codes into a computer—there is always the possibility of human error. Data should always be checked for flaws at multiple points during the analysis. Coding should not be used as a replacement for error checking. from http://web.csulb.edu/~msaintg/ppa696/696codes.htm",
+      "sources": [
+        "SOURCE: IM:062",
+        "SOURCE: California State University, Long Beach. (n.d.). Data entry issues. Retrieved August 1, 2016,"
+      ]
+    },
+    {
+      "number": 42,
+      "question": "Anthony is a marketing intern for a local restaurant. One of his projects involved creating a social media campaign targeted at young professionals. Now that the campaign has been running for several weeks, Anthony's boss wants to know how effective the campaign has been in increasing interest in the restaurant. Which of the following techniques would best measure customer “buzz” about the restaurant:",
+      "options": {
+        "A": "Using social media analytics and monitoring online review sites",
+        "B": "Asking customers in the restaurant what they think about the social media campaign",
+        "C": "Conducting a focus group with young professionals in the area",
+        "D": "Sending surveys to a group of young professionals who frequent the restaurant"
+      },
+      "answer": "A",
+      "explanation": "Using social media analytics and monitoring online review sites. Social media analytics tools offer the most comprehensive picture of a company's media efforts—what is and isn't working, which posts have the most engagement, who is seeing the content, and more. In addition to using analytics, online review sites such as Yelp or Tripadvisor would be appropriate for a restaurant to determine the general sentiment surrounding the business. Asking a few customers in the restaurant for their opinion would only reveal a snapshot of information, instead of the whole picture. And while conducting a focus group and sending out a survey may reveal some valuable information, both options would take a significant amount of time and money to carry out. Retrieved August 1, 2016, from http://www.razorsocial.com/social-media-analytics-tools/",
+      "sources": [
+        "SOURCE: IM:469",
+        "SOURCE: Cleary, Ian. (2016, July 28). The social media analytics compass: what and how to measure."
+      ]
+    },
+    {
+      "number": 43,
+      "question": "A local advertising firm created a research study that aimed to understand the television viewing habits of the adult population in its city. The company then selected a sample of 500 people to participate in the study, all of whom lived in the neighborhood by the company's office. This is an example of a sample with",
+      "options": {
+        "A": "voluntary response bias.",
+        "B": "sampling error.",
+        "C": "nonresponse bias.",
+        "D": "undercoverage."
+      },
+      "answer": "D",
+      "explanation": "Undercoverage. Undercoverage occurs when some members of the population are inadequately represented in the sample. Because the company wanted to learn about all of the city's adults, its sample should have represented all the different groups of people that live in the city—not just one neighborhood. Sampling error is the variability among statistics from different samples. Nonresponse bias occurs when respondents are either unwilling or unable to participate in the survey, or leave certain survey items blank. Voluntary response bias occurs when sample members volunteer themselves to be in the sample. http://stattrek.com/survey-research/survey-bias.aspx",
+      "sources": [
+        "SOURCE: IM:292",
+        "SOURCE: Stat Trek. (2015). Bias in survey sampling. Retrieved August 1, 2016, from"
+      ]
+    },
+    {
+      "number": 44,
+      "question": "Ben is trying to figure out how his classmates feel about a new dress code policy at school, so he decides to do some research on the issue. What type of research is most appropriate for his research question?",
+      "options": {
+        "A": "Primary, qualitative research",
+        "B": "Secondary, qualitative research",
+        "C": "Primary, quantitative research",
+        "D": "Secondary, quantitative research"
+      },
+      "answer": "A",
+      "explanation": "Primary, qualitative research. Primary research involves direct interaction with subjects through focus groups, interviews, or surveys to create original and unique information. Secondary research involves sifting through readily available information through Internet research, books, former primary research studies, and more. Qualitative research is better for uncovering personal opinions, beliefs, values and other non-numerical information, whereas quantitative research collects numerical data that are used to uncover statistical trends. Because Ben is investigating the feelings and attitudes of his classmates, it makes the most sense for him to conduct primary, qualitative research. August 1, 2016, from http://www.ehow.com/how_2067463_pick-market-research- methodology.html",
+      "sources": [
+        "SOURCE: IM:428",
+        "SOURCE: Dontigney, E. (2014, October 22). How to pick a market research methodology. Retrieved"
+      ]
+    },
+    {
+      "number": 45,
+      "question": "Which of the following is an example of marketing an idea:",
+      "options": {
+        "A": "Concert sponsored by a soft drink company",
+        "B": "Poster for a school dance",
+        "C": "Campaign against texting while driving",
+        "D": "Sports star promoting his new line of shoes 2017 HS ICDC MARKETING CLUSTER EXAM 7"
+      },
+      "answer": "C",
+      "explanation": "Campaign against texting while driving. A campaign against texting while driving is marketing the idea that texting while driving is dangerous and should be stopped. A poster for a school dance is marketing an event. A concert sponsored by a soft drink company is marketing an event and a good. A sports star promoting his new line of shoes is marketing a person and a good. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 23",
+      "sources": [
+        "SOURCE: MK:001",
+        "SOURCE: LAP-MK-004—Have It Your Way! (Nature of Marketing)"
+      ]
+    },
+    {
+      "number": 46,
+      "question": "A marketer is trying to figure out what the company's customers need and how the company can meet those needs. Which element of the marketing mix is this marketer working on?",
+      "options": {
+        "A": "Product",
+        "B": "Place",
+        "C": "Price",
+        "D": "Promotion"
+      },
+      "answer": "A",
+      "explanation": "Product. The product element of the marketing mix involves the goods, services, or ideas a business will offer its customers. Marketers conduct research and use their creativity to figure out what customers need and how they will meet those needs. Place, price, and promotion are other elements of the marketing mix.",
+      "sources": [
+        "SOURCE: MP:001",
+        "SOURCE: LAP-MP-002—Pick the Mix (Nature of Marketing Strategies)"
+      ]
+    },
+    {
+      "number": 47,
+      "question": "Jake is a high school soccer player who is about to begin the fall season. While he is getting ready for his first practice, he realizes that his cleats from last year are too small and that he needs to buy a new pair. The soccer specialty store near Jake's house would consider Jake to be a member of its",
+      "options": {
+        "A": "market segment.",
+        "B": "target market.",
+        "C": "industrial market.",
+        "D": "geographic segmentation."
+      },
+      "answer": "B",
+      "explanation": "Target market. A target market is the particular group of customers a business seeks to attract. Jake is a soccer player with a need for new cleats—he fits the target market for a soccer specialty store perfectly. A market segment is more specific—it is one of the groups into which the total target market is divided. For example, female goalkeepers or male defensemen are both market segments within the larger target population of soccer players. An industrial market includes customers or potential customers who purchase items for use in the operation of a business, for resale, or for making other goods. Geographic segmentation is the division of a market on the basis of where customers are located.",
+      "sources": [
+        "SOURCE: MP:003",
+        "SOURCE: LAP-MP-003—Have We Met? (Market Identification)"
+      ]
+    },
+    {
+      "number": 48,
+      "question": "Which of the following situations is an example of how external factors could affect a company's marketing situation:",
+      "options": {
+        "A": "A candy company enters a joint venture with an international partner.",
+        "B": "A shoe manufacturer releases a new line of athletic gear.",
+        "C": "A recent health care law affects procedures at a hospital.",
+        "D": "A technology firm hires a new president."
+      },
+      "answer": "C",
+      "explanation": "A recent health care law affects procedures at a hospital. The situation analysis must discuss the climate, or external factors, that could affect the marketing situation. External factors can be social and cultural, demographic, economic, technological, or political and legal. A new health care law is an example of a political and legal change that would affect the marketing efforts of a hospital. A shoe company releasing a new line of athletic gear is an internal company change, as is a technology firm hiring a new president. A joint venture is an example of a collaboration, rather than an external factor.",
+      "sources": [
+        "SOURCE: MP:007",
+        "SOURCE: LAP-MP-001—A Winning Plan (Nature of Marketing Plans)"
+      ]
+    },
+    {
+      "number": 49,
+      "question": "Which of the following is a true statement regarding the effect of the product life cycle on a business's sales forecast:",
+      "options": {
+        "A": "Anticipated sales remain the same throughout the product life cycle.",
+        "B": "At the end of the product life cycle, anticipated sales are low.",
+        "C": "Anticipated sales are lowest during the growth phase of the product life cycle.",
+        "D": "During the maturity phase of the product life cycle, anticipated sales are extremely high."
+      },
+      "answer": "B",
+      "explanation": "At the end of the product life cycle, anticipated sales are low. Anticipated sales for a product change as the product progresses through the product life cycle. During the growth phase, anticipated sales are high. During the maturity phase, sales begin to slow down. As a product is \"dying,\" anticipated sales are generally quite low (e.g., demand for VCRs as DVD players were being introduced).",
+      "sources": [
+        "SOURCE: MP:013",
+        "SOURCE: LAP-MP-005—Futurecast (Nature of Sales Forecasts)"
+      ]
+    },
+    {
+      "number": 50,
+      "question": "Information management can help a business protect its customers from",
+      "options": {
+        "A": "having items broken during shipping.",
+        "B": "experiencing buyers' remorse.",
+        "C": "receiving spam messages.",
+        "D": "dealing with discourteous employees."
+      },
+      "answer": "C",
+      "explanation": "Receiving spam messages. Information management can help a business protect its customers from receiving spam messages (repetitive or unwanted messages). Information management cannot necessarily prevent customers from experiencing buyers' remorse, having items broken during shipping, or dealing with discourteous employees.",
+      "sources": [
+        "SOURCE: NF:110",
+        "SOURCE: LAP-NF-110—In the Know (Nature of Information Management)"
+      ]
+    },
+    {
+      "number": 51,
+      "question": "Which of the following is a true statement regarding the effect of technology on business:",
+      "options": {
+        "A": "Technology has allowed almost every U.S. employee to telecommute.",
+        "B": "Technology can spawn new industries.",
+        "C": "Technology has raised costs.",
+        "D": "Technology has lessened competition among businesses."
+      },
+      "answer": "B",
+      "explanation": "Technology can spawn new industries. New technologies can create new industries. Examples include the aviation industry and the robotics industry. Technology has increased employees' ability to telecommute—but only about 50 percent of American workers do so. Technology has also lowered production costs and increased competition among businesses. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 24",
+      "sources": [
+        "SOURCE: NF:003",
+        "SOURCE: LAP-NF-004—TECH-Tastic (Technology's Impact on Business)"
+      ]
+    },
+    {
+      "number": 52,
+      "question": "Which of the following statements about the capability of data analysis and management systems is true:",
+      "options": {
+        "A": "They are not helpful when decision making involves a group of people.",
+        "B": "They can calculate and implement the best course of action without human involvement.",
+        "C": "They help managers to make better business decisions based on more accurate data.",
+        "D": "They increase the amount of time required to make business decisions."
+      },
+      "answer": "C",
+      "explanation": "They help managers to make better business decisions based on more accurate data. Data analysis and management systems reduce the number of errors, helping managers to make better business decisions. Data analysis and management systems can calculate data and compile them in charts that are easily read, but it requires a person familiar with the business and all the factors affecting it to decide on and implement the best course of action. Data analysis and management systems make data and information available to a large group of people; as a result, group decision making is easier to accomplish. Data analysis and management systems reduce the amount of time required to make business decisions, not increase it. August 24, 2016, from https://www.ot.ru/en/solutions/systems-analysis-and-data- management/",
+      "sources": [
+        "SOURCE: NF:139",
+        "SOURCE: Open Technologies. (1994-2016). Data analysis and management systems. Retrieved"
+      ]
+    },
+    {
+      "number": 53,
+      "question": "Which of the following is an accurate statement about how customer records should be maintained:",
+      "options": {
+        "A": "Since customer information changes frequently, it is important to enable any employee to update customer records.",
+        "B": "Companies should avoid adding suppliers and competitors to customer records because it reduces the accuracy of those records.",
+        "C": "Customers' addresses and phone numbers change frequently, so customer records should only be updated every three years.",
+        "D": "It's not necessary to collect full records on customers because a quick Internet search can easily discover any missing information. 2017 HS ICDC MARKETING CLUSTER EXAM 8"
+      },
+      "answer": "B",
+      "explanation": "Companies should avoid adding suppliers and competitors to customer records because it reduces the accuracy of those records. Adding suppliers and competitors to customer records could cause confusion. Supplier and competitor information should be stored in separate records where the information can be used effectively. The process of updating customer information should be limited to a few employees to ensure that changes are made accurately and that the information is kept confidential. Information changes frequently, so customer records should be updated at least once a year to maintain accurate information. Information found on the Internet may not be reliable, so complete records should be created by asking the customer to provide the necessary information. August 17, 2016, from http://www.interfaceonline.co.za/ten-rules-for-maintaining-your- customer-database.html",
+      "sources": [
+        "SOURCE: NF:002",
+        "SOURCE: Interface Management. (2013). Ten rules for maintaining your customer database. Retrieved"
+      ]
+    },
+    {
+      "number": 54,
+      "question": "The local movie theater is experiencing a decline in business because a new zoo attraction is drawing record crowds. What type of competition is the theater experiencing?",
+      "options": {
+        "A": "Direct",
+        "B": "Brand",
+        "C": "General",
+        "D": "Substitute"
+      },
+      "answer": "D",
+      "explanation": "Substitute. A theater and a zoo are different types of entertainment, so the theater is experiencing substitute competition. Brand competition is competition among similar products of different brands. General competition involves all businesses competing for scarce customer dollars. Direct competition is rivalry between businesses that offer similar types of goods or services.",
+      "sources": [
+        "SOURCE: NF:015",
+        "SOURCE: LAP-NF-015—Get the 4-1-1 (Conducting an Environmental Scan)"
+      ]
+    },
+    {
+      "number": 55,
+      "question": "Which of the following situations is a conflict of interest:",
+      "options": {
+        "A": "An employee fails to report a safety violation.",
+        "B": "A purchasing employee receives gifts from a supplier.",
+        "C": "A manager monitors her/his employees' emails.",
+        "D": "A business sells products that have nearly expired."
+      },
+      "answer": "B",
+      "explanation": "A purchasing employee receives gifts from a supplier. When an employee receives gifts from a supplier or potential supplier, it can present a conflict of interest, or a situation in which the employee is unable to make a truly impartial decision. Conflicts of interest do not necessarily occur when an employee fails to report a safety violation, when a manager monitors her/his employees' emails, or when a business sells products that have nearly expired. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 25",
+      "sources": [
+        "SOURCE: OP:190",
+        "SOURCE: LAP-OP-190—Above Board (Ethics in Operations)"
+      ]
+    },
+    {
+      "number": 56,
+      "question": "Jason is an IT professional for his company, and one of his responsibilities involves the maintenance of the office's copy machines. One of the company's old copiers is due for a replacement in a few weeks. What should Jason do to ensure that any sensitive information stored on the copier is protected?",
+      "options": {
+        "A": "Jason does not need to do anything; the copier's manufacturer will handle the removal and/or overwriting of the hard drive.",
+        "B": "Remove or overwrite the copier's hard drive himself to make sure all information is protected.",
+        "C": "Contact the copier's manufacturer, dealer, or servicer to learn about options for removing or overwriting the copier's hard drive.",
+        "D": "Delete all the files and print jobs that appear on the copier screen under \"Recent.\""
+      },
+      "answer": "C",
+      "explanation": "Contact the copier's manufacturer, dealer, or servicer to learn about options for removing or overwriting the copier's hard drive. Different manufacturers offer different services for the removal and protection of hard drives; some may remove it and return it to you to keep or overwrite on your own, while others may remove and overwrite the hard drive for you for an additional fee. Removing a hard drive on your own is risky—it often requires special equipment and software, and it can be difficult to locate the drive. It is better to work with a skilled technician who is trained for the task. You should always take some action towards protecting the information stored on your copier—you should not leave such an important process in the hands of the manufacturer who does not know your company's wishes. Communicate with them to find out exactly what you need, or don't need, to do. Simply deleting files on a hard drive is not always permanent. Files can be retrieved or restored through other software, so it is important that you take further action such as overwriting the hard drive. July 28, 2016, from https://www.ftc.gov/tips-advice/business-center/guidance/copier-data- security-guide-businesses",
+      "sources": [
+        "SOURCE: OP:064",
+        "SOURCE: Federal Trade Commission. (2010). Copier data security: A guide for businesses. Retrieved"
+      ]
+    },
+    {
+      "number": 57,
+      "question": "Which of the following is an accurate statement concerning a project's budget:",
+      "options": {
+        "A": "If a company's resources are used, equipment costs can be disregarded.",
+        "B": "When estimating the cost of a project, labor costs are not included.",
+        "C": "Projects are experiments and not expected to make a profit.",
+        "D": "A project budget should include funds to cover unexpected costs."
+      },
+      "answer": "D",
+      "explanation": "A project budget should include funds to cover unexpected costs. Project managers often encounter unexpected costs while completing their projects, so funds should be included in the budget for such expenses. Labor costs are typically included in a project's cost. Projects may involve experimenting with a new approach or product, but they are still expected to turn a profit. If a project requires use of a company's equipment, the cost of using that equipment should be included in the project budget. https://www.thebalance.com/project-management-101-2275338",
+      "sources": [
+        "SOURCE: OP:003",
+        "SOURCE: Reh, F. (2016, August 8). Project management 101. Retrieved August 22, 2016, from"
+      ]
+    },
+    {
+      "number": 58,
+      "question": "Which of the following is most likely to positively impact both productivity and quality:",
+      "options": {
+        "A": "Precut materials to reduce production time",
+        "B": "The highest quality materials available",
+        "C": "Materials with the lowest possible cost",
+        "D": "Quality materials that arrive on time"
+      },
+      "answer": "D",
+      "explanation": "Quality materials that arrive on time. Two purchasing-related factors that can have a significant impact on quality and productivity are the quality of the materials and the timeliness of their delivery. High quality materials only benefit productivity if they arrive on time. Inexpensive materials may decrease the cost of goods sold, but they aren't likely to increase productivity and quality. Materials that are precut to reduce production time could increase productivity, but only if they are delivered on time. Precut materials may or may not increase the quality of the outputs. 2016, from https://www.entrepreneur.com/article/79798",
+      "sources": [
+        "SOURCE: OP:247",
+        "SOURCE: Entrepreneur. (n.d.). How to create a formal purchasing program. Retrieved on August 24,"
+      ]
+    },
+    {
+      "number": 59,
+      "question": "Which of the following is the best thing for a manager to do to create a culture of quality in the workplace:",
+      "options": {
+        "A": "Hold a department meeting highlighting the need for quality work",
+        "B": "Reward employees for making suggestions to improve quality",
+        "C": "Put up motivational signs that state that quality is everyone's job",
+        "D": "Discourage errors by holding employees accountable for their actions"
+      },
+      "answer": "B",
+      "explanation": "Reward employees for making suggestions to improve quality. Management as well as front-line employees should be involved in creating a quality culture. While holding a meeting or putting up motivational signs tells employees what is expected of them, rewarding them for making suggestions to improve quality is more likely to contribute to a culture of quality in the workplace. To create a culture of quality, managers should focus on improving processes instead of pointing out employees' mistakes. organization. Retrieved August 22, 2016, from http://www.leadershipreview.net/building-a- culture-of-quality",
+      "sources": [
+        "SOURCE: OP:019",
+        "SOURCE: Leadership Review. (2014, December 12). How to build a culture of quality for your"
+      ]
+    },
+    {
+      "number": 60,
+      "question": "Shonda needs to choose between two colleges. After doing a lot of research about both schools, she has a gut feeling that one is the right choice, so she decides to go there. Shonda is using __________ to solve her problem.",
+      "options": {
+        "A": "intuition",
+        "B": "the seven-step method",
+        "C": "brainstorming",
+        "D": "mind mapping"
+      },
+      "answer": "A",
+      "explanation": "Intuition. Intuitive problem solving relies on “gut” feelings and flashes of insight. Shonda does research on both colleges, but it's her intuition that helps her ultimately decide between them. The seven-step method, brainstorming, and mind mapping are all ways to solve problems, but Shonda is not using any of them in this example. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 26",
+      "sources": [
+        "SOURCE: PD:077",
+        "SOURCE: LAP-PD-077—No Problem (Demonstrating Problem-Solving Skills)"
+      ]
+    },
+    {
+      "number": 61,
+      "question": "Alyssa is a recent college graduate with a degree in Marketing. She created a basic résumé of her skills and used it to apply for many different jobs at a local career fair. Several weeks later, she is disappointed when she hasn't heard back from any of the companies she applied to. Which of the following could explain why Alyssa hasn't received any interviews:",
+      "options": {
+        "A": "She did not customize her résumé to match each specific job that she applied for.",
+        "B": "She used Calibri font instead of Times New Roman.",
+        "C": "She failed to list her work and volunteer experience in reverse chronological order.",
+        "D": "She did not list any references on her résumé. 2017 HS ICDC MARKETING CLUSTER EXAM 9"
+      },
+      "answer": "A",
+      "explanation": "She did not customize her résumé to match each specific job that she applied for. Every job and every company is different—from the office culture, to the type of work, to the specific job responsibilities and day-to-day tasks. Before applying for jobs, Alyssa should have researched each company to discover what characteristics, skills, and experiences it looks for in a candidate. Then, she should have tailored her résumé to highlight specific examples of how she has displayed those characteristics or skills. The type of font used on a résumé should be professional and neat; however, the difference between Calibri and Times New Roman is not enough to cause a recruiter to disqualify a candidate. While listing work experience in reverse chronological order is recommended for clarity and consistency, failing to do so is not a major mistake. Listing references on a résumé is a personal choice. Many companies will request references once they interview candidates, so it is not always necessary to include them on a résumé. http://www.gcflearnfree.org/resumewriting/",
+      "sources": [
+        "SOURCE: PD:031",
+        "SOURCE: Goodwill Community Foundation, Inc. (2014). Résumé writing. Retrieved July 29, 2016, from"
+      ]
+    },
+    {
+      "number": 62,
+      "question": "Manuel is a member of the drama club at school. Manuel is required to attend rehearsals every day, wear his costume during dress rehearsals, and sit quietly backstage when he is not performing. These requirements are examples of",
+      "options": {
+        "A": "rules of conduct.",
+        "B": "consequences.",
+        "C": "conflicts of interest.",
+        "D": "ethics principles."
+      },
+      "answer": "A",
+      "explanation": "Rules of conduct. Rules are explicit or understood regulations or principles governing conduct within a particular activity or sphere. The requirements listed are examples of rules governing conduct within the school drama club. Manuel must follow these rules of conduct so that he can be a member of the club. This situation does not describe consequences, conflicts of interest, or ethics principles.",
+      "sources": [
+        "SOURCE: PD:251",
+        "SOURCE: LAP-PD-251—Know the Code (Following Rules of Conduct)"
+      ]
+    },
+    {
+      "number": 63,
+      "question": "A pet food manufacturing company has decided to remove all non-meat fillers from its pet food by the end of the fiscal year. This is an example of a(n)",
+      "options": {
+        "A": "objective.",
+        "B": "mission.",
+        "C": "goal.",
+        "D": "strategy."
+      },
+      "answer": "C",
+      "explanation": "Goal. A goal is a specific, desired accomplishment over a defined period of time. An organization's mission is the reason behind its establishment—what it is meant to do or produce. Objectives are statements of broad intent that often arise out of mission statements. A strategy is a general course of action for meeting objectives, taking into account the current situation and available resources. on July 29, 2016, from http://www.flexstudy.com/catalog/schpdf.cfm?coursenum=95086",
+      "sources": [
+        "SOURCE: PD:254",
+        "SOURCE: Flexstudy.com. (2016). The importance and value of organizational goal setting. Retrieved"
+      ]
+    },
+    {
+      "number": 64,
+      "question": "Which of the following is a job duty for a merchandiser/buyer:",
+      "options": {
+        "A": "Writing press releases",
+        "B": "Negotiating with vendors",
+        "C": "Designing advertisements",
+        "D": "Organizing focus groups"
+      },
+      "answer": "B",
+      "explanation": "Negotiating with vendors. Merchandisers and buyers have many job duties, including keeping up with trends, analyzing sales, negotiating with vendors, and predicting what will sell in the future. Public relations professionals write press releases, advertisers design advertisements, and marketing research professionals organize focus groups.",
+      "sources": [
+        "SOURCE: PD:024",
+        "SOURCE: LAP-PD-021—Career Opportunities in Marketing"
+      ]
+    },
+    {
+      "number": 65,
+      "question": "Before a good can be sold, the buyers and sellers first have to agree on a(n)",
+      "options": {
+        "A": "market share.",
+        "B": "exchange price.",
+        "C": "promotion decision.",
+        "D": "pricing objective."
+      },
+      "answer": "B",
+      "explanation": "Exchange price. An exchange price is the amount of money that the buyer is willing to pay and the seller is willing to accept for a good or service. A market share is an organization's portion of the total industry sales in a specific market. Promotion decisions refer to the selection of the various types of communications that marketers use to inform, persuade, or remind customers of their products. Pricing objectives are goals a company hopes to accomplish through its pricing strategies. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 27",
+      "sources": [
+        "SOURCE: PI:001",
+        "SOURCE: LAP-PI-002—The Price Is Right (Nature of Pricing)"
+      ]
+    },
+    {
+      "number": 66,
+      "question": "Which of the following is a benefit of using automated pricing technology:",
+      "options": {
+        "A": "It reduces competition among companies that sell the same goods and services.",
+        "B": "It helps companies monitor their prices to ensure that they are giving customers the best deal.",
+        "C": "It eliminates the need to develop traditional pricing strategies, saving the company time and effort.",
+        "D": "It allows companies to focus more on lowering costs and less on customer service."
+      },
+      "answer": "B",
+      "explanation": "It helps companies monitor their prices to ensure that they are giving customers the best deal. Price optimization models and other automated pricing technology give companies insight into their competitors' pricing, customer demand, and forecasted trends—all of which help companies determine the lowest prices that will improve profits. Pricing technology does not reduce competition among similar companies. In fact, many people would argue that it increases competition because companies are constantly attempting to under-cut their competitors' prices. Pricing technology does not eliminate the need for traditional market analysis or the development of traditional pricing strategies. Automated technology can backfire if it is not carefully monitored and adjusted when necessary. Pricing technology does not reduce the need for quality customer service. Even if a company has rock-bottom prices, customers will be hesitant to shop at a store where they feel disrespected or neglected. from http://www.bain.com/publications/articles/management-tools-price-optimization- models.aspx",
+      "sources": [
+        "SOURCE: PI:016",
+        "SOURCE: Bain & Company. (2015, June 10). Price optimization models. Retrieved August 5, 2016,"
+      ]
+    },
+    {
+      "number": 67,
+      "question": "Melissa is eager to visit a local department store after seeing an advertisement for a great deal on new mattresses. When she gets to the store, however, the salesperson explains that the on-sale model quickly sold out, and attempts to sell her a much more expensive mattress. This is an example of",
+      "options": {
+        "A": "predatory pricing.",
+        "B": "bait-and-switch advertising.",
+        "C": "price discrimination.",
+        "D": "price fixing."
+      },
+      "answer": "B",
+      "explanation": "Bait-and-switch advertising. Bait-and-switch advertising is an unethical and fraudulent sales method in which a store advertises extremely low prices, and then attempts to sell customers different products at higher prices once they visit the store. The purpose of the tactic is to get customers to visit a business in the hopes that they will make a purchase, even if it's not the exact item that they wanted. Predatory pricing is the act of setting prices low in an attempt to eliminate the competition. Price discrimination occurs when a business charges different customers different prices for similar amounts and types of products. Price fixing is an agreement among competitors to \"fix,\" or set the price, for a product so that it is the same among all the stores. All of these methods are unethical and illegal. August 10, 2016, from http://www.wisegeek.org/what-is-a-bait-and-switch.htm",
+      "sources": [
+        "SOURCE: PI:017",
+        "SOURCE: Ellis-Christensen, T., & Wallace, O. (2015, March 15). What is a bait and switch? Retrieved"
+      ]
+    },
+    {
+      "number": 68,
+      "question": "After increasing its product's price so that it is higher than a competing product's price, the Expert Company's profits have begun decreasing. What is most likely happening?",
+      "options": {
+        "A": "The company is selling more products at the higher price point.",
+        "B": "The company is being perceived as having a discount image.",
+        "C": "Customers don't think the product is worth more than a competing product.",
+        "D": "The company is undercutting competitor's pricing to sell more products."
+      },
+      "answer": "C",
+      "explanation": "Customers don't think the product is worth more than a competing product. If a company increases the product price and profits are decreasing, most likely customers do not think the product's value is worth more than that of a competing product. The company may be seen as having an exclusive image with the higher price point. If profits are decreasing, the company is selling less product than before the price change. The company is not undercutting competitor's pricing—it is selling above competitor's prices.",
+      "sources": [
+        "SOURCE: PI:002",
+        "SOURCE: LAP-PI-003—Make Cents (Factors Affecting Selling Price)"
+      ]
+    },
+    {
+      "number": 69,
+      "question": "A product's sales have been slowly declining over the past year. A superior product was introduced to the market, and now the original product is unable to compete. What process should the product's company carry out?",
+      "options": {
+        "A": "Commercialization",
+        "B": "Product discontinuation",
+        "C": "Product development",
+        "D": "Prototype creation 2017 HS ICDC MARKETING CLUSTER EXAM 10"
+      },
+      "answer": "B",
+      "explanation": "Product discontinuation. Weak products are those with declining sales and profitability. These products must be discontinued because of their costs to the company. Commercialization is the point at which the product goes into full-scale production, a marketing plan is put in place, service and sales training are conducted, and the product's life cycle begins. Product development is a lengthy step that could take months or even years to finish. During this step, a working model of the product is tested, modified, and retested, until the company decides it's ready to hit the market. Companies create prototypes when they are testing a product concept, not when a product is already on the market and unsuccessful.",
+      "sources": [
+        "SOURCE: PM:001",
+        "SOURCE: LAP-PM-017—Rapping Up Products (Nature of Product/Service Management)"
+      ]
+    },
+    {
+      "number": 70,
+      "question": "Kelly runs a successful start-up company that sells homemade nut butters. After several months of explosive growth, she notices that her sales seem to have peaked. Her products are still selling, but at a slower rate than before. Kelly's products are in the __________ stage of the product life cycle.",
+      "options": {
+        "A": "decline",
+        "B": "growth",
+        "C": "maturity",
+        "D": "introduction"
+      },
+      "answer": "C",
+      "explanation": "Maturity. The maturity stage is the product life cycle stage in which sales peak and then increase at a slower rate or start to decline. The growth stage is the stage in which sales rise rapidly, whereas the decline stage is the stage in which sales decrease and profits begin to erode. The introduction stage is the stage in which the product first appears in the marketplace. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 28",
+      "sources": [
+        "SOURCE: PM:024",
+        "SOURCE: LAP-PM-018—Get a Life (Cycle) (Product Life Cycles)"
+      ]
+    },
+    {
+      "number": 71,
+      "question": "A new change to educational policy increases the number of math classes that students need to take to graduate. A textbook publisher then creates a new line of instructional materials based on these changes. This is an example of how",
+      "options": {
+        "A": "companies need to pay better attention to customer feedback.",
+        "B": "economic changes are detrimental to product development.",
+        "C": "competitors are a useful source of product innovation.",
+        "D": "political trends create product opportunities."
+      },
+      "answer": "D",
+      "explanation": "Political trends create product opportunities. Trends and changes in the political sphere sometimes create new product opportunities and open new markets. If educational policy changes allow a textbook publisher to create a new line of instructional materials, the policy created a product opportunity. This is not an example of how economic changes are detrimental to new product development, how competitors are a useful source of product innovation, or of how companies need to pay better attention to customer feedback. from http://www.marketingdonut.co.uk/marketing/marketing-strategy/your-target- market/spotting-gaps-in-your-market",
+      "sources": [
+        "SOURCE: PM:134",
+        "SOURCE: The Marketing Donut. (2009-2016). Spotting gaps in your market. Retrieved August 3, 2016,"
+      ]
+    },
+    {
+      "number": 72,
+      "question": "Dana owns a restaurant that specializes in burgers and fries. After experiencing success, Dana decided to add milkshakes to the menu because she thought they would go well with the other menu items. The milkshakes, burgers, and fries are examples of __________ goods.",
+      "options": {
+        "A": "specialty",
+        "B": "complementary",
+        "C": "substitute",
+        "D": "trend-driven"
+      },
+      "answer": "B",
+      "explanation": "Complementary. A complementary good is one that goes with something else. Milkshakes can be added to burgers and fries as a beverage or dessert option to complete the meal. Specialty goods are goods that are unique enough that customers are willing to put forth special effort to obtain them. Milkshakes do not fit into this category because they are fairly ordinary. A substitute good is one that replaces another because it satisfies the same need or want. Milkshakes are not replacing one of Dana's current products. Finally, a trend-driven good is one that is inspired by a current trend in society or in a particular industry. There is no indication that the decision to add milkshakes was based on a trend.",
+      "sources": [
+        "SOURCE: PM:127",
+        "SOURCE: LAP-PM-127—Unleash Your Mind (Techniques for Generating Product Ideas)"
+      ]
+    },
+    {
+      "number": 73,
+      "question": "Geoff doesn't waste materials at his job. He is helping his company meet __________ standards.",
+      "options": {
+        "A": "quantity",
+        "B": "time",
+        "C": "quality",
+        "D": "cost"
+      },
+      "answer": "D",
+      "explanation": "Cost. Cost standards are used to specify project or product costs. They are important because the measure of a business's success is profit. Increased costs, without a proportionate increase in sales, decreases profit. Wasting material or taking more time than necessary to perform a task adds to the cost of doing business. This is not an example of helping his company meet time, quality, or quantity standards.",
+      "sources": [
+        "SOURCE: PM:019",
+        "SOURCE: LAP-PM-008—Raise the Bar (Grades and Standards)"
+      ]
+    },
+    {
+      "number": 74,
+      "question": "Which of the following data might be included on a warranty card or registration:",
+      "options": {
+        "A": "Where the product was purchased",
+        "B": "Competitor information",
+        "C": "Prospects contacted",
+        "D": "Sales in relation to prior time periods"
+      },
+      "answer": "A",
+      "explanation": "Where the product was purchased. A warranty card or registration can be a valuable source of secondary data for a business. It includes information about where the product was purchased. Warranty cards do not contain competitor information, prospects contacted (contained on a call report), or data about sales in relation to prior time periods (contained on a sales report.)",
+      "sources": [
+        "SOURCE: PM:020",
+        "SOURCE: LAP-PM-004—Promises, Promises (Warranties and Guarantees)"
+      ]
+    },
+    {
+      "number": 75,
+      "question": "Consumer protection laws benefit businesses by",
+      "options": {
+        "A": "simplifying buying decisions.",
+        "B": "preventing injuries and illness.",
+        "C": "combating consumer faults.",
+        "D": "protecting them from financial losses."
+      },
+      "answer": "D",
+      "explanation": "Protecting them from financial losses. Consumer protection laws also benefit businesses because they protect businesses from financial losses caused by consumer lawsuits, government fines, and defective or unsafe products that cannot be sold. Preventing injuries and illness, combating consumer faults, and simplifying buying decisions are all benefits to consumers, rather than to businesses. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 29",
+      "sources": [
+        "SOURCE: PM:017",
+        "SOURCE: LAP-PM-007—Protect and Serve (Consumer Protection)"
+      ]
+    },
+    {
+      "number": 76,
+      "question": "A fast-food restaurant decides to add a new line of salads to its menu. The company is using a(n) ___________ product-mix strategy.",
+      "options": {
+        "A": "contraction",
+        "B": "expansion",
+        "C": "trading up",
+        "D": "trading down"
+      },
+      "answer": "B",
+      "explanation": "Expansion. A business may expand its product mix by adding additional product items or lines. There are a number of reasons why a business may choose an expansion product-mix strategy, including satisfying customers' desire for variety, offering customers complementary products, spreading risk over a wider area, appealing to a new market, increasing sales and profits, enhancing the company's reputation, and making more efficient use of the company facilities. Contraction means removing product items or lines from the product mix. When a company decides to add a higher priced product or line to its mix, it is using a trading-up strategy. When a company decides to add a lower priced product or line to its mix, it is using a trading-down strategy.",
+      "sources": [
+        "SOURCE: PM:003",
+        "SOURCE: LAP-PM-003—Mix & Match (Nature of the Product Mix)"
+      ]
+    },
+    {
+      "number": 77,
+      "question": "Which of the following is a benefit customers receive from product bundling:",
+      "options": {
+        "A": "Improved workflow",
+        "B": "Increased revenue",
+        "C": "Access to unpopular products",
+        "D": "Convenience 2017 HS ICDC MARKETING CLUSTER EXAM 11"
+      },
+      "answer": "D",
+      "explanation": "Convenience. Product bundling is when two products are sold together as one item or purchase. It is convenient for customers because they have fewer separate purchases to make and can obtain several items that they need at once. Product bundling can increase revenue for businesses rather than for customers. Access to unpopular products is not a benefit for customers. Improved workflow is a benefit for business rather than for customers. businesses. Retrieved August 2, 2016, from http://readwrite.com/2010/03/01/bundled- pricing-benefit-cusotmers-businesses/",
+      "sources": [
+        "SOURCE: PM:041",
+        "SOURCE: Cameron, C. (2010, March 1). How bundled pricing can benefit both customers and"
+      ]
+    },
+    {
+      "number": 78,
+      "question": "Jill only buys Natural Glow cosmetics and will go from store to store until she finds them. Jill is in the brand __________ stage of brand loyalty.",
+      "options": {
+        "A": "evangelism",
+        "B": "insistence",
+        "C": "preference",
+        "D": "recognition"
+      },
+      "answer": "B",
+      "explanation": "Insistence. Brand insistence has been achieved when a consumer refuses alternative products and searches exclusively for the desired merchandise. In this case, Jill insists upon Natural Glow cosmetics and makes sure she buys them over any other brand of cosmetics. Brand evangelism occurs when you are an advocate for a brand, convincing others that the brand is the best. In this case, there is no indication that Jill is a brand evangelist for Natural Glow. Brand preference occurs when you prefer a brand based on previous experience with it and will select it over competitors when the option is available. In this case, Jill is beyond the level of brand preference because she only wants Natural Glow, even when it is not available. Brand recognition means that the consumer is aware of and can identify a brand. Jill is beyond this point with Natural Glow. http://tofurious.com/marketing-strategy/the-4-degrees-of-brand-loyalty/",
+      "sources": [
+        "SOURCE: PM:021",
+        "SOURCE: Chan, L. (2013, April 30). The 4 degrees of brand loyalty. Retrieved August 3, 2016, from"
+      ]
+    },
+    {
+      "number": 79,
+      "question": "Which of the following is an example of using customer voice to build your brand:",
+      "options": {
+        "A": "Blocking all negative social media posts that customers write about your brand",
+        "B": "Posting positive customer reviews prominently on your website",
+        "C": "Promoting the best-selling products that you already know customers love",
+        "D": "Letting customers spread the word about your brand to their friends and family"
+      },
+      "answer": "B",
+      "explanation": "Posting positive customer reviews prominently on your website. Customer feedback is a great way to promote your brand as positive and trustworthy. You should prominently display your best customer reviews on your website so prospective customers will develop a positive attitude toward your brand. Blocking all negative social media posts that customers might write about your brand will make you seem untrustworthy and dishonest. It is better to address these complaints. Promoting the best-selling products that you already know customers love does not involve using customer voice. Finally, letting customers spread the word about your brand is not actively using customer voice to promote or build your brand. August 3, 2016, from http://www.jeffbullas.com/2016/01/12/7-tips-market-brand-using- customer-reviews/ 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 30",
+      "sources": [
+        "SOURCE: PM:276",
+        "SOURCE: Roy, A. (2016, Jan. 12). 7 tips to market your brand using customer reviews. Retrieved"
+      ]
+    },
+    {
+      "number": 80,
+      "question": "A company's strategy, culture, and communication combine to form brand",
+      "options": {
+        "A": "promise.",
+        "B": "touchpoints.",
+        "C": "cues.",
+        "D": "identity."
+      },
+      "answer": "D",
+      "explanation": "Identity. Brand identity is the culmination of what a company wants to be—what it says about who it is. Strategy, culture, and communication all contribute to brand identity. Brand touchpoints are any instances in which the customers encounter the brand, such as a promotional message or a company website. Brand cues are messages that affect buying behavior in regard to a brand, such as a certain word that makes a customer think of a product. A brand promise is a commitment made by a brand to its customers about what it intends to deliver. http://www.investopedia.com/terms/b/brand-identity.asp",
+      "sources": [
+        "SOURCE: PM:207",
+        "SOURCE: Investopedia. (2016). Brand identity. Retrieved August 2, 2016, from"
+      ]
+    },
+    {
+      "number": 81,
+      "question": "Which of the following is an example of a customer touchpoint that is important during the purchase stage:",
+      "options": {
+        "A": "A charity sponsorship",
+        "B": "Product reviews",
+        "C": "Customer service teams",
+        "D": "A retail store"
+      },
+      "answer": "D",
+      "explanation": "A retail store. Touchpoints are any interactions a business has with customers. Touchpoints give customers the opportunity to form an opinion of the brand. When a customer is making a purchase, a retail store is a touchpoint that a customer might encounter. Product reviews are more likely to be a factor during the pre-purchase stage. Customer service teams are likely to be a touchpoint during the post- purchase phase. A charity sponsorship is more likely to be important during the pre-purchase stage. from https://www.surveymonkey.com/mp/identify-customer-touchpoints/",
+      "sources": [
+        "SOURCE: PM:277",
+        "SOURCE: SurveyMonkey. (2016). How to identify customer touchpoints. Retrieved August 3, 2016,"
+      ]
+    },
+    {
+      "number": 82,
+      "question": "You see a billboard advertising beef from the Cattlemen's Beef Board. This is an example of __________ product promotion.",
+      "options": {
+        "A": "primary",
+        "B": "secondary",
+        "C": "public-service",
+        "D": "public-relations"
+      },
+      "answer": "A",
+      "explanation": "Primary. Primary product promotion aims to stimulate demand, or desire, for an entire class of goods or services. The emphasis is on the product and its uses, rather than on a particular brand. When you see an advertisement for beef from the Cattlemen's Beef Board, you are receiving a primary promotional message. Secondary, or selective, product promotion is used to stimulate demand for a specific brand of a product. Public-service promotions inform customers about noncontroversial issues that are in the public's best interest. Public-relations promotion is a type of institutional promotion created to deal with controversial public issues that are related to a company or its products.",
+      "sources": [
+        "SOURCE: PR:002",
+        "SOURCE: LAP-PR-004—Know Your Options (Types of Promotion)"
+      ]
+    },
+    {
+      "number": 83,
+      "question": "Will wants to open a food truck business, but he lives in a city where many other food trucks already operate. Will should",
+      "options": {
+        "A": "set up meetings with potential customers to explain his business.",
+        "B": "run a local radio ad that explains why his food truck is different.",
+        "C": "perform charitable activities so he will receive positive publicity.",
+        "D": "offer merchandising allowances."
+      },
+      "answer": "B",
+      "explanation": "Run a local radio ad that explains why his food truck is different. Advertisements are an effective promotional strategy when a product needs to be differentiated from its competitors, as well as when a product is in its introductory stage. Therefore, a radio ad that focuses on differentiating Will's food truck from others is an appropriate tactic. Setting up meetings with potential customers to explain his business is not an effective strategy for Will because personal selling is not generally used for convenience goods such as food. Will would not be able to meet with enough customers to make his business profitable. Performing charitable activities to receive good publicity would be more effective when Will has already established his brand. It is hard to generate publicity during the introductory stage. Finally, a merchandising allowance is a sales promotion that is used when promoting to intermediary businesses, rather than directly to consumers, as is the case with Will's food truck.",
+      "sources": [
+        "SOURCE: PR:003",
+        "SOURCE: LAP-PR-001—Spread the Word (Nature of Promotional Mix)"
+      ]
+    },
+    {
+      "number": 84,
+      "question": "Which of the following examples depicts an advantage of using digital advertising:",
+      "options": {
+        "A": "Conversion rates of banner ads are more difficult to measure than in print.",
+        "B": "Ethan uses ad-blocking software so he can stream videos commercial-free.",
+        "C": "Viewers must interact with a video ad before continuing to a website.",
+        "D": "Digital ads are more expensive than television advertisements."
+      },
+      "answer": "C",
+      "explanation": "Viewers must interact with a video ad before continuing to a website. One of the biggest challenges facing any advertisement is engagement—keeping the viewers' attention and making sure they are receiving the message. It is easy for viewers to ignore video ads, either digital or traditional, but if they are forced to interact with the ad in some way, they are more likely to pay attention to the ad and take in its message. Ad-blocking software is a disadvantage to digital advertising, rather than an advantage. Conversion rates are easier to measure online than in print. Finally, digital ads are generally cheaper than television advertisements. Western, Cengage Learning. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 31",
+      "sources": [
+        "SOURCE: PR:100",
+        "SOURCE: Kurtz, D. (2013). Contemporary marketing: 2013 edition (pp. 516, 534). Mason, OH: South-"
+      ]
+    },
+    {
+      "number": 85,
+      "question": "Which of the following advertisements is most likely to violate promotional regulations:",
+      "options": {
+        "A": "A toy commercial uses bright colors and a catchy jingle.",
+        "B": "A food advertisement depicts a child using a stove unsupervised.",
+        "C": "An email newsletter includes an opt-out link at the bottom.",
+        "D": "The people in a prescription drug commercial are designated as actors. 2017 HS ICDC MARKETING CLUSTER EXAM 12"
+      },
+      "answer": "B",
+      "explanation": "A food advertisement depicts a child using a stove unsupervised. Advertisements that are unfair or cause injury to consumers can violate consumer protection regulations. An advertisement that shows a child using the stove unsupervised can be dangerous to children who might see the advertisement and think it's okay for them to use the stove by themselves. A toy commercial that uses bright colors and a catchy jingle would not necessarily violate any regulation. Email newsletters should always include an opt-out link so that they don't violate regulation. Finally, a prescription drug commercial should clarify that the people in it are actors, rather than actual users of the drug. present. Retrieved August 16, 2016, from https://www.ftc.gov/sites/default/files/documents/public_statements/advertising-kids-and-ftc- regulatory-retrospective-advises-present/040802adstokids.pdf",
+      "sources": [
+        "SOURCE: PR:101",
+        "SOURCE: FTC. (n.d.). Advertising to kids and the FTC: A regulatory retrospective that advises the"
+      ]
+    },
+    {
+      "number": 86,
+      "question": "A local pizza place gives you a magnet that includes its logo, website, and phone number. This is an example of",
+      "options": {
+        "A": "specialty media.",
+        "B": "directory advertising.",
+        "C": "product placement.",
+        "D": "a spectacular."
+      },
+      "answer": "A",
+      "explanation": "Specialty media. Specialty media is a type of “other” media that features a business's logo, is useful, and is given away freely. A magnet featuring a business's logo, website, and phone number is considered specialty media. Directory advertising includes promotional messages found in directories of a general nature such as the Yellow Pages or in specialized listings of companies in an industry. Product placement is a type of “other” media that uses products as props in movies, television shows, and computer games. A spectacular is a type of out-of-home advertisement built to order and often designed with neon lights or moving parts.",
+      "sources": [
+        "SOURCE: PR:007",
+        "SOURCE: LAP-PR-003—Ad-Quipping Your Business (Types of Advertising Media)"
+      ]
+    },
+    {
+      "number": 87,
+      "question": "If a retailer is trying to clear its inventory of a particular product, which of the following would be the most effective type of sales promotion:",
+      "options": {
+        "A": "A sweepstakes for a new car",
+        "B": "A contest that rewards the 100th customer",
+        "C": "A booth at a trade show",
+        "D": "A Buy-One-Get-One-Free coupon"
+      },
+      "answer": "D",
+      "explanation": "A Buy-One-Get-One-Free coupon. Sales promotions are intended to stimulate customer purchases, usually in the short-term. A Buy-One-Get-One-Free coupon helps entice customers to buy a product that they might not normally buy. If the retailer is trying to get rid of merchandise, a coupon focused on that product would help to promote it. A contest that rewards the store's 100th customer, a booth at a trade show, and a sweepstakes for a new car would not necessarily promote the particular product in question, though they are all forms of sales promotion. Western, Cengage Learning.",
+      "sources": [
+        "SOURCE: PR:249",
+        "SOURCE: Kurtz, D. (2013). Contemporary marketing: 2013 edition (p. 501). Mason, OH: South-"
+      ]
+    },
+    {
+      "number": 88,
+      "question": "Which of the following is an important component of a business's press kit:",
+      "options": {
+        "A": "Biographies of key company figures",
+        "B": "Promotional messages",
+        "C": "Interviews",
+        "D": "Customer testimonials"
+      },
+      "answer": "A",
+      "explanation": "Biographies of key company figures. A press kit is a package of information about a company, whether physical or digital, that is sent out to reporters in hopes of generating interest about that company. The press kit should be a “one-stop shop” of all information a reporter could need to write about the company. This includes biographies of key figures in the company, such as the CEO, COO, etc. Promotional messages, interviews, and customer testimonials are not necessarily important components of a press kit. http://www.inc.com/guides/2010/09/how-to-put-together-a-press-kit.html",
+      "sources": [
+        "SOURCE: PR:250",
+        "SOURCE: Donnelly, T. How to put together a press kit. Retrieved August 4, 2016, from"
+      ]
+    },
+    {
+      "number": 89,
+      "question": "What is the first requirement for writing successful advertising copy?",
+      "options": {
+        "A": "Be informative",
+        "B": "Grab attention",
+        "C": "Persuade readers",
+        "D": "Demand action"
+      },
+      "answer": "B",
+      "explanation": "Grab attention. If an ad's copy does not grab a reader's attention, it will never be seen, read, or understood. Therefore, a piece of copy must first and foremost attract attention. Being informative, persuading readers, and demanding action are all important but are not the first priorities. Attention must be captured first before any of these requirements can be achieved. http://www.bizmove.com/marketing/m2j3.htm 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 32",
+      "sources": [
+        "SOURCE: PR:014",
+        "SOURCE: BizMove. (n.d.) Writing advertising ads. Retrieved August 5, 2016, from"
+      ]
+    },
+    {
+      "number": 90,
+      "question": "A furniture store released an ad in the weekly paper, but readers complained that it was too busy and difficult to know where to focus. The advertisement should have included more",
+      "options": {
+        "A": "graphics.",
+        "B": "fonts.",
+        "C": "logos.",
+        "D": "white space."
+      },
+      "answer": "D",
+      "explanation": "White space. White space is essential because it separates images on the page, keeps the page from looking cluttered and messy, and makes the advertisement clearer. White space could help the furniture store's ad to look less busy. More fonts would probably make the ad look busier and would not necessarily help the readers know where to focus. Logos and graphics would not necessarily help the ad to be less busy. 2016, from http://www.serif.com/blog/how-important-is-white-space-in-print-design/",
+      "sources": [
+        "SOURCE: PR:251",
+        "SOURCE: Mauloni, M. (2013, Jan 7). How important is white space in print design? Retrieved August 3,"
+      ]
+    },
+    {
+      "number": 91,
+      "question": "Which of the following is an example of a one-way public-relations activity that could be used to distribute company information directly to the target audience:",
+      "options": {
+        "A": "Search engine optimization",
+        "B": "Newsletters",
+        "C": "Press conferences",
+        "D": "Social media"
+      },
+      "answer": "B",
+      "explanation": "Newsletters. Newsletters are one-way communications from the company to its target audience that contain important information about the company. They can be sent via email or through regular mail. Search engine optimization is a tactic used to boost an organization's ability to be discovered through search engine tools. It is not a direct way of distributing information to the target audience; rather, it is a strategy that can be employed in many types of PR content. Press conferences and social media are not one-way public relations activities; rather, they are interactive. http://www.buzzle.com/articles/public-relations-tools.html",
+      "sources": [
+        "SOURCE: PR:252",
+        "SOURCE: Rampur, S. (2011, Sept 27). Tools of public relations. Retrieved August 4, 2016, from"
+      ]
+    },
+    {
+      "number": 92,
+      "question": "Cozy Cup Coffee moved into a new location in a residential area. Many of the neighbors were not thrilled about the construction noise and increased traffic. Cozy Cup Coffee decided to give out free cups of coffee to the neighbors every morning. This is an example of",
+      "options": {
+        "A": "why residential areas are not appropriate targets for public relations activities.",
+        "B": "how company shareholders are the most important audience of public relations.",
+        "C": "why company vendors get in the way of community relations.",
+        "D": "how companies can target the community with public relations efforts."
+      },
+      "answer": "D",
+      "explanation": "How companies can target the community with public relations efforts. One potential audience of public relations activities is the community. Businesses cannot avoid interacting with the community, so they should strive to maintain a good relationship. Cozy Cup Coffee realizes that its relationship with the community is tenuous, so it engages in a public relations effort by giving out free cups of coffee. This example does not depict how company shareholders are the most important audience of public relations, why company vendors get in the way of community relations, or that residential areas are not appropriate targets for public relations activities. http://www.evancarmichael.com/library/martin-cohn/The-Importance-of-Community- Relations.html",
+      "sources": [
+        "SOURCE: PR:253",
+        "SOURCE: Cohn, M. (n.d.) The importance of community relations. Retrieved August 5, 2016, from"
+      ]
+    },
+    {
+      "number": 93,
+      "question": "Which of the following is an example of a tangible product:",
+      "options": {
+        "A": "An insurance policy",
+        "B": "A pizza",
+        "C": "Cooking lessons",
+        "D": "A haircut 2017 HS ICDC MARKETING CLUSTER EXAM 13"
+      },
+      "answer": "B",
+      "explanation": "A pizza. Pizza is a tangible product because it can be detected by the senses. Tangible products can be touched, smelled, tasted, seen, or heard. An insurance policy, cooking lessons, and a haircut are all intangible products because they are services you could pay someone else to perform. You cannot detect intangible objects through the senses.",
+      "sources": [
+        "SOURCE: SE:017",
+        "SOURCE: LAP-SE-117—Sell Away (The Nature and Scope of Selling)"
+      ]
+    },
+    {
+      "number": 94,
+      "question": "Joaquin, a car salesman, is sure to send out a personalized thank-you note every time he makes a sale. Which key to customer service is he demonstrating?",
+      "options": {
+        "A": "Soliciting feedback",
+        "B": "Keeping in touch",
+        "C": "Being prompt",
+        "D": "Having a good attitude"
+      },
+      "answer": "B",
+      "explanation": "Keeping in touch. Good salespeople recognize that keeping in contact with customers is one of the best ways to maintain their partnerships. Sometimes this involves sending out a thank-you note, as in Joaquin's case. Sometimes this can be as simple as a follow-up phone call, or for major clients, it may even involve a personal visit. Soliciting feedback, being prompt, and having a good attitude are all important keys to customer service, but Joaquin is not demonstrating them in this example. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 33",
+      "sources": [
+        "SOURCE: SE:076",
+        "SOURCE: LAP-SE-130—Go Beyond the Sale (Customer Service in Selling)"
+      ]
+    },
+    {
+      "number": 95,
+      "question": "Elizabeth is looking for a new laptop for college. She visits a technology store, finds a computer that she likes, and asks the salesperson about the warranty on the laptop. Elizabeth is asking about the store's __________ policy.",
+      "options": {
+        "A": "liability",
+        "B": "repair and maintenance",
+        "C": "guarantee",
+        "D": "return and adjustment"
+      },
+      "answer": "C",
+      "explanation": "Guarantee. These types of policies are guarantees of quality or product performance and often include warranties which cover a certain period of time or specific parts of the product. Repair and maintenance policies are policies that offer continued care of a product for a specified or indefinite amount of time. Companies who offer potentially dangerous products or services (parasailing or bungee jumping, for example) may have a liability policy that requires salespeople to obtain a liability waiver from the customer. These waivers release the company from responsibility for something that might go wrong. Return and adjustment policies govern the return of goods, including how and when customers can return products.",
+      "sources": [
+        "SOURCE: SE:932",
+        "SOURCE: LAP-SE-121—Sell Right (Selling Policies)"
+      ]
+    },
+    {
+      "number": 96,
+      "question": "Which of the following sales actions is considered illegal:",
+      "options": {
+        "A": "A salesperson ignores his/her coworker's unethical actions.",
+        "B": "An employer puts too much pressure on his/her sales employees.",
+        "C": "A salesperson says something untrue that damages a competitor's business.",
+        "D": "A salesperson takes a client out to dinner."
+      },
+      "answer": "C",
+      "explanation": "A salesperson says something untrue that damages a competitor's business. When you say something untrue that damages a person's or business's reputation, that's considered slander, which is illegal. An employer putting too much pressure on his/her sales employees and a salesperson ignoring his/her coworker's misbehavior are both considered unethical actions, but they aren't illegal. A salesperson taking a client out to dinner is not typically considered unethical or illegal, although if a salesperson isn't careful, s/he could cross over into the legal issue of bribery. likeness. Retrieved August 17, 2016, from http://intellectualproperty.uslegal.com/unfair- competition/the-law-of-unfair-competition/false-advertising-trade-defamation-and- misappropriation-of-a-name-or-likeness/",
+      "sources": [
+        "SOURCE: SE:108",
+        "SOURCE: US Legal. (n.d.). False advertising, trade defamation, and misappropriation of a name or"
+      ]
+    },
+    {
+      "number": 97,
+      "question": "Which of the following is a true statement regarding the use of product information for selling:",
+      "options": {
+        "A": "It is impossible to give customers too much product information.",
+        "B": "Salespeople should not rely on selling skills alone.",
+        "C": "It is not necessary to acquire information about the industry as a whole.",
+        "D": "Salespeople should rely on technical language when sharing product information."
+      },
+      "answer": "B",
+      "explanation": "Salespeople should not rely on selling skills alone. It is important to acquire product information for answering customers' questions, demonstrating how the product meets their needs, etc. Selling skills alone will not result in sales success. Sometimes, it is possible to overwhelm customers by giving them too much information or by using too much technical jargon. It is important for salespeople to acquire industry information as well as product information.",
+      "sources": [
+        "SOURCE: SE:062",
+        "SOURCE: LAP-SE-131—Get Informed (Acquiring Product Information for Use in Selling)"
+      ]
+    },
+    {
+      "number": 98,
+      "question": "Which of the following statements describes features:",
+      "options": {
+        "A": "They answer the question, \"What's in it for me?\"",
+        "B": "They can be obvious, exclusive, or hidden.",
+        "C": "They are the advantages a customer wants from a product.",
+        "D": "They are physical characteristics."
+      },
+      "answer": "D",
+      "explanation": "They are physical characteristics. A feature is a physical characteristic or quality of a product. It is something the customer can touch, feel, smell, see, or measure. It helps to describe the product. In short, a feature answers the question, “What is it?” Benefits, not features, can be obvious, exclusive, or hidden. Benefits are the advantages a customer wants from a product, and they answer the question, “What's in it for me?”",
+      "sources": [
+        "SOURCE: SE:109",
+        "SOURCE: LAP-SE-113—Find Features, Boost Benefits (Feature-Benefit Selling)"
+      ]
+    },
+    {
+      "number": 99,
+      "question": "In what stage of the selling process do salespeople handle objections?",
+      "options": {
+        "A": "Prescribing solutions to customer needs",
+        "B": "Reaching closure",
+        "C": "Reaffirming buyer-seller relationship",
+        "D": "Preparing to sell"
+      },
+      "answer": "B",
+      "explanation": "Reaching closure. Closing a sale often has two distinct parts or steps—overcoming objections and getting the order. Clearing up objections can serve as a chance for the salesperson to demonstrate his/her knowledge and further solidify the product's benefits to the customer. Prescribing solutions to a customer's needs involves making product suggestions based on a customer's specific situation, and occurs after the salesperson has determined the customer's needs through questioning. Reaffirming the buyer-seller relationship occurs after a sale has been made, when the salesperson reassures the customer that they have made a good purchase decision. Preparing to sell is the very first phase of the selling process, and involves preliminary research and planning the sales presentation. 2017 HS ICDC MARKETING CLUSTER EXAM—KEY 34",
+      "sources": [
+        "SOURCE: SE:048",
+        "SOURCE: LAP-SE-126—Set Your Sales (The Selling Process)"
+      ]
+    },
+    {
+      "number": 100,
+      "question": "A grocery store chain recently started stocking a new brand of ice cream after noticing the brand's popularity at competing grocery stores. The grocery store chain's decision to stock the new ice cream brand was motivated by __________ factors.",
+      "options": {
+        "A": "individual",
+        "B": "interpersonal",
+        "C": "organizational",
+        "D": "environmental 2017 HS ICDC"
+      },
+      "answer": "D",
+      "explanation": "Environmental. Environmental factors drive people or organizations to make purchases driven by the current business, social, or government environments. Factors such as competition and consumer demand are considered environmental factors. Interpersonal factors like status, persuasiveness, and authority can influence whether or not an organization or person purchases a product or service. Organizational factors include influences like corporate culture, role expectations, and company reward systems. Individual factors, like reward valence, personal needs, and personal relevance, can also drive people or organizations to make purchases. 2016, from http://www.slideshare.net/cshekhar8/factors-influencing-industrial-buying-ism",
+      "sources": [
+        "SOURCE: SE:359",
+        "SOURCE: Singh, C. (2014, January 29). Factors influencing industrial buying. Retrieved August 17,"
+      ]
+    }
+  ]
+}
