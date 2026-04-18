@@ -3243,9 +3243,14 @@ async function renderStudy(prefix, _qnum) {
 //   3. localhost:3001 as last-resort fallback
 function __decaDefaultBase() {
   try {
-    const h = window.location && window.location.hostname;
+    const loc = window.location;
+    const h = loc && loc.hostname;
+    // HTTPS deploys (Render, custom domains) serve the API on the same origin
+    // via unified-serve.js — no custom port needed.
+    if (loc && loc.protocol === "https:") return loc.origin;
+    // LAN (e.g. 192.168.x.x:8765) → same host, port 3001 where server.js runs
     if (h && h !== "localhost" && h !== "127.0.0.1" && h !== "") {
-      return `${window.location.protocol}//${h}:3001`;
+      return `${loc.protocol}//${h}:3001`;
     }
   } catch {}
   return "http://localhost:3001";
