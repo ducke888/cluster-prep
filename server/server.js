@@ -48,13 +48,16 @@ const PORT = process.env.TUTOR_PORT || 3001;
 const API_KEY = process.env.ANTHROPIC_API_KEY;
 const MODEL = process.env.TUTOR_MODEL || "claude-haiku-4-5";
 const DAILY_CAP_USD = Number(process.env.TUTOR_DAILY_CAP_USD || 1.0);
+// Account-wide cap across ALL users combined. Hard ceiling on daily spend.
+const TOTAL_DAILY_CAP_USD = Number(process.env.TUTOR_TOTAL_DAILY_CAP_USD || 5.0);
 const MAX_USER_CHARS = 2000;       // per message
 const MAX_CONTEXT_MESSAGES = 14;   // server truncates context beyond this
 const MAX_TOKENS_OUT = 600;        // upper bound on model output
 
-// Claude 3.5 Haiku pricing (USD per million tokens).
-const PRICE_IN_PER_MTOK  = 0.80;
-const PRICE_OUT_PER_MTOK = 4.00;
+// Claude Haiku 4.5 pricing (USD per million tokens).
+// https://www.anthropic.com/pricing
+const PRICE_IN_PER_MTOK  = 1.00;
+const PRICE_OUT_PER_MTOK = 5.00;
 
 const BUDGET_FILE = path.join(__dirname, "budget.json");
 const LEADERBOARD_FILE = path.join(__dirname, "leaderboard.json");
@@ -101,6 +104,15 @@ function todayKey() {
 function spentUSDToday(user) {
   const b = loadBudget();
   return ((b[user] && b[user][todayKey()]) || 0);
+}
+function totalSpentUSDToday() {
+  const b = loadBudget();
+  const t = todayKey();
+  let sum = 0;
+  for (const u of Object.keys(b)) {
+    sum += (b[u] && b[u][t]) || 0;
+  }
+  return sum;
 }
 function addSpendUSD(user, usd) {
   const b = loadBudget();
@@ -290,10 +302,14 @@ const requestListener = async (req, res) => {
   if (req.method === "GET" && req.url.startsWith("/api/tutor/budget")) {
     const url = new URL(req.url, "http://x");
     const user = (url.searchParams.get("user") || "_guest").slice(0, 80);
+    const totalSpent = totalSpentUSDToday();
     return sendJSON(res, 200, {
       user, cap: DAILY_CAP_USD,
       spent: Number(spentUSDToday(user).toFixed(4)),
       remaining: Number(Math.max(0, DAILY_CAP_USD - spentUSDToday(user)).toFixed(4)),
+      totalCap: TOTAL_DAILY_CAP_USD,
+      totalSpent: Number(totalSpent.toFixed(4)),
+      totalRemaining: Number(Math.max(0, TOTAL_DAILY_CAP_USD - totalSpent).toFixed(4)),
     });
   }
 
@@ -319,12 +335,22 @@ const requestListener = async (req, res) => {
     const messages = sanitizeMessages(body.messages);
     if (messages.length === 0) return sendJSON(res, 400, { error: "no messages" });
 
+    // Per-user cap
     const spent = spentUSDToday(user);
     if (spent >= DAILY_CAP_USD) {
       return sendJSON(res, 429, {
         error: "daily_budget_exceeded",
         message: `You've used today's $${DAILY_CAP_USD.toFixed(2)} tutor budget. Resets at midnight UTC.`,
         spent, cap: DAILY_CAP_USD,
+      });
+    }
+    // Account-wide cap (protects against many users hitting their caps at once)
+    const totalSpent = totalSpentUSDToday();
+    if (totalSpent >= TOTAL_DAILY_CAP_USD) {
+      return sendJSON(res, 429, {
+        error: "account_budget_exceeded",
+        message: `The tutor is temporarily unavailable — the site's daily AI budget ($${TOTAL_DAILY_CAP_USD.toFixed(2)}) has been reached. Resets at midnight UTC.`,
+        totalSpent, totalCap: TOTAL_DAILY_CAP_USD,
       });
     }
 
@@ -378,7 +404,8 @@ if (require.main === module) {
   server.listen(PORT, "0.0.0.0", () => {
     console.log(`DECA tutor proxy on http://0.0.0.0:${PORT} (listening on all interfaces)`);
     console.log(`  model: ${MODEL}`);
-    console.log(`  daily cap: $${DAILY_CAP_USD.toFixed(2)}/user`);
+    console.log(`  daily cap: $${DAILY_CAP_USD.toFixed(2)}/user · $${TOTAL_DAILY_CAP_USD.toFixed(2)} site-wide`);
+    console.log(`  pricing:  $${PRICE_IN_PER_MTOK}/M input · $${PRICE_OUT_PER_MTOK}/M output (Haiku 4.5)`);
     console.log(`  api key: ${API_KEY ? "set ✓" : "MISSING ✗  — set ANTHROPIC_API_KEY"}`);
     console.log(`  reset epoch: ${loadEpoch()}`);
     console.log(`  endpoints: POST /api/tutor · GET /api/tutor/budget · GET /api/leaderboard · POST /api/leaderboard/report · GET /api/reset-epoch · POST /api/admin/reset-all?token=…`);
