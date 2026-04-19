@@ -3354,14 +3354,36 @@ async function renderStudy(prefix, _qnum) {
   }
   byTopic._OTHER = { prefix: "_OTHER", name: "Other / Uncoded", wrongCount: 0, total: 0, wrongQs: [], allQs: [] };
 
-  // DECA reuses the same question stems across multiple exams (e.g. the
-  // same "Which of the following is..." shows up in ICDC 2014 AND state
-  // 2016). If the user missed the identical question in two sources, we
-  // only want to surface it ONCE in Review Wrongs — otherwise the same
-  // card appears two or three times in a row and feels broken.
-  // Key by normalized stem text; keep the earliest hit per bucket.
-  const seenStemPerBucket = {}; // { [prefix]: Set<normalizedStem> }
+  // DECA reuses the same question stems across multiple exams (same
+  // "Which of the following..." shows up in ICDC 2014 AND state 2016).
+  //
+  // Two-pass algorithm:
+  //   Pass 1: group every (wrong in log OR wrong on site) occurrence by
+  //           normalized stem. Per group, note whether the user has EVER
+  //           answered any instance correctly on site — if so, the whole
+  //           group is "done" (answering once anywhere counts).
+  //   Pass 2: walk exams again; push ONE representative per still-wrong
+  //           stem into bucket.wrongQs. This way the list has no dupes
+  //           AND the counter ticks down by exactly 1 per correct answer,
+  //           even if that question existed in 3 exams.
   const normStem = (s) => (s || "").toLowerCase().replace(/\s+/g, " ").trim();
+  const stemAnyRight = new Map(); // normStem -> true if user has answered any instance correctly
+
+  for (const meta of state.index) {
+    if (!meta.available) continue;
+    const exam = state.exams[meta.slug];
+    if (!exam) continue;
+    const siteSel = (loadProgress(meta.slug).selections) || {};
+    for (const q of exam.questions) {
+      if (!q.answer) continue;
+      const key = normStem(q.question);
+      if (!key) continue;
+      const siteChosen = siteSel[q.number];
+      if (siteChosen === q.answer) stemAnyRight.set(key, true);
+    }
+  }
+
+  const seenWrongStemPerBucket = {}; // { prefix: Set<stem> }
 
   for (const meta of state.index) {
     if (!meta.available) continue;
@@ -3374,32 +3396,31 @@ async function renderStudy(prefix, _qnum) {
       const bucket = byTopic[codePrefix] || byTopic._OTHER;
       bucket.total++;
       bucket.allQs.push({ slug: meta.slug, title: meta.title, number: q.number, code: q.code });
-      // "wrongCount" = LOG test wrong only — this is the historical counter
-      // that the sidebar shows and drives the "most missed" ranking. Never
-      // decrements when the user re-does a question.
+      // "wrongCount" = LOG test wrong only — historical, never decrements,
+      // drives the sidebar ranking.
       const logChosen = logSel[q.number];
       if (logChosen && q.answer && logChosen !== q.answer) {
         bucket.wrongCount++;
       }
-      // "wrongQs" = currently-effective wrong (what still needs review). If
-      // they've retried on-site and got it right, it drops off. If they
-      // retried but still missed, it stays.
+      // "wrongQs" = effective still-wrong stems (deduped).
       const siteChosen = siteSel[q.number];
+      const key = q.question ? normStem(q.question) : null;
+      if (!q.answer || !key) continue;
+      // Group considered "done" if user nailed any instance on site.
+      if (stemAnyRight.get(key)) continue;
+      // Otherwise, is this instance effectively wrong?
       const effective = siteChosen || logChosen;
-      const source = siteChosen ? "site" : (logChosen ? "log" : null);
-      if (effective && q.answer && effective !== q.answer) {
-        // Dedupe by question stem within the same topic bucket.
-        const stemKey = normStem(q.question);
-        if (stemKey) {
-          if (!seenStemPerBucket[bucket.prefix]) seenStemPerBucket[bucket.prefix] = new Set();
-          if (seenStemPerBucket[bucket.prefix].has(stemKey)) continue;
-          seenStemPerBucket[bucket.prefix].add(stemKey);
-        }
-        bucket.wrongQs.push({
-          slug: meta.slug, title: meta.title, number: q.number, code: q.code,
-          chosen: effective, correct: q.answer, source,
-        });
-      }
+      const isEffectivelyWrong = effective && effective !== q.answer;
+      if (!isEffectivelyWrong) continue;
+      // First representative of this stem within this bucket → push.
+      if (!seenWrongStemPerBucket[bucket.prefix]) seenWrongStemPerBucket[bucket.prefix] = new Set();
+      if (seenWrongStemPerBucket[bucket.prefix].has(key)) continue;
+      seenWrongStemPerBucket[bucket.prefix].add(key);
+      const source = siteChosen ? "site" : "log";
+      bucket.wrongQs.push({
+        slug: meta.slug, title: meta.title, number: q.number, code: q.code,
+        chosen: effective, correct: q.answer, source,
+      });
     }
   }
   // "completed" = had log wrongs, now zero still effectively wrong.
@@ -4091,7 +4112,11 @@ function mdLite(s) {
 }
 
 function renderStudyOverview(topicList) {
-  const totalWrong = topicList.reduce((n, t) => n + t.wrongCount, 0);
+  // "Wrongs to review" KPI uses wrongQs.length (the effective still-wrong
+  // list) so it ticks down as the user nails questions and back up when
+  // they reset. Sidebar badge + ranking still use wrongCount (historical)
+  // so the topic order stays stable.
+  const totalWrong = topicList.reduce((n, t) => n + (t.wrongQs ? t.wrongQs.length : 0), 0);
   // Focus KPIs: skip uncoded — we can't study specific codes there.
   const activeTopics = topicList.filter(t => t.wrongCount > 0 && t.prefix !== "_OTHER");
   const top5 = activeTopics.slice(0, 5);
@@ -4690,11 +4715,28 @@ function refreshWrongsCount(prefix) {
   if (!prefix) return;
   let wrong = 0;
   let total = 0;
-  // Match the dedupe behavior of renderStudy: same stem across multiple
-  // exams counts once. Otherwise the counter says "27 to review" while
-  // the on-screen list shows 24 distinct cards — mismatch.
-  const seenStem = new Set();
+  // Two-pass dedupe — must match renderStudy() exactly. Pass 1: any stem
+  // the user has now answered correctly on site anywhere is considered
+  // "nailed" and every instance of that stem is dropped from the wrong
+  // list. Pass 2: count one representative per still-wrong stem. This
+  // way answering 5 correctly drops the count by 5, and resetting brings
+  // those same 5 back. A single-pass dedupe was letting duplicate stems
+  // shuffle into the freed slot, so the number never moved.
   const normStem = (s) => (s || "").toLowerCase().replace(/\s+/g, " ").trim();
+  const stemAnyRight = new Map();
+  for (const meta of state.index || []) {
+    if (!meta.available) continue;
+    const exam = state.exams[meta.slug];
+    if (!exam) continue;
+    const siteSel = (loadProgress(meta.slug).selections) || {};
+    for (const q of exam.questions) {
+      if (!q.answer) continue;
+      const key = normStem(q.question);
+      if (!key) continue;
+      if (siteSel[q.number] === q.answer) stemAnyRight.set(key, true);
+    }
+  }
+  const seenStem = new Set();
   for (const meta of state.index || []) {
     if (!meta.available) continue;
     const exam = state.exams[meta.slug];
@@ -4705,13 +4747,16 @@ function refreshWrongsCount(prefix) {
       const qp = q.code ? q.code.split(":")[0] : "_OTHER";
       if (qp !== prefix) continue;
       total++;
+      if (!q.answer) continue;
+      const key = normStem(q.question);
+      if (!key) continue;
+      if (stemAnyRight.get(key)) continue;
+      if (seenStem.has(key)) continue;
       const siteChosen = siteSel[q.number];
       const logChosen  = !siteChosen ? logSel[q.number] : null;
       const effective = siteChosen || logChosen;
-      if (effective && q.answer && effective !== q.answer) {
-        const key = normStem(q.question);
-        if (key && seenStem.has(key)) continue;
-        if (key) seenStem.add(key);
+      if (effective && effective !== q.answer) {
+        seenStem.add(key);
         wrong++;
       }
     }
