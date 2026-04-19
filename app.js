@@ -1368,7 +1368,7 @@ const EXTRA_SEEDS = {};
 async function maybeImportSeed(username) {
   const path = SEED_FILES[username];
   if (path) {
-    const flagKey = `deca-imce:user:${username}:seedImported:${path}:v6`;
+    const flagKey = `deca-imce:user:${username}:seedImported:${path}:v7`;
     if (!localStorage.getItem(flagKey)) {
       try {
         const res = await fetch(path, { cache: "no-store" });
