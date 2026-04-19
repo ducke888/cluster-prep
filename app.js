@@ -3317,6 +3317,30 @@ async function renderStudy(prefix, _qnum) {
         updateStudyQuestion(slug, qNum);
       });
     });
+    // Per-question "Reset answer" — wipes study + progress + logTest state
+    // for that single question, then re-renders the topic so the list updates.
+    document.querySelectorAll(".study-q .q-reset").forEach(el => {
+      el.addEventListener("click", () => {
+        const qNum = Number(el.getAttribute("data-q"));
+        const slug = el.getAttribute("data-slug");
+        clearStudyAnswer(slug, qNum);
+        // Re-render the study view so the question pops off the wrongs list
+        // (if it was right) or clears its selected/correct highlight.
+        render();
+      });
+    });
+    // Top "Reset all answers" button — wipes every question under this prefix.
+    const resetAllBtn = document.querySelector(".wrongs-reset-all");
+    if (resetAllBtn) {
+      resetAllBtn.addEventListener("click", () => {
+        const pfx = resetAllBtn.getAttribute("data-prefix");
+        const name = (byTopic[pfx] && byTopic[pfx].name) || pfx;
+        if (!confirm(`Reset every answer under "${name}"?\n\nThis clears your picks on questions in this topic — the wrong ones will still appear here (since the original log-test wrongs are removed too, they'll drop off the list).\n\nYou can't undo this.`)) return;
+        const n = clearStudyAnswersForPrefix(pfx);
+        render();
+        if (typeof toast === "function") toast(`Reset ${n} answer${n === 1 ? "" : "s"}.`);
+      });
+    }
     // Initial render of selection state
     document.querySelectorAll(".study-q").forEach(el => {
       const qNum = Number(el.getAttribute("data-q"));
@@ -3963,11 +3987,17 @@ function renderStudyTopic(topic, sub) {
     return head + renderFlashcards(guide, topic);
   }
   if (sub === "missed") {
-    return head + renderStudyQuestionList(topic.wrongQs,
+    const toolbar = topic.wrongQs.length > 0
+      ? `<div class="wrongs-toolbar">
+           <span class="wrongs-toolbar-label">${topic.wrongQs.length} question${topic.wrongQs.length === 1 ? "" : "s"} to review</span>
+           <button class="btn ghost wrongs-reset-all" data-prefix="${escapeHtml(topic.prefix)}">Reset all answers</button>
+         </div>`
+      : "";
+    return head + toolbar + renderStudyQuestionList(topic.wrongQs,
       topic.wrongQs.length === 0
         ? "You haven't missed any questions with this code yet. Check 'Same-code practice' for more reps."
         : null,
-      { showPrevious: true });
+      { showPrevious: true, showReset: true });
   }
   if (sub === "all") {
     const wrongSet = new Set(topic.wrongQs.map(q => `${q.slug}:${q.number}`));
@@ -4051,32 +4081,86 @@ function buildFlashcardDeck(guide) {
   return cards;
 }
 
+// --- Flashcard confidence (Quizlet-style Learn mode) ---
+// Per-user, per-topic map of cardKey -> "weak"|"good"|"confident".
+// Confident cards are removed from future decks until the user resets.
+function fcKey(prefix) { return `deca-imce:user:${userScope()}:fc:${prefix}`; }
+function loadFcState(prefix) {
+  try { return JSON.parse(localStorage.getItem(fcKey(prefix)) || "{}"); }
+  catch { return {}; }
+}
+function saveFcState(prefix, map) {
+  localStorage.setItem(fcKey(prefix), JSON.stringify(map));
+}
+function cardKeyOf(c) { return (c.front || "").trim().toLowerCase(); }
+
 function renderFlashcards(guide, topic) {
-  const deck = buildFlashcardDeck(guide);
-  if (deck.length === 0) {
+  const fullDeck = buildFlashcardDeck(guide);
+  if (fullDeck.length === 0) {
     return `<div class="empty">No flashcards for <strong>${escapeHtml(topic.prefix)}</strong> yet.</div>`;
   }
-  const meta = `${deck.length} card${deck.length === 1 ? "" : "s"} · click / press <kbd>Space</kbd> to flip · <kbd>←</kbd>/<kbd>→</kbd> to navigate`;
+  const state = loadFcState(topic.prefix);
+  let confident = 0, good = 0, weak = 0;
+  for (const c of fullDeck) {
+    const s = state[cardKeyOf(c)];
+    if (s === "confident") confident++;
+    else if (s === "good") good++;
+    else if (s === "weak") weak++;
+  }
+  const total = fullDeck.length;
+  const pct = Math.round((confident / total) * 100);
   return `
     <div class="flashcards" data-topic="${topic.prefix}">
-      <div class="fc-meta">${meta}</div>
-      <div class="fc-card" id="fc-card" tabindex="0">
-        <div class="fc-inner">
-          <div class="fc-face fc-front">
-            <div class="fc-section" id="fc-section"></div>
-            <div class="fc-term" id="fc-term"></div>
-            <div class="fc-hint">click to flip</div>
-          </div>
-          <div class="fc-face fc-back">
-            <div class="fc-body" id="fc-body"></div>
+      <div class="fc-header">
+        <div class="fc-progress-ring">
+          <div class="fc-ring-label"><strong>${confident}</strong><span>/ ${total}</span></div>
+        </div>
+        <div class="fc-legend">
+          <div><span class="fc-dot fc-dot-confident"></span> Confident <strong>${confident}</strong></div>
+          <div><span class="fc-dot fc-dot-good"></span> Good <strong>${good}</strong></div>
+          <div><span class="fc-dot fc-dot-weak"></span> Weak <strong>${weak}</strong></div>
+        </div>
+        <div class="fc-header-actions">
+          <button class="btn ghost" id="fc-reset">Reset progress</button>
+        </div>
+      </div>
+      <div class="fc-meta">Click the card to flip. Then rate yourself — <strong>Weak</strong> (left) keeps it in rotation, <strong>Good</strong> (middle) shows it less often, <strong>Confident</strong> (right) retires it. Shortcuts: <kbd>Space</kbd> flip · <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> rate.</div>
+      <div class="fc-stage">
+        <div class="fc-card" id="fc-card" tabindex="0">
+          <div class="fc-inner">
+            <div class="fc-face fc-front">
+              <div class="fc-section" id="fc-section"></div>
+              <div class="fc-term" id="fc-term"></div>
+              <div class="fc-hint">click to flip</div>
+            </div>
+            <div class="fc-face fc-back">
+              <div class="fc-body" id="fc-body"></div>
+              <div class="fc-hint fc-hint-back">rate yourself below ↓</div>
+            </div>
           </div>
         </div>
       </div>
+      <div class="fc-rate-row" id="fc-rate-row">
+        <button class="btn fc-rate fc-rate-weak" id="fc-weak" disabled>
+          <span class="fc-rate-ico">✗</span>
+          <span class="fc-rate-lbl">Weak</span>
+          <span class="fc-rate-kbd">1</span>
+        </button>
+        <button class="btn fc-rate fc-rate-good" id="fc-good" disabled>
+          <span class="fc-rate-ico">≈</span>
+          <span class="fc-rate-lbl">Good</span>
+          <span class="fc-rate-kbd">2</span>
+        </button>
+        <button class="btn fc-rate fc-rate-confident" id="fc-confident" disabled>
+          <span class="fc-rate-ico">✓</span>
+          <span class="fc-rate-lbl">Confident</span>
+          <span class="fc-rate-kbd">3</span>
+        </button>
+      </div>
       <div class="fc-controls">
-        <button class="btn ghost" id="fc-prev">← Prev</button>
-        <span class="fc-progress" id="fc-progress">1 / ${deck.length}</span>
-        <button class="btn ghost" id="fc-next">Next →</button>
-        <button class="btn" id="fc-shuffle">Shuffle</button>
+        <button class="btn ghost" id="fc-skip">Skip card →</button>
+        <span class="fc-session-progress" id="fc-session-progress"></span>
+        <button class="btn ghost" id="fc-shuffle">Shuffle remaining</button>
       </div>
     </div>
   `;
@@ -4084,44 +4168,158 @@ function renderFlashcards(guide, topic) {
 
 function wireFlashcards(topic) {
   const guide = TOPIC_GUIDES[topic.prefix];
-  let deck = buildFlashcardDeck(guide);
-  if (deck.length === 0) return;
-  let i = 0, flipped = false;
+  const fullDeck = buildFlashcardDeck(guide);
+  if (fullDeck.length === 0) return;
+
+  // Build the session queue: drop "confident" cards; show weak + good + unrated.
+  // Order: weak first (need most review), then unrated, then good.
+  let confidenceMap = loadFcState(topic.prefix);
+  const rank = (c) => {
+    const s = confidenceMap[cardKeyOf(c)];
+    if (s === "weak") return 0;
+    if (s === "good") return 2;
+    if (s === "confident") return 99;
+    return 1; // unrated
+  };
+  let queue = fullDeck
+    .filter(c => confidenceMap[cardKeyOf(c)] !== "confident")
+    .slice()
+    .sort((a, b) => rank(a) - rank(b));
+
+  const stageEl = document.querySelector(".fc-stage");
   const card = document.getElementById("fc-card");
   const front = document.getElementById("fc-term");
   const sectionEl = document.getElementById("fc-section");
   const back = document.getElementById("fc-body");
-  const progress = document.getElementById("fc-progress");
+  const sessProg = document.getElementById("fc-session-progress");
+  const rateRow = document.getElementById("fc-rate-row");
+  const btnWeak = document.getElementById("fc-weak");
+  const btnGood = document.getElementById("fc-good");
+  const btnConf = document.getElementById("fc-confident");
+
+  let flipped = false;
+  let completed = 0; // cards rated this session (any rating)
+  const totalSession = queue.length;
+
+  const showDone = () => {
+    const state = loadFcState(topic.prefix);
+    let confident = 0;
+    for (const c of fullDeck) if (state[cardKeyOf(c)] === "confident") confident++;
+    const done = confident === fullDeck.length;
+    stageEl.innerHTML = `
+      <div class="fc-done">
+        <div class="fc-done-ico">${done ? "🏆" : "✓"}</div>
+        <h3>${done ? "Deck mastered!" : "Session complete"}</h3>
+        <p>${done
+          ? `You've marked all ${fullDeck.length} cards as Confident. Reset to review them again.`
+          : `${confident} of ${fullDeck.length} cards are now Confident. Cards rated Weak or Good will reappear next session.`}</p>
+        <div class="fc-done-actions">
+          <button class="btn primary" id="fc-again">Review again</button>
+          <button class="btn ghost" id="fc-reset2">Reset all progress</button>
+        </div>
+      </div>
+    `;
+    rateRow.style.display = "none";
+    document.getElementById("fc-skip").style.display = "none";
+    document.getElementById("fc-shuffle").style.display = "none";
+    sessProg.textContent = `${completed} / ${totalSession} rated this session`;
+    document.getElementById("fc-again").addEventListener("click", () => {
+      // Rebuild queue including any non-confident cards (re-runs session)
+      location.hash = location.hash; // force re-render
+      setTimeout(() => { render(); }, 0); // re-render this view
+      // Simplest: re-invoke the whole sub-render
+      const subHash = location.hash;
+      location.hash = "#/_fcreload_";
+      setTimeout(() => { location.hash = subHash; }, 0);
+    });
+    document.getElementById("fc-reset2").addEventListener("click", () => {
+      saveFcState(topic.prefix, {});
+      const subHash = location.hash;
+      location.hash = "#/_fcreload_";
+      setTimeout(() => { location.hash = subHash; }, 0);
+    });
+  };
+
+  const updateProgress = () => {
+    sessProg.textContent = `${completed} / ${totalSession} this session`;
+  };
+
   const render = () => {
-    const c = deck[i];
+    if (queue.length === 0) { showDone(); return; }
+    const c = queue[0];
     sectionEl.textContent = c.section;
     front.textContent = c.front;
     back.innerHTML = c.back;
-    progress.textContent = `${i + 1} / ${deck.length}`;
     flipped = false;
     card.classList.remove("flipped");
+    // Disable rating until flipped (must see the answer first)
+    [btnWeak, btnGood, btnConf].forEach(b => b.disabled = true);
+    updateProgress();
   };
-  const flip = () => { flipped = !flipped; card.classList.toggle("flipped", flipped); };
-  const next = () => { i = (i + 1) % deck.length; render(); };
-  const prev = () => { i = (i - 1 + deck.length) % deck.length; render(); };
-  card.addEventListener("click", flip);
-  document.getElementById("fc-next").addEventListener("click", next);
-  document.getElementById("fc-prev").addEventListener("click", prev);
-  document.getElementById("fc-shuffle").addEventListener("click", () => {
-    for (let k = deck.length - 1; k > 0; k--) {
-      const j = Math.floor(Math.random() * (k + 1));
-      [deck[k], deck[j]] = [deck[j], deck[k]];
+
+  const flip = () => {
+    flipped = !flipped;
+    card.classList.toggle("flipped", flipped);
+    [btnWeak, btnGood, btnConf].forEach(b => b.disabled = !flipped);
+  };
+
+  const rate = (level) => {
+    if (queue.length === 0) return;
+    if (!flipped) return; // must flip first
+    const c = queue.shift();
+    confidenceMap[cardKeyOf(c)] = level;
+    saveFcState(topic.prefix, confidenceMap);
+    completed++;
+    // Weak cards get re-queued toward the end of the session so they come back.
+    // Good cards are done for this session. Confident is retired.
+    if (level === "weak") {
+      // Insert 3-5 positions ahead so it doesn't come back immediately.
+      const insertAt = Math.min(queue.length, 3 + Math.floor(Math.random() * 3));
+      queue.splice(insertAt, 0, c);
     }
-    i = 0; render();
+    render();
+  };
+
+  const skip = () => {
+    if (queue.length <= 1) return;
+    const c = queue.shift();
+    queue.push(c);
+    render();
+  };
+
+  const shuffle = () => {
+    for (let k = queue.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [queue[k], queue[j]] = [queue[j], queue[k]];
+    }
+    render();
+  };
+
+  card.addEventListener("click", flip);
+  btnWeak.addEventListener("click", () => rate("weak"));
+  btnGood.addEventListener("click", () => rate("good"));
+  btnConf.addEventListener("click", () => rate("confident"));
+  document.getElementById("fc-skip").addEventListener("click", skip);
+  document.getElementById("fc-shuffle").addEventListener("click", shuffle);
+  document.getElementById("fc-reset").addEventListener("click", () => {
+    if (!confirm("Reset confidence for all " + fullDeck.length + " cards in this topic?")) return;
+    saveFcState(topic.prefix, {});
+    const subHash = location.hash;
+    location.hash = "#/_fcreload_";
+    setTimeout(() => { location.hash = subHash; }, 0);
   });
-  // Keyboard shortcuts while deck is mounted
+
   const onKey = (e) => {
     if (!document.getElementById("fc-card")) {
       document.removeEventListener("keydown", onKey); return;
     }
+    const tag = (e.target && e.target.tagName) || "";
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
     if (e.key === " " || e.key === "Enter") { e.preventDefault(); flip(); }
-    else if (e.key === "ArrowRight") { e.preventDefault(); next(); }
-    else if (e.key === "ArrowLeft")  { e.preventDefault(); prev(); }
+    else if (e.key === "1") { e.preventDefault(); if (flipped) rate("weak"); }
+    else if (e.key === "2") { e.preventDefault(); if (flipped) rate("good"); }
+    else if (e.key === "3") { e.preventDefault(); if (flipped) rate("confident"); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); skip(); }
   };
   document.addEventListener("keydown", onKey);
   card.focus();
@@ -4178,6 +4376,7 @@ function renderStudyQuestionCard(item, opts = {}) {
       <div class="options">${optsHtml}</div>
       <div class="q-actions">
         <button class="btn ghost reveal-one" data-q="${q.number}" data-slug="${item.slug}">Show answer</button>
+        ${opts.showReset ? `<button class="btn ghost q-reset" data-q="${q.number}" data-slug="${item.slug}">Reset answer</button>` : ""}
       </div>
       <div class="explain hidden">
         <div class="explain-body"></div>
@@ -4201,6 +4400,11 @@ function setStudyState(slug, qNum, patch) {
   if (!all[slug]) all[slug] = {};
   all[slug][qNum] = { ...(all[slug][qNum] || {}), ...patch };
   localStorage.setItem(studyKey(), JSON.stringify(all));
+
+  // Push to Firestore so the answered-state propagates to other devices —
+  // otherwise a study answer on laptop wouldn't show as done on phone until
+  // the 5s periodic interval fires. Debounced so rapid clicks coalesce.
+  try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
 
   // Mirror an actual answer (chosen letter) into the main `progress:` bucket
   // so Study-tab / Review-wrongs attempts count toward Site-progress stats.
@@ -4229,6 +4433,75 @@ function setStudyState(slug, qNum, patch) {
       }
     } catch { /* quota or parse — ignore */ }
   }
+}
+
+// Wipe a single question's answer from BOTH the study bucket and the
+// mirrored progress bucket, so the question goes back to "unanswered".
+// Also wipes it from the logTest bucket's selection so it actually leaves
+// the "previously wrong" list (otherwise the original log-test wrong pick
+// would still keep the question pinned as wrong).
+function clearStudyAnswer(slug, qNum) {
+  try {
+    const all = loadAllStudy();
+    if (all[slug] && all[slug][qNum]) {
+      delete all[slug][qNum];
+      if (Object.keys(all[slug]).length === 0) delete all[slug];
+      localStorage.setItem(studyKey(), JSON.stringify(all));
+    }
+  } catch {}
+  try {
+    const pKey = progressKey(slug);
+    const prev = JSON.parse(localStorage.getItem(pKey) || "{}");
+    let changed = false;
+    ["selections", "timestamps", "revealed"].forEach(field => {
+      if (prev[field] && prev[field][qNum] !== undefined) {
+        delete prev[field][qNum];
+        changed = true;
+      }
+    });
+    if (changed) localStorage.setItem(pKey, JSON.stringify(prev));
+  } catch {}
+  try {
+    const lKey = logTestKey(slug);
+    const prev = JSON.parse(localStorage.getItem(lKey) || "{}");
+    let changed = false;
+    ["selections", "timestamps", "revealed"].forEach(field => {
+      if (prev[field] && prev[field][qNum] !== undefined) {
+        delete prev[field][qNum];
+        changed = true;
+      }
+    });
+    if (changed) localStorage.setItem(lKey, JSON.stringify(prev));
+  } catch {}
+  // Push the wipe to Firestore so other devices match.
+  try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
+}
+
+// Wipe every answer under a given code-prefix (e.g. "IM") in BOTH the study
+// bucket and the mirrored progress bucket, AND the logTest bucket. Used by the
+// "Reset all answers" button on the Review-wrongs view.
+function clearStudyAnswersForPrefix(prefix) {
+  if (!prefix) return 0;
+  let count = 0;
+  // We need the exam data loaded to know which code each question has.
+  for (const meta of state.index || []) {
+    if (!meta.available) continue;
+    const exam = state.exams[meta.slug];
+    if (!exam) continue;
+    for (const q of exam.questions) {
+      const qp = q.code ? q.code.split(":")[0] : "_OTHER";
+      if (qp !== prefix) continue;
+      // Only clear if there's an existing answer somewhere.
+      const siteSel = (loadProgress(meta.slug).selections) || {};
+      const logSel  = (loadLogTest(meta.slug).selections)  || {};
+      const stu = getStudyState(meta.slug, q.number);
+      if (siteSel[q.number] || logSel[q.number] || stu.chosen || stu.revealed) {
+        clearStudyAnswer(meta.slug, q.number);
+        count++;
+      }
+    }
+  }
+  return count;
 }
 
 function updateStudyQuestion(slug, qNum) {

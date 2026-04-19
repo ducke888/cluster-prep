@@ -663,6 +663,47 @@ main {
 }
 .sub-tabs button.active .count { background: var(--red); color: #fff; }
 
+/* Toolbar that sits above the "Review wrongs" question list */
+.wrongs-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  margin: 10px 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fafaff 0%, #f3f2fb 100%);
+  box-shadow: var(--shadow);
+}
+.wrongs-toolbar-label {
+  color: var(--muted);
+  font-size: .9rem;
+  font-weight: 600;
+}
+.wrongs-toolbar .wrongs-reset-all {
+  border-color: #fda4af;
+  color: #9f1239;
+  background: #fff;
+}
+.wrongs-toolbar .wrongs-reset-all:hover {
+  background: #fff1f2;
+  color: #881337;
+}
+/* Per-question reset button — small, muted, red hover */
+.q-actions .q-reset {
+  font-size: .85rem;
+  padding: 4px 10px;
+  color: #9f1239;
+  border-color: #fecdd3;
+  background: #fff;
+}
+.q-actions .q-reset:hover {
+  background: #fff1f2;
+  color: #881337;
+  border-color: #fda4af;
+}
+
 .guide-body {
   background: #fff;
   border: 1px solid var(--border);

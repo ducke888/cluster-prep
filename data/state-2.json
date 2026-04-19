@@ -1,7 +1,7 @@
 {
   "file": "Marketing Exam - State #2.pdf",
   "question_count": 100,
-  "answered_count": 0,
+  "answered_count": 5,
   "questions": [
     {
       "number": 1,
@@ -272,7 +272,7 @@
         "C": "accuracy in counting.",
         "D": "an uncounted production."
       },
-      "answer": null,
+      "answer": "A",
       "explanation": "",
       "sources": []
     },
@@ -311,7 +311,7 @@
         "C": "positive feedback.",
         "D": "constructive criticism."
       },
-      "answer": null,
+      "answer": "A",
       "explanation": "",
       "sources": []
     },
@@ -467,7 +467,7 @@
         "C": "compensation.",
         "D": "employee contract."
       },
-      "answer": null,
+      "answer": "A",
       "explanation": "",
       "sources": []
     },
@@ -701,7 +701,7 @@
         "C": "high prices.",
         "D": "faulty products."
       },
-      "answer": null,
+      "answer": "A",
       "explanation": "",
       "sources": []
     },
@@ -922,7 +922,7 @@
         "C": "remain the same.",
         "D": "increase."
       },
-      "answer": null,
+      "answer": "A",
       "explanation": "",
       "sources": []
     },

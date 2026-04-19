@@ -1,7 +1,7 @@
 {
   "file": "Copy of Sample Exam 7.pdf",
   "question_count": 100,
-  "answered_count": 95,
+  "answered_count": 100,
   "questions": [
     {
       "number": 1,
@@ -12,7 +12,7 @@
         "C": "Voluntary",
         "D": "Implied"
       },
-      "answer": null,
+      "answer": "C",
       "explanation": "",
       "sources": []
     },
@@ -25,7 +25,7 @@
         "C": "complex distribution patterns.",
         "D": "a comparative advantage."
       },
-      "answer": null,
+      "answer": "A",
       "explanation": "",
       "sources": []
     },
@@ -38,7 +38,7 @@
         "C": "couldn't get a hold of the vendor.",
         "D": "had incorrect customer contact information."
       },
-      "answer": null,
+      "answer": "B",
       "explanation": "",
       "sources": []
     },
@@ -51,7 +51,7 @@
         "C": "producer.",
         "D": "industrial user."
       },
-      "answer": null,
+      "answer": "D",
       "explanation": "",
       "sources": []
     },
@@ -64,7 +64,7 @@
         "C": "When they regulate promotion",
         "D": "When they reduce competition"
       },
-      "answer": null,
+      "answer": "D",
       "explanation": "",
       "sources": []
     },
