@@ -3294,6 +3294,15 @@ async function renderStudy(prefix, _qnum) {
   }
   byTopic._OTHER = { prefix: "_OTHER", name: "Other / Uncoded", wrongCount: 0, total: 0, wrongQs: [], allQs: [] };
 
+  // DECA reuses the same question stems across multiple exams (e.g. the
+  // same "Which of the following is..." shows up in ICDC 2014 AND state
+  // 2016). If the user missed the identical question in two sources, we
+  // only want to surface it ONCE in Review Wrongs — otherwise the same
+  // card appears two or three times in a row and feels broken.
+  // Key by normalized stem text; keep the earliest hit per bucket.
+  const seenStemPerBucket = {}; // { [prefix]: Set<normalizedStem> }
+  const normStem = (s) => (s || "").toLowerCase().replace(/\s+/g, " ").trim();
+
   for (const meta of state.index) {
     if (!meta.available) continue;
     const exam = state.exams[meta.slug];
@@ -3319,6 +3328,13 @@ async function renderStudy(prefix, _qnum) {
       const effective = siteChosen || logChosen;
       const source = siteChosen ? "site" : (logChosen ? "log" : null);
       if (effective && q.answer && effective !== q.answer) {
+        // Dedupe by question stem within the same topic bucket.
+        const stemKey = normStem(q.question);
+        if (stemKey) {
+          if (!seenStemPerBucket[bucket.prefix]) seenStemPerBucket[bucket.prefix] = new Set();
+          if (seenStemPerBucket[bucket.prefix].has(stemKey)) continue;
+          seenStemPerBucket[bucket.prefix].add(stemKey);
+        }
         bucket.wrongQs.push({
           slug: meta.slug, title: meta.title, number: q.number, code: q.code,
           chosen: effective, correct: q.answer, source,
@@ -4614,6 +4630,11 @@ function refreshWrongsCount(prefix) {
   if (!prefix) return;
   let wrong = 0;
   let total = 0;
+  // Match the dedupe behavior of renderStudy: same stem across multiple
+  // exams counts once. Otherwise the counter says "27 to review" while
+  // the on-screen list shows 24 distinct cards — mismatch.
+  const seenStem = new Set();
+  const normStem = (s) => (s || "").toLowerCase().replace(/\s+/g, " ").trim();
   for (const meta of state.index || []) {
     if (!meta.available) continue;
     const exam = state.exams[meta.slug];
@@ -4627,13 +4648,19 @@ function refreshWrongsCount(prefix) {
       const siteChosen = siteSel[q.number];
       const logChosen  = !siteChosen ? logSel[q.number] : null;
       const effective = siteChosen || logChosen;
-      if (effective && q.answer && effective !== q.answer) wrong++;
+      if (effective && q.answer && effective !== q.answer) {
+        const key = normStem(q.question);
+        if (key && seenStem.has(key)) continue;
+        if (key) seenStem.add(key);
+        wrong++;
+      }
     }
   }
   // Update the "Review wrongs" sub-tab badge
   const missedBtn = document.querySelector('.sub-tabs button[data-sub="missed"] .count');
   if (missedBtn) missedBtn.textContent = String(wrong);
-  // Update the "Same-code practice" sub-tab badge (total - wrong)
+  // Update the "Same-code practice" sub-tab badge (total - wrong, but only
+  // an estimate since "total" doesn't dedupe — good enough for a preview).
   const allBtn = document.querySelector('.sub-tabs button[data-sub="all"] .count');
   if (allBtn) allBtn.textContent = String(Math.max(0, total - wrong));
   // Update the toolbar label above the wrongs list, if it's currently shown

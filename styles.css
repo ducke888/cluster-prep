@@ -2539,12 +2539,13 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
 }
 
 /* ================================================================
-   QUESTION BANK
+   QUESTION BANK — dark theme, matches the rest of the app
    ================================================================ */
 .qbank-page {
   max-width: 1100px;
   margin: 18px auto 60px;
   padding: 0 20px;
+  color: var(--ink);
 }
 .qbank-head {
   display: flex;
@@ -2556,15 +2557,16 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, #ede9fe 0%, #c7d2fe 100%);
-  color: #4c1d95;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22) 0%, rgba(91, 33, 182, 0.32) 100%);
+  color: var(--red-light);
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(76, 29, 149, 0.15);
+  border: 1px solid var(--border-2);
+  box-shadow: 0 4px 14px rgba(76, 29, 149, 0.18);
 }
-.qbank-head h2 { margin: 0 0 4px; font-size: 1.55rem; }
-.qbank-head .hint { margin: 0; max-width: 680px; }
+.qbank-head h2 { margin: 0 0 4px; font-size: 1.55rem; color: var(--ink); }
+.qbank-head .hint { margin: 0; max-width: 680px; color: var(--ink-2); }
 
 .qbank-toggle-row {
   display: flex;
@@ -2573,10 +2575,10 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
   flex-wrap: wrap;
   margin-bottom: 14px;
   padding: 10px 14px;
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 .qb-toggle {
   display: inline-flex;
@@ -2590,20 +2592,20 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
   border-radius: 999px;
   transition: background .15s;
 }
-.qb-toggle:hover { background: var(--bg-soft, #f6f5fb); }
+.qb-toggle:hover { background: var(--card-2); }
 .qb-toggle input[type="checkbox"] {
   appearance: none;
   width: 36px;
   height: 20px;
   border-radius: 999px;
-  background: #d4d4d8;
+  background: var(--border-2);
   position: relative;
   cursor: pointer;
   transition: background .2s;
   margin: 0;
 }
 .qb-toggle input[type="checkbox"]:checked {
-  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+  background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-light) 100%);
 }
 .qb-toggle input[type="checkbox"]::after {
   content: "";
@@ -2615,12 +2617,12 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
   background: #fff;
   border-radius: 50%;
   transition: transform .2s;
-  box-shadow: 0 1px 3px rgba(0,0,0,.25);
+  box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 .qb-toggle input[type="checkbox"]:checked::after {
   transform: translateX(16px);
 }
-.qb-toggle-label { font-weight: 500; }
+.qb-toggle-label { font-weight: 500; color: var(--ink); }
 .qbank-count {
   margin-left: auto;
   color: var(--muted);
@@ -2629,12 +2631,12 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
 }
 
 .qbank-filters {
-  background: #fff;
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 14px 16px;
   margin-bottom: 18px;
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 .qbank-filter-group { margin-bottom: 12px; }
 .qbank-filter-group:last-of-type { margin-bottom: 6px; }
@@ -2658,36 +2660,38 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
   padding: 5px 10px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: #fafafc;
+  background: var(--card-2);
   font-size: .85rem;
   font-weight: 500;
-  color: var(--ink);
+  color: var(--ink-2);
   cursor: pointer;
   transition: all .15s;
 }
 .qb-chip:hover {
   border-color: var(--red-light);
-  background: #f3efff;
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--ink);
 }
 .qb-chip.active {
-  background: linear-gradient(135deg, #ede9fe 0%, #ddd6fe 100%);
+  background: rgba(139, 92, 246, 0.20);
   border-color: var(--red);
-  color: var(--red-dark);
+  color: var(--red-light);
   font-weight: 600;
 }
 .qb-chip-code {
   font-family: ui-monospace, monospace;
   font-size: .78rem;
   font-weight: 700;
-  color: var(--red-dark);
-  background: #fff;
-  border: 1px solid var(--border);
+  color: var(--red-light);
+  background: rgba(167, 139, 250, 0.08);
+  border: 1px solid var(--border-2);
   padding: 1px 5px;
   border-radius: 4px;
 }
 .qb-chip.active .qb-chip-code {
-  background: #fff;
+  background: rgba(167, 139, 250, 0.22);
   border-color: var(--red);
+  color: #fff;
 }
 .qb-chip-name { line-height: 1.2; }
 .qb-chip-count {
@@ -2696,24 +2700,51 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
   font-size: .78rem;
   font-weight: 600;
 }
-.qb-chip.active .qb-chip-count { color: var(--red); }
+.qb-chip.active .qb-chip-count { color: var(--red-light); }
 .qb-chips-topics { max-height: 180px; overflow-y: auto; padding-right: 4px; }
+.qb-chips-topics::-webkit-scrollbar { width: 6px; }
+.qb-chips-topics::-webkit-scrollbar-thumb { background: var(--border-2); border-radius: 3px; }
 
 .qb-clear {
   margin-top: 8px;
   font-size: .82rem;
   padding: 4px 10px;
-  color: #9f1239;
-  border-color: #fecdd3;
+  color: var(--bad);
+  border: 1px solid var(--border-2);
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
 }
 .qb-clear:hover {
-  background: #fff1f2;
-  color: #881337;
-  border-color: #fda4af;
+  background: rgba(220, 38, 38, 0.10);
+  color: #fca5a5;
+  border-color: rgba(220, 38, 38, 0.45);
 }
 
 .qbank-list { margin-top: 6px; }
+.qbank-list .q-card,
+.qbank-list .sq-card,
+.qbank-list .study-q {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--ink);
+}
 .qbank-loadmore-wrap {
   text-align: center;
   margin-top: 18px;
+}
+
+/* Generic input/select inside Question Bank filters (search bars etc.) */
+.qbank-filters input[type="search"],
+.qbank-filters input[type="text"],
+.qbank-filters select {
+  background: var(--card-2);
+  color: var(--ink);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+.qbank-filters input[type="search"]::placeholder,
+.qbank-filters input[type="text"]::placeholder {
+  color: var(--muted);
 }
