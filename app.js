@@ -1640,6 +1640,62 @@ function recordAnswerActivity(isCorrect) {
   m[t].answered += 1;
   if (isCorrect) m[t].correct += 1;
   saveActivityDays(m);
+  // Debounced push so the leaderboard reflects live activity instead of
+  // only refreshing when the user navigates to Stats or Leaderboard.
+  // Without this, answering 27 questions then opening the leaderboard
+  // shows yesterday's counts for the today/week/month windows.
+  scheduleLeaderboardPush();
+}
+
+// Recompute the user's full leaderboard payload from localStorage and push
+// it to Firestore. Debounced (400ms) so rapid answer clicks coalesce into
+// one write. Needs `state.exams` to be populated for accurate siteAnswered
+// counts — skips the push silently if not (first-load race).
+let _lbPushTimer = null;
+function scheduleLeaderboardPush() {
+  if (_lbPushTimer) clearTimeout(_lbPushTimer);
+  _lbPushTimer = setTimeout(() => {
+    _lbPushTimer = null;
+    _pushLeaderboardFromLocal();
+  }, 400);
+}
+async function _pushLeaderboardFromLocal() {
+  try {
+    if (!state.user || !state.index) return;
+    let siteAnswered = 0, siteCorrect = 0, logAnswered = 0, logCorrect = 0, fixedFromLog = 0;
+    for (const meta of state.index) {
+      if (!meta.available) continue;
+      const exam = state.exams && state.exams[meta.slug];
+      if (!exam) continue;
+      const siteSel = (loadProgress(meta.slug).selections) || {};
+      const logSel  = (loadLogTest(meta.slug).selections)  || {};
+      for (const q of exam.questions) {
+        const sChosen = siteSel[q.number];
+        if (sChosen && q.answer) {
+          siteAnswered++;
+          if (sChosen === q.answer) siteCorrect++;
+        }
+        const lChosen = logSel[q.number];
+        if (lChosen && q.answer) {
+          logAnswered++;
+          if (lChosen === q.answer) logCorrect++;
+          if (lChosen !== q.answer && sChosen && sChosen === q.answer) fixedFromLog++;
+        }
+      }
+    }
+    const testsCompleted = (() => {
+      try { return JSON.parse(localStorage.getItem(`deca-imce:user:${state.user}:testsCompleted`) || "[]"); }
+      catch { return []; }
+    })();
+    const streakInfo = (typeof loadStreak === "function") ? loadStreak() : null;
+    const payload = computeLeaderboardPayload({
+      siteAnswered, siteCorrect, logAnswered, logCorrect,
+      testsCompletedCount: (testsCompleted && testsCompleted.length) || 0,
+      wrongsFixed: fixedFromLog,
+      streakCurrent: streakInfo && streakInfo.current ? streakInfo.current : 0,
+    });
+    await reportLeaderboard(payload);
+  } catch (e) { /* silent — best-effort live push */ }
 }
 
 // Call when the user answers a question on any site page (exam or study).
@@ -3008,8 +3064,12 @@ async function renderStats() {
     wrongsFixed: fixedFromLog,
     streakCurrent: streakInfo && streakInfo.current ? streakInfo.current : 0,
   });
-  reportLeaderboard(payload);
-  if (sub === "leaderboard") hydrateLeaderboard(payload);
+  // Push first, THEN hydrate — otherwise the board snapshot we read from
+  // Firestore races the put and the user sees stale numbers.
+  (async () => {
+    try { await reportLeaderboard(payload); } catch {}
+    if (sub === "leaderboard") hydrateLeaderboard(payload);
+  })();
 }
 
 // ---- Starting-point view (log-imported data + pasted codes) ----
@@ -5315,7 +5375,6 @@ async function renderLeaderboardPage() {
     wrongsFixed: fixedFromLog,
     streakCurrent: streakInfo && streakInfo.current ? streakInfo.current : 0,
   });
-  reportLeaderboard(payload);
 
   app.innerHTML = `
     <section class="leaderboard-page">
@@ -5326,6 +5385,11 @@ async function renderLeaderboardPage() {
       ${renderStatsLeaderboard(payload)}
     </section>
   `;
+  // CRITICAL: await the push before hydrating. Otherwise fetchLeaderboard()
+  // races the put and we render stale data — the user's 27 new answers
+  // land in Firestore a half-second after the board snapshot is read,
+  // so the daily/weekly/monthly columns show yesterday's numbers.
+  try { await reportLeaderboard(payload); } catch {}
   hydrateLeaderboard(payload);
 }
 
