@@ -149,6 +149,10 @@ function wireChrome() {
   document.getElementById("nav-home").addEventListener("click", () => { location.hash = "#/"; });
   document.getElementById("nav-stats").addEventListener("click", () => { location.hash = "#/stats"; });
   document.getElementById("nav-study").addEventListener("click", () => { location.hash = "#/study"; });
+  const lbBtn = document.getElementById("nav-leaderboard");
+  if (lbBtn) lbBtn.addEventListener("click", () => { location.hash = "#/leaderboard"; });
+  const qbBtn = document.getElementById("nav-qbank");
+  if (qbBtn) qbBtn.addEventListener("click", () => { location.hash = "#/qbank"; });
   document.getElementById("login-btn").addEventListener("click", openLoginModal);
 
   // Modal close + submit.
@@ -179,6 +183,10 @@ async function render() {
     return;
   } else if (route === "countdown") {
     renderCountdown();
+  } else if (route === "leaderboard") {
+    await renderLeaderboardPage();
+  } else if (route === "qbank") {
+    await renderQuestionBank();
   } else {
     // Welcome page is no longer auto-shown. The React landing at :5173 is the
     // canonical intro; arriving at the vanilla app means the user already
@@ -1377,9 +1385,13 @@ async function maybeImportSeed(username) {
           // Clean up logTest entries for slugs that used to be in the seed but
           // were removed (e.g. state-2/state-3 which had no answer keys and
           // were showing misleading 0% scores).
-          const DROPPED_SLUGS = { aryan: ["state-2", "state-3"] };
-          for (const slug of (DROPPED_SLUGS[username] || [])) {
+          // state-2 / state-3 were removed site-wide (no answer keys available),
+          // so every user's seed should also drop any stale logTest entries for them.
+          const GLOBAL_DROPPED = ["state-2", "state-3"];
+          const DROPPED_SLUGS = { aryan: [...GLOBAL_DROPPED], rohit: [...GLOBAL_DROPPED], shreyas: [...GLOBAL_DROPPED] };
+          for (const slug of (DROPPED_SLUGS[username] || GLOBAL_DROPPED)) {
             localStorage.removeItem(`deca-imce:user:${username}:logTest:${slug}`);
+            localStorage.removeItem(`deca-imce:user:${username}:progress:${slug}`);
           }
           for (const [slug, qs] of Object.entries(seed)) {
             // Write to a SEPARATE bucket ("logTest"), not the site's progress bucket.
@@ -2878,7 +2890,6 @@ async function renderStats() {
       <button class="${sub === "start" ? "active" : ""}" data-stats-sub="start">Starting Point <span class="count">${logAnswered}</span></button>
       <button class="${sub === "site"  ? "active" : ""}" data-stats-sub="site">Site Progress <span class="count">${siteAnswered}</span></button>
       <button class="${sub === "tests" ? "active" : ""}" data-stats-sub="tests">Tests Completed <span class="count">${testsCompleted.length}</span></button>
-      <button class="${sub === "leaderboard" ? "active" : ""}" data-stats-sub="leaderboard">Leaderboard</button>
     </div>
   `;
 
@@ -2892,7 +2903,9 @@ async function renderStats() {
   } else if (sub === "tests") {
     body = renderStatsTests(testsCompleted);
   } else if (sub === "leaderboard") {
-    body = renderStatsLeaderboard();
+    // Leaderboard is now a top-level route — redirect old links there.
+    location.hash = "#/leaderboard";
+    return;
   } else {
     body = renderStatsStart({
       logAnswered, logCorrect, logWrong, manualWrong,
@@ -3338,7 +3351,7 @@ async function renderStudy(prefix, _qnum) {
       resetAllBtn.addEventListener("click", () => {
         const pfx = resetAllBtn.getAttribute("data-prefix");
         const name = (byTopic[pfx] && byTopic[pfx].name) || pfx;
-        if (!confirm(`Reset every answer under "${name}"?\n\nThis clears your picks on questions in this topic — the wrong ones will still appear here (since the original log-test wrongs are removed too, they'll drop off the list).\n\nYou can't undo this.`)) return;
+        if (!confirm(`Reset your picks on every "${name}" question?\n\nThis only deselects the answers you've clicked on this site so you can re-attempt. Your original test logs are NEVER touched — every question you missed in those logs will still be here.`)) return;
         const n = clearStudyAnswersForPrefix(pfx);
         render();
         if (typeof toast === "function") toast(`Reset ${n} answer${n === 1 ? "" : "s"}.`);
@@ -4412,9 +4425,10 @@ function setStudyState(slug, qNum, patch) {
   try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
 
   // Mirror an actual answer (chosen letter) into the main `progress:` bucket
-  // so Study-tab / Review-wrongs attempts count toward Site-progress stats.
-  // We only mirror when a letter is picked (not for reveals) and we never
-  // overwrite an existing selection — first answer wins to preserve history.
+  // so Study-tab / Review-wrongs attempts count toward Site-progress stats
+  // (today counter, weekly counter, accuracy, streak — all of it). We ALWAYS
+  // overwrite both the selection and the timestamp so re-attempting a
+  // previously-answered question still shows up in "today's activity".
   if (patch && patch.chosen) {
     try {
       const pKey = progressKey(slug);
@@ -4423,19 +4437,28 @@ function setStudyState(slug, qNum, patch) {
         catch { return {}; }
       })();
       const selections = prev.selections || {};
-      if (!selections[qNum]) {
-        selections[qNum] = patch.chosen;
-        const timestamps = prev.timestamps || {};
-        timestamps[qNum] = patch.answeredAt || Date.now();
-        const revealed = prev.revealed || {};
-        revealed[qNum] = true; // study mode always reveals after answering
-        localStorage.setItem(pKey, JSON.stringify({
-          ...prev,
-          selections,
-          revealed,
-          timestamps,
-        }));
-      }
+      const timestamps = prev.timestamps || {};
+      const revealed = prev.revealed || {};
+      const now = patch.answeredAt || Date.now();
+      selections[qNum] = patch.chosen;
+      timestamps[qNum] = now;
+      revealed[qNum] = true;
+      localStorage.setItem(pKey, JSON.stringify({
+        ...prev, selections, revealed, timestamps,
+      }));
+      // Also bump the per-day activity map so the leaderboard's
+      // today/week/month windows pick this answer up.
+      try {
+        // `recordActivityDay` increments answered (+1) and correct (+1 if right)
+        // for today's date. Only record on-the-day write; no backdating.
+        if (typeof recordAnswerActivity === "function") {
+          const exam = state.exams && state.exams[slug];
+          const q = exam && exam.questions.find(x => x.number === Number(qNum));
+          if (q && q.answer) {
+            recordAnswerActivity(patch.chosen === q.answer);
+          }
+        }
+      } catch {}
     } catch { /* quota or parse — ignore */ }
   }
 }
@@ -4856,6 +4879,338 @@ function renderStatsLeaderboard(selfPayload) {
       <div id="lb-body"><div class="empty" style="padding:24px">Loading rankings…</div></div>
     </div>
   `;
+}
+
+// ================================================================
+//                          QUESTION BANK
+// ================================================================
+// A combined pool of every question across every exam, with filters for
+// topic, exam type, answer status, etc. Uses renderStudyQuestionCard so
+// answers count toward the same progress mirror as the Study tab.
+
+function qbankClassify(slug) {
+  if (/^icdc/i.test(slug)) return "icdc";
+  if (/^state/i.test(slug)) return "state";
+  if (/^sample/i.test(slug)) return "sample";
+  return "other";
+}
+
+function qbankDefaultFilters() {
+  return {
+    topics: [],          // array of topic prefixes, empty = all
+    examTypes: [],       // array of "icdc" | "state" | "sample" | "other", empty = all
+    status: "all",       // "all" | "unanswered" | "correct" | "wrong"
+    randomize: false,
+    showPrevious: true,
+    limit: 50,           // page size
+  };
+}
+
+// Seeded shuffle so "randomize" stays stable across re-renders within a session.
+function qbankShuffle(arr, seed) {
+  const out = arr.slice();
+  let s = seed || 1;
+  for (let i = out.length - 1; i > 0; i--) {
+    s = (s * 9301 + 49297) % 233280;
+    const j = Math.floor((s / 233280) * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+async function renderQuestionBank() {
+  app.innerHTML = `<div class="empty">Loading question bank…</div>`;
+
+  // Load every available exam so we can pool every question.
+  const slugs = state.index.filter(e => e.available).map(e => e.slug);
+  await Promise.all(slugs.map(s => getExam(s).catch(() => null)));
+
+  // Persist filter state on `state` so tab switches don't wipe it.
+  if (!state.qbank) state.qbank = qbankDefaultFilters();
+  const f = state.qbank;
+
+  // Build the full pool.
+  const pool = [];
+  const topicCounts = {};
+  const typeCounts = { icdc: 0, state: 0, sample: 0, other: 0 };
+  for (const meta of state.index) {
+    if (!meta.available) continue;
+    const exam = state.exams[meta.slug];
+    if (!exam) continue;
+    const examType = qbankClassify(meta.slug);
+    typeCounts[examType] = (typeCounts[examType] || 0) + exam.questions.length;
+    for (const q of exam.questions) {
+      const prefix = q.code ? q.code.split(":")[0] : "_OTHER";
+      topicCounts[prefix] = (topicCounts[prefix] || 0) + 1;
+      pool.push({
+        slug: meta.slug,
+        title: meta.title,
+        number: q.number,
+        code: q.code,
+        prefix,
+        examType,
+      });
+    }
+  }
+
+  // Apply filters.
+  const filtered = pool.filter(item => {
+    if (f.examTypes.length && !f.examTypes.includes(item.examType)) return false;
+    if (f.topics.length && !f.topics.includes(item.prefix)) return false;
+    if (f.status !== "all") {
+      const siteSel = (loadProgress(item.slug).selections) || {};
+      const logSel  = (loadLogTest(item.slug).selections)  || {};
+      const effective = siteSel[item.number] || logSel[item.number];
+      const exam = state.exams[item.slug];
+      const q = exam && exam.questions.find(x => x.number === item.number);
+      const correct = q && q.answer;
+      if (f.status === "unanswered" && effective) return false;
+      if (f.status === "correct" && (!effective || effective !== correct)) return false;
+      if (f.status === "wrong" && (!effective || effective === correct)) return false;
+    }
+    return true;
+  });
+
+  const ordered = f.randomize ? qbankShuffle(filtered, 42) : filtered;
+  const paged = ordered.slice(0, f.limit);
+
+  // Build topic chip options sorted by count desc.
+  const topicsSorted = Object.keys(topicCounts)
+    .filter(p => p !== "_OTHER" || topicCounts[p] > 0)
+    .sort((a, b) => {
+      if (a === "_OTHER") return 1;
+      if (b === "_OTHER") return -1;
+      return (topicCounts[b] || 0) - (topicCounts[a] || 0);
+    });
+
+  const topicChips = topicsSorted.map(p => {
+    const name = (TOPIC_GUIDES[p] && TOPIC_GUIDES[p].name) || (p === "_OTHER" ? "Other / Uncoded" : p);
+    const active = f.topics.includes(p);
+    return `<button class="qb-chip ${active ? "active" : ""}" data-topic="${escapeHtml(p)}">
+      <span class="qb-chip-code">${escapeHtml(p)}</span>
+      <span class="qb-chip-name">${escapeHtml(name)}</span>
+      <span class="qb-chip-count">${topicCounts[p] || 0}</span>
+    </button>`;
+  }).join("");
+
+  const typeChips = [
+    { k: "icdc", name: "ICDC" },
+    { k: "state", name: "State" },
+    { k: "sample", name: "Sample" },
+    { k: "other", name: "Other" },
+  ].filter(t => typeCounts[t.k]).map(t => {
+    const active = f.examTypes.includes(t.k);
+    return `<button class="qb-chip ${active ? "active" : ""}" data-type="${t.k}">
+      <span class="qb-chip-name">${t.name}</span>
+      <span class="qb-chip-count">${typeCounts[t.k]}</span>
+    </button>`;
+  }).join("");
+
+  const statusChips = [
+    { k: "all", name: "All" },
+    { k: "unanswered", name: "Unanswered" },
+    { k: "correct", name: "Correct" },
+    { k: "wrong", name: "Wrong" },
+  ].map(s => `<button class="qb-chip ${f.status === s.k ? "active" : ""}" data-status="${s.k}">
+    <span class="qb-chip-name">${s.name}</span>
+  </button>`).join("");
+
+  const list = paged.length === 0
+    ? `<div class="empty" style="padding:40px">No questions match these filters. Loosen a filter above.</div>`
+    : `<div class="q-list">${paged.map(item => renderStudyQuestionCard(item, { showPrevious: f.showPrevious })).join("")}</div>`;
+
+  app.innerHTML = `
+    <section class="qbank-page">
+      <div class="qbank-head">
+        <div class="qbank-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16v16H4z"/><path d="M9 9h6"/><path d="M9 13h6"/><path d="M9 17h3"/>
+          </svg>
+        </div>
+        <div>
+          <h2>Question Bank</h2>
+          <p class="hint">Every question across every exam in one pool. Filter by topic, exam type, or status. Answers count toward your stats just like a regular test.</p>
+        </div>
+      </div>
+
+      <div class="qbank-toggle-row">
+        <label class="qb-toggle">
+          <input type="checkbox" id="qb-rand" ${f.randomize ? "checked" : ""} />
+          <span class="qb-toggle-label">🎲 Randomize order</span>
+        </label>
+        <label class="qb-toggle">
+          <input type="checkbox" id="qb-prev" ${f.showPrevious ? "checked" : ""} />
+          <span class="qb-toggle-label">🗂️ Show previous attempts</span>
+        </label>
+        <div class="qbank-count">
+          ${filtered.length.toLocaleString()} question${filtered.length === 1 ? "" : "s"}
+          ${paged.length < filtered.length ? ` <span class="hint" style="margin-left:6px">(showing first ${paged.length})</span>` : ""}
+        </div>
+      </div>
+
+      <div class="qbank-filters">
+        <div class="qbank-filter-group">
+          <div class="qbank-filter-label">Exam type</div>
+          <div class="qb-chips">${typeChips || '<span class="hint">No exams loaded.</span>'}</div>
+        </div>
+        <div class="qbank-filter-group">
+          <div class="qbank-filter-label">Answer status</div>
+          <div class="qb-chips">${statusChips}</div>
+        </div>
+        <div class="qbank-filter-group">
+          <div class="qbank-filter-label">Topic <span class="hint">(click to toggle multiple)</span></div>
+          <div class="qb-chips qb-chips-topics">${topicChips}</div>
+        </div>
+        ${(f.topics.length || f.examTypes.length || f.status !== "all") ? `<button class="btn ghost qb-clear" id="qb-clear">Clear filters</button>` : ""}
+      </div>
+
+      <div class="qbank-list">${list}</div>
+
+      ${paged.length < filtered.length ? `
+        <div class="qbank-loadmore-wrap">
+          <button class="btn" id="qb-more">Load more questions</button>
+        </div>
+      ` : ""}
+    </section>
+  `;
+
+  // ---- Wire filter interactions ----
+  const rerender = () => renderQuestionBank();
+
+  document.querySelectorAll(".qb-chip[data-topic]").forEach(el => {
+    el.addEventListener("click", () => {
+      const p = el.getAttribute("data-topic");
+      const idx = f.topics.indexOf(p);
+      if (idx >= 0) f.topics.splice(idx, 1);
+      else f.topics.push(p);
+      rerender();
+    });
+  });
+  document.querySelectorAll(".qb-chip[data-type]").forEach(el => {
+    el.addEventListener("click", () => {
+      const t = el.getAttribute("data-type");
+      const idx = f.examTypes.indexOf(t);
+      if (idx >= 0) f.examTypes.splice(idx, 1);
+      else f.examTypes.push(t);
+      rerender();
+    });
+  });
+  document.querySelectorAll(".qb-chip[data-status]").forEach(el => {
+    el.addEventListener("click", () => {
+      f.status = el.getAttribute("data-status");
+      rerender();
+    });
+  });
+  const randEl = document.getElementById("qb-rand");
+  if (randEl) randEl.addEventListener("change", () => { f.randomize = randEl.checked; rerender(); });
+  const prevEl = document.getElementById("qb-prev");
+  if (prevEl) prevEl.addEventListener("change", () => { f.showPrevious = prevEl.checked; rerender(); });
+  const clearBtn = document.getElementById("qb-clear");
+  if (clearBtn) clearBtn.addEventListener("click", () => {
+    state.qbank = qbankDefaultFilters();
+    rerender();
+  });
+  const moreBtn = document.getElementById("qb-more");
+  if (moreBtn) moreBtn.addEventListener("click", () => {
+    f.limit = (f.limit || 50) + 50;
+    rerender();
+  });
+
+  // ---- Wire question cards (answer + reveal + reset) ----
+  document.querySelectorAll(".qbank-list .study-q .opt").forEach(el => {
+    el.addEventListener("click", () => {
+      const qNum = Number(el.getAttribute("data-q"));
+      const slug = el.getAttribute("data-slug");
+      const letter = el.getAttribute("data-letter");
+      setStudyState(slug, qNum, { chosen: letter, answeredAt: Date.now() });
+      updateStudyQuestion(slug, qNum);
+    });
+  });
+  document.querySelectorAll(".qbank-list .study-q .reveal-one").forEach(el => {
+    el.addEventListener("click", () => {
+      const qNum = Number(el.getAttribute("data-q"));
+      const slug = el.getAttribute("data-slug");
+      const s = getStudyState(slug, qNum);
+      setStudyState(slug, qNum, { revealed: !s.revealed });
+      updateStudyQuestion(slug, qNum);
+    });
+  });
+  document.querySelectorAll(".qbank-list .study-q").forEach(el => {
+    const qNum = Number(el.getAttribute("data-q"));
+    const slug = el.getAttribute("data-slug");
+    updateStudyQuestion(slug, qNum);
+  });
+}
+
+// Top-level Leaderboard route — same UI as the stats sub-tab, but on its
+// own route (#/leaderboard) with a dedicated nav button. Computes the
+// self-payload inline from localStorage so we can push/hydrate without
+// needing renderStats() to run.
+async function renderLeaderboardPage() {
+  if (!state.user) {
+    app.innerHTML = `
+      <section class="panel" style="max-width:560px;margin:40px auto;text-align:center">
+        <h2>Leaderboard</h2>
+        <p class="hint">Log in to see rankings and show up on the board.</p>
+        <button class="btn primary" id="lb-login">Log in</button>
+      </section>
+    `;
+    const btn = document.getElementById("lb-login");
+    if (btn) btn.addEventListener("click", openLoginModal);
+    return;
+  }
+  app.innerHTML = `<div class="empty">Loading leaderboard…</div>`;
+
+  // Load every available exam so we can compute the user's payload.
+  const slugs = state.index.filter(e => e.available).map(e => e.slug);
+  await Promise.all(slugs.map(s => getExam(s).catch(() => null)));
+
+  let siteAnswered = 0, siteCorrect = 0, logAnswered = 0, logCorrect = 0;
+  let fixedFromLog = 0;
+  const testsCompleted = (() => {
+    try { return JSON.parse(localStorage.getItem(`deca-imce:user:${state.user}:testsCompleted`) || "[]"); }
+    catch { return []; }
+  })();
+  for (const meta of state.index) {
+    if (!meta.available) continue;
+    const exam = state.exams[meta.slug];
+    if (!exam) continue;
+    const siteSel = (loadProgress(meta.slug).selections) || {};
+    const logSel  = (loadLogTest(meta.slug).selections)  || {};
+    for (const q of exam.questions) {
+      const sChosen = siteSel[q.number];
+      if (sChosen && q.answer) {
+        siteAnswered++;
+        if (sChosen === q.answer) siteCorrect++;
+      }
+      const lChosen = logSel[q.number];
+      if (lChosen && q.answer) {
+        logAnswered++;
+        if (lChosen === q.answer) logCorrect++;
+        // "wrong in log, correct on site" — counts as a fixed wrong
+        if (lChosen !== q.answer && sChosen && sChosen === q.answer) fixedFromLog++;
+      }
+    }
+  }
+  const streakInfo = (typeof loadStreak === "function") ? loadStreak() : null;
+  const payload = computeLeaderboardPayload({
+    siteAnswered, siteCorrect, logAnswered, logCorrect,
+    testsCompletedCount: (testsCompleted && testsCompleted.length) || 0,
+    wrongsFixed: fixedFromLog,
+    streakCurrent: streakInfo && streakInfo.current ? streakInfo.current : 0,
+  });
+  reportLeaderboard(payload);
+
+  app.innerHTML = `
+    <section class="leaderboard-page">
+      <div class="stats-head" style="margin-bottom:14px">
+        <h2>Leaderboard</h2>
+        <p class="hint">Live rankings across everyone studying. You're logged in as <strong>${escapeHtml(state.user)}</strong>.</p>
+      </div>
+      ${renderStatsLeaderboard(payload)}
+    </section>
+  `;
+  hydrateLeaderboard(payload);
 }
 
 // Compute window-filtered ranking rows. For time windows, we derive

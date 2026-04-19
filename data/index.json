@@ -252,24 +252,6 @@
     "json": "data/state-1.json"
   },
   {
-    "slug": "state-2",
-    "title": "State Exam #2",
-    "file": "Marketing Exam - State #2.pdf",
-    "question_count": 100,
-    "answered_count": 0,
-    "available": true,
-    "json": "data/state-2.json"
-  },
-  {
-    "slug": "state-3",
-    "title": "State Exam #3",
-    "file": "Marketing Exam - State #3.pdf",
-    "question_count": 100,
-    "answered_count": 0,
-    "available": true,
-    "json": "data/state-3.json"
-  },
-  {
     "slug": "state-4",
     "title": "State Exam #4",
     "file": "Marketing Exam - State #4.pdf",
