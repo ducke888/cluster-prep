@@ -1,7 +1,7 @@
 {
   "file": "2010 HS ICDC Test and Key (Marketing Cluster).pdf",
-  "question_count": 99,
-  "answered_count": 99,
+  "question_count": 100,
+  "answered_count": 100,
   "questions": [
     {
       "number": 1,
@@ -1425,6 +1425,22 @@
       "sources": [
         "SOURCE: PR:101",
         "SOURCE: Arens, W.F. (2004). Contemporary advertising (9th ed.) [pp. 62-65]. New York: McGraw-Hill"
+      ]
+    },
+    {
+      "number": 90,
+      "question": "Which of the following is likely to happen when a business doesn't have an adequate supply of the products it selects to promote:",
+      "options": {
+        "A": "Customers will think they have been cheated.",
+        "B": "The business may increase its profits.",
+        "C": "The business will enhance its image.",
+        "D": "Customers may ignore future promotions."
+      },
+      "answer": "D",
+      "explanation": "Customers may ignore future promotions. Customers who cannot buy products that are being promoted because the business did not make sure it had adequate stock to back up the promotion may lose faith in the business. The next time customers see one of the company's promotions, they may not bother to respond. Customers should not think they have been cheated under these circumstances. The business's image will be damaged rather than enhanced, and its profits could decrease.",
+      "sources": [
+        "SOURCE: PR:076",
+        "SOURCE: Kotler, P., & Armstrong, G. (2008). Principles of marketing (12th ed.) [pp. 10-11, 12-17, 44-45]. Upper Saddle River, NJ: Prentice-Hall."
       ]
     },
     {

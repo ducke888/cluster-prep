@@ -3,7 +3,7 @@
 Study app for DECA Marketing Cluster Exam (ICDC prep).
 
 ## Layout
-- **Vanilla app** (main): `index.html` + `app.js` (~2100 lines) + `styles.css`. Served by `python3 -m http.server 8765`.
+- **Vanilla app** (main): `app.html` + `app.js` (~2100 lines) + `styles.css`. Served by `node unified-serve.js` on :8765 locally (was Python http.server — swapped because it didn't send `Cache-Control: no-cache` on HTML, so browsers cached stale HTML and query-string `?v=` cache-busts looked broken).
 - **React landing** (intro page only): `app-react/` — Vite + React + TS + Tailwind v4 + shadcn-style. `npm run dev` on 5173. Entry: `src/App.tsx` → `ShaderAnimation` + `CinematicHero`. CTAs redirect to vanilla app.
 - **Data**: `data/*.json` (41 parsed exams + `seed-aryan.json`, `seed-rohit.json`, `index.json`).
 - **Scripts**: `scripts/parse_exams.py`, `parse_more_exams.py`, `parse_rohit_logs.py`, `topic_concept_scan.py`.

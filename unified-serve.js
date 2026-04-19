@@ -73,10 +73,23 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(404); return res.end("not found");
     }
     const ext = path.extname(abs).toLowerCase();
-    res.writeHead(200, {
+    // HTML entry points must never be stale — otherwise the browser keeps
+    // loading an old HTML file that references old ?v= cache-bust strings,
+    // and all our CSS/JS updates appear to "not work" in that browser.
+    // CSS/JS/images can be cached aggressively because every reference to
+    // them carries a versioned query string we bump on each release.
+    const isHtml = ext === ".html";
+    const headers = {
       "Content-Type": MIME[ext] || "application/octet-stream",
-      "Cache-Control": ext === ".html" ? "no-cache" : "public, max-age=3600",
-    });
+    };
+    if (isHtml) {
+      headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
+      headers["Pragma"] = "no-cache";
+      headers["Expires"] = "0";
+    } else {
+      headers["Cache-Control"] = "public, max-age=3600";
+    }
+    res.writeHead(200, headers);
     if (req.method === "HEAD") return res.end();
     fs.createReadStream(abs).pipe(res);
   });

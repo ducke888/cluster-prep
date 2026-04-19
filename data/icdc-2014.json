@@ -1,7 +1,7 @@
 {
   "file": "2014 Marketing.pdf",
-  "question_count": 99,
-  "answered_count": 99,
+  "question_count": 100,
+  "answered_count": 100,
   "questions": [
     {
       "number": 1,
@@ -1073,6 +1073,22 @@
       "sources": [
         "SOURCE:\t PI:017",
         "SOURCE:\t Kurtz, D. (2013). Contemporary marketing: 2013 edition (pp. 607-609, 652-653). Mason, OH:"
+      ]
+    },
+    {
+      "number": 68,
+      "question": "A business is most likely to set sales-oriented pricing objectives when its focus is to",
+      "options": {
+        "A": "improve its cash flow.",
+        "B": "be more competitive in the marketplace.",
+        "C": "earn a return on investment.",
+        "D": "survive during short-term financial problems."
+      },
+      "answer": "B",
+      "explanation": "Be more competitive in the marketplace. The purpose of sales-oriented pricing objectives is to increase the total amount of income that it generates from sales. To do this, a business may charge lower prices to increase sales volume, or it may charge higher prices to increase the dollar value of its sales. Businesses often set sales-oriented pricing objectives when they want to be more competitive in the marketplace. Businesses set profit-oriented pricing objectives when they want to improve their cash flow, earn a return on investment, or survive when they experience financial problems.",
+      "sources": [
+        "SOURCE:\t PI:002",
+        "SOURCE:\t PI LAP 3—Make Cents (Factors Affecting Selling Price)"
       ]
     },
     {

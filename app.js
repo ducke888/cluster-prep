@@ -1789,24 +1789,8 @@ function renderCountdown() {
         <div class="countdown-target">
           Target: Sun, Apr 26 2026 · 8:00 AM EDT
         </div>
-        <div class="counter-loader" aria-hidden="true">
-          <div class="cl-grid">
-            <div id="cl-div1" class="cl-cell"></div>
-            <div id="cl-div2" class="cl-cell"></div>
-            <div id="cl-div3" class="cl-cell"></div>
-            <div id="cl-div4" class="cl-cell"></div>
-            <div id="cl-div5" class="cl-cell cl-hidden"></div>
-            <div id="cl-div6" class="cl-cell"></div>
-            <div id="cl-div7" class="cl-cell"></div>
-            <div id="cl-div8" class="cl-cell"></div>
-            <div id="cl-div9" class="cl-cell"></div>
-            <div id="cl-div10" class="cl-cell"></div>
-            <div id="cl-div11" class="cl-cell cl-hidden"></div>
-            <div id="cl-div12" class="cl-cell"></div>
-            <div id="cl-div13" class="cl-cell"></div>
-            <div id="cl-div14" class="cl-cell"></div>
-            <div id="cl-div15" class="cl-cell"></div>
-          </div>
+        <div class="word-loader" aria-hidden="true">
+          <div class="wl-grid" id="wl-grid"></div>
         </div>
         <div class="countdown-cta-row">
           <a href="#/" class="btn primary">Back to tests</a>
@@ -1840,6 +1824,89 @@ function renderCountdown() {
       sEl.classList.add("cd-tick");
     }
   }, 1000);
+
+  // Kick off the DECA ↔ ICDC word-morph loader.
+  startWordLoader();
+}
+
+// ================================================================
+//   Word-morph loader: cycles DECA → ICDC → DECA using a 3×5
+//   pixel font in a shared grid. Each letter is 3 cols wide with
+//   a 1-col gap, so a 4-letter word occupies 15 cols × 5 rows.
+//   Cells fade in/out via CSS transition when their on/off class
+//   flips each frame.
+// ================================================================
+const WL_FONT = {
+  D: ["110", "101", "101", "101", "110"],
+  E: ["111", "100", "110", "100", "111"],
+  C: ["111", "100", "100", "100", "111"],
+  A: ["010", "101", "111", "101", "101"],
+  I: ["111", "010", "010", "010", "111"],
+};
+const WL_WORDS = ["DECA", "ICDC"];
+const WL_ROWS = 5;
+const WL_LETTER_W = 3;
+const WL_GAP = 1;
+let _wlTickId = null;
+let _wlIdx = 0;
+
+function wordToGrid(word) {
+  // Returns a flat array of "1"/"0" strings, left-to-right, top-to-bottom.
+  const cols = word.length * WL_LETTER_W + (word.length - 1) * WL_GAP;
+  const out = new Array(cols * WL_ROWS).fill("0");
+  for (let li = 0; li < word.length; li++) {
+    const glyph = WL_FONT[word[li]];
+    if (!glyph) continue;
+    const colOffset = li * (WL_LETTER_W + WL_GAP);
+    for (let r = 0; r < WL_ROWS; r++) {
+      for (let c = 0; c < WL_LETTER_W; c++) {
+        if (glyph[r][c] === "1") {
+          out[r * cols + (colOffset + c)] = "1";
+        }
+      }
+    }
+  }
+  return { cells: out, cols };
+}
+
+function startWordLoader() {
+  const host = document.getElementById("wl-grid");
+  if (!host) return;
+  // Build cells on first word so grid size is right.
+  const first = wordToGrid(WL_WORDS[0]);
+  host.style.setProperty("--wl-cols", String(first.cols));
+  host.innerHTML = first.cells
+    .map((v, i) => `<span class="wl-cell ${v === "1" ? "on" : ""}" data-i="${i}"></span>`)
+    .join("");
+  _wlIdx = 0;
+  if (_wlTickId) clearInterval(_wlTickId);
+  // 1.8s per word — long enough to read, short enough to feel alive.
+  _wlTickId = setInterval(() => {
+    if (!document.querySelector(".countdown-page")) {
+      clearInterval(_wlTickId);
+      _wlTickId = null;
+      return;
+    }
+    _wlIdx = (_wlIdx + 1) % WL_WORDS.length;
+    const frame = wordToGrid(WL_WORDS[_wlIdx]);
+    const cells = host.querySelectorAll(".wl-cell");
+    // If column count changed (not today, but future-proof), rebuild.
+    if (cells.length !== frame.cells.length) {
+      host.style.setProperty("--wl-cols", String(frame.cols));
+      host.innerHTML = frame.cells
+        .map((v, i) => `<span class="wl-cell ${v === "1" ? "on" : ""}" data-i="${i}"></span>`)
+        .join("");
+      return;
+    }
+    // Stagger the on/off flip by column so the letters feel like they
+    // "sweep" into the next word instead of snapping all at once.
+    cells.forEach((el, i) => {
+      const col = i % frame.cols;
+      const on = frame.cells[i] === "1";
+      const delay = col * 35;
+      setTimeout(() => el.classList.toggle("on", on), delay);
+    });
+  }, 1800);
 }
 // Tick the countdown once a minute so the UI stays fresh without spamming.
 setInterval(() => { refreshCountdownUI(); }, 60000);
@@ -3209,12 +3276,22 @@ async function renderStudy(prefix, _qnum) {
   const availableSlugs = state.index.filter(e => e.available).map(e => e.slug);
   await Promise.all(availableSlugs.map(s => getExam(s).catch(() => null)));
 
-  // Aggregate: per topic prefix → {wrong, total, wrongQs, allQs}
+  // Aggregate: per topic prefix we track TWO counts.
+  //   wrongCount    = historical "most missed" count — built from the original
+  //                   LOG TEST wrongs only, so re-doing a question correctly
+  //                   on the site does NOT decrement it. This is what drives
+  //                   the sidebar sort order and the "Most missed topic" KPI —
+  //                   you missed it, that's history; the ranking shouldn't
+  //                   reshuffle just because you've since fixed some.
+  //   wrongQs       = the list of questions STILL effectively wrong (original
+  //                   log-test pick if user hasn't retried, their site pick if
+  //                   they have). This is what the "Review wrongs" tab shows
+  //                   so the "N to review" counter ticks down as they nail
+  //                   questions one by one.
   const byTopic = {};
   for (const code of Object.keys(TOPIC_GUIDES)) {
     byTopic[code] = { prefix: code, name: TOPIC_GUIDES[code].name, wrongCount: 0, total: 0, wrongQs: [], allQs: [] };
   }
-  // "Other" bucket for uncategorized
   byTopic._OTHER = { prefix: "_OTHER", name: "Other / Uncoded", wrongCount: 0, total: 0, wrongQs: [], allQs: [] };
 
   for (const meta of state.index) {
@@ -3228,12 +3305,20 @@ async function renderStudy(prefix, _qnum) {
       const bucket = byTopic[codePrefix] || byTopic._OTHER;
       bucket.total++;
       bucket.allQs.push({ slug: meta.slug, title: meta.title, number: q.number, code: q.code });
+      // "wrongCount" = LOG test wrong only — this is the historical counter
+      // that the sidebar shows and drives the "most missed" ranking. Never
+      // decrements when the user re-does a question.
+      const logChosen = logSel[q.number];
+      if (logChosen && q.answer && logChosen !== q.answer) {
+        bucket.wrongCount++;
+      }
+      // "wrongQs" = currently-effective wrong (what still needs review). If
+      // they've retried on-site and got it right, it drops off. If they
+      // retried but still missed, it stays.
       const siteChosen = siteSel[q.number];
-      const logChosen  = !siteChosen ? logSel[q.number] : null;
       const effective = siteChosen || logChosen;
       const source = siteChosen ? "site" : (logChosen ? "log" : null);
       if (effective && q.answer && effective !== q.answer) {
-        bucket.wrongCount++;
         bucket.wrongQs.push({
           slug: meta.slug, title: meta.title, number: q.number, code: q.code,
           chosen: effective, correct: q.answer, source,
@@ -3241,14 +3326,18 @@ async function renderStudy(prefix, _qnum) {
       }
     }
   }
+  // "completed" = had log wrongs, now zero still effectively wrong.
+  for (const t of Object.values(byTopic)) {
+    t.completed = t.wrongCount > 0 && t.wrongQs.length === 0;
+  }
 
-  // Topic list sorted by wrongs desc, then by ICDC weight desc.
-  // Uncoded ("_OTHER") is ALWAYS pushed to the bottom regardless of count —
-  // we can't target specific codes there, so it's lower priority for studying.
+  // Topic list sorted by historical wrongCount desc, then by ICDC weight desc.
+  // We deliberately use wrongCount (not wrongQs.length) so the order is stable
+  // even as the user completes topics. Completed topics are still shown at
+  // their original rank but styled as completed (strikethrough + check).
   const topicList = Object.values(byTopic)
     .filter(t => t.prefix !== "_OTHER" || t.wrongCount > 0)
     .sort((a, b) => {
-      // Uncoded always last
       if (a.prefix === "_OTHER" && b.prefix !== "_OTHER") return 1;
       if (b.prefix === "_OTHER" && a.prefix !== "_OTHER") return -1;
       if (b.wrongCount !== a.wrongCount) return b.wrongCount - a.wrongCount;

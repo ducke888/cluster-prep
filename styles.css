@@ -36,27 +36,44 @@ html, body {
 a { color: var(--accent); }
 
 .topbar {
-  background: #fff;
+  background: var(--card);
   border-bottom: 1px solid var(--border);
-  display: flex;
+  /* Grid, not flex — grid tracks cannot wrap, they only shrink. Column 1
+     hugs the brand; column 2 (nav) takes the rest and scrolls if needed. */
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
-  padding: 14px 22px;
+  padding: 10px 18px;
   position: sticky;
   top: 0;
   z-index: 10;
   box-shadow: var(--shadow);
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 10px;
+  flex-wrap: nowrap;
+  min-height: 56px;
 }
+/* Brand must be allowed to shrink (and its h1/sub get ellipsis) so nav wins. */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+.brand > div { min-width: 0; overflow: hidden; }
+.brand h1 { font-size: 1.05rem; margin: 0; letter-spacing: .2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand .sub { margin: 2px 0 0; color: var(--muted); font-size: .8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.brand { display: flex; align-items: center; gap: 14px; }
-.brand h1 { font-size: 1.1rem; margin: 0; letter-spacing: .2px; }
-.brand .sub { margin: 2px 0 0; color: var(--muted); font-size: .82rem; }
-.logo-link { display: inline-flex; text-decoration: none; border-radius: 10px; }
+/* Subtitle goes first once viewport tightens — nav is the priority. */
+@media (max-width: 1400px) { .brand .sub { display: none; } }
+@media (max-width: 1050px) { .brand h1 { font-size: 1rem; } }
+@media (max-width: 760px)  { .brand h1 { display: none; } .topbar { padding: 10px 12px; gap: 8px; } }
+
+.logo-link { display: inline-flex; text-decoration: none; border-radius: 10px; flex-shrink: 0; }
 .logo-link:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
 .logo {
-  width: 40px; height: 40px;
+  width: 36px; height: 36px;
   display: block;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(124, 58, 237, .28);
@@ -67,44 +84,56 @@ a { color: var(--accent); }
 #nav {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
+  gap: 6px;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* old IE/Edge */
+  padding-bottom: 2px;
 }
+#nav::-webkit-scrollbar { display: none; }
+#nav > * { flex-shrink: 0; }
 
 .nav-btn {
   border: 1px solid var(--border);
-  background: #fff;
-  padding: 8px 14px;
+  background: var(--card-2);
+  padding: 6px 12px;
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
   color: var(--ink-2);
-  font-size: .92rem;
+  font-size: .86rem;
+  white-space: nowrap;
 }
-.nav-btn:hover { border-color: var(--ink-2); }
+.nav-btn:hover { border-color: var(--border-2); color: var(--ink); }
 .nav-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
-.nav-btn.login { background: var(--ink); color: #fff; border-color: var(--ink); }
-.nav-btn.login:hover { background: #000; }
+.nav-btn.login { background: var(--red); color: #fff; border-color: var(--red); }
+.nav-btn.login:hover { filter: brightness(1.1); }
 
 .auth-slot {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding-left: 10px;
-  margin-left: 4px;
+  gap: 6px;
+  padding-left: 8px;
+  margin-left: 2px;
   border-left: 1px solid var(--border);
 }
 .auth-slot.nologin { border-left: none; padding-left: 0; }
 .user-chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #eef3ff;
+  gap: 6px;
+  background: rgba(167, 139, 250, 0.12);
   color: var(--accent);
-  padding: 6px 10px;
+  padding: 5px 10px;
   border-radius: 999px;
   font-weight: 700;
-  font-size: .88rem;
+  font-size: .84rem;
+  white-space: nowrap;
 }
 .user-chip .avatar {
   width: 22px; height: 22px;
@@ -1137,7 +1166,8 @@ body { min-height: 100vh; background: var(--bg); }
 a { color: var(--red); text-decoration: none; }
 a:hover { color: var(--ink); }
 
-/* Top bar */
+/* Top bar — dark-theme overrides. Don't reset display/flex here; the
+   grid layout from the first .topbar rule must win. */
 .topbar {
   background: rgba(10,10,10,.8);
   backdrop-filter: saturate(180%) blur(12px);
@@ -1150,12 +1180,16 @@ a:hover { color: var(--ink); }
 
 /* Dark theme: keep the purple gradient logo as-is (no overrides). */
 
-/* Nav pill */
+/* Nav pill (minimal chrome — the pill lives inside the grid column
+   and must stay scrollable, not expand) */
 #nav {
   padding: 3px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 8px;
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  flex-wrap: nowrap !important;
 }
 .nav-btn {
   border: none;
@@ -2450,53 +2484,47 @@ main { max-width: 1100px; }
   justify-content: center;
 }
 
-/* ---- counter-loader grid (animated skyblue dots) ---- */
-.counter-loader {
+/* ---- word-morph loader (DECA ↔ ICDC in block letters) ----
+   Grid built in JS: 15 cols × 5 rows. Each cell is a small rounded
+   square that fades between on/off state when the word changes,
+   with a per-column delay so the transition feels like a sweep. */
+.word-loader {
   margin: 40px auto 0;
   display: flex; justify-content: center; align-items: center;
-  height: 180px;
+  min-height: 120px;
 }
-.counter-loader .cl-grid {
+.word-loader .wl-grid {
+  --wl-cell: 16px;
+  --wl-gap: 6px;
+  --wl-cols: 15;
   display: grid;
-  grid-template-columns: repeat(3, 25px);
-  grid-template-rows: repeat(5, 25px);
-  gap: 10px;
-  grid-template-areas:
-    "div1 div2 div3"
-    "div4 div5 div6"
-    "div7 div8 div9"
-    "div10 div11 div12"
-    "div13 div14 div15";
+  grid-template-columns: repeat(var(--wl-cols), var(--wl-cell));
+  grid-template-rows: repeat(5, var(--wl-cell));
+  gap: var(--wl-gap);
 }
-.counter-loader .cl-cell { background-color: #22d3ee; border-radius: 5px; box-shadow: 0 0 12px rgba(34,211,238,0.5); }
-.counter-loader .cl-hidden { display: none; }
-
-#cl-div1  { grid-area: div1;  animation: cl-d1  10s both infinite; }
-#cl-div2  { grid-area: div2;  animation: cl-d2  10s both infinite; }
-#cl-div3  { grid-area: div3; }
-#cl-div4  { grid-area: div4;  animation: cl-d4  10s both infinite; }
-#cl-div5  { grid-area: div5; }
-#cl-div6  { grid-area: div6;  animation: cl-d6  10s both infinite; }
-#cl-div7  { grid-area: div7;  animation: cl-d7  10s both infinite; }
-#cl-div8  { grid-area: div8;  animation: cl-d8  10s both infinite; }
-#cl-div9  { grid-area: div9; }
-#cl-div10 { grid-area: div10; animation: cl-d10 10s both infinite; }
-#cl-div11 { grid-area: div11; }
-#cl-div12 { grid-area: div12; animation: cl-d12 10s both infinite; }
-#cl-div13 { grid-area: div13; animation: cl-d13 10s both infinite; }
-#cl-div14 { grid-area: div14; animation: cl-d14 10s both infinite; }
-#cl-div15 { grid-area: div15; }
-
-@keyframes cl-d1  { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } }
-@keyframes cl-d2  { 10% { transform: translateX(35px); } 20% { transform: translateX(0); } 40% { transform: translateX(35px); } 50% { transform: translateX(0); } }
-@keyframes cl-d4  { 10% { transform: translateX(70px); } 20%,30% { transform: translateX(70px); } 40% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } }
-@keyframes cl-d6  { 50%,60% { transform: translateX(-70px); } 70% { transform: translateX(0); } }
-@keyframes cl-d7  { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } }
-@keyframes cl-d8  { 0%,10% { transform: translateX(35px); } 20% { transform: translateX(0); } 70% { transform: translateX(35px); } 80% { transform: translateX(0); } 100% { transform: translateX(35px); } }
-@keyframes cl-d10 { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } 30%,40%,50% { transform: translateX(70px); } 60% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } 90% { transform: translateX(70px); } 100% { transform: translateX(0); } }
-@keyframes cl-d12 { 20% { transform: translateX(-70px); } 30% { transform: translateX(0); } }
-@keyframes cl-d13 { 10% { transform: translateX(70px); } 20% { transform: translateX(0); } 40% { transform: translateX(70px); } 50% { transform: translateX(0); } 70% { transform: translateX(70px); } 80% { transform: translateX(0); } }
-@keyframes cl-d14 { 10% { transform: translateX(35px); } 20% { transform: translateX(0); } 40% { transform: translateX(35px); } 50% { transform: translateX(0); } 70% { transform: translateX(35px); } 80% { transform: translateX(0); } }
+.word-loader .wl-cell {
+  width: var(--wl-cell);
+  height: var(--wl-cell);
+  border-radius: 4px;
+  background: transparent;
+  box-shadow: none;
+  transform: scale(.55);
+  opacity: 0;
+  transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    opacity   .45s ease,
+    background-color .45s ease,
+    box-shadow .45s ease;
+}
+.word-loader .wl-cell.on {
+  background: #22d3ee;
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.55);
+  transform: scale(1);
+  opacity: 1;
+}
+@media (max-width: 640px) {
+  .word-loader .wl-grid { --wl-cell: 11px; --wl-gap: 4px; }
+}
 
 /* Make the topbar ICDC pill feel clickable. */
 a.icdc-pill { cursor: pointer; text-decoration: none; }
