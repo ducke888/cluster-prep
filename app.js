@@ -1368,7 +1368,7 @@ const EXTRA_SEEDS = {};
 async function maybeImportSeed(username) {
   const path = SEED_FILES[username];
   if (path) {
-    const flagKey = `deca-imce:user:${username}:seedImported:${path}:v7`;
+    const flagKey = `deca-imce:user:${username}:seedImported:${path}:v8`;
     if (!localStorage.getItem(flagKey)) {
       try {
         const res = await fetch(path, { cache: "no-store" });
@@ -3301,6 +3301,9 @@ async function renderStudy(prefix, _qnum) {
         const letter = el.getAttribute("data-letter");
         setStudyState(slug, qNum, { chosen: letter, answeredAt: Date.now() });
         updateStudyQuestion(slug, qNum);
+        // Live-update the "Review wrongs" count badge so when the user nails
+        // a question the "28 to review" counter ticks down immediately.
+        refreshWrongsCount(activePrefix);
         // Streak: study tab counts toward goal on the topic's prefix.
         if (activePrefix && activePrefix !== "_OTHER") {
           recordStreakActivity(activePrefix);
@@ -4349,12 +4352,14 @@ function renderStudyQuestionCard(item, opts = {}) {
   // Render hidden initially; updateStudyQuestion() toggles it once .chosen is set.
   let prevBadge = "";
   if (opts.showPrevious) {
-    const siteSel = (loadProgress(item.slug).selections) || {};
+    // The original wrong pick ALWAYS comes from the logTest bucket here
+    // (that's literally what makes the question appear in "Previously wrong").
+    // The progress-bucket selection is the user's fresh retry — we don't want
+    // to show that as "previously picked". So only pull from logTest.
     const logSel  = (loadLogTest(item.slug).selections)  || {};
-    const origChosen = siteSel[q.number] || logSel[q.number];
-    const fromLog = !siteSel[q.number] && !!logSel[q.number];
+    const origChosen = logSel[q.number];
     if (origChosen) {
-      prevBadge = `<div class="prev-picked hidden" data-prev="1">You previously picked <strong>${escapeHtml(origChosen)}</strong> — try again fresh${fromLog ? ` <span style="font-size:.75rem;color:var(--muted);margin-left:6px">(from your log test)</span>` : ""}</div>`;
+      prevBadge = `<div class="prev-picked hidden" data-prev="1" data-orig="${escapeHtml(origChosen)}" data-slug="${item.slug}" data-q="${q.number}">You previously picked <strong>${escapeHtml(origChosen)}</strong> <span class="prev-picked-verdict">— try again fresh</span></div>`;
     }
   }
 
@@ -4435,11 +4440,11 @@ function setStudyState(slug, qNum, patch) {
   }
 }
 
-// Wipe a single question's answer from BOTH the study bucket and the
-// mirrored progress bucket, so the question goes back to "unanswered".
-// Also wipes it from the logTest bucket's selection so it actually leaves
-// the "previously wrong" list (otherwise the original log-test wrong pick
-// would still keep the question pinned as wrong).
+// Clear the user's re-attempt PICK on a question — deselects the answer
+// choice so they can try again. Does NOT touch the logTest bucket, so the
+// original seed-imported "wrong" pick stays intact and the question stays
+// in the "previously wrong" list (which is the whole point — they came to
+// this view BECAUSE they missed it; reset is just "let me try again").
 function clearStudyAnswer(slug, qNum) {
   try {
     const all = loadAllStudy();
@@ -4461,29 +4466,17 @@ function clearStudyAnswer(slug, qNum) {
     });
     if (changed) localStorage.setItem(pKey, JSON.stringify(prev));
   } catch {}
-  try {
-    const lKey = logTestKey(slug);
-    const prev = JSON.parse(localStorage.getItem(lKey) || "{}");
-    let changed = false;
-    ["selections", "timestamps", "revealed"].forEach(field => {
-      if (prev[field] && prev[field][qNum] !== undefined) {
-        delete prev[field][qNum];
-        changed = true;
-      }
-    });
-    if (changed) localStorage.setItem(lKey, JSON.stringify(prev));
-  } catch {}
-  // Push the wipe to Firestore so other devices match.
+  // NOTE: intentionally NOT touching logTest — the seed-imported wrong pick
+  // is what makes the question appear in "Previously wrong" at all.
   try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
 }
 
-// Wipe every answer under a given code-prefix (e.g. "IM") in BOTH the study
-// bucket and the mirrored progress bucket, AND the logTest bucket. Used by the
-// "Reset all answers" button on the Review-wrongs view.
+// Clear every re-attempt PICK under a given code-prefix (e.g. "IM"). Only
+// wipes the student's Study-tab picks + progress mirror; the original
+// logTest wrongs stay so the question list itself is unchanged.
 function clearStudyAnswersForPrefix(prefix) {
   if (!prefix) return 0;
   let count = 0;
-  // We need the exam data loaded to know which code each question has.
   for (const meta of state.index || []) {
     if (!meta.available) continue;
     const exam = state.exams[meta.slug];
@@ -4491,17 +4484,49 @@ function clearStudyAnswersForPrefix(prefix) {
     for (const q of exam.questions) {
       const qp = q.code ? q.code.split(":")[0] : "_OTHER";
       if (qp !== prefix) continue;
-      // Only clear if there's an existing answer somewhere.
       const siteSel = (loadProgress(meta.slug).selections) || {};
-      const logSel  = (loadLogTest(meta.slug).selections)  || {};
       const stu = getStudyState(meta.slug, q.number);
-      if (siteSel[q.number] || logSel[q.number] || stu.chosen || stu.revealed) {
+      if (siteSel[q.number] || stu.chosen || stu.revealed) {
         clearStudyAnswer(meta.slug, q.number);
         count++;
       }
     }
   }
   return count;
+}
+
+// Recompute how many questions under `prefix` are still wrong and update
+// the sub-tab count badge + the "N questions to review" toolbar label.
+// Called after every answer click so counters feel live.
+function refreshWrongsCount(prefix) {
+  if (!prefix) return;
+  let wrong = 0;
+  let total = 0;
+  for (const meta of state.index || []) {
+    if (!meta.available) continue;
+    const exam = state.exams[meta.slug];
+    if (!exam) continue;
+    const siteSel = (loadProgress(meta.slug).selections) || {};
+    const logSel  = (loadLogTest(meta.slug).selections)  || {};
+    for (const q of exam.questions) {
+      const qp = q.code ? q.code.split(":")[0] : "_OTHER";
+      if (qp !== prefix) continue;
+      total++;
+      const siteChosen = siteSel[q.number];
+      const logChosen  = !siteChosen ? logSel[q.number] : null;
+      const effective = siteChosen || logChosen;
+      if (effective && q.answer && effective !== q.answer) wrong++;
+    }
+  }
+  // Update the "Review wrongs" sub-tab badge
+  const missedBtn = document.querySelector('.sub-tabs button[data-sub="missed"] .count');
+  if (missedBtn) missedBtn.textContent = String(wrong);
+  // Update the "Same-code practice" sub-tab badge (total - wrong)
+  const allBtn = document.querySelector('.sub-tabs button[data-sub="all"] .count');
+  if (allBtn) allBtn.textContent = String(Math.max(0, total - wrong));
+  // Update the toolbar label above the wrongs list, if it's currently shown
+  const toolbarLabel = document.querySelector(".wrongs-toolbar-label");
+  if (toolbarLabel) toolbarLabel.textContent = `${wrong} question${wrong === 1 ? "" : "s"} to review`;
 }
 
 function updateStudyQuestion(slug, qNum) {
@@ -4532,10 +4557,27 @@ function updateStudyQuestion(slug, qNum) {
   const revealBtn = card.querySelector(".reveal-one");
 
   // Toggle prev-picked badge: only show AFTER user answers in this tab.
+  // Verdict text changes based on whether their fresh attempt was right.
   const prevEl = card.querySelector(".prev-picked[data-prev]");
   if (prevEl) {
-    if (sel) prevEl.classList.remove("hidden");
-    else     prevEl.classList.add("hidden");
+    if (sel) {
+      prevEl.classList.remove("hidden");
+      prevEl.classList.remove("good", "bad");
+      const verdict = prevEl.querySelector(".prev-picked-verdict");
+      if (verdict && correctLetter) {
+        if (sel === correctLetter) {
+          verdict.textContent = "— Great job! ✓";
+          prevEl.classList.add("good");
+        } else {
+          verdict.textContent = "— not quite, try again";
+          prevEl.classList.add("bad");
+        }
+      } else if (verdict) {
+        verdict.textContent = "— try again fresh";
+      }
+    } else {
+      prevEl.classList.add("hidden");
+    }
   }
 
   // Reveal button: if user has selected, the answer is already shown — hide toggle.

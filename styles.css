@@ -1099,6 +1099,21 @@ body.welcome-active .foot { display: none !important; }
   display: inline-block;
 }
 .prev-picked strong { color: var(--bad); font-weight: 700; }
+/* After the user re-answers, tint the banner green for right / keep amber for wrong */
+.prev-picked.good {
+  background: #e7f8ec;
+  border-color: #9ed7b1;
+  color: #0f5132;
+}
+.prev-picked.good strong { color: #0f5132; }
+.prev-picked.good .prev-picked-verdict { color: #0f5132; font-weight: 700; }
+.prev-picked.bad {
+  background: #fdecee;
+  border-color: #f1b4bb;
+  color: #842029;
+}
+.prev-picked.bad strong { color: #842029; }
+.prev-picked.bad .prev-picked-verdict { color: #842029; font-weight: 600; }
 
 .foot {
   padding: 26px 20px 40px;
