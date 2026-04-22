@@ -4532,6 +4532,310 @@ function wireFlashcards(topic) {
   render();
 }
 
+// ============================================================
+//                    MEGA FLASHCARDS
+// ============================================================
+// Same concept as per-topic flashcards in the Study tab, but lets the
+// user mix multiple topics into one deck (or include ALL topics). Lives
+// inside the Question Bank page as an alternate "mode". Confidence for
+// each card is saved back to its ORIGINAL topic's state, so if the user
+// marks "Penetration pricing" Confident here, it stays Confident when
+// they later study Pricing alone.
+
+function buildMegaFlashcardDeck(selectedPrefixes) {
+  const allPrefixes = Object.keys(TOPIC_GUIDES);
+  const prefixes = (selectedPrefixes && selectedPrefixes.length)
+    ? selectedPrefixes.filter(p => TOPIC_GUIDES[p])
+    : allPrefixes;
+  const cards = [];
+  const seen = new Set();
+  for (const prefix of prefixes) {
+    const guide = TOPIC_GUIDES[prefix];
+    if (!guide) continue;
+    for (const sec of guide.sections || []) {
+      for (const item of sec.items || []) {
+        const card = extractCard(item, sec.h);
+        if (!card) continue;
+        const key = card.front.toLowerCase();
+        if (seen.has(key)) continue; // de-dupe across topics too
+        seen.add(key);
+        cards.push({
+          ...card,
+          topicPrefix: prefix,
+          topicName: guide.name || prefix,
+        });
+      }
+    }
+  }
+  return cards;
+}
+
+function renderMegaFlashcards(selectedPrefixes) {
+  const fullDeck = buildMegaFlashcardDeck(selectedPrefixes);
+  const allPrefixes = Object.keys(TOPIC_GUIDES);
+  const activePrefixes = (selectedPrefixes && selectedPrefixes.length) ? selectedPrefixes : allPrefixes;
+  const scopeLabel = (selectedPrefixes && selectedPrefixes.length)
+    ? `${selectedPrefixes.length} topic${selectedPrefixes.length === 1 ? "" : "s"}`
+    : `All ${allPrefixes.length} topics`;
+
+  if (fullDeck.length === 0) {
+    return `
+      <div class="mega-fc">
+        <div class="mega-fc-head">
+          <h3>🧠 Mega Flashcards</h3>
+          <p class="hint">Pick any mix of topics above, or leave them all off to include every topic.</p>
+        </div>
+        <div class="empty" style="padding:40px">No flashcards in the selected topics yet.</div>
+      </div>
+    `;
+  }
+
+  // Aggregate confidence across every card's own topic state.
+  let confident = 0, good = 0, weak = 0;
+  const stateCache = {};
+  for (const c of fullDeck) {
+    if (!stateCache[c.topicPrefix]) stateCache[c.topicPrefix] = loadFcState(c.topicPrefix);
+    const s = stateCache[c.topicPrefix][cardKeyOf(c)];
+    if (s === "confident") confident++;
+    else if (s === "good") good++;
+    else if (s === "weak") weak++;
+  }
+  const total = fullDeck.length;
+
+  return `
+    <div class="mega-fc">
+      <div class="mega-fc-head">
+        <h3>🧠 Mega Flashcards</h3>
+        <p class="hint">Deck scope: <strong>${escapeHtml(scopeLabel)}</strong> · ${total} card${total === 1 ? "" : "s"}. Confidence is shared with the per-topic flashcards in the Study tab.</p>
+      </div>
+      <div class="flashcards mega" data-topics="${escapeHtml(activePrefixes.join(","))}">
+        <div class="fc-header">
+          <div class="fc-progress-ring">
+            <div class="fc-ring-label"><strong>${confident}</strong><span>/ ${total}</span></div>
+          </div>
+          <div class="fc-legend">
+            <div><span class="fc-dot fc-dot-confident"></span> Confident <strong>${confident}</strong></div>
+            <div><span class="fc-dot fc-dot-good"></span> Good <strong>${good}</strong></div>
+            <div><span class="fc-dot fc-dot-weak"></span> Weak <strong>${weak}</strong></div>
+          </div>
+          <div class="fc-header-actions">
+            <button class="btn ghost" id="mfc-reset">Reset progress</button>
+          </div>
+        </div>
+        <div class="fc-meta">Click the card to flip. Then rate yourself — <strong>Weak</strong> (left) keeps it in rotation, <strong>Good</strong> (middle) shows it less often, <strong>Confident</strong> (right) retires it. Shortcuts: <kbd>Space</kbd> flip · <kbd>1</kbd>/<kbd>2</kbd>/<kbd>3</kbd> rate.</div>
+        <div class="fc-stage">
+          <div class="fc-card" id="mfc-card" tabindex="0">
+            <div class="fc-inner">
+              <div class="fc-face fc-front">
+                <div class="fc-section"><span class="mfc-topic-badge" id="mfc-topic"></span> <span id="mfc-section"></span></div>
+                <div class="fc-term" id="mfc-term"></div>
+                <div class="fc-hint">click to flip</div>
+              </div>
+              <div class="fc-face fc-back">
+                <div class="fc-body" id="mfc-body"></div>
+                <div class="fc-hint fc-hint-back">rate yourself below ↓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fc-rate-row" id="mfc-rate-row">
+          <button class="btn fc-rate fc-rate-weak" id="mfc-weak" disabled>
+            <span class="fc-rate-ico">✗</span>
+            <span class="fc-rate-lbl">Weak</span>
+            <span class="fc-rate-kbd">1</span>
+          </button>
+          <button class="btn fc-rate fc-rate-good" id="mfc-good" disabled>
+            <span class="fc-rate-ico">≈</span>
+            <span class="fc-rate-lbl">Good</span>
+            <span class="fc-rate-kbd">2</span>
+          </button>
+          <button class="btn fc-rate fc-rate-confident" id="mfc-confident" disabled>
+            <span class="fc-rate-ico">✓</span>
+            <span class="fc-rate-lbl">Confident</span>
+            <span class="fc-rate-kbd">3</span>
+          </button>
+        </div>
+        <div class="fc-controls">
+          <button class="btn ghost" id="mfc-skip">Skip card →</button>
+          <span class="fc-session-progress" id="mfc-session-progress"></span>
+          <button class="btn ghost" id="mfc-shuffle">Shuffle remaining</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function wireMegaFlashcards(selectedPrefixes) {
+  const fullDeck = buildMegaFlashcardDeck(selectedPrefixes);
+  if (fullDeck.length === 0) return;
+
+  // Per-topic confidence cache. Any rating writes straight back to the
+  // card's original topic bucket so it syncs with the per-topic deck.
+  const stateCache = {};
+  const getConf = (c) => {
+    if (!stateCache[c.topicPrefix]) stateCache[c.topicPrefix] = loadFcState(c.topicPrefix);
+    return stateCache[c.topicPrefix][cardKeyOf(c)];
+  };
+  const setConf = (c, level) => {
+    if (!stateCache[c.topicPrefix]) stateCache[c.topicPrefix] = loadFcState(c.topicPrefix);
+    stateCache[c.topicPrefix][cardKeyOf(c)] = level;
+    saveFcState(c.topicPrefix, stateCache[c.topicPrefix]);
+  };
+  const clearAllConf = () => {
+    const touched = new Set(fullDeck.map(c => c.topicPrefix));
+    for (const p of touched) {
+      const st = loadFcState(p);
+      let changed = false;
+      for (const c of fullDeck) {
+        if (c.topicPrefix !== p) continue;
+        const k = cardKeyOf(c);
+        if (st[k]) { delete st[k]; changed = true; }
+      }
+      if (changed) saveFcState(p, st);
+    }
+  };
+
+  const rank = (c) => {
+    const s = getConf(c);
+    if (s === "weak") return 0;
+    if (s === "good") return 2;
+    if (s === "confident") return 99;
+    return 1;
+  };
+  let queue = fullDeck
+    .filter(c => getConf(c) !== "confident")
+    .slice()
+    .sort((a, b) => rank(a) - rank(b));
+
+  const stageEl = document.querySelector(".mega-fc .fc-stage");
+  const card = document.getElementById("mfc-card");
+  const front = document.getElementById("mfc-term");
+  const topicBadge = document.getElementById("mfc-topic");
+  const sectionEl = document.getElementById("mfc-section");
+  const back = document.getElementById("mfc-body");
+  const sessProg = document.getElementById("mfc-session-progress");
+  const rateRow = document.getElementById("mfc-rate-row");
+  const btnWeak = document.getElementById("mfc-weak");
+  const btnGood = document.getElementById("mfc-good");
+  const btnConf = document.getElementById("mfc-confident");
+
+  if (!card) return;
+
+  let flipped = false;
+  let completed = 0;
+  const totalSession = queue.length;
+
+  const showDone = () => {
+    let confident = 0;
+    for (const c of fullDeck) if (getConf(c) === "confident") confident++;
+    const done = confident === fullDeck.length;
+    stageEl.innerHTML = `
+      <div class="fc-done">
+        <div class="fc-done-ico">${done ? "🏆" : "✓"}</div>
+        <h3>${done ? "Mega deck mastered!" : "Session complete"}</h3>
+        <p>${done
+          ? `You've marked all ${fullDeck.length} cards as Confident. Reset to review them again.`
+          : `${confident} of ${fullDeck.length} cards are Confident. Cards rated Weak or Good will reappear next session.`}</p>
+        <div class="fc-done-actions">
+          <button class="btn primary" id="mfc-again">Review again</button>
+          <button class="btn ghost" id="mfc-reset2">Reset all progress</button>
+        </div>
+      </div>
+    `;
+    rateRow.style.display = "none";
+    const skipBtn = document.getElementById("mfc-skip"); if (skipBtn) skipBtn.style.display = "none";
+    const shufBtn = document.getElementById("mfc-shuffle"); if (shufBtn) shufBtn.style.display = "none";
+    sessProg.textContent = `${completed} / ${totalSession} rated this session`;
+    const againBtn = document.getElementById("mfc-again");
+    if (againBtn) againBtn.addEventListener("click", () => renderQuestionBank());
+    const reset2Btn = document.getElementById("mfc-reset2");
+    if (reset2Btn) reset2Btn.addEventListener("click", () => {
+      clearAllConf();
+      renderQuestionBank();
+    });
+  };
+
+  const updateProgress = () => {
+    sessProg.textContent = `${completed} / ${totalSession} this session`;
+  };
+
+  const renderTop = () => {
+    if (queue.length === 0) { showDone(); return; }
+    const c = queue[0];
+    topicBadge.textContent = c.topicPrefix;
+    topicBadge.title = c.topicName;
+    sectionEl.textContent = c.section || "";
+    front.textContent = c.front;
+    back.innerHTML = c.back;
+    flipped = false;
+    card.classList.remove("flipped");
+    [btnWeak, btnGood, btnConf].forEach(b => b.disabled = true);
+    updateProgress();
+  };
+
+  const flip = () => {
+    flipped = !flipped;
+    card.classList.toggle("flipped", flipped);
+    [btnWeak, btnGood, btnConf].forEach(b => b.disabled = !flipped);
+  };
+
+  const rate = (level) => {
+    if (queue.length === 0) return;
+    if (!flipped) return;
+    const c = queue.shift();
+    setConf(c, level);
+    completed++;
+    if (level === "weak") {
+      const insertAt = Math.min(queue.length, 3 + Math.floor(Math.random() * 3));
+      queue.splice(insertAt, 0, c);
+    }
+    renderTop();
+  };
+
+  const skip = () => {
+    if (queue.length <= 1) return;
+    const c = queue.shift();
+    queue.push(c);
+    renderTop();
+  };
+
+  const shuffle = () => {
+    for (let k = queue.length - 1; k > 0; k--) {
+      const j = Math.floor(Math.random() * (k + 1));
+      [queue[k], queue[j]] = [queue[j], queue[k]];
+    }
+    renderTop();
+  };
+
+  card.addEventListener("click", flip);
+  btnWeak.addEventListener("click", () => rate("weak"));
+  btnGood.addEventListener("click", () => rate("good"));
+  btnConf.addEventListener("click", () => rate("confident"));
+  document.getElementById("mfc-skip").addEventListener("click", skip);
+  document.getElementById("mfc-shuffle").addEventListener("click", shuffle);
+  document.getElementById("mfc-reset").addEventListener("click", () => {
+    if (!confirm(`Reset confidence for all ${fullDeck.length} cards in this mega deck?`)) return;
+    clearAllConf();
+    renderQuestionBank();
+  });
+
+  const onKey = (e) => {
+    if (!document.getElementById("mfc-card")) {
+      document.removeEventListener("keydown", onKey); return;
+    }
+    const tag = (e.target && e.target.tagName) || "";
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+    if (e.key === " " || e.key === "Enter") { e.preventDefault(); flip(); }
+    else if (e.key === "1") { e.preventDefault(); if (flipped) rate("weak"); }
+    else if (e.key === "2") { e.preventDefault(); if (flipped) rate("good"); }
+    else if (e.key === "3") { e.preventDefault(); if (flipped) rate("confident"); }
+    else if (e.key === "ArrowRight") { e.preventDefault(); skip(); }
+  };
+  document.addEventListener("keydown", onKey);
+  card.focus();
+  renderTop();
+}
+
 function renderStudyQuestionList(list, emptyMsg, opts = {}) {
   if (!list || list.length === 0) {
     return `<div class="empty">${escapeHtml(emptyMsg || "Nothing here yet.")}</div>`;
@@ -5118,6 +5422,7 @@ function qbankClassify(slug) {
 
 function qbankDefaultFilters() {
   return {
+    mode: "questions",   // "questions" | "flashcards" — Mega Flashcard mode reuses the same topic chips
     topics: [],          // array of topic prefixes, empty = all
     examTypes: [],       // array of "icdc" | "state" | "sample" | "other", empty = all
     status: "all",       // "all" | "unanswered" | "correct" | "wrong"
@@ -5236,9 +5541,87 @@ async function renderQuestionBank() {
     <span class="qb-chip-name">${s.name}</span>
   </button>`).join("");
 
+  const isFlash = f.mode === "flashcards";
+
   const list = paged.length === 0
     ? `<div class="empty" style="padding:40px">No questions match these filters. Loosen a filter above.</div>`
     : `<div class="q-list">${paged.map(item => renderStudyQuestionCard(item, { showPrevious: f.showPrevious })).join("")}</div>`;
+
+  const modeTabs = `
+    <div class="qbank-mode-tabs" role="tablist">
+      <button class="qbank-mode-tab ${!isFlash ? "active" : ""}" data-mode="questions" role="tab" aria-selected="${!isFlash}">
+        <span class="qbmt-ico">📝</span>
+        <span class="qbmt-lbl">Questions</span>
+        <span class="qbmt-sub">${filtered.length.toLocaleString()} Q</span>
+      </button>
+      <button class="qbank-mode-tab ${isFlash ? "active" : ""}" data-mode="flashcards" role="tab" aria-selected="${isFlash}">
+        <span class="qbmt-ico">🧠</span>
+        <span class="qbmt-lbl">Mega Flashcards</span>
+        <span class="qbmt-sub">Pick topics → mix into one deck</span>
+      </button>
+    </div>
+  `;
+
+  // In flashcard mode we only need the topic chips — exam type / status /
+  // randomize / show-previous don't apply to a term→definition deck. We
+  // reuse the same `f.topics` array so topic selection carries over when
+  // the user toggles modes.
+  const filterPanel = isFlash ? `
+    <div class="qbank-filters flashmode">
+      <div class="qbank-filter-group" style="grid-column: 1 / -1">
+        <div class="qbank-filter-label">Topics in deck <span class="hint">(click to toggle — leave all off to include every topic)</span></div>
+        <div class="qb-chips qb-chips-topics">${topicChips}</div>
+      </div>
+      <div class="qbank-flash-actions">
+        <button class="btn ghost" id="qb-select-all">Select all topics</button>
+        ${f.topics.length ? `<button class="btn ghost qb-clear" id="qb-clear">Clear selection</button>` : ""}
+      </div>
+    </div>
+  ` : `
+    <div class="qbank-filters">
+      <div class="qbank-filter-group">
+        <div class="qbank-filter-label">Exam type</div>
+        <div class="qb-chips">${typeChips || '<span class="hint">No exams loaded.</span>'}</div>
+      </div>
+      <div class="qbank-filter-group">
+        <div class="qbank-filter-label">Answer status</div>
+        <div class="qb-chips">${statusChips}</div>
+      </div>
+      <div class="qbank-filter-group">
+        <div class="qbank-filter-label">Topic <span class="hint">(click to toggle multiple)</span></div>
+        <div class="qb-chips qb-chips-topics">${topicChips}</div>
+      </div>
+      ${(f.topics.length || f.examTypes.length || f.status !== "all") ? `<button class="btn ghost qb-clear" id="qb-clear">Clear filters</button>` : ""}
+    </div>
+  `;
+
+  const body = isFlash
+    ? renderMegaFlashcards(f.topics)
+    : `
+      <div class="qbank-list">${list}</div>
+      ${paged.length < filtered.length ? `
+        <div class="qbank-loadmore-wrap">
+          <button class="btn" id="qb-more">Load more questions</button>
+        </div>
+      ` : ""}
+    `;
+
+  const toggles = isFlash ? "" : `
+    <div class="qbank-toggle-row">
+      <label class="qb-toggle">
+        <input type="checkbox" id="qb-rand" ${f.randomize ? "checked" : ""} />
+        <span class="qb-toggle-label">🎲 Randomize order</span>
+      </label>
+      <label class="qb-toggle">
+        <input type="checkbox" id="qb-prev" ${f.showPrevious ? "checked" : ""} />
+        <span class="qb-toggle-label">🗂️ Show previous attempts</span>
+      </label>
+      <div class="qbank-count">
+        ${filtered.length.toLocaleString()} question${filtered.length === 1 ? "" : "s"}
+        ${paged.length < filtered.length ? ` <span class="hint" style="margin-left:6px">(showing first ${paged.length})</span>` : ""}
+      </div>
+    </div>
+  `;
 
   app.innerHTML = `
     <section class="qbank-page">
@@ -5250,53 +5633,29 @@ async function renderQuestionBank() {
         </div>
         <div>
           <h2>Question Bank</h2>
-          <p class="hint">Every question across every exam in one pool. Filter by topic, exam type, or status. Answers count toward your stats just like a regular test.</p>
+          <p class="hint">Every question across every exam in one pool — or flip to <strong>Mega Flashcards</strong> to mix term/definition cards across any topics you choose.</p>
         </div>
       </div>
 
-      <div class="qbank-toggle-row">
-        <label class="qb-toggle">
-          <input type="checkbox" id="qb-rand" ${f.randomize ? "checked" : ""} />
-          <span class="qb-toggle-label">🎲 Randomize order</span>
-        </label>
-        <label class="qb-toggle">
-          <input type="checkbox" id="qb-prev" ${f.showPrevious ? "checked" : ""} />
-          <span class="qb-toggle-label">🗂️ Show previous attempts</span>
-        </label>
-        <div class="qbank-count">
-          ${filtered.length.toLocaleString()} question${filtered.length === 1 ? "" : "s"}
-          ${paged.length < filtered.length ? ` <span class="hint" style="margin-left:6px">(showing first ${paged.length})</span>` : ""}
-        </div>
-      </div>
-
-      <div class="qbank-filters">
-        <div class="qbank-filter-group">
-          <div class="qbank-filter-label">Exam type</div>
-          <div class="qb-chips">${typeChips || '<span class="hint">No exams loaded.</span>'}</div>
-        </div>
-        <div class="qbank-filter-group">
-          <div class="qbank-filter-label">Answer status</div>
-          <div class="qb-chips">${statusChips}</div>
-        </div>
-        <div class="qbank-filter-group">
-          <div class="qbank-filter-label">Topic <span class="hint">(click to toggle multiple)</span></div>
-          <div class="qb-chips qb-chips-topics">${topicChips}</div>
-        </div>
-        ${(f.topics.length || f.examTypes.length || f.status !== "all") ? `<button class="btn ghost qb-clear" id="qb-clear">Clear filters</button>` : ""}
-      </div>
-
-      <div class="qbank-list">${list}</div>
-
-      ${paged.length < filtered.length ? `
-        <div class="qbank-loadmore-wrap">
-          <button class="btn" id="qb-more">Load more questions</button>
-        </div>
-      ` : ""}
+      ${modeTabs}
+      ${toggles}
+      ${filterPanel}
+      ${body}
     </section>
   `;
 
   // ---- Wire filter interactions ----
   const rerender = () => renderQuestionBank();
+
+  // Mode tabs (Questions vs Mega Flashcards)
+  document.querySelectorAll(".qbank-mode-tab").forEach(el => {
+    el.addEventListener("click", () => {
+      const m = el.getAttribute("data-mode");
+      if (m === f.mode) return;
+      f.mode = m;
+      rerender();
+    });
+  });
 
   document.querySelectorAll(".qb-chip[data-topic]").forEach(el => {
     el.addEventListener("click", () => {
@@ -5328,7 +5687,20 @@ async function renderQuestionBank() {
   if (prevEl) prevEl.addEventListener("change", () => { f.showPrevious = prevEl.checked; rerender(); });
   const clearBtn = document.getElementById("qb-clear");
   if (clearBtn) clearBtn.addEventListener("click", () => {
+    // Preserve the current mode — the user explicitly asked to clear
+    // filters, not switch out of flashcards.
+    const keepMode = f.mode;
     state.qbank = qbankDefaultFilters();
+    state.qbank.mode = keepMode;
+    rerender();
+  });
+  const selectAllBtn = document.getElementById("qb-select-all");
+  if (selectAllBtn) selectAllBtn.addEventListener("click", () => {
+    // Populate with every topic that has a TOPIC_GUIDE (what flashcards
+    // can be built from). Leaving the array empty also means "all", but
+    // some users want the explicit visual confirmation that every chip
+    // is active.
+    f.topics = Object.keys(TOPIC_GUIDES);
     rerender();
   });
   const moreBtn = document.getElementById("qb-more");
@@ -5336,6 +5708,12 @@ async function renderQuestionBank() {
     f.limit = (f.limit || 50) + 50;
     rerender();
   });
+
+  // ---- Mega Flashcards wiring (only present in flashcards mode) ----
+  if (isFlash) {
+    wireMegaFlashcards(f.topics);
+    return; // no question-card handlers needed
+  }
 
   // ---- Wire question cards (answer + reveal + reset) ----
   document.querySelectorAll(".qbank-list .study-q .opt").forEach(el => {

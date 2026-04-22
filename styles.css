@@ -2568,6 +2568,88 @@ a.icdc-pill:hover { filter: brightness(1.15); transform: translateY(-1px); }
 .qbank-head h2 { margin: 0 0 4px; font-size: 1.55rem; color: var(--ink); }
 .qbank-head .hint { margin: 0; max-width: 680px; color: var(--ink-2); }
 
+/* Mode tabs — Questions vs Mega Flashcards */
+.qbank-mode-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.qbank-mode-tab {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  cursor: pointer;
+  color: var(--ink-2);
+  text-align: left;
+  transition: border-color .15s, background .15s, color .15s, transform .08s;
+}
+.qbank-mode-tab:hover { background: var(--card-2); color: var(--ink); }
+.qbank-mode-tab.active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.22) 0%, rgba(91, 33, 182, 0.22) 100%);
+  border-color: var(--red-light);
+  color: var(--ink);
+  box-shadow: 0 4px 14px rgba(76, 29, 149, 0.18);
+}
+.qbank-mode-tab .qbmt-ico { font-size: 1.1rem; }
+.qbank-mode-tab .qbmt-lbl {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.qbank-mode-tab .qbmt-sub {
+  font-size: .82rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.qbank-mode-tab.active .qbmt-sub { color: var(--ink-2); }
+@media (max-width: 640px) {
+  .qbank-mode-tabs { grid-template-columns: 1fr; }
+}
+
+/* Flashcard-mode filter panel: topic chips fill full width + action row */
+.qbank-filters.flashmode { display: block; }
+.qbank-filters.flashmode .qbank-filter-group { margin-bottom: 10px; }
+.qbank-flash-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* Mega flashcard shell */
+.mega-fc {
+  margin-top: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 18px 22px;
+}
+.mega-fc-head { margin-bottom: 10px; }
+.mega-fc-head h3 { margin: 0 0 4px; font-size: 1.1rem; color: var(--ink); }
+.mega-fc-head .hint { margin: 0; color: var(--ink-2); font-size: .9rem; }
+
+/* Topic-prefix badge on the card face */
+.mfc-topic-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  background: rgba(139, 92, 246, 0.18);
+  color: var(--red-light);
+  border: 1px solid var(--red-light);
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
 .qbank-toggle-row {
   display: flex;
   align-items: center;
