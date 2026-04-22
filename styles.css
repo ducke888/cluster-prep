@@ -1779,6 +1779,120 @@ main { max-width: 1100px; }
   width: 100%; max-width: 640px;
 }
 .fc-progress { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; min-width: 72px; text-align: center; }
+.fc-session-progress { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+
+/* Header (progress ring + legend + reset) above the card */
+.fc-header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; width: 100%; max-width: 640px;
+  padding: 12px 14px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.fc-progress-ring {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--bg-2);
+  border: 2px solid var(--border-2);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.fc-ring-label {
+  display: flex; flex-direction: column; align-items: center;
+  line-height: 1;
+}
+.fc-ring-label strong {
+  color: var(--accent);
+  font-size: 1.1rem; font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.fc-ring-label span {
+  color: var(--muted); font-size: .7rem; margin-top: 2px;
+}
+.fc-legend {
+  display: flex; flex-wrap: wrap; gap: 12px 18px;
+  flex: 1; justify-content: center;
+  font-size: .82rem; color: var(--ink-2);
+}
+.fc-legend > div { display: inline-flex; align-items: center; gap: 6px; }
+.fc-legend strong { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.fc-dot {
+  display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--border-2);
+}
+.fc-dot-confident { background: var(--good, #22c55e); }
+.fc-dot-good { background: var(--accent, #a78bfa); }
+.fc-dot-weak { background: var(--bad, #dc2626); }
+.fc-header-actions { flex-shrink: 0; }
+
+/* Stage wraps the card so we can swap it for the "done" panel without
+   yanking the whole flashcards flexbox. */
+.fc-stage {
+  width: 100%; max-width: 640px;
+  display: flex; justify-content: center;
+}
+
+/* Rate row — three big buttons under the card */
+.fc-rate-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 100%; max-width: 640px;
+}
+.fc-rate {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card-2);
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .08s, border-color .12s, background .12s, opacity .12s;
+}
+.fc-rate:hover:not(:disabled) { transform: translateY(-1px); }
+.fc-rate:disabled { opacity: .45; cursor: not-allowed; }
+.fc-rate-ico {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: .85rem; font-weight: 800;
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+}
+.fc-rate-lbl { font-size: .92rem; }
+.fc-rate-kbd {
+  margin-left: auto;
+  padding: 1px 6px; border-radius: 4px;
+  border: 1px solid var(--border-2); background: var(--bg-2);
+  color: var(--muted); font-size: .72rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.fc-rate-weak:hover:not(:disabled) { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 14%, var(--card-2)); }
+.fc-rate-weak .fc-rate-ico { color: var(--bad); border-color: var(--bad); }
+.fc-rate-good:hover:not(:disabled) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--card-2)); }
+.fc-rate-good .fc-rate-ico { color: var(--accent); border-color: var(--accent); }
+.fc-rate-confident:hover:not(:disabled) { border-color: var(--good, #22c55e); background: color-mix(in srgb, var(--good, #22c55e) 14%, var(--card-2)); }
+.fc-rate-confident .fc-rate-ico { color: var(--good, #22c55e); border-color: var(--good, #22c55e); }
+
+/* Session-complete / deck-mastered panel */
+.fc-done {
+  width: 100%; max-width: 640px;
+  padding: 34px 24px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.fc-done-ico { font-size: 2.4rem; margin-bottom: 8px; }
+.fc-done h3 { margin: 0 0 8px; font-size: 1.2rem; color: var(--ink); }
+.fc-done p { margin: 0 auto 18px; max-width: 460px; color: var(--ink-2); font-size: .92rem; line-height: 1.5; }
+.fc-done-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+@media (max-width: 600px) {
+  .fc-rate-row { grid-template-columns: 1fr; }
+  .fc-rate-kbd { display: none; }
+}
 
 /* -------- Streak panel on stats page -------- */
 .streak-panel { margin-bottom: 18px; }
