@@ -5554,22 +5554,40 @@ async function renderQuestionBank() {
   const ordered = f.randomize ? qbankShuffle(filtered, 42) : filtered;
   const paged = ordered.slice(0, f.limit);
 
-  // Build topic chip options sorted by count desc.
-  const topicsSorted = Object.keys(topicCounts)
-    .filter(p => p !== "_OTHER" || topicCounts[p] > 0)
+  const isFlashMode = f.mode === "flashcards";
+
+  // Flashcard counts per topic — the real number of term/definition
+  // cards extractCard() produces from the topic's study guide. In
+  // flashcard mode we show THIS on each chip instead of the question
+  // count, so the chip and the deck size match.
+  const flashcardCounts = {};
+  for (const p of Object.keys(TOPIC_GUIDES)) {
+    flashcardCounts[p] = buildFlashcardDeck(TOPIC_GUIDES[p]).length;
+  }
+
+  // Build topic chip options sorted by count desc. In flashcard mode,
+  // hide topics with zero flashcards (including _OTHER, which has no
+  // guide) and sort by flashcard count so the biggest decks surface.
+  const topicsSorted = Object.keys(isFlashMode ? flashcardCounts : topicCounts)
+    .filter(p => {
+      if (isFlashMode) return (flashcardCounts[p] || 0) > 0;
+      return p !== "_OTHER" || topicCounts[p] > 0;
+    })
     .sort((a, b) => {
       if (a === "_OTHER") return 1;
       if (b === "_OTHER") return -1;
-      return (topicCounts[b] || 0) - (topicCounts[a] || 0);
+      const src = isFlashMode ? flashcardCounts : topicCounts;
+      return (src[b] || 0) - (src[a] || 0);
     });
 
   const topicChips = topicsSorted.map(p => {
     const name = (TOPIC_GUIDES[p] && TOPIC_GUIDES[p].name) || (p === "_OTHER" ? "Other / Uncoded" : p);
     const active = f.topics.includes(p);
-    return `<button class="qb-chip ${active ? "active" : ""}" data-topic="${escapeHtml(p)}">
+    const count = isFlashMode ? (flashcardCounts[p] || 0) : (topicCounts[p] || 0);
+    return `<button class="qb-chip ${active ? "active" : ""}" data-topic="${escapeHtml(p)}" title="${isFlashMode ? count + " flashcard" + (count === 1 ? "" : "s") : count + " question" + (count === 1 ? "" : "s")}">
       <span class="qb-chip-code">${escapeHtml(p)}</span>
       <span class="qb-chip-name">${escapeHtml(name)}</span>
-      <span class="qb-chip-count">${topicCounts[p] || 0}</span>
+      <span class="qb-chip-count">${count}</span>
     </button>`;
   }).join("");
 
