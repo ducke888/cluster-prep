@@ -4377,6 +4377,22 @@ function wireFlashcards(topic) {
   const fullDeck = buildFlashcardDeck(guide);
   if (fullDeck.length === 0) return;
 
+  // Tear down any previous flashcard keydown listener (per-topic OR mega)
+  // before installing ours. See wireMegaFlashcards for the full rationale —
+  // stale wires keep handling 1/2/3 and paint wrong counts otherwise.
+  if (window.__decaFcKeyHandler) {
+    document.removeEventListener("keydown", window.__decaFcKeyHandler);
+    window.__decaFcKeyHandler = null;
+  }
+
+  // Wire-instance id stamped on the DOM so any stale wire's count repaint
+  // is rejected by updateHeaderCounts.
+  const wireId = "wire-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
+  const stampWireId = () => {
+    const hdr = document.querySelector(".flashcards .fc-header");
+    if (hdr) hdr.dataset.wireId = wireId;
+  };
+
   // Build the session queue: drop "confident" cards; show weak + good + unrated.
   // Order: weak first (need most review), then unrated, then good.
   let confidenceMap = loadFcState(topic.prefix);
@@ -4472,6 +4488,9 @@ function wireFlashcards(topic) {
   // Live-repaint the Confident / Good / Weak numbers in the header so
   // the counter ticks as the user rates, no reload required.
   const updateHeaderCounts = () => {
+    const hdr = document.querySelector(".flashcards .fc-header");
+    if (!hdr) return;
+    if (hdr.dataset.wireId && hdr.dataset.wireId !== wireId) return; // stale wire, bail
     let confident = 0, good = 0, weak = 0;
     for (const c of fullDeck) {
       const s = confidenceMap[cardKeyOf(c)];
@@ -4479,12 +4498,15 @@ function wireFlashcards(topic) {
       else if (s === "good") good++;
       else if (s === "weak") weak++;
     }
-    const hdr = document.querySelector(".flashcards .fc-header");
-    if (!hdr) return;
+    // Hard cap so display can never exceed deck size.
+    const total = fullDeck.length;
+    confident = Math.min(confident, total);
+    good = Math.min(good, total);
+    weak = Math.min(weak, total);
     const ringStrong = hdr.querySelector(".fc-ring-label strong");
     const ringTotal  = hdr.querySelector(".fc-ring-label span");
     if (ringStrong) ringStrong.textContent = String(confident);
-    if (ringTotal)  ringTotal.textContent  = `/ ${fullDeck.length}`;
+    if (ringTotal)  ringTotal.textContent  = `/ ${total}`;
     const legendItems = hdr.querySelectorAll(".fc-legend > div");
     if (legendItems[0]) legendItems[0].querySelector("strong").textContent = String(confident);
     if (legendItems[1]) legendItems[1].querySelector("strong").textContent = String(good);
@@ -4552,7 +4574,9 @@ function wireFlashcards(topic) {
     else if (e.key === "3") { e.preventDefault(); if (flipped) rate("confident"); }
     else if (e.key === "ArrowRight") { e.preventDefault(); skip(); }
   };
+  window.__decaFcKeyHandler = onKey;
   document.addEventListener("keydown", onKey);
+  stampWireId();
   card.focus();
   render();
 }
@@ -4761,6 +4785,17 @@ function wireMegaFlashcards(selectedPrefixes) {
   const fullDeck = buildMegaFlashcardDeck(selectedPrefixes);
   if (fullDeck.length === 0) return;
 
+  // Tear down any previous flashcard keydown listener before installing
+  // ours. Without this, a stale wire (e.g. user changed topic chips and
+  // a fresh deck got built) keeps responding to 1/2/3 and runs its OLD
+  // rate() against its OLD fullDeck — then its updateHeaderCounts
+  // paints the OLD (larger) confident count onto the NEW (smaller)
+  // ring, producing values like "29 / 28".
+  if (window.__decaFcKeyHandler) {
+    document.removeEventListener("keydown", window.__decaFcKeyHandler);
+    window.__decaFcKeyHandler = null;
+  }
+
   // Per-topic confidence cache. Any rating writes straight back to the
   // card's original topic bucket so it syncs with the per-topic deck.
   const stateCache = {};
@@ -4792,10 +4827,23 @@ function wireMegaFlashcards(selectedPrefixes) {
     try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
   };
 
+  // Wire-instance id stamped on the DOM. Any updateHeaderCounts call
+  // from a STALE wire (whose DOM has been replaced) sees a different
+  // id and bails out instead of painting wrong numbers into the live
+  // mega-fc DOM that belongs to a different deck.
+  const wireId = "wire-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
+  const stampWireId = () => {
+    const hdr = document.querySelector(".mega-fc .fc-header");
+    if (hdr) hdr.dataset.wireId = wireId;
+  };
+
   // Recompute Confident/Good/Weak totals from the live stateCache and
   // paint them into the header — called after every rate so the user
   // sees numbers tick without a reload.
   const updateHeaderCounts = () => {
+    const hdr = document.querySelector(".mega-fc .fc-header");
+    if (!hdr) return;
+    if (hdr.dataset.wireId && hdr.dataset.wireId !== wireId) return; // stale wire, bail
     let confident = 0, good = 0, weak = 0;
     for (const c of fullDeck) {
       const s = getConf(c);
@@ -4803,12 +4851,16 @@ function wireMegaFlashcards(selectedPrefixes) {
       else if (s === "good") good++;
       else if (s === "weak") weak++;
     }
-    const hdr = document.querySelector(".mega-fc .fc-header");
-    if (!hdr) return;
+    // Hard cap so the display can never exceed the deck size, even if
+    // some other code path corrupts the cache.
+    const total = fullDeck.length;
+    confident = Math.min(confident, total);
+    good = Math.min(good, total);
+    weak = Math.min(weak, total);
     const ringStrong = hdr.querySelector(".fc-ring-label strong");
     const ringTotal  = hdr.querySelector(".fc-ring-label span");
     if (ringStrong) ringStrong.textContent = String(confident);
-    if (ringTotal)  ringTotal.textContent  = `/ ${fullDeck.length}`;
+    if (ringTotal)  ringTotal.textContent  = `/ ${total}`;
     const legendItems = hdr.querySelectorAll(".fc-legend > div");
     if (legendItems[0]) legendItems[0].querySelector("strong").textContent = String(confident);
     if (legendItems[1]) legendItems[1].querySelector("strong").textContent = String(good);
@@ -5074,7 +5126,15 @@ function wireMegaFlashcards(selectedPrefixes) {
     else if (e.key === "3") { e.preventDefault(); if (flipped) rate("confident"); }
     else if (e.key === "ArrowRight") { e.preventDefault(); skip(); }
   };
+  // Save a reference so the NEXT wireMegaFlashcards (or wireFlashcards)
+  // call can rip this listener out before installing its own. Otherwise
+  // both wires fire on 1/2/3 and the older one paints stale numbers
+  // (e.g. "29 / 28") into the new wire's DOM.
+  window.__decaFcKeyHandler = onKey;
   document.addEventListener("keydown", onKey);
+  // Stamp the live header so any stale wire's updateHeaderCounts (if it
+  // somehow fires) sees a different wireId and bails.
+  stampWireId();
   card.focus();
   renderTop();
 }
