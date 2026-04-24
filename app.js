@@ -4469,12 +4469,36 @@ function wireFlashcards(topic) {
     [btnWeak, btnGood, btnConf].forEach(b => b.disabled = !flipped);
   };
 
+  // Live-repaint the Confident / Good / Weak numbers in the header so
+  // the counter ticks as the user rates, no reload required.
+  const updateHeaderCounts = () => {
+    let confident = 0, good = 0, weak = 0;
+    for (const c of fullDeck) {
+      const s = confidenceMap[cardKeyOf(c)];
+      if (s === "confident") confident++;
+      else if (s === "good") good++;
+      else if (s === "weak") weak++;
+    }
+    const hdr = document.querySelector(".flashcards .fc-header");
+    if (!hdr) return;
+    const ringStrong = hdr.querySelector(".fc-ring-label strong");
+    const ringTotal  = hdr.querySelector(".fc-ring-label span");
+    if (ringStrong) ringStrong.textContent = String(confident);
+    if (ringTotal)  ringTotal.textContent  = `/ ${fullDeck.length}`;
+    const legendItems = hdr.querySelectorAll(".fc-legend > div");
+    if (legendItems[0]) legendItems[0].querySelector("strong").textContent = String(confident);
+    if (legendItems[1]) legendItems[1].querySelector("strong").textContent = String(good);
+    if (legendItems[2]) legendItems[2].querySelector("strong").textContent = String(weak);
+  };
+
   const rate = (level) => {
     if (queue.length === 0) return;
     if (!flipped) return; // must flip first
     const c = queue.shift();
     confidenceMap[cardKeyOf(c)] = level;
     saveFcState(topic.prefix, confidenceMap);
+    // Cross-device sync — fc: keys are auto-snapshotted by syncProfilePush.
+    try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
     completed++;
     // Weak cards get re-queued toward the end of the session so they come back.
     // Good cards are done for this session. Confident is retired.
@@ -4483,6 +4507,7 @@ function wireFlashcards(topic) {
       const insertAt = Math.min(queue.length, 3 + Math.floor(Math.random() * 3));
       queue.splice(insertAt, 0, c);
     }
+    updateHeaderCounts();
     render();
   };
 
@@ -4680,6 +4705,10 @@ function wireMegaFlashcards(selectedPrefixes) {
     if (!stateCache[c.topicPrefix]) stateCache[c.topicPrefix] = loadFcState(c.topicPrefix);
     stateCache[c.topicPrefix][cardKeyOf(c)] = level;
     saveFcState(c.topicPrefix, stateCache[c.topicPrefix]);
+    // Persist to Firestore too so progress follows the user across
+    // devices/browsers. syncProfilePush already snapshots every
+    // `deca-imce:user:<name>:...` key, so fc: state is auto-included.
+    try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
   };
   const clearAllConf = () => {
     const touched = new Set(fullDeck.map(c => c.topicPrefix));
@@ -4693,6 +4722,30 @@ function wireMegaFlashcards(selectedPrefixes) {
       }
       if (changed) saveFcState(p, st);
     }
+    try { if (state.user) syncProfilePushDebounced(state.user, 500); } catch {}
+  };
+
+  // Recompute Confident/Good/Weak totals from the live stateCache and
+  // paint them into the header — called after every rate so the user
+  // sees numbers tick without a reload.
+  const updateHeaderCounts = () => {
+    let confident = 0, good = 0, weak = 0;
+    for (const c of fullDeck) {
+      const s = getConf(c);
+      if (s === "confident") confident++;
+      else if (s === "good") good++;
+      else if (s === "weak") weak++;
+    }
+    const hdr = document.querySelector(".mega-fc .fc-header");
+    if (!hdr) return;
+    const ringStrong = hdr.querySelector(".fc-ring-label strong");
+    const ringTotal  = hdr.querySelector(".fc-ring-label span");
+    if (ringStrong) ringStrong.textContent = String(confident);
+    if (ringTotal)  ringTotal.textContent  = `/ ${fullDeck.length}`;
+    const legendItems = hdr.querySelectorAll(".fc-legend > div");
+    if (legendItems[0]) legendItems[0].querySelector("strong").textContent = String(confident);
+    if (legendItems[1]) legendItems[1].querySelector("strong").textContent = String(good);
+    if (legendItems[2]) legendItems[2].querySelector("strong").textContent = String(weak);
   };
 
   const rank = (c) => {
@@ -4789,6 +4842,7 @@ function wireMegaFlashcards(selectedPrefixes) {
       const insertAt = Math.min(queue.length, 3 + Math.floor(Math.random() * 3));
       queue.splice(insertAt, 0, c);
     }
+    updateHeaderCounts();
     renderTop();
   };
 
