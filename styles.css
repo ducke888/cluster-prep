@@ -1894,6 +1894,107 @@ main { max-width: 1100px; }
   .fc-rate-kbd { display: none; }
 }
 
+/* Post-session understanding quiz (fires automatically when a flashcard
+   session ends). Real exam questions drawn from the terms the user just
+   rated — wrong answers demote the matching term back to Weak. */
+.fc-quiz {
+  width: 100%; max-width: 640px;
+  padding: 20px 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.fc-quiz-head {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 10px; flex-wrap: wrap;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.fc-quiz-head-l { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.fc-quiz-term { color: var(--ink-2); font-size: .85rem; }
+.fc-quiz-term strong { color: var(--ink); }
+.fc-quiz-prog {
+  color: var(--muted); font-size: .78rem; letter-spacing: .06em;
+  text-transform: uppercase; font-variant-numeric: tabular-nums;
+}
+.fc-quiz-q {
+  color: var(--ink); font-size: 1.02rem; line-height: 1.55;
+  font-weight: 500;
+}
+.fc-quiz-opts {
+  display: flex; flex-direction: column; gap: 8px;
+}
+.fc-quiz-opt {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 14px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .12s, background .12s, transform .08s;
+  font-size: .94rem; line-height: 1.4;
+}
+.fc-quiz-opt:hover:not(:disabled) { border-color: var(--accent); transform: translateX(2px); }
+.fc-quiz-opt:disabled { cursor: default; }
+.fc-quiz-opt.locked { opacity: .9; }
+.fc-quiz-opt.right {
+  border-color: var(--good, #22c55e);
+  background: color-mix(in srgb, var(--good, #22c55e) 14%, var(--card-2));
+}
+.fc-quiz-opt.wrong {
+  border-color: var(--bad);
+  background: color-mix(in srgb, var(--bad) 14%, var(--card-2));
+}
+.fc-quiz-letter {
+  flex-shrink: 0;
+  width: 24px; height: 24px; border-radius: 6px;
+  display: grid; place-items: center;
+  background: var(--bg-2); border: 1px solid var(--border-2);
+  font-size: .82rem; font-weight: 700; color: var(--muted);
+}
+.fc-quiz-opt.right .fc-quiz-letter { color: var(--good, #22c55e); border-color: var(--good, #22c55e); }
+.fc-quiz-opt.wrong .fc-quiz-letter { color: var(--bad); border-color: var(--bad); }
+.fc-quiz-text { flex: 1; }
+.fc-quiz-verdict {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: .9rem; line-height: 1.5;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+}
+.fc-quiz-verdict.ok {
+  border-color: var(--good, #22c55e);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--good, #22c55e) 10%, var(--card-2));
+}
+.fc-quiz-verdict.bad {
+  border-color: var(--bad);
+  color: var(--ink);
+  background: color-mix(in srgb, var(--bad) 10%, var(--card-2));
+}
+.fc-quiz-verdict em { color: var(--red-light); font-style: normal; font-weight: 600; }
+.fc-quiz-nav {
+  display: flex; justify-content: flex-end;
+}
+.fc-quiz-nav .hidden { display: none; }
+
+/* Quiz recap line inside the Session-complete / Deck-mastered panel */
+.fc-quiz-recap {
+  margin: -8px auto 16px;
+  padding: 8px 14px;
+  background: var(--card-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: inline-block;
+  font-size: .88rem;
+  color: var(--ink-2);
+}
+.fc-quiz-recap strong { color: var(--ink); }
+.fc-quiz-recap-weak { color: var(--bad); font-weight: 600; }
+
 /* -------- Streak panel on stats page -------- */
 .streak-panel { margin-bottom: 18px; }
 .streak-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; }

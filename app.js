@@ -4690,6 +4690,73 @@ function renderMegaFlashcards(selectedPrefixes) {
   `;
 }
 
+// ---- Post-flashcard-session quiz helpers ----
+// Given a term (card front) plus the card's topic prefix, find real exam
+// questions in the pool that reference the term — so we can test whether
+// the user actually understands it, not just recognized it on a card.
+// Match is whole-word, case-insensitive, against the question text + all
+// four option texts. Topic prefix is required so we don't mistakenly
+// pull an unrelated question that happens to share a common English word.
+function findQuestionsForTerm(term, topicPrefix) {
+  if (!term || term.length < 3) return [];
+  const cleaned = String(term).trim();
+  // Escape regex metacharacters in the term before wrapping it in word
+  // boundaries. Without this, terms like "C.O.D." blow up the regex.
+  const esc = cleaned.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(`\\b${esc}\\b`, "i");
+  const matches = [];
+  for (const meta of state.index || []) {
+    if (!meta.available) continue;
+    const exam = state.exams[meta.slug];
+    if (!exam) continue;
+    for (const q of exam.questions) {
+      if (!q.answer) continue;
+      if (topicPrefix) {
+        const qp = q.code ? q.code.split(":")[0] : "_OTHER";
+        if (qp !== topicPrefix) continue;
+      }
+      const optsText = ["A","B","C","D"].map(L => (q.options && q.options[L]) || "").join(" ");
+      const bag = (q.question || "") + " " + optsText;
+      if (re.test(bag)) matches.push({ slug: meta.slug, title: meta.title, number: q.number, q });
+    }
+  }
+  return matches;
+}
+
+// Build a short post-session quiz drawn from the cards the user just
+// rated. Pulls up to `perTerm` questions per term, capped at `target`
+// total. Dedupes across cards so the same question can't appear twice.
+function buildFlashcardPostQuiz(ratedCards, target = 8, perTerm = 2) {
+  if (!ratedCards || ratedCards.length === 0) return [];
+  const picks = [];
+  const seenQ = new Set();
+  // Shuffle rated order so the first terms don't monopolize the quiz.
+  const cards = ratedCards.slice();
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+  for (const c of cards) {
+    const candidates = findQuestionsForTerm(c.front, c.topicPrefix);
+    for (let i = candidates.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
+    }
+    let added = 0;
+    for (const m of candidates) {
+      const k = `${m.slug}#${m.number}`;
+      if (seenQ.has(k)) continue;
+      seenQ.add(k);
+      picks.push({ ...m, sourceCard: c });
+      added++;
+      if (added >= perTerm) break;
+      if (picks.length >= target) break;
+    }
+    if (picks.length >= target) break;
+  }
+  return picks.slice(0, target);
+}
+
 function wireMegaFlashcards(selectedPrefixes) {
   const fullDeck = buildMegaFlashcardDeck(selectedPrefixes);
   if (fullDeck.length === 0) return;
@@ -4777,11 +4844,29 @@ function wireMegaFlashcards(selectedPrefixes) {
   let flipped = false;
   let completed = 0;
   const totalSession = queue.length;
+  // Cards the user rated during THIS session, in order. Fed into the
+  // post-session quiz so we test them on what they just studied.
+  const sessionRated = [];
+  let postQuizRan = false;
+  // Filled in by the quiz so showDone can surface the results.
+  let lastQuizStats = null;
+
+  const hideInteractiveRow = () => {
+    rateRow.style.display = "none";
+    const skipBtn = document.getElementById("mfc-skip"); if (skipBtn) skipBtn.style.display = "none";
+    const shufBtn = document.getElementById("mfc-shuffle"); if (shufBtn) shufBtn.style.display = "none";
+  };
 
   const showDone = () => {
     let confident = 0;
     for (const c of fullDeck) if (getConf(c) === "confident") confident++;
     const done = confident === fullDeck.length;
+    const quizLine = lastQuizStats ? `
+      <div class="fc-quiz-recap">
+        Quiz: <strong>${lastQuizStats.right}</strong> / ${lastQuizStats.total} correct${lastQuizStats.demoted
+          ? ` · <span class="fc-quiz-recap-weak">${lastQuizStats.demoted} term${lastQuizStats.demoted === 1 ? "" : "s"} moved back to Weak</span>`
+          : ""}.
+      </div>` : "";
     stageEl.innerHTML = `
       <div class="fc-done">
         <div class="fc-done-ico">${done ? "🏆" : "✓"}</div>
@@ -4789,16 +4874,15 @@ function wireMegaFlashcards(selectedPrefixes) {
         <p>${done
           ? `You've marked all ${fullDeck.length} cards as Confident. Reset to review them again.`
           : `${confident} of ${fullDeck.length} cards are Confident. Cards rated Weak or Good will reappear next session.`}</p>
+        ${quizLine}
         <div class="fc-done-actions">
           <button class="btn primary" id="mfc-again">Review again</button>
           <button class="btn ghost" id="mfc-reset2">Reset all progress</button>
         </div>
       </div>
     `;
-    rateRow.style.display = "none";
-    const skipBtn = document.getElementById("mfc-skip"); if (skipBtn) skipBtn.style.display = "none";
-    const shufBtn = document.getElementById("mfc-shuffle"); if (shufBtn) shufBtn.style.display = "none";
-    sessProg.textContent = `${completed} / ${totalSession} rated this session`;
+    hideInteractiveRow();
+    sessProg.textContent = `${completed} / ${totalSession} rated this session${lastQuizStats ? ` · quiz ${lastQuizStats.right}/${lastQuizStats.total}` : ""}`;
     const againBtn = document.getElementById("mfc-again");
     if (againBtn) againBtn.addEventListener("click", () => renderQuestionBank());
     const reset2Btn = document.getElementById("mfc-reset2");
@@ -4808,12 +4892,112 @@ function wireMegaFlashcards(selectedPrefixes) {
     });
   };
 
+  // Post-session quiz — actually tests whether the user understands the
+  // terms they just reviewed, using real exam questions. Missing a
+  // question demotes that card back to Weak so it cycles in again.
+  const startPostQuiz = () => {
+    const picks = buildFlashcardPostQuiz(sessionRated, 8, 2);
+    if (picks.length === 0) {
+      // No matching questions exist for any rated term in the selected
+      // topic(s). Fall straight through to the done panel.
+      showDone();
+      return;
+    }
+    hideInteractiveRow();
+    let qIdx = 0;
+    const results = []; // { right, pick }
+    const demotedTerms = new Set();
+
+    const renderQuiz = () => {
+      if (qIdx >= picks.length) {
+        const right = results.filter(r => r.right).length;
+        lastQuizStats = { right, total: results.length, demoted: demotedTerms.size };
+        showDone();
+        return;
+      }
+      const pick = picks[qIdx];
+      const q = pick.q;
+      const optsHtml = ["A","B","C","D"].map(L => {
+        const text = (q.options && q.options[L]) || "";
+        if (!text) return "";
+        return `<button class="fc-quiz-opt" data-letter="${L}">
+          <span class="fc-quiz-letter">${L}</span>
+          <span class="fc-quiz-text">${escapeHtml(text)}</span>
+        </button>`;
+      }).join("");
+      stageEl.innerHTML = `
+        <div class="fc-quiz">
+          <div class="fc-quiz-head">
+            <div class="fc-quiz-head-l">
+              <span class="mfc-topic-badge">${escapeHtml(pick.sourceCard.topicPrefix)}</span>
+              <span class="fc-quiz-term">tests: <strong>${escapeHtml(pick.sourceCard.front)}</strong></span>
+            </div>
+            <span class="fc-quiz-prog">Question ${qIdx + 1} / ${picks.length}</span>
+          </div>
+          <div class="fc-quiz-q">${escapeHtml(q.question)}</div>
+          <div class="fc-quiz-opts">${optsHtml}</div>
+          <div class="fc-quiz-verdict hidden"></div>
+          <div class="fc-quiz-nav"><button class="btn primary hidden" id="mfc-quiz-next">${qIdx + 1 === picks.length ? "Finish quiz" : "Next →"}</button></div>
+        </div>
+      `;
+      // Option click → lock, verdict, demote on wrong
+      stageEl.querySelectorAll(".fc-quiz-opt").forEach(el => {
+        el.addEventListener("click", () => {
+          const letter = el.getAttribute("data-letter");
+          const correct = q.answer;
+          const right = letter === correct;
+          stageEl.querySelectorAll(".fc-quiz-opt").forEach(opt => {
+            const L = opt.getAttribute("data-letter");
+            if (L === correct) opt.classList.add("right");
+            if (L === letter && !right) opt.classList.add("wrong");
+            opt.disabled = true;
+            opt.classList.add("locked");
+          });
+          const verdictEl = stageEl.querySelector(".fc-quiz-verdict");
+          verdictEl.classList.remove("hidden");
+          if (right) {
+            verdictEl.classList.add("ok");
+            const explain = (q.explanation || "").split(". ").slice(0, 2).join(". ");
+            verdictEl.innerHTML = `<strong>Correct.</strong> ${escapeHtml(explain)}`;
+          } else {
+            // Demote the card back to Weak so it comes around again.
+            setConf(pick.sourceCard, "weak");
+            demotedTerms.add(pick.sourceCard.front);
+            updateHeaderCounts();
+            const correctText = (q.options && q.options[correct]) || "";
+            verdictEl.classList.add("bad");
+            verdictEl.innerHTML = `<strong>Answer: ${correct} — ${escapeHtml(correctText)}.</strong> Marked <em>${escapeHtml(pick.sourceCard.front)}</em> as <strong>Weak</strong> for another round.`;
+          }
+          results.push({ right, pick });
+          const nextBtn = document.getElementById("mfc-quiz-next");
+          nextBtn.classList.remove("hidden");
+          nextBtn.focus();
+        });
+      });
+      const nb = document.getElementById("mfc-quiz-next");
+      if (nb) nb.addEventListener("click", () => { qIdx++; renderQuiz(); });
+      sessProg.textContent = `${completed} / ${totalSession} rated · quiz ${qIdx + 1}/${picks.length}`;
+    };
+    renderQuiz();
+  };
+
   const updateProgress = () => {
     sessProg.textContent = `${completed} / ${totalSession} this session`;
   };
 
   const renderTop = () => {
-    if (queue.length === 0) { showDone(); return; }
+    if (queue.length === 0) {
+      // Session just drained. Try to test what they just learned with
+      // real questions; fall back to the plain done panel if nothing
+      // matches or the user hasn't actually rated anything.
+      if (!postQuizRan && sessionRated.length > 0) {
+        postQuizRan = true;
+        startPostQuiz();
+      } else {
+        showDone();
+      }
+      return;
+    }
     const c = queue[0];
     topicBadge.textContent = c.topicPrefix;
     topicBadge.title = c.topicName;
@@ -4837,6 +5021,11 @@ function wireMegaFlashcards(selectedPrefixes) {
     if (!flipped) return;
     const c = queue.shift();
     setConf(c, level);
+    // Only remember the first time we rate each card this session —
+    // avoids quizzing the same term twice if it got demoted + re-rated.
+    if (!sessionRated.some(r => cardKeyOf(r) === cardKeyOf(c))) {
+      sessionRated.push(c);
+    }
     completed++;
     if (level === "weak") {
       const insertAt = Math.min(queue.length, 3 + Math.floor(Math.random() * 3));
