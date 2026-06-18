@@ -1261,6 +1261,11 @@ body.welcome-active .foot { display: none !important; }
   color: var(--muted);
   font-size: .82rem;
 }
+.login-privacy { margin: 12px 0 0; font-size: .76rem; color: var(--muted); text-align: center; }
+.login-privacy a { color: var(--accent); }
+.foot-sep { margin: 0 6px; opacity: .6; }
+.foot-link { color: var(--accent); text-decoration: none; }
+.foot-link:hover { text-decoration: underline; }
 
 /* =========================================================
    MINIMALIST DARK — Linear/Vercel inspired

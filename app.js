@@ -72,7 +72,7 @@ window.addEventListener("DOMContentLoaded", init);
 // Change ACCESS_PASSWORD to rotate access. To remove the gate entirely, flip
 // ACCESS_GATE_ENABLED to false.
 const ACCESS_GATE_ENABLED = true;
-const ACCESS_PASSWORD = "deca2026";
+const ACCESS_PASSWORD = "reedydeca";
 function accessGranted() {
   return localStorage.getItem("deca-access-granted") === ACCESS_PASSWORD;
 }
