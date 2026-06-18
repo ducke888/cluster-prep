@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "bma-2017",
+    "title": "BMA 2017 ICDC",
+    "file": "BM 2017.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2017.json"
+  },
+  {
+    "slug": "bma-2018",
+    "title": "BMA 2018 ICDC",
+    "file": "BM 2018.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2018.json"
+  },
+  {
+    "slug": "bma-2019",
+    "title": "BMA 2019 ICDC",
+    "file": "BM 2019.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2019.json"
+  },
+  {
+    "slug": "bma-2020",
+    "title": "BMA 2020 ICDC",
+    "file": "BM 2020.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2020.json"
+  },
+  {
+    "slug": "bma-2021",
+    "title": "BMA 2021 ICDC",
+    "file": "BM 2021.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2021.json"
+  },
+  {
+    "slug": "bma-2022",
+    "title": "BMA 2022 ICDC",
+    "file": "BM 2022.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2022.json"
+  },
+  {
+    "slug": "bma-2023",
+    "title": "BMA 2023 ICDC",
+    "file": "BM 2023.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2023.json"
+  },
+  {
+    "slug": "bma-2024",
+    "title": "BMA 2024 ICDC",
+    "file": "BM 2024.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2024.json"
+  },
+  {
+    "slug": "bma-2025",
+    "title": "BMA 2025 ICDC",
+    "file": "BM 2025.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2025.json"
+  },
+  {
+    "slug": "bma-2026",
+    "title": "BMA 2026 ICDC",
+    "file": "BM 2026.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/bma/bma-2026.json"
+  }
+]

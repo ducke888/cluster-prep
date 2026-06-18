@@ -388,102 +388,8 @@ const requestListener = async (req, res) => {
     return sendJSON(res, 200, { ok: true, epoch: next });
   }
 
-  if (req.method === "GET" && req.url.startsWith("/api/tutor/budget")) {
-    const url = new URL(req.url, "http://x");
-    const user = (url.searchParams.get("user") || "_guest").slice(0, 80);
-    const [userSpent, totalSpent] = await Promise.all([
-      spentUSDToday(user),
-      totalSpentUSDToday(),
-    ]);
-    return sendJSON(res, 200, {
-      user, cap: DAILY_CAP_USD,
-      spent: Number(userSpent.toFixed(4)),
-      remaining: Number(Math.max(0, DAILY_CAP_USD - userSpent).toFixed(4)),
-      totalCap: TOTAL_DAILY_CAP_USD,
-      totalSpent: Number(totalSpent.toFixed(4)),
-      totalRemaining: Number(Math.max(0, TOTAL_DAILY_CAP_USD - totalSpent).toFixed(4)),
-    });
-  }
-
-  if (req.method !== "POST" || !req.url.startsWith("/api/tutor")) {
-    return sendJSON(res, 404, { error: "not found" });
-  }
-
-  if (!API_KEY) {
-    return sendJSON(res, 500, {
-      error: "server is missing ANTHROPIC_API_KEY — set it in the environment.",
-    });
-  }
-
-  let raw = "";
-  req.on("data", chunk => { raw += chunk; if (raw.length > 200 * 1024) req.destroy(); });
-  req.on("end", async () => {
-    let body;
-    try { body = JSON.parse(raw || "{}"); } catch { return sendJSON(res, 400, { error: "bad JSON" }); }
-
-    const user = String(body.user || "_guest").replace(/[^a-z0-9_.-]/gi, "").slice(0, 80) || "_guest";
-    const topic = String(body.topic || "").slice(0, 40);
-    const question = body.question ? String(body.question).slice(0, MAX_USER_CHARS) : null;
-    const messages = sanitizeMessages(body.messages);
-    if (messages.length === 0) return sendJSON(res, 400, { error: "no messages" });
-
-    // Per-user cap
-    const spent = await spentUSDToday(user);
-    if (spent >= DAILY_CAP_USD) {
-      return sendJSON(res, 429, {
-        error: "daily_budget_exceeded",
-        message: `You've used today's $${DAILY_CAP_USD.toFixed(2)} tutor budget. Resets at midnight UTC.`,
-        spent, cap: DAILY_CAP_USD,
-      });
-    }
-    // Account-wide cap (protects against many users hitting their caps at once)
-    const totalSpent = await totalSpentUSDToday();
-    if (totalSpent >= TOTAL_DAILY_CAP_USD) {
-      return sendJSON(res, 429, {
-        error: "account_budget_exceeded",
-        message: `The tutor is temporarily unavailable — the site's daily AI budget ($${TOTAL_DAILY_CAP_USD.toFixed(2)}) has been reached. Resets at midnight UTC.`,
-        totalSpent, totalCap: TOTAL_DAILY_CAP_USD,
-      });
-    }
-
-    const systemParts = [DECA_SYSTEM_PROMPT];
-    if (topic) systemParts.push(`Today's focus topic: ${topic}.`);
-    if (question) systemParts.push(`The student is currently stuck on this practice question (treat it as context — do not just give the answer, coach through it):\n${question}`);
-    const systemPrompt = systemParts.join("\n\n");
-
-    const anthropic = await callAnthropic({
-      model: MODEL,
-      max_tokens: MAX_TOKENS_OUT,
-      system: systemPrompt,
-      messages,
-    });
-
-    if (!anthropic.ok) {
-      return sendJSON(res, anthropic.status || 500, {
-        error: "upstream_error",
-        message: (anthropic.json && anthropic.json.error && anthropic.json.error.message) || "Anthropic error",
-      });
-    }
-
-    const usage = anthropic.json.usage || { input_tokens: 0, output_tokens: 0 };
-    const cost =
-      (usage.input_tokens / 1e6) * PRICE_IN_PER_MTOK +
-      (usage.output_tokens / 1e6) * PRICE_OUT_PER_MTOK;
-    const newSpent = await addSpendUSD(user, cost);
-
-    const text = (anthropic.json.content || [])
-      .filter(c => c.type === "text")
-      .map(c => c.text).join("\n");
-
-    return sendJSON(res, 200, {
-      text,
-      usage,
-      costUSD: Number(cost.toFixed(5)),
-      spentTodayUSD: Number(newSpent.toFixed(4)),
-      remainingUSD: Number(Math.max(0, DAILY_CAP_USD - newSpent).toFixed(4)),
-      capUSD: DAILY_CAP_USD,
-    });
-  });
+  // AI tutor removed — no AI endpoints. Unknown routes 404.
+  return sendJSON(res, 404, { error: "not found" });
 };
 
 // Export so unified-serve.js (production) can wrap this as a request listener.
@@ -501,6 +407,6 @@ if (require.main === module) {
     console.log(`  api key: ${API_KEY ? "set ✓" : "MISSING ✗  — set ANTHROPIC_API_KEY"}`);
     console.log(`  budget backend: ${fsdb ? "firestore (persistent)" : "budget.json (ephemeral)"}`);
     console.log(`  reset epoch: ${loadEpoch()}`);
-    console.log(`  endpoints: POST /api/tutor · GET /api/tutor/budget · GET /api/leaderboard · POST /api/leaderboard/report · GET /api/reset-epoch · POST /api/admin/reset-all?token=…`);
+    console.log(`  endpoints: GET /api/leaderboard · POST /api/leaderboard/report · GET /api/profile · PUT /api/profile · GET /api/reset-epoch · POST /api/admin/reset-all?token=…`);
   });
 }

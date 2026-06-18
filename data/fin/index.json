@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "fin-2017",
+    "title": "Finance 2017 ICDC",
+    "file": "FI 2017.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2017.json"
+  },
+  {
+    "slug": "fin-2018",
+    "title": "Finance 2018 ICDC",
+    "file": "FI 2018.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2018.json"
+  },
+  {
+    "slug": "fin-2019",
+    "title": "Finance 2019 ICDC",
+    "file": "FI 2019.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2019.json"
+  },
+  {
+    "slug": "fin-2020",
+    "title": "Finance 2020 ICDC",
+    "file": "FI 2020.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2020.json"
+  },
+  {
+    "slug": "fin-2021",
+    "title": "Finance 2021 ICDC",
+    "file": "FI 2021.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2021.json"
+  },
+  {
+    "slug": "fin-2022",
+    "title": "Finance 2022 ICDC",
+    "file": "FI 2022.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2022.json"
+  },
+  {
+    "slug": "fin-2023",
+    "title": "Finance 2023 ICDC",
+    "file": "FI 2023.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2023.json"
+  },
+  {
+    "slug": "fin-2024",
+    "title": "Finance 2024 ICDC",
+    "file": "FI 2024.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2024.json"
+  },
+  {
+    "slug": "fin-2025",
+    "title": "Finance 2025 ICDC",
+    "file": "FI 2025.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2025.json"
+  },
+  {
+    "slug": "fin-2026",
+    "title": "Finance 2026 ICDC",
+    "file": "FI 2026.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/fin/fin-2026.json"
+  }
+]

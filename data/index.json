@@ -273,8 +273,8 @@
     "slug": "icdc-2010",
     "title": "ICDC 2010 (Marketing)",
     "file": "2010 HS ICDC Test and Key (Marketing Cluster).pdf",
-    "question_count": 99,
-    "answered_count": 99,
+    "question_count": 100,
+    "answered_count": 100,
     "available": true,
     "json": "data/icdc-2010.json"
   },
@@ -309,8 +309,8 @@
     "slug": "icdc-2014",
     "title": "ICDC 2014 (Marketing)",
     "file": "2014 Marketing.pdf",
-    "question_count": 99,
-    "answered_count": 99,
+    "question_count": 100,
+    "answered_count": 100,
     "available": true,
     "json": "data/icdc-2014.json"
   },
@@ -349,5 +349,41 @@
     "answered_count": 100,
     "available": true,
     "json": "data/icdc-2018.json"
+  },
+  {
+    "slug": "mkt-2018",
+    "title": "Marketing 2018 ICDC",
+    "file": "MK 2018.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/mkt-2018.json"
+  },
+  {
+    "slug": "mkt-2020",
+    "title": "Marketing 2020 ICDC",
+    "file": "MK 2020.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/mkt-2020.json"
+  },
+  {
+    "slug": "mkt-2022",
+    "title": "Marketing 2022 ICDC",
+    "file": "MK 2022.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/mkt-2022.json"
+  },
+  {
+    "slug": "mkt-2026",
+    "title": "Marketing 2026 ICDC",
+    "file": "MK 2026.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/mkt-2026.json"
   }
 ]

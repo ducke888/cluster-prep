@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "ht-2017",
+    "title": "H&T 2017 ICDC",
+    "file": "HT 2017.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2017.json"
+  },
+  {
+    "slug": "ht-2018",
+    "title": "H&T 2018 ICDC",
+    "file": "HT 2018.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2018.json"
+  },
+  {
+    "slug": "ht-2019",
+    "title": "H&T 2019 ICDC",
+    "file": "HT 2019.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2019.json"
+  },
+  {
+    "slug": "ht-2020",
+    "title": "H&T 2020 ICDC",
+    "file": "HT 2020.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2020.json"
+  },
+  {
+    "slug": "ht-2021",
+    "title": "H&T 2021 ICDC",
+    "file": "HT 2021.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2021.json"
+  },
+  {
+    "slug": "ht-2022",
+    "title": "H&T 2022 ICDC",
+    "file": "HT 2022.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2022.json"
+  },
+  {
+    "slug": "ht-2023",
+    "title": "H&T 2023 ICDC",
+    "file": "HT 2023.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2023.json"
+  },
+  {
+    "slug": "ht-2024",
+    "title": "H&T 2024 ICDC",
+    "file": "HT 2024.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2024.json"
+  },
+  {
+    "slug": "ht-2025",
+    "title": "H&T 2025 ICDC",
+    "file": "HT 2025.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2025.json"
+  },
+  {
+    "slug": "ht-2026",
+    "title": "H&T 2026 ICDC",
+    "file": "HT 2026.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ht/ht-2026.json"
+  }
+]

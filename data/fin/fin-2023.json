@@ -1,0 +1,1607 @@
+{
+  "file": "FI 2023.pdf",
+  "question_count": 100,
+  "answered_count": 100,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Which of the following is a characteristic of a legally binding contract:",
+      "options": {
+        "A": "The contract must be written and signed.",
+        "B": "One of the parties must be in agreement.",
+        "C": "The contract must include an expiration date.",
+        "D": "Something of value must be exchanged."
+      },
+      "answer": "D",
+      "explanation": "Something of value must be exchanged. A legally binding contract must meet two requirements: something of value must be exchanged, and both parties must be in agreement with the terms of the contract. The contract does not necessarily have to be in writing or signed, but it is much easier to enforce if it is. Finally, a contract does not necessarily have to include a stated expiration date. https://www.nolo.com/legal-encyclopedia/contracts-101-make-legally-valid-30247.html",
+      "sources": [
+        "SOURCE: BL:002 Describe the nature of legally binding contracts",
+        "SOURCE: Laurence, B.K. (2022). Contracts 101: Make a legally valid contract. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 2,
+      "question": "Chris purchased 500 shares of microcap HRR stock. Then, he posted false information about HRR on several investment websites to hype up the stock. After driving up the price of HRR stock, Chris quickly sold all of his stock in the company and earned a large profit. The price of the stock then fell, leaving HRR investors with worthless stock. What type of investment scam did Chris commit?",
+      "options": {
+        "A": "Ponzi scheme",
+        "B": "Pump and dump",
+        "C": "Pyramid scheme",
+        "D": "Phishing"
+      },
+      "answer": "B",
+      "explanation": "Pump and dump. Pump and dump is an investment scam that takes place mostly online. It typically involves scammers who buy a small stock and then hype it up to other investors, causing its price to rise. The scammers sell when the price is high, leaving the victims to deal with the rapid price decline afterwards. A pyramid scheme is an illegal form of multi-level marketing in which emphasis is placed on collecting initial fees from as many people as possible. A Ponzi scheme is an investment scam that lures in new investors by promising high rates of return with little to no risk. Phishing is an online identity-theft scam that fools its victims into believing they are submitting sensitive, personal information (such as credit card numbers or bank passwords) to a legitimate website. 2022, from https://www.investor.gov/protect-your-investments/fraud/types-fraud/pump-dump- schemes",
+      "sources": [
+        "SOURCE: BL:133 Discuss legal considerations in the finance industry",
+        "SOURCE: U.S. Securities and Exchange Commission. (n.d.). Pump and dump schemes. Retrieved August 16,"
+      ]
+    },
+    {
+      "number": 3,
+      "question": "The tendency to respond to situations based on how those situations are posed or viewed is known as",
+      "options": {
+        "A": "framing.",
+        "B": "obedience to authority.",
+        "C": "groupthink.",
+        "D": "overoptimism and overconfidence."
+      },
+      "answer": "A",
+      "explanation": "Framing. Framing is the tendency to respond to situations based on how those situations are posed or viewed. Groupthink occurs when people in a group make decisions together in a way that discourages individual responsibility or creativity. Obedience to authority is the tendency to want to please authority figures and go along with them, even when they are being unethical. Overoptimism and overconfidence occur when people are overly sure of themselves.",
+      "sources": [
+        "SOURCE: FI:355 Discuss the role of ethics in finance",
+        "SOURCE: LAP-FI-355—Money Morals (The Role of Ethics in Finance)"
+      ]
+    },
+    {
+      "number": 4,
+      "question": "Colin bought 35 shares of stock at $23.50 per share and recently sold all of the stock for $53.00 per share. What type of tax will Colin pay?",
+      "options": {
+        "A": "Sales",
+        "B": "Excise",
+        "C": "Capital gains",
+        "D": "Gift"
+      },
+      "answer": "C",
+      "explanation": "Capital gains. When investments such as stocks, bonds, and real estate are sold at a profit, the stockholder may be required to pay a capital gains tax. A capital gain is the difference between the purchase price and sales price of an asset (e.g., stock). A sales tax is a tax on a retail item. An excise tax is a tax for nonessential products, such as gasoline. A gift tax is a tax on something of value (e.g., money) given to another person. Usually, the gift giver pays the tax. https://www.investopedia.com/terms/c/capital_gains_tax.asp  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: BL:134 Discuss the effect of tax laws and regulations on financial transactions",
+        "SOURCE: Fernando, J. (2022, July 30). Capital gains tax. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 5,
+      "question": "What is an advantage of setting ideal standards?",
+      "options": {
+        "A": "Reduce the frustration associated with easily attainable goals",
+        "B": "Allocate time for rework when errors occur",
+        "C": "Recognize that errors can occur in production",
+        "D": "Provide a lofty goal for employees to strive for"
+      },
+      "answer": "D",
+      "explanation": "Provide a lofty goal for employees to strive for. Some businesses challenge employees by setting ideal standards—standards that are or are almost unattainable because they're set so high. They identify the quantity and quality of output that can occur if no mistakes or errors occur and if workers do not need to rest. These businesses feel that these standards help employees strive to achieve more than they would if attainable standards were set. Although some workers are challenged by the lofty goals, others question why they should bother with the work since the standards can't be reached. Cengage Learning.",
+      "sources": [
+        "SOURCE: FI:662 Discuss the nature of cost accounting budgets",
+        "SOURCE: Warren, C.S., & Taylor, W.B. (2020). Managerial accounting (15th ed.) [Lesson 9-1a]. Boston, MA:"
+      ]
+    },
+    {
+      "number": 6,
+      "question": "Which of the following is a benefit of using artificial intelligence in compliance:",
+      "options": {
+        "A": "Reduces human error",
+        "B": "Increases costs",
+        "C": "Reduces efficiency",
+        "D": "Increases false positives"
+      },
+      "answer": "A",
+      "explanation": "Reduces human error. Compliance officers can benefit from artificial intelligence (AI) in a number of ways. AI technology helps increase the efficiency and effectiveness of the compliance function, lowers the chance for human error, and decreases false positives in the system. While adopting artificial intelligence can be costly at first, companies can save money long-term as AI reduces the human capital required to carry out compliances processes and procedures. August 16, 2022, from https://a-teaminsight.com/blog/three-ways-artificial-intelligence-improves- compliance/",
+      "sources": [
+        "SOURCE: BL:149 Describe the use of technology in compliance",
+        "SOURCE: Rottner, S. (2019, January 15). Three ways artificial intelligence improves compliance. Retrieved"
+      ]
+    },
+    {
+      "number": 7,
+      "question": "Martin was speeding, but he was only driving a couple of miles over the speed limit so he could keep up with traffic. Martin was most likely breaking __________ law but not __________ law.",
+      "options": {
+        "A": "the letter of the; the spirit of the",
+        "B": "criminal; civil",
+        "C": "civil; criminal",
+        "D": "the spirit of the; the letter of the Test 1267 FINANCE CLUSTER EXAM 2 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "A",
+      "explanation": "The letter of the; the spirit of the. The letter of the law refers to the literal meaning of a law as it is written, word for word. However, the spirit of the law is the intent of the law. It is the social and moral consensus of how to interpret the law. In the given example, the posted speed limit is the letter of the law, whereas the spirit of the law is to drive safely and keep up with traffic. If Martin is only going a couple of miles over the speed limit and is still safely keeping up with traffic, he is most likely violating the letter, but not the spirit of the law. This example does not pertain to criminal law or civil law.",
+      "sources": [
+        "SOURCE: BL:163 Comply with the spirit and intent of laws and regulations",
+        "SOURCE: LAP-BL-163—Laying Down the Law (Complying With the Spirit and Intent of Laws and Regulations)"
+      ]
+    },
+    {
+      "number": 8,
+      "question": "Which of the following is an example of a verbal acknowledgment response a listener can use to show a speaker that they are listening:",
+      "options": {
+        "A": "Making eye contact",
+        "B": "Leaning forward",
+        "C": "Nodding their head",
+        "D": "Saying, “I understand.”"
+      },
+      "answer": "D",
+      "explanation": "Saying, “I understand.” Verbal acknowledgment responses are simple verbal utterances or words that show the speaker that you are paying attention. Making eye contact, leaning forward, and nodding are all nonverbal ways to show a speaker that you are listening.",
+      "sources": [
+        "SOURCE: CO:017 Demonstrate active listening skills",
+        "SOURCE: LAP-CO-017—Listen Up! (Demonstrating Active Listening Skills)"
+      ]
+    },
+    {
+      "number": 9,
+      "question": "Samantha has been chosen by her boss to participate in a group discussion on a topic she knows very little about. Her lack of knowledge in the subject makes her feel like she has little to contribute to the group. Which of the following should she do to become a valuable participant:",
+      "options": {
+        "A": "Ask to be excused from the group",
+        "B": "Take the leadership role to give the group an open mind about the topic",
+        "C": "Resist the urge to comment on the subject until she becomes an expert",
+        "D": "Ask questions to clarify other participants' comments"
+      },
+      "answer": "D",
+      "explanation": "Ask questions to clarify other participants' comments. Asking clarifying questions assists the entire group in learning about the topic. No one in the group knows everything about the topic. Talking together through tough subjects and sharing diverse viewpoints is the purpose of working as a group. Similarly, she should attempt to assist the group that she has been chosen for instead of asking to be removed. This is not the right time to take a leadership role, which should be assumed by the person who knows the most about—or has the most experience with—the subject. https://student.unsw.edu.au/discussion-skills  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: CO:053 Participate in group discussions",
+        "SOURCE: UNSW Sydney. (2022, March 28). Guide to discussion skills. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 10,
+      "question": "Which of the following is a type of simple written report that usually is distributed to employees within a business:",
+      "options": {
+        "A": "Memorandum",
+        "B": "Handbook",
+        "C": "Proposal",
+        "D": "Newsletter"
+      },
+      "answer": "A",
+      "explanation": "Memorandum. Memorandums are a frequently used form of brief, written communication exchanged by people within a business. Memorandums often are distributed to employees within a business to update them on the progress of various projects, or inform them of changes in policies and procedures. They are informal and simple because they are intended only for the use of the business's employees. A proposal usually is a complex written report that is formal and may be distributed to those outside the business. Handbooks and newsletters are internal company publications, but they are not typically written in a simple report format and distributed to employees. Tinley Park, IL: The Goodheart-Willcox Co.",
+      "sources": [
+        "SOURCE: CO:094 Prepare simple written reports",
+        "SOURCE: Clark, B., Basteri, C.G., Gassen, C., & Walker, M. (2014). Marketing dynamics (3rd ed.) [p. 451]."
+      ]
+    },
+    {
+      "number": 11,
+      "question": "One way that organizations can achieve their corporate governance objectives is by",
+      "options": {
+        "A": "allowing senior managers to serve on the board of directors.",
+        "B": "preventing stakeholders from viewing financial information.",
+        "C": "encouraging employee participation at board meetings.",
+        "D": "releasing an annual report detailing their failures and losses."
+      },
+      "answer": "C",
+      "explanation": "Encouraging employee participation at board meetings. Achieving corporate governance objectives requires the participation of all people involved with a company. It is especially important for an organization's employees to be actively engaged in corporate governance. Employees should be encouraged to participate in board meetings to raise questions or concerns that they may have about the company's actions. Preventing stakeholders from viewing financial information, allowing senior managers to serve on the board of directors, and releasing an annual report detailing their failures and losses are not appropriate steps companies should take to achieve corporate governance objectives. from https://www.safetrac.com.au/achieving-good-corporate-governance/",
+      "sources": [
+        "SOURCE: PD:301 Ascertain employee's role in achieving governance objectives",
+        "SOURCE: Safetrac. (2022, June 23). How to achieve good corporate governance. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 12,
+      "question": "One of the characteristics of effective verbal communication is",
+      "options": {
+        "A": "precise speech.",
+        "B": "good use of slang.",
+        "C": "lack of clarity.",
+        "D": "lack of tact."
+      },
+      "answer": "A",
+      "explanation": "Precise speech. Precise speech involves choosing the words that most accurately communicate what you want to say. This makes your communication effective because it has clarity, and the listener will be most likely to receive the message you want to transmit. Effective verbal communication should also be tactful and should not include slang. August 17, 2022, from https://open.lib.umn.edu/businesscommunication/chapter/2-6-improving- verbal-communication/",
+      "sources": [
+        "SOURCE: CO:147 Explain the nature of effective verbal communications",
+        "SOURCE: University of Minnesota Libraries. (2015, November 25). Improving verbal communication. Retrieved"
+      ]
+    },
+    {
+      "number": 13,
+      "question": "Which of the following is considered a presale touchpoint:",
+      "options": {
+        "A": "Shipping/Delivery",
+        "B": "Installation",
+        "C": "Interaction with a salesperson",
+        "D": "Advertising"
+      },
+      "answer": "D",
+      "explanation": "Advertising. Advertising is considered a presale touchpoint, or an interaction between the brand and the customer before they engage in the actual buying process. Interaction with a salesperson occurs during the sale. Shipping/Delivery and installation are post-sale touchpoints.",
+      "sources": [
+        "SOURCE: CR:001 Identify company's brand promise",
+        "SOURCE: LAP-CR-001—Share the Promise (Identifying Brand Promise)"
+      ]
+    },
+    {
+      "number": 14,
+      "question": "If a financial planner fails to stay informed about new laws impacting the financial products they sell, which of the following ethical principles are they failing to observe:",
+      "options": {
+        "A": "Objectivity",
+        "B": "Confidentiality",
+        "C": "Honesty",
+        "D": "Competence Test 1267 FINANCE CLUSTER EXAM 3 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Competence. A financial planner who fails to stay current is not competent, because they are not maintaining the knowledge necessary to provide accurate information. Confidentiality refers to the protection of client information. If the financial planner is unaware of new laws impacting financial products, they are not intentionally being dishonest. Objectivity refers to providing information without bias. https://www.cfp.net/ethics/code-of-ethics-and-standards-of-conduct  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: CR:012 Explain the responsibilities of finance professionals in providing client services",
+        "SOURCE: CFP Board. (2022). Code of ethics and standards of conduct. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 15,
+      "question": "One action that an ethical business can take to help build the long-term trust and loyalty of its customers is to",
+      "options": {
+        "A": "implement a comprehensive customer privacy policy.",
+        "B": "send daily opt-in email messages to customers.",
+        "C": "sell its customer list to third parties without permission.",
+        "D": "maintain detailed information about customers' transactions."
+      },
+      "answer": "A",
+      "explanation": "Implement a comprehensive customer privacy policy. To build long-term relationships with its customers, a business must take steps to earn its customers' trust. Developing, implementing, communicating, and adhering to a customer privacy policy is one way to build the customers' trust. Privacy policies might include limiting the access that employees have to customer information and not selling customer lists to third parties. By respecting their customers' privacy, businesses can earn and maintain their customers' trust. Laws require businesses to maintain certain information about their customers' transactions for specified timeframes. Sending opt-in email messages to customers is helpful in maintaining relationships with customers; however, sending them too frequently, such as every day, may be annoying to some customers. August 17, 2022, from https://www.paymentsjournal.com/ethical-guidelines-for-the-use-of-e- commerce-data/",
+      "sources": [
+        "SOURCE: CR:017 Explain the role of ethics in customer relationship management",
+        "SOURCE: Wallace, F. (2022, February 10). Ethical guidelines for the use of e-commerce data. Retrieved"
+      ]
+    },
+    {
+      "number": 16,
+      "question": "What is the primary purpose of data-cleansing processes?",
+      "options": {
+        "A": "To control the employees' intranet access",
+        "B": "To correct non-response errors",
+        "C": "To maintain a useful customer database",
+        "D": "To monitor the system for security breaches"
+      },
+      "answer": "C",
+      "explanation": "To maintain a useful customer database. The data-cleansing process removes duplicate records, updates expired data, and completes incomplete data fields. An effective data cleansing will result in a database that contains useful, relevant, and accurate data. Having a \"clean\" database helps the organization process good information to make sound business decisions. Businesses use a variety of security software and procedures to control employees' access to their intranets and to monitor security breaches. Businesses do not use data- cleansing processes to correct non-response errors on surveys. https://www.nedarc.org/tutorials/analyzingData/cleanTheData/purposeDataCleaning.html",
+      "sources": [
+        "SOURCE: CR:024 Use Customer Relationship Management (CRM) technology",
+        "SOURCE: NEDARC. (2019, August 5). Purpose of data cleaning. Retrieved August 29, 2022, from"
+      ]
+    },
+    {
+      "number": 17,
+      "question": "Which of the following statements regarding the financial-information management function is true:",
+      "options": {
+        "A": "Data in a financial-information management system are typically at least four-to-six months old.",
+        "B": "The financial-information management function's responsibilities have declined in recent years.",
+        "C": "The financial-information management function is an electronic, web-based activity.",
+        "D": "A financial-information management system can be used to support operations management decisions."
+      },
+      "answer": "D",
+      "explanation": "A financial-information management system can be used to support operations management decisions. Operations managers might use a financial-information management system to determine operating efficiency, manage inventory, or evaluate key suppliers. Although technology is an integral part of the financial-information management function, it is not the only part. The financial-information management function involves people, processes, and equipment/technology. Due to increased compliance requirements, the financial-information management function's responsibilities have increased in recent years. Much more data must be maintained by the financial-information management system for longer periods of time as a result of new laws and regulations. Data in a financial-information management system should be current. In many situations, decision makers need to know what is happening right now, not what happened months or even years ago. system? Retrieved August 16, 2022, from https://smallbusiness.chron.com/benefits-financial- management-information-system-71943.html",
+      "sources": [
+        "SOURCE: FM:002 Explain the nature and scope of the financial-information management function",
+        "SOURCE: LaMarco, N. (2019, February 13). What are the benefits of a financial management information"
+      ]
+    },
+    {
+      "number": 18,
+      "question": "One of the advantages of a market economy is",
+      "options": {
+        "A": "absence of taxes.",
+        "B": "government control.",
+        "C": "freedom of competition.",
+        "D": "assigned occupations."
+      },
+      "answer": "C",
+      "explanation": "Freedom of competition. In a market economy, businesses are free to compete with each other for labor and for customers. The government taxes the profits made by businesses and the money earned by workers in order to provide services to the people. The role of the government in this economy is limited to protecting private property, ensuring competition, and preserving law and order. Workers are free to choose the type of work they want and are limited only by their own abilities and finances.  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: EC:009 Explain the concept of private enterprise",
+        "SOURCE: LAP-EC-015—People Power (The Private Enterprise System)"
+      ]
+    },
+    {
+      "number": 19,
+      "question": "Which of the following represents a natural risk for the owner of a delivery service:",
+      "options": {
+        "A": "Accident",
+        "B": "Snowstorm",
+        "C": "Government intervention",
+        "D": "Rising prices"
+      },
+      "answer": "B",
+      "explanation": "Snowstorm. Natural risks result from causes such as floods, tornadoes, fires, and other conditions of nature. A snowstorm can slow down a delivery service's operations schedule and cost the company heavily through extra labor costs, damage from accidents, and a decrease in customer service. Accidents are human risks. Government intervention and rising prices are economic risks.",
+      "sources": [
+        "SOURCE: EC:011 Determine factors affecting business risk",
+        "SOURCE: LAP-EC-003—Lose, Win, or Draw (Business Risk)"
+      ]
+    },
+    {
+      "number": 20,
+      "question": "As the operations manager, you know the inputs and the outputs of your business for the last fiscal year. What can be calculated from this information?",
+      "options": {
+        "A": "Disposable income",
+        "B": "Business productivity",
+        "C": "Quality of work life",
+        "D": "Gross domestic product"
+      },
+      "answer": "B",
+      "explanation": "Business productivity. Business productivity is the amount of goods and services produced by a business from a set amount of resources. It is determined by dividing the business's outputs by its inputs. Quality of work life is the general conditions under which employees work, and it can affect the level of productivity. Gross domestic product is the final total value of all goods and services produced within a country's boundaries during a year's time. Disposable income is the amount of income people have left to spend, or dispose of, after they have paid their taxes.",
+      "sources": [
+        "SOURCE: EC:013 Explain the concept of productivity",
+        "SOURCE: LAP-EC-018—Make the Most of It (Productivity)"
+      ]
+    },
+    {
+      "number": 21,
+      "question": "One of Jordan's employees has become unhappy at work in recent weeks, so Jordan decides to give the employee more responsibility and decision-making authority. Jordan is increasing the employee's job",
+      "options": {
+        "A": "rotation.",
+        "B": "depth.",
+        "C": "automation.",
+        "D": "scope. Test 1267 FINANCE CLUSTER EXAM 4 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Depth. Job depth is the amount of control and decision-making authority an employee has in a job. Job rotation is an instructional method in which employees are rotated periodically from one job to another to broaden the employees' perspective of the business. An employee's job scope is the number of tasks involved in a job and the frequency with which they occur. Automation is a method of operating or controlling a process in which tasks are completed by automatic means such as technology, reducing human effort and labor.",
+      "sources": [
+        "SOURCE: EC:014 Analyze impact of specialization/division of labor on productivity",
+        "SOURCE: LAP-EC-914—Divide and Conquer (Specialization and Division of Labor)"
+      ]
+    },
+    {
+      "number": 22,
+      "question": "Which of the following traits differentiates entrepreneurs from small-business owners:",
+      "options": {
+        "A": "Job creation",
+        "B": "Size of workforce",
+        "C": "Willingness to take risks",
+        "D": "Impact on economic growth"
+      },
+      "answer": "C",
+      "explanation": "Willingness to take risks. Risk is one of the defining traits of entrepreneurship. Entrepreneurs must be willing to take risks as they begin new ventures. Small-business owners do not necessarily have the same level of risk because they are not always focused as strongly on innovation. The size of the workforce does not necessarily differentiate between small-business owners and entrepreneurs. Both small businesses and entrepreneurs create jobs and have a positive impact on economic growth. owners. Retrieved August 17, 2022, from https://www.zenbusiness.com/blog/differences- entrepreneurs-business-owners/",
+      "sources": [
+        "SOURCE: EC:065 Identify the impact of small business/entrepreneurship on market economies",
+        "SOURCE: Kelly, M. (2022, February 13). Key differences between entrepreneurs and small business"
+      ]
+    },
+    {
+      "number": 23,
+      "question": "When a leader keeps trying in spite of setbacks, they are demonstrating which of the following characteristics of emotional intelligence:",
+      "options": {
+        "A": "Confidence",
+        "B": "Perseverance",
+        "C": "Positive working relationships",
+        "D": "Proactive behavior"
+      },
+      "answer": "B",
+      "explanation": "Perseverance. Leaders are often the people who keep trying in spite of setbacks and seemingly impossible obstacles. This is perseverance. With characteristics from emotional intelligence, such as motivation, leaders learn to outlast disappointment and fatigue. Trying in spite of setbacks is not the same as proactive behavior— taking action before problems develop. It is also not the same as confidence or getting along with a wide variety of people (positive working relationships).  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: EI:001 Describe the nature of emotional intelligence",
+        "SOURCE: LAP-EI-001—EQ and You (Emotional Intelligence)"
+      ]
+    },
+    {
+      "number": 24,
+      "question": "What seems to be almost an automatic response to criticism for many people?",
+      "options": {
+        "A": "Anger",
+        "B": "Acceptance",
+        "C": "Patience",
+        "D": "Initiative"
+      },
+      "answer": "A",
+      "explanation": "Anger. The reaction most of us have when we are being criticized is to feel resentful and angry. This is a normal defensive reaction, but it must be controlled. Patience and acceptance are character traits that would help you improve your self-control and your overall ability to accept criticism. Initiative is the willingness to act without having to be told to do so.",
+      "sources": [
+        "SOURCE: EI:003 Explain the use of feedback for personal growth",
+        "SOURCE: LAP-EI-903—Grin and Bear It (Using Feedback for Personal Growth)"
+      ]
+    },
+    {
+      "number": 25,
+      "question": "A person reacting to conflict by trying to persuade others to take a certain course of action is an example of",
+      "options": {
+        "A": "problem-solving.",
+        "B": "yielding.",
+        "C": "negotiating.",
+        "D": "forcing."
+      },
+      "answer": "C",
+      "explanation": "Negotiating. When a person negotiates, they are trying to persuade someone to take a certain course of action. Negotiating a compromise is often necessary to resolve a conflict. For example, you want something from me, so you offer me something I want in return. We negotiate until we are both satisfied and have resolved the conflict. Problem-solving involves looking at all sides of the issue and working with the other person to come up with a satisfactory resolution. Yielding means accommodating or “giving in.” Forcing often involves using physical or emotional responses such as throwing punches or using offensive language.",
+      "sources": [
+        "SOURCE: EI:015 Use conflict-resolution skills",
+        "SOURCE: LAP-EI-915—Stop the Madness (Conflict Resolution)"
+      ]
+    },
+    {
+      "number": 26,
+      "question": "If you want to exhibit self-confidence in an upcoming job interview, you should",
+      "options": {
+        "A": "dress well in clothing that makes you feel good.",
+        "B": "use defensive body language.",
+        "C": "not plan for things that could go wrong.",
+        "D": "see perfection as your only option."
+      },
+      "answer": "A",
+      "explanation": "Dress well in clothing that makes you feel good. Dressing well in clothing that makes you feel good can go a long way toward helping you exhibit self-confidence. The correct body language is important, but self- confidence doesn't involve being defensive. Although you do not want to focus on things that can go wrong, you should be ready for them so that you can be prepared and confident. Confident people realize that not everything will go perfectly, and that's okay. from https://howtoadult.com/191199-how-to-show-self-confidence-tips-tricks.html",
+      "sources": [
+        "SOURCE: EI:023 Exhibit self-confidence",
+        "SOURCE: Ireland, K. (2017, June 13). How to show self confidence tips and tricks. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 27,
+      "question": "Isaac is having a tough time adjusting to his new job duties, so he asks his boss for help in dealing with the changes. His boss tells him the first step in handling a workplace change is understanding that change is",
+      "options": {
+        "A": "negative.",
+        "B": "unavoidable.",
+        "C": "unnecessary.",
+        "D": "intimidating."
+      },
+      "answer": "B",
+      "explanation": "Unavoidable. Change in the workplace is unavoidable. New hires, new job duties, new bosses, and other changes can be difficult adjustments for employees. As Isaac's boss reminds him, understanding that change is unavoidable is the first step in accepting it. Change is necessary in all companies. Although Isaac may find the change intimidating or negative at first, looking at the situation that way will not help him adjust to it. https://careertrend.com/how-5093175-manage-change-workplace.html",
+      "sources": [
+        "SOURCE: EI:026 Adjust to change",
+        "SOURCE: Gorg, V.A. (2017, July 5). How to manage change in the workplace. Retrieved August 19, 2022, from"
+      ]
+    },
+    {
+      "number": 28,
+      "question": "Which of the following is a sign of high achievement orientation:",
+      "options": {
+        "A": "A lack of competitiveness",
+        "B": "An entrepreneurial spirit",
+        "C": "Impatience",
+        "D": "Poor-quality work Test 1267 FINANCE CLUSTER EXAM 5 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "An entrepreneurial spirit. An entrepreneurial spirit is a sign of a high achievement orientation. This is because achievement-oriented people enjoy challenges and trying new things. Achievement-oriented people are patient, persistent, and competitive; they also typically produce high-quality work.  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: EI:027 Develop an achievement orientation",
+        "SOURCE: LAP-EI-027—High Hopes (Developing an Achievement Orientation)"
+      ]
+    },
+    {
+      "number": 29,
+      "question": "Mr. Field makes all the important decisions and gives his employees very specific instructions. Which of the following describes Mr. Field's management style:",
+      "options": {
+        "A": "Open",
+        "B": "Laissez-faire",
+        "C": "Authoritarian",
+        "D": "Democratic"
+      },
+      "answer": "C",
+      "explanation": "Authoritarian. This management style is used by people who enjoy being in command, rely on their own judgment, and tell employees exactly how to do their jobs. Democratic managers encourage employee participation in decision-making, seek employee input, and share authority. Laissez-faire is a more open style of management that provides only general guidance and avoids giving specific, detailed directions. \"Open\" is not a recognized management style.",
+      "sources": [
+        "SOURCE: EI:037 Foster positive working relationships",
+        "SOURCE: LAP-EI-037—Can You Relate? (Fostering Positive Working Relationships)"
+      ]
+    },
+    {
+      "number": 30,
+      "question": "Kali promised her parents that she would get good grades this semester, so she studies every day, completes all of her assignments on time, and attends review sessions. Kali is __________ getting good grades.",
+      "options": {
+        "A": "being pressured into",
+        "B": "committed to",
+        "C": "not focused on",
+        "D": "uninterested in"
+      },
+      "answer": "B",
+      "explanation": "Committed to. Kali is committed to getting good grades because she is following through on her promise to her parents. She is taking the necessary steps to make sure she fulfills this commitment. There is no indication that Kali is uninterested in, being pressured into, or not focused on getting good grades.",
+      "sources": [
+        "SOURCE: EI:077 Manage commitments in a timely manner",
+        "SOURCE: LAP-EI-077—Commit to It! (Managing Commitments in a Timely Manner)"
+      ]
+    },
+    {
+      "number": 31,
+      "question": "If a drama club member adopts the other drama club members’ negative attitude even though she doesn’t really approve of doing so, she is demonstrating",
+      "options": {
+        "A": "acceptance.",
+        "B": "emotional intelligence.",
+        "C": "status quo bias.",
+        "D": "groupthink."
+      },
+      "answer": "D",
+      "explanation": "Groupthink. If a drama club member adopts the other group members’ negative attitude even though she doesn’t really approve of doing so, she is demonstrating groupthink behavior. Status quo bias refers to a preference to maintain the status quo. Acceptance refers to a conscious decision to personally agree with a practice instead of simply following the crowd. Emotional intelligence is the ability to recognize and manage emotions in ourselves and in others.",
+      "sources": [
+        "SOURCE: EI:134 Challenge the status quo",
+        "SOURCE: LAP-EI-134—Unfollow the Crowd (Challenging the Status Quo)"
+      ]
+    },
+    {
+      "number": 32,
+      "question": "Cornell wants to start his own business, but he isn't exactly sure what product or service he wants to pursue at the moment. The first step of the entrepreneurial process that Cornell should focus on is",
+      "options": {
+        "A": "verification.",
+        "B": "idea generation.",
+        "C": "illumination.",
+        "D": "a feasibility study."
+      },
+      "answer": "B",
+      "explanation": "Idea generation. Coming up with an idea is the first step in the entrepreneurial process; without an initial idea, none of the other steps can be completed. A feasibility study is conducted to see if the idea is viable. Two steps in the feasibility study are illumination (where the idea becomes realistic) and verification (where the idea is found to be practical and useful). entrepreneurship. Retrieved August 17, 2022, from https://www.yourarticlelibrary.com/entrepreneur/entrepreneurship-characteristicsimportance-types- and-functions-of-entrepreneurship/5228/",
+      "sources": [
+        "SOURCE: EN:039 Describe the nature of entrepreneurship",
+        "SOURCE: Chand, S. (2014, February 8). Entrepreneurship: Characteristics, importance, types, and functions of"
+      ]
+    },
+    {
+      "number": 33,
+      "question": "When validating your credit report, it is important to",
+      "options": {
+        "A": "destroy financial documents that contradict your credit report.",
+        "B": "ignore any mistakes because they will be removed automatically.",
+        "C": "compare your report with your own financial documents.",
+        "D": "send your findings to your employer and/or school administrator."
+      },
+      "answer": "C",
+      "explanation": "Compare your report with your own financial documents. When validating your credit report, it is important to compare your report's information with your own financial documents to make sure that there are no inaccuracies or mistakes. You should not ignore mistakes that appear on your credit report; they will not be removed automatically. It would be inappropriate to send your credit report to your employer or school administrator. You should not destroy any financial documents that contradict your credit report; rather, you should compare your report with the documents to determine which information is correct. https://www.usa.gov/credit-reports  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:072 Validate credit history",
+        "SOURCE: USAGov. (n.d.). Credit reports and scores. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 34,
+      "question": "Which of the following is a true statement regarding budgets:",
+      "options": {
+        "A": "They are set for specific time periods.",
+        "B": "Some businesses don't need them.",
+        "C": "To be successful, they must stay the same from year to year.",
+        "D": "They are required by law."
+      },
+      "answer": "A",
+      "explanation": "They are set for specific time periods. Budgets are estimates of income and expenses for specific time periods. They are estimates and should be flexible—they don't need to stay the same from year to year to be successful. Budgets aren't required by law, but every business needs one to operate!",
+      "sources": [
+        "SOURCE: FI:106 Describe the nature of budgets",
+        "SOURCE: LAP-FI-106—Money Tracks (Nature of Budgets)"
+      ]
+    },
+    {
+      "number": 35,
+      "question": "The two major sections on a balance sheet are",
+      "options": {
+        "A": "assets and liabilities.",
+        "B": "assets and income.",
+        "C": "expenses and assets.",
+        "D": "cash flow and liabilities. Test 1267 FINANCE CLUSTER EXAM 6 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "A",
+      "explanation": "Assets and liabilities. Assets and liabilities are the two major sections that must \"balance\" on a balance sheet. Cash flow, income, and expenses are important items on financial statements, but they are not the major sections on a balance sheet. https://www.investopedia.com/terms/b/balancesheet.asp",
+      "sources": [
+        "SOURCE: FI:274 Describe sources of securities information",
+        "SOURCE: Fernando, J. (2022, July 5). Balance sheet. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 36,
+      "question": "Before deciding whether to purchase any Upside Corporation stock, Anna wants to study the company's financials. What part of Upside's website is likely to contain the company's most recent annual report?",
+      "options": {
+        "A": "Public Relations",
+        "B": "Sustainability",
+        "C": "Leadership",
+        "D": "Investor Relations"
+      },
+      "answer": "D",
+      "explanation": "Investor Relations. Most publicly traded companies have an \"Investor Relations\" section within their websites where individuals such as Anna can find the companies' annual reports as well as any other information and filings they have made public throughout the year. Some companies also devote a portion of their websites to \"Sustainability,\" which emphasizes the companies' dedication to impacting the environment and society in positive ways. The \"Public Relations\" component of most companies' websites contains press releases, press kits, and media resources such as product images and information. The \"Leadership\" section typically contains biographical profiles of senior executives and members of the board of directors. Upper Saddle, NJ: Pearson.",
+      "sources": [
+        "SOURCE: FI:274 Describe sources of securities information",
+        "SOURCE: Madura, J., Casey, M., & Roberts, S. (2014). Personal financial literacy (2nd ed.) [pp. 268-278]."
+      ]
+    },
+    {
+      "number": 37,
+      "question": "Before Alana can review the performance of her stock in the newspaper's securities table, she must locate the company's abbreviated name in the table, which is followed by the",
+      "options": {
+        "A": "trademark.",
+        "B": "trade number.",
+        "C": "yield code.",
+        "D": "ticker symbol."
+      },
+      "answer": "D",
+      "explanation": "Ticker symbol. The ticker symbol, or call letters, is a system of letters that uniquely identifies a company in a stock (securities) table. Investors and potential investors review the stock tables to assess the performance of their stock or stock they might purchase. Because stock tables have many companies listed, knowing the ticker symbol of a particular stock helps people locate stock information quickly. A trademark is a symbol, design, or word used by a producer to identify a good or service, and it is registered with the government to prevent use by others. Yield code and trade number are fictitious terms. https://www.investopedia.com/articles/investing/093014/stock-quotes-explained.asp",
+      "sources": [
+        "SOURCE: FI:275 Interpret securities table",
+        "SOURCE: Hayes, A. (2022, January 17). How to understand a stock quote. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 38,
+      "question": "What might a company's higher-than-usual sales volume for a day indicate?",
+      "options": {
+        "A": "Investors have recalculated the PE.",
+        "B": "Investors believe the yield percentage has changed.",
+        "C": "Investors have received their dividends.",
+        "D": "Investors have reacted to news about the company."
+      },
+      "answer": "D",
+      "explanation": "Investors have reacted to news about the company. A higher-than-usual sales volume might mean that investors have heard something about the company that they feel could affect the stock price. Receiving dividends or thoughts about the yield percentage or PE are not usually factors that would lead to a day's abnormal sales volume. 2022, from https://seekingalpha.com/article/4437223-what-does-volume-mean-stocks  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:275 Interpret securities table",
+        "SOURCE: Jones, M. (2022, May 27). Trading volume: What it is & how it affects stocks. Retrieved August 16,"
+      ]
+    },
+    {
+      "number": 39,
+      "question": "Commercial banks and brokerage firms are examples of",
+      "options": {
+        "A": "legislative groups.",
+        "B": "financial intermediaries.",
+        "C": "nonprofit organizations.",
+        "D": "insurance institutions."
+      },
+      "answer": "B",
+      "explanation": "Financial intermediaries. Intermediaries (middlemen) help move financial products between producers and end users. Commercial banks, brokerage firms, financial-planning firms, insurance institutions, and credit unions are examples of financial intermediaries. Legislative groups (e.g., U.S. Congress and the Canadian Parliamentary System) develop and pass laws. A nonprofit organization is a business or organization whose intent is to make enough money to support its mission. https://www.investopedia.com/terms/f/financialintermediary.asp",
+      "sources": [
+        "SOURCE: FI:336 Describe the role of financial institutions",
+        "SOURCE: Chen, J. (2020, September 23). Financial intermediary. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 40,
+      "question": "Which of the following is an example of a deposit-taking institution:",
+      "options": {
+        "A": "Premier Insurance Company",
+        "B": "Insight Credit Services",
+        "C": "First Street Credit Union",
+        "D": "Delaware Mortgage Company"
+      },
+      "answer": "C",
+      "explanation": "First Street Credit Union. Credit unions are cooperatives that provide financial products and services to a group of individuals who share a common characteristic such as working for the same employer or working in the same industry. Credit unions offer many different types of financial products, including savings and checking accounts for their members. Insurance companies, credit-services companies (e.g., MasterCard), and mortgage companies do not provide deposit-taking financial products. 16, 2022, from https://www.investopedia.com/ask/answers/061615/what-are-major-categories- financial-institutions-and-what-are-their-primary-roles.asp",
+      "sources": [
+        "SOURCE: FI:336 Describe the role of financial institutions",
+        "SOURCE: Horton, M. (2021, April 29). What are the 9 major types of financial institutions?. Retrieved August"
+      ]
+    },
+    {
+      "number": 41,
+      "question": "How are very small companies and companies with poor credit ratings most likely to trade their stock?",
+      "options": {
+        "A": "On the New York Stock Exchange (NYSE)",
+        "B": "On the Over the Counter Bulletin Board (OTCBB)",
+        "C": "On the Toronto Stock Exchange (TSX)",
+        "D": "On the American Stock Exchange (AMEX)"
+      },
+      "answer": "B",
+      "explanation": "On the Over the Counter Bulletin Board (OTCBB). Very small companies that don't meet organized exchange listing requirements as well as companies with poor credit ratings are likely to trade their stock on the OTCBB. The OTCBB is a regulated electronic exchange with no listing requirements. Therefore, stocks traded on the OTCBB are likely to be riskier investments than stocks traded on organized exchanges such as the New York Stock Exchange or the Toronto Stock Exchange. The American Stock Exchange is an organized exchange which became the NYSE Amex Equities in 2009. commodities markets, etc.) https://www.investopedia.com/terms/o/otc.asp",
+      "sources": [
+        "SOURCE: FI:337 Explain types of financial markets (e.g., money market, capital market, insurance market,",
+        "SOURCE: Murphy, C.B. (2022, August 10). Over-the-counter (OTC). Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 42,
+      "question": "Which of the following is a function of financial markets:",
+      "options": {
+        "A": "Customer service",
+        "B": "Borrowing and lending",
+        "C": "Auctions",
+        "D": "Productivity Test 1267 FINANCE CLUSTER EXAM 7 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Borrowing and lending. A financial market is any market where buyers and sellers exchange assets. One of the functions of financial markets is the borrowing and lending of funds. Borrowing and lending allows financial markets to exist. Auctions are an example of a financial market. Customer service and productivity are not functions of financial markets. commodities markets, etc.) https://www.edupristine.com/blog/functions-of-financial-market  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:337 Explain types of financial markets (e.g., money market, capital market, insurance market,",
+        "SOURCE: EduPristine. (2022, April 27). Functions of financial markets? Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 43,
+      "question": "When individuals purchase items such as high-performance sports cars, rare collectibles, and jewelry containing large, precious gemstones, they must often pay __________ taxes.",
+      "options": {
+        "A": "gift",
+        "B": "property",
+        "C": "luxury",
+        "D": "estate"
+      },
+      "answer": "C",
+      "explanation": "Luxury. Governments increase their revenues by charging taxes on nonessential, often very expensive goods and services, such as high-end automobiles, rare collectibles, and jewelry. This type of tax is called a luxury tax. An individual who receives a certain amount of money as a gift may be required to pay a gift tax. Property taxes are paid on buildings (e.g., homes) and land. A person who inherits some or all of a deceased person's assets pays an estate tax, which is based on the net value of the assets or estate. http://www.investopedia.com/terms/l/luxury_tax.asp",
+      "sources": [
+        "SOURCE: BL:134 Discuss the effect of tax laws and regulations on financial transactions",
+        "SOURCE: Kagan, J. (2020, July 19). Luxury tax. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 44,
+      "question": "Instead of transferring the company's money to the company's bank account, Oscar placed it in an offshore bank account that only he had access to. When the company's officers found out what Oscar had been doing, they filed charges against him, and law enforcement officers arrested Oscar for",
+      "options": {
+        "A": "securities fraud.",
+        "B": "espionage.",
+        "C": "embezzlement.",
+        "D": "insider trading."
+      },
+      "answer": "C",
+      "explanation": "Embezzlement. Embezzlement involves the theft of valuables that have been entrusted to another's care. In the example, the company entrusted Oscar with placing the company's money in one account, and instead, Oscar put the money in a bank account that only he had access to. Oscar was stealing money from the company. Insider trading involves leaking information to others that is not known to the public. Securities fraud involves the use of misleading sales tactics to persuade investors to purchase securities. Espionage involves revealing confidential information without the source or owner's permission and is often associated with spying. from https://www.law.cornell.edu/wex/embezzlement",
+      "sources": [
+        "SOURCE: FI:356 Explain legal considerations for finance",
+        "SOURCE: Cornell Law School Legal Information Institute. (n.d.). Embezzlement. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 45,
+      "question": "One of Margaret's financial goals has always been to leave money behind for her family. As a result, she spent her life spending very little and had a large estate when she passed. Now that Margaret has died, who is legally responsible for managing and distributing her wealth and assets according to her wishes?",
+      "options": {
+        "A": "Her attorney",
+        "B": "An executor",
+        "C": "A beneficiary",
+        "D": "Her daughter"
+      },
+      "answer": "B",
+      "explanation": "An executor. An executor is the person legally responsible for overseeing the assets of the person who has died. The executor has a fiduciary duty to manage the deceased's assets according to their last wishes. It is possible for an executor to be a family member or any attorney, but that is not always the case. Beneficiaries are the people who are the recipients of the deceased's assets, but they do not manage those assets (unless specifically appointed executor, as it is possible to be both). https://www.investopedia.com/terms/e/estateplanning.asp",
+      "sources": [
+        "SOURCE: FI:572 Explain the nature of estate planning",
+        "SOURCE: Kagan, J. (2021, April 30). Complete guide to estate planning. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 46,
+      "question": "In relation to the business cycle, the stock prices of non-cyclical industries tend to",
+      "options": {
+        "A": "remain steady throughout all phases.",
+        "B": "steadily decrease during the expansion phase.",
+        "C": "increase dramatically during the contraction phase.",
+        "D": "increase slightly during the trough phase."
+      },
+      "answer": "A",
+      "explanation": "Remain steady throughout all phases. The business cycle affects the stock prices of various industries in different ways. The demand for the products of non-cyclical industries (e.g., food, beverage, tobacco, healthcare) tends to remain consistent throughout all phases of the business cycle. Therefore, the stock performance of non-cyclical industries tends to remain steady throughout all stages of the business cycle, as well. Changes in the business cycle tend to affect the stock prices of other industries, including energy and capital goods. The energy sector (e.g., oil) is affected by the global supply and demand, which influences energy stock performance. Historically, energy stocks tend to perform best late in the business cycle. Capital goods stocks tend to perform well during the expansion phase of the business cycle because businesses are expanding and buying equipment. August 16, 2022, from https://www.investopedia.com/articles/00/082800.asp  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:574 Describe the relationship between economic conditions and financial markets",
+        "SOURCE: Investopedia. (2022, June 21). Cyclical versus non-cyclical stocks: What's the difference? Retrieved"
+      ]
+    },
+    {
+      "number": 47,
+      "question": "A country's unemployment rate impacts the economy because when people are unemployed, they lose their",
+      "options": {
+        "A": "individual identity.",
+        "B": "purchasing power.",
+        "C": "absolute advantage.",
+        "D": "corporate connection."
+      },
+      "answer": "B",
+      "explanation": "Purchasing power. When people are unemployed, they don't just lose their income. They also lose the opportunity to purchase and contribute to a country's economy through their purchasing power. While those who are unemployed might lose a sense of individual identity and their connection to corporations, these losses do not impact the economy. Absolute advantage is the advantage achieved when a nation can produce a good or service at a lower cost than another nation. 2022, from https://www.investopedia.com/articles/economics/10/unemployment-rate-get-real.asp",
+      "sources": [
+        "SOURCE: FI:574 Describe the relationship between economic conditions and financial markets",
+        "SOURCE: Picardo, E. (2022, March 23). How the unemployment rate affects everybody. Retrieved August 16,"
+      ]
+    },
+    {
+      "number": 48,
+      "question": "What is a characteristic of an emerging market?",
+      "options": {
+        "A": "High-yield bond markets that operate in a secure economic climate",
+        "B": "Strong and highly developed infrastructure",
+        "C": "Unstable stock markets in a transitional economy",
+        "D": "Low gross domestic product due to high foreign investment"
+      },
+      "answer": "C",
+      "explanation": "Unstable stock markets in a transitional economy. Emerging markets are growing markets (e.g., stock, bond, commodities, etc.) that result when a country initiates reforms that move it from a closed economy to an open or market economy. Because the markets are new, they are untried and relatively unstable, which is a high risk for investors. However, these markets also have the potential to provide investors with high returns, as the country's business activity increases and its economy grows. Developing countries tend to experience gains in gross domestic product due to higher production and business activity, which is often facilitated by high foreign investment. The infrastructure of developing countries often improves when the government and investors provide the financial resources to support it. https://www.investopedia.com/terms/e/emergingmarketeconomy.asp",
+      "sources": [
+        "SOURCE: FI:575 Explain the nature and scope of financial globalization",
+        "SOURCE: Investopedia. (2022, May 11). Emerging market economy? Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 49,
+      "question": "Which of the following has contributed to the globalization of financial markets:",
+      "options": {
+        "A": "Higher currency exchange rates",
+        "B": "Increased banking regulations",
+        "C": "Greater restrictions on foreign financial transactions",
+        "D": "Increased use of the internet in financial transactions Test 1267 FINANCE CLUSTER EXAM 8 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Increased use of the internet in financial transactions. Increased use of the internet to complete financial transactions has created fierce competition to secure customers around the globe. Increased restrictions on foreign transactions, higher currency exchange rates, and increased banking regulations would all likely decrease the globalization of financial markets. from https://www.investopedia.com/articles/financial-theory/09/risk-free-rate-return.asp",
+      "sources": [
+        "SOURCE: FI:575 Explain the nature and scope of financial globalization",
+        "SOURCE: Pologeorgis, N.A. (2022, May 29). The globalization of financial services. Retrieved August 18, 2022,"
+      ]
+    },
+    {
+      "number": 50,
+      "question": "What is another way to describe financial information that is true, complete, and faithfully represented?",
+      "options": {
+        "A": "Reliable",
+        "B": "Comparable",
+        "C": "Timely",
+        "D": "Understandable"
+      },
+      "answer": "A",
+      "explanation": "Reliable. Useful financial information is typically transparent, timely, understandable, comparable, and reliable. If data users are confident that their financial information is true, complete, and faithfully represented, then the financial information is reliable. If the financial information is comprehensible and presented in the simplest manner possible, then it is understandable. If one set of financial information can be brought together with another set of financial information to determine similarities and differences between the two sets, then the information is comparable. If the information is up to date, it is also timely.  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:579 Describe the need for financial information",
+        "SOURCE: LAP-FI-579—By the Numbers (The Need for Financial Information)"
+      ]
+    },
+    {
+      "number": 51,
+      "question": "A statement of changes in equity is most useful for",
+      "options": {
+        "A": "investors.",
+        "B": "managers.",
+        "C": "customers.",
+        "D": "employees."
+      },
+      "answer": "A",
+      "explanation": "Investors. The statement of changes in equity is a financial statement that specifically looks at the changes to the owners' equity over time. It gives the clearest picture of how invested wealth has grown, changed, or contributed to a business. Because of the specific focus on wealth, it is most useful to the investors of the business who have an interest in seeing the effect of business operations on their investments. Employees, managers, and customers would not necessarily have as much to gain from the statement of changes in equity because they are not as concerned with invested wealth and generally are not directly affected by changes in equity. https://www.wallstreetmojo.com/statement-of-changes-in-equity/",
+      "sources": [
+        "SOURCE: FI:630 Explain the nature of statements of changes in equity",
+        "SOURCE: Thakur, M. (2022, July 13). Statement of changes in equity. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 52,
+      "question": "When dividends are paid to stockholders, how are they represented on a statement of stockholders' equity?",
+      "options": {
+        "A": "They are subtracted from the net income.",
+        "B": "They are listed as a percentage of the net income.",
+        "C": "They are simply listed on the statement.",
+        "D": "They are added to the net income."
+      },
+      "answer": "A",
+      "explanation": "They are subtracted from the net income. Since dividends paid to stockholders are taken from net income earned, they are subtracted from the net income on the statement of stockholders' equity. Since dividends paid reduce a company's profits, they are not added to net income. Dividends are listed as an actual cash amount, not a percentage, on the statement. It is not possible to correctly calculate a company's stockholders' equity by simply listing dividends paid. 2022, from https://www.investopedia.com/ask/answers/08/dividend-payout-balance-sheet.asp",
+      "sources": [
+        "SOURCE: FI:630 Explain the nature of statements of changes in equity",
+        "SOURCE: Clark, K. (2021, June 30). Is dividend payment shown in shareholder's equity? Retrieved August 16,"
+      ]
+    },
+    {
+      "number": 53,
+      "question": "What type of variance analysis involves determining the difference between the standard costs and the actual costs of raw materials used for production?",
+      "options": {
+        "A": "Fixed overhead",
+        "B": "Material yield",
+        "C": "Selling price",
+        "D": "Purchase price"
+      },
+      "answer": "D",
+      "explanation": "Purchase price. A variance is the difference between an established standard and the actual outcome. It is important for a business to monitor variances in the price of raw materials because they affect its bottom line. When a vendor increases the prices that it charges for raw materials, it costs the business (manufacturer) more money to produce an item. The business may need to find a vendor that charges less for the materials or parts, or it may need to increase its selling price—the amount that the business charges its customers for the finished good. Fixed overhead costs are expenses that do not change in relation to changes in sales volume and include things such as rent and employee salaries. Material yield analysis involves analyzing variances in the number of materials/products that are supposed to be used/sold with the actual number of materials/products that have been used/sold in a certain time frame. https://www.accountingtools.com/articles/what-is-variance-analysis.html",
+      "sources": [
+        "SOURCE: FI:661 Discuss the use of variance analysis in managerial accounting",
+        "SOURCE: AccountingTools. (2022, May 1). Variance analysis definition. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 54,
+      "question": "Which of the following is a technique that can best help managerial accountants evaluate how well they have budgeted:",
+      "options": {
+        "A": "Variance analysis",
+        "B": "Cost-benefit analysis",
+        "C": "Marginal analysis",
+        "D": "Competitive analysis"
+      },
+      "answer": "A",
+      "explanation": "Variance analysis. Variance analysis involves determining the difference between actual and planned behavior. In terms of accounting, it involves determining how much actual numbers differ from those projected in the budget. Managerial accountants can use this analysis technique to see how accurate their budgets are. Cost- benefit analysis examines the costs and benefits of a certain decision. Marginal analysis explains the additional benefits of an activity compared to the additional costs incurred by that activity. Competitive analysis is the process of comparing a business's income statement with that of its competitors to see how it is doing by industry standards. from https://www.accountingtools.com/articles/what-is-variance-analysis.html  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:661 Discuss the use of variance analysis in managerial accounting",
+        "SOURCE: AccountingTools. (2022, May 1). Variance analysis definition. Retrieved August 16, 2022,"
+      ]
+    },
+    {
+      "number": 55,
+      "question": "Incorporating technology into compliance is a way for organizations to",
+      "options": {
+        "A": "increase staff.",
+        "B": "avoid the effects of regulation.",
+        "C": "improve customer experience.",
+        "D": "reduce costs."
+      },
+      "answer": "D",
+      "explanation": "Reduce costs. Using compliance technology allows organizations to reduce the costs of compliance. Technology is more efficient, saves time, and can replace expensive labor costs. Compliance technology does not necessarily help organizations improve customer experience, increase staff, or avoid the effects of regulation. Technologies and tactics for tomorrow's regulator. Retrieved August 16, 2022, from https://www2.deloitte.com/insights/us/en/industry/public-sector/reducing-compliance-costs-with- regtech.html",
+      "sources": [
+        "SOURCE: BL:149 Describe the use of technology in compliance",
+        "SOURCE: Eggers, W.D., Kishnani, P.K., & Turley, M. (2018, October 18). The regulator's new toolkit:"
+      ]
+    },
+    {
+      "number": 56,
+      "question": "When creating a master budget for her company, Jamila determined that the marketing department is responsible for the purchase of a new email platform. Jamila is",
+      "options": {
+        "A": "performing marginal analysis.",
+        "B": "allocating costs.",
+        "C": "eliminating sunk costs.",
+        "D": "performing cost-benefit analysis. Test 1267 FINANCE CLUSTER EXAM 9 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Allocating costs. Cost allocation is the process of assigning costs to cost objects, such as projects, departments, or regions. Jamila is allocating the cost of the email platform to the marketing department. Jamila is not performing marginal analysis, eliminating sunk costs, or performing cost-benefit analysis. https://www.accountingtools.com/articles/what-is-cost-allocation.html",
+      "sources": [
+        "SOURCE: FI:663 Discuss the nature of cost allocation",
+        "SOURCE: AccountingTools. (2022, June 12). Cost allocation definition. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 57,
+      "question": "What type of economic system allows buyers and sellers to make economic decisions without government interference?",
+      "options": {
+        "A": "Market economy",
+        "B": "Command economy",
+        "C": "Socialism",
+        "D": "Communism"
+      },
+      "answer": "A",
+      "explanation": "Market economy. A market system, often called free enterprise or capitalism, is an economic system in which the means of production and distribution are owned and controlled by individuals and businesses. This allows buyers and sellers of products to make their own decisions without interference from the government. A command economy is one in which all or many of the means of production and distribution are owned and controlled by the government. Communism and socialism are forms of command economies.",
+      "sources": [
+        "SOURCE: EC:007 Explain the types of economic systems",
+        "SOURCE: LAP-EC-907—Who's the Boss? (Economic Systems)"
+      ]
+    },
+    {
+      "number": 58,
+      "question": "How can a financial-information management system contribute to the development of future budget requirements?",
+      "options": {
+        "A": "Organizing and analyzing past resource usage data",
+        "B": "Managing company assets",
+        "C": "Restricting access to confidential information",
+        "D": "Collecting and analyzing competitive data"
+      },
+      "answer": "A",
+      "explanation": "Organizing and analyzing past resource usage data. Financial-information management systems help collect, organize, and analyze many pieces of financial data in order to improve a company's finances as a whole. A financial-information management system can take past resource usage information and use it to determine future budget requirements. A financial-information management system also manages company assets, collects and analyzes competitive data, and restricts access to confidential information, but these functions do not necessarily relate directly to the development of future budget requirements. system? Retrieved August 16, 2022, from https://smallbusiness.chron.com/benefits-financial- management-information-system-71943.html  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FM:002 Explain the nature and scope of the financial-information management function",
+        "SOURCE: LaMarco, N. (2019, February 13). What are the benefits of a financial management information"
+      ]
+    },
+    {
+      "number": 59,
+      "question": "Pamela was dismissed from her job as a financial database administrator because she shared her username and password with a coworker so that they could access a customer database that is typically off-limits to them. Pamela failed to fulfill her responsibilities as a data",
+      "options": {
+        "A": "auditor.",
+        "B": "steward.",
+        "C": "sponsor.",
+        "D": "processor."
+      },
+      "answer": "B",
+      "explanation": "Steward. A data steward is, in essence, responsible for ensuring the integrity of an organization's data. To ensure those data's integrity, data stewards must make sure that data are used ethically and honestly—and only by those individuals authorized to do so. Pamela failed to fulfill her responsibilities as a data steward because she allowed a coworker to access data that they were not authorized to see or use. An auditor is responsible for verifying the accuracy of business records. In business, a sponsor is typically an individual or organization that financially supports a project, event, or promotion. A data processor is responsible for analyzing facts and figures and putting them into formats useful to the business. https://www.techtarget.com/searchdatamanagement/definition/data-stewardship",
+      "sources": [
+        "SOURCE: FM:003 Explain the role of ethics in financial-information management",
+        "SOURCE: Pratt, M.K., & Luna, M. (2022, March 15). Data stewardship. Retrieved August 16, 2022, from"
+      ]
+    },
+    {
+      "number": 60,
+      "question": "Kramer Bank uses sophisticated computer software to analyze its commercial customers' financial information. The software reviews each customer's data and identifies additional business opportunities that the bank should pursue with the customer. The bank should share information about these other opportunities with personnel who specialize in",
+      "options": {
+        "A": "relationship management and pricing.",
+        "B": "relationship management and sales.",
+        "C": "risk management and pricing.",
+        "D": "risk management and sales."
+      },
+      "answer": "B",
+      "explanation": "Relationship management and sales. Many organizations use automated software to analyze existing customers' financial information. In some cases, this software is designed to identify cross-selling opportunities—opportunities for the firm to do additional business with its existing customers. Information of this sort is usually passed on to individuals who work in relationship management and sales. After receiving the information, the relationship managers and sales professionals can pursue these other business opportunities with the customers. Risk management and pricing personnel are not likely to receive information about cross- selling opportunities with bank customers. https://www.slideshare.net/Microsoft/crm-in-financial-services",
+      "sources": [
+        "SOURCE: FM:009 Describe techniques used to analyze customer financial information",
+        "SOURCE: Microsoft. (2014, September 26). CRM in financial services. Retrieved August 18, 2022, from"
+      ]
+    },
+    {
+      "number": 61,
+      "question": "Financial information that a credit card issuer analyzes when reviewing customers' credit card applications include the customers'",
+      "options": {
+        "A": "income and preferred standard of living.",
+        "B": "loan balances and consumption rates.",
+        "C": "payment history and current level of debt.",
+        "D": "employment status and financial goals."
+      },
+      "answer": "C",
+      "explanation": "Payment history and current level of debt. Because offering credit is a risk to businesses, they must evaluate many factors to determine the likelihood that a customer will pay credit balances when they are due. Credit card issuers may review the applicant's credit report, which provides details about the customer's payment history of other loans and bills. Another factor analyzed is the applicant's current level of debt, which might include current loan balances with other institutions. Also reviewed is the applicant's employment status and income level, which reveals the applicant's ability to cover their debts. The applicant's financial goals, consumption rates, and preferred standard of living are not primary factors that influence an institution's decision to offer credit. from https://www.credit.com/credit-scores/what-is-a-bad-credit-score/",
+      "sources": [
+        "SOURCE: FM:009 Describe techniques used to analyze customer financial information",
+        "SOURCE: Detweiler, G. (2019, March 6). Just how bad is my bad credit score? Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 62,
+      "question": "Which of the following is a technological tool that businesses use to archive their financial records:",
+      "options": {
+        "A": "Electronic data interchange",
+        "B": "Direct-response software",
+        "C": "Web-development programs",
+        "D": "Digital microfilm scanner Test 1267 FINANCE CLUSTER EXAM 10 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Digital microfilm scanner. Businesses must keep a variety of financial information for a certain length of time, often for several years. Many businesses have saved their archived financial information on microfilm. Microfilm is a type of film that stores photographed images and text in a condensed format for easy storage. A digital microfilm scanner can take existing microfilm, which is older technology, and convert it into a digital format. The advantage to switching microfilm records to a digital format is that businesses can easily view the data on computers and share information quickly through the internet. Direct-response software is a computer program that helps businesses automate their direct-marketing efforts. Electronic data interchange (EDI) is a network of computers that allows businesses to share information. Businesses use web-development programs to develop and maintain websites. from https://ourpastimes.com/scan-microfilm-personal-scanner-7470174.html  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FM:011 Describe the use of technology in the financial-information management function",
+        "SOURCE: Tomas, L. (2017, April 12). How to scan microfilm with personal scanner. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 63,
+      "question": "Alyssa is starting a small business out of her home. When she accesses a business \"how-to\" website, Alyssa finds software downloads and printable worksheets that will help her plan and manage her business's income and expenses. The software and worksheets are types of",
+      "options": {
+        "A": "organizational charts.",
+        "B": "statistical information.",
+        "C": "legal data.",
+        "D": "budgeting tools."
+      },
+      "answer": "D",
+      "explanation": "Budgeting tools. A budget is an estimate of income and expense for a specific timeframe. A budget is an important financial tool that helps the business manage its money. Many websites provide budgeting tools such as software downloads or free printable worksheets. Legal data, statistical information, and organizational charts are not tools that help small-business owners plan and manage their income and expenses. Retrieved August 17, 2022, from https://www.thebalance.com/basic-monthly-budget-worksheet- 1289585",
+      "sources": [
+        "SOURCE: FM:013 Demonstrate budgeting applications",
+        "SOURCE: Vohwinkle, J. (2022, April 21). The basic monthly budget worksheets everyone should have."
+      ]
+    },
+    {
+      "number": 64,
+      "question": "What is a benefit of managing budgeting data efficiently through budgeting applications?",
+      "options": {
+        "A": "Increases management's confidence in budgets",
+        "B": "Decreases the need for having an audit trail",
+        "C": "Decreases auditors' ability to trace the numbers used in budgets",
+        "D": "Increases amount of time that must be spent on value-added activities"
+      },
+      "answer": "A",
+      "explanation": "Increases management's confidence in budgets. The efficient management of budget data benefits businesses in a variety of ways, including error detection and control, decreasing the time needed for completing the accounting cycle, and increasing management's confidence, not only in budgets, but also in financial statements and performance scorecards, etc. Since use of efficient budgeting applications decreases the amount of time required to complete the accounting cycle, financial professionals have the opportunity to spend more time on value-added activities, such as decision-making and presentation of information, rather than having to spend more time on them. An audit trail and increased ability to trace the numbers used in budgets are natural outgrowths of the use of budgeting applications. 2022, from https://www.cflowapps.com/budget-management-process-and-benefits/",
+      "sources": [
+        "SOURCE: FM:013 Demonstrate budgeting applications",
+        "SOURCE: CFlow. (2022, January 17). All you need to know about budget management. Retrieved August 17,"
+      ]
+    },
+    {
+      "number": 65,
+      "question": "Seth's manager asked him to develop a report that compares their company's fourth-quarter performance with others in its industry. Which financial-analysis software feature should Seth use to generate information for his report?",
+      "options": {
+        "A": "DuPont modeling",
+        "B": "Ratio analysis",
+        "C": "Benchmarking",
+        "D": "Forecasting"
+      },
+      "answer": "C",
+      "explanation": "Benchmarking. Many financial-analysis software applications can provide users with benchmarking information that compares a company's financial performance with other specific companies in its industry and/or with industry standards. Other financial-analysis software features include ratio analysis, DuPont modeling, and forecasting. Financial ratios are comparisons of different numbers from a business's financial statement. Most financial-analysis software calculates the different financial ratios automatically and then evaluates those ratios to determine company strengths and weaknesses for the user. DuPont modeling helps the user examine the impact of each financial ratio on return on equity. Forecasting features are often used to make predictions, develop budgets, and experiment with \"what-if\" scenarios. hidden messages in your financial statements. Retrieved August 17, 2022, from https://www.mondaq.com/unitedstates/audit/320334/ratio-analysis-and-industry-benchmarking- reveal-hidden-messages-in-your-financial-statements",
+      "sources": [
+        "SOURCE: FM:014 Demonstrate financial analysis applications",
+        "SOURCE: Ostrow Reisin Berk & Abrams. (2014, June 13). Ratio analysis and industry benchmarking reveal"
+      ]
+    },
+    {
+      "number": 66,
+      "question": "A current employee who is asked to help orient a new employee will be serving as the new employee's",
+      "options": {
+        "A": "sponsor.",
+        "B": "manager.",
+        "C": "apprentice.",
+        "D": "trainee."
+      },
+      "answer": "A",
+      "explanation": "Sponsor. The sponsor method of orientation and training involves current employees who volunteer or are asked to be of assistance to the new employee. Sponsors provide job information, advice, and other kinds of job-related help. An apprentice or a trainee is a worker who is learning a job. A manager performs management functions and probably would be the one to ask an employee to help orient a new employee. responsibilities. Retrieved August 17, 2022, from https://www.calhr.ca.gov/Documents/wfp- Onboarding-Sponsor's-Roles-and-Responsibilites.pdf  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: HR:360 Orient new employees",
+        "SOURCE: California Department of Human Resources. (n.d.). Onboarding sponsor's roles and"
+      ]
+    },
+    {
+      "number": 67,
+      "question": "Most automobile salespeople try to get an idea of what price range the potential customer can afford. This is part of which of the following marketing functions:",
+      "options": {
+        "A": "Pricing",
+        "B": "Marketing-information management",
+        "C": "Selling",
+        "D": "Distribution"
+      },
+      "answer": "C",
+      "explanation": "Selling. This is a marketing function which involves determining client needs and wants and responding through planned, personalized communication that influences purchase decisions and enhances future business opportunities. Determining an appropriate price range of products to show customers is part of the selling function. Pricing is a marketing function which involves determining and adjusting prices to maximize return and meet customers' perceptions of value. Distribution is a marketing function which is responsible for the moving, storing, locating, and/or transferring ownership of goods or services. Marketing-information management involves gathering, accessing, synthesizing, evaluating, and disseminating information for use in making business decisions.",
+      "sources": [
+        "SOURCE: MK:002 Describe marketing functions and related activities",
+        "SOURCE: LAP-MK-001—Work the Big Seven (Marketing Functions)"
+      ]
+    },
+    {
+      "number": 68,
+      "question": "Computer database programs make it easier for businesses to manage",
+      "options": {
+        "A": "large amounts of related information.",
+        "B": "customers' buying habits.",
+        "C": "internet search engines.",
+        "D": "problem-solving skills."
+      },
+      "answer": "A",
+      "explanation": "Large amounts of related information. Database programs are computer software applications that are used to collect and sort many types of information. Information stored in databases help businesses organize customer lists and financial information, track products and shipments, and catalog various records, such as personnel files. Internet search engines are software programs that automatically crawl the web looking for information pertaining to specified search terms and display a list of results. Problem-solving skills refer to a person's ability to find alternatives to achieve a desired outcome. Skills are not managed through a computer program. Databases can track customers' buying habits but cannot manage what customers will purchase.",
+      "sources": [
+        "SOURCE: NF:003 Identify ways that technology impacts business",
+        "SOURCE: LAP-NF-004—TECH-tastic (Technology's Impact on Business)"
+      ]
+    },
+    {
+      "number": 69,
+      "question": "Which of the following is the most effective way to use text in a PowerPoint presentation:",
+      "options": {
+        "A": "Include full paragraphs to provide context.",
+        "B": "Use bullet points organized by topic.",
+        "C": "Use a rainbow of colors as well as text.",
+        "D": "Include every word you plan to say. Test 1267 FINANCE CLUSTER EXAM 11 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Use bullet points organized by topic. Best practices for using text in a PowerPoint presentation include using bullet points to indicate to the audience what the presentation's key points and ideas are. Full paragraphs or every word that a presenter wants to say would only confuse a person listening to a presenter. Using a rainbow of colors on each slide is likely to be distracting to the audience. from https://cft.vanderbilt.edu/guides-sub-pages/making-better-powerpoint-presentations/",
+      "sources": [
+        "SOURCE: NF:008 Demonstrate basic presentation applications",
+        "SOURCE: Vanderbilt University. (n.d.). Making better PowerPoint presentations. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 70,
+      "question": "When a shoe company is trying to plan for the future, it looks at current data about the shoe industry and determines what is popular and unpopular. The company is analyzing business",
+      "options": {
+        "A": "trends.",
+        "B": "licenses.",
+        "C": "productivity.",
+        "D": "finances."
+      },
+      "answer": "A",
+      "explanation": "Trends. Business trends are tendencies and changes in the business world. The company is not analyzing finances. Business productivity is the amount of goods or services produced by a business from a set amount of resources. Business licenses are documents that grant permission to operate a business. http://smallbusiness.chron.com/definition-business-trends-3399.html  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: NF:013 Describe current business trends",
+        "SOURCE: Chron. (2021, May 25). Definition of business trends. Retrieved August 19, 2022, from"
+      ]
+    },
+    {
+      "number": 71,
+      "question": "What component of a computer system is responsible for storing information needed by software applications that are currently in use?",
+      "options": {
+        "A": "Central processing unit",
+        "B": "Web-hosting service",
+        "C": "Random access memory",
+        "D": "Hard disk drive"
+      },
+      "answer": "C",
+      "explanation": "Random access memory. Random access memory (RAM) is the computer's short-term memory responsible for storing information needed by software applications that are currently in use. The number of applications that a computer can run at once depends a great deal on the amount of RAM that the computer has. A computer with a lot of RAM can run several applications at once, while a computer with little RAM can run a much more limited number of programs at the same time. The central processing unit (CPU) is the brains of the computer—it performs calculations and tasks that allow software to function properly. The hard disk drive (HDD) is the computer's long-term memory where more permanent information is stored. A web-hosting service is an internet service provider (ISP) that keeps businesses' web pages up and running for a fee. 2022, from https://www.ictlounge.com/html/computercomponents.htm",
+      "sources": [
+        "SOURCE: NF:084 Discuss principles of computer systems",
+        "SOURCE: Nicholls, M. (n.d.). Components of a computer system and storage devices. Retrieved August 17,"
+      ]
+    },
+    {
+      "number": 72,
+      "question": "Which of the following is a true statement about a management information system (MIS):",
+      "options": {
+        "A": "It may be one part of a business's overall information management program.",
+        "B": "It does not assist with a business's information management program.",
+        "C": "It is the same thing as an information management program.",
+        "D": "It includes people, processes, and practices."
+      },
+      "answer": "A",
+      "explanation": "It may be one part of a business's overall information management program. A management information system (MIS) is a form of technology that assists with a business's information management needs. It is not the same thing as an information management program; however, it may be one part of an overall information management program. An MIS is just hardware and software, but an overall information management program involves people, processes, and practices.",
+      "sources": [
+        "SOURCE: NF:110 Discuss the nature of information management",
+        "SOURCE: LAP-NF-110—In the Know (Nature of Information Management)"
+      ]
+    },
+    {
+      "number": 73,
+      "question": "Mira is reviewing a financial statement for a local business. During her analysis of data, she uses Benford's Law. What can this help her do?",
+      "options": {
+        "A": "Estimate business viability",
+        "B": "Find opportunities for profit",
+        "C": "Identify personnel issues",
+        "D": "Detect the possibility of fraud"
+      },
+      "answer": "D",
+      "explanation": "Detect the possibility of fraud. Benford's Law explores the distribution of digits in a large, randomly generated set of natural numbers. In this data set, the most frequent leading digit is 1, followed by 2, 3, 4, etc., exponentially decreasing until the least frequent leading digit, 9. When applied to data analytics and financial statements, this law helps identify possible deviations from this pattern, which could indicate fraudulently manufactured numbers. Benford's Law does not directly find opportunities for profit, identify personnel issues, or estimate business viability. Retrieved August 17, 2022, from https://towardsdatascience.com/what-is-benfords-law-and-why-is-it- important-for-data-science-312cb8b61048",
+      "sources": [
+        "SOURCE: NF:124 Demonstrate advanced database applications",
+        "SOURCE: Sarkar, T. (2018, October 25). What is Benford's Law and why is it important for data science?"
+      ]
+    },
+    {
+      "number": 74,
+      "question": "Equipment inspections, fire drills, and employee safety training are examples of a business's __________ management efforts.",
+      "options": {
+        "A": "financial",
+        "B": "time",
+        "C": "resource",
+        "D": "risk"
+      },
+      "answer": "D",
+      "explanation": "Risk. Risk management involves procedures used by management to reduce possible hazards that cause losses to the business. Safety inspections, fire drills, and safety training are all attempts to reduce such hazards. Financial management involves making the best use of available funds. Time management involves making the best use of one's time. Resource management involves making the best use of available resources. 2022, from https://www.techtarget.com/searchsecurity/definition/What-is-risk-management-and-why- is-it-important  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: OP:007 Follow safety precautions",
+        "SOURCE: Tucci, L. (2021, October). What is risk management and why is it important? Retrieved August 17,"
+      ]
+    },
+    {
+      "number": 75,
+      "question": "Retailers' and wholesalers' primary purpose for purchasing is for",
+      "options": {
+        "A": "resale.",
+        "B": "conversion into a final product.",
+        "C": "consumption.",
+        "D": "use in the business."
+      },
+      "answer": "A",
+      "explanation": "Resale. Retailers and wholesalers engage in purchasing primarily for the purpose of resale. The buying and reselling of goods has a long history and is an activity that has traditionally been performed by merchants such as wholesalers and retailers. Purchasing for use in the business, for consumption, and for conversion into a final product are purposes of industrial purchasing.",
+      "sources": [
+        "SOURCE: OP:015 Explain the nature and scope of purchasing",
+        "SOURCE: LAP-OP-015—Buy Right (Purchasing)"
+      ]
+    },
+    {
+      "number": 76,
+      "question": "What is one of the most important components of the production process?",
+      "options": {
+        "A": "New technology",
+        "B": "Human resources",
+        "C": "Goods and services",
+        "D": "Inputs and outputs Test 1267 FINANCE CLUSTER EXAM 12 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Human resources. Human resources, the people who work to produce goods and services, is one of the most important components of the production process. People are needed to run the businesses, operate the equipment, and deal with customers. Even in predominately automated facilities, people need to oversee the operation and perform the tasks that cannot be done by machines. Goods and services are created by the production process. People are needed to develop new technology. Production converts inputs (raw materials) into outputs (goods and services).",
+      "sources": [
+        "SOURCE: OP:017 Explain the concept of production",
+        "SOURCE: LAP-OP-017—Can You Make It? (Nature of Production)"
+      ]
+    },
+    {
+      "number": 77,
+      "question": "A project manager may schedule a meeting with their project team when closing the project to",
+      "options": {
+        "A": "establish the project's long-term goals.",
+        "B": "evaluate the project's successes and obstacles.",
+        "C": "determine project priorities and processes.",
+        "D": "delegate the project's tasks to team members."
+      },
+      "answer": "B",
+      "explanation": "Evaluate the project's successes and obstacles. During the closing phase of a project, the project manager often meets with team members to evaluate the project's successes and obstacles, problems, and ways to improve. The feedback is then summarized in a “lessons learned” document that can be used by teams that execute similar projects for the organization in the future. Establishing goals, delegating tasks, and determining priorities and processes are activities that are performed before the project begins. from https://www.prodpad.com/resources/guides/product-management-process/",
+      "sources": [
+        "SOURCE: OP:159 Evaluate project results",
+        "SOURCE: ProdPad. (2022, April 5). Product management process introduction. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 78,
+      "question": "What is the first step you should take when planning a project?",
+      "options": {
+        "A": "Develop a draft plan.",
+        "B": "Identify resources.",
+        "C": "Determine quality standards.",
+        "D": "Identify the project's stakeholders."
+      },
+      "answer": "D",
+      "explanation": "Identify the project's stakeholders. The first step is to figure out who else is involved in the project—the project's stakeholders. Identifying the project's stakeholders is the first step because you do not want to start planning any other aspects of the project without getting their input and including them in the process. Before you determine quality standards, identify resources, or develop a draft plan, you need to identify the project's stakeholders so they will be considered throughout these other steps.",
+      "sources": [
+        "SOURCE: OP:519 Plan project",
+        "SOURCE: LAP-OP-519—Plan On It! (Planning Projects)"
+      ]
+    },
+    {
+      "number": 79,
+      "question": "While there are some general parts of any project that you can evaluate, you should focus on",
+      "options": {
+        "A": "measures that are most important for your specific project.",
+        "B": "whatever your stakeholders ask you to do.",
+        "C": "the aspects of the project that bring in money.",
+        "D": "project scope because it is the only part that truly matters."
+      },
+      "answer": "A",
+      "explanation": "Measures that are most important for your specific project. While there are some general parts of any project that you can evaluate, you should look at which measures are most important for your specific project. To start, consider project goals. Your most important evaluation criteria will likely relate directly to your project's objectives. Project scope is not the only part of the project that truly matters. While your stakeholders' input is important, you should not necessarily follow their direction when deciding which aspects of a project to evaluate. The aspects of a project that bring in money are important to evaluate, but they are not the only parts of a project that you should evaluate.  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: OP:521 Evaluate project success",
+        "SOURCE: LAP-OP-521—Making the Grade (Evaluating Project Success)"
+      ]
+    },
+    {
+      "number": 80,
+      "question": "A major purpose of establishing personal goals is to",
+      "options": {
+        "A": "identify your wants.",
+        "B": "get help from others.",
+        "C": "achieve success in life.",
+        "D": "decrease personal needs."
+      },
+      "answer": "C",
+      "explanation": "Achieve success in life. Success has been defined as reaching the goals you have set for yourself. By establishing well-defined goals, you can greatly increase the chances of achieving success in life. Before you can set appropriate goals, you must identify your wants and then be willing to take action to satisfy those wants. Setting goals does not decrease personal needs or necessarily involve getting help from others.",
+      "sources": [
+        "SOURCE: PD:018 Set personal goals",
+        "SOURCE: LAP-PD-918—Go for the Goal (Goal Setting)"
+      ]
+    },
+    {
+      "number": 81,
+      "question": "Melissa works in a large warehouse that stores hazardous materials. She and her coworkers are regularly instructed to clean up spills but are never provided with protective clothing or equipment. What employee right is Melissa's employer failing to address?",
+      "options": {
+        "A": "Right to expect recognition and criticism",
+        "B": "Right to form unions and collective bargain",
+        "C": "Right to a safe working environment",
+        "D": "Right to fair and unprejudiced treatment"
+      },
+      "answer": "C",
+      "explanation": "Right to a safe working environment. All employees are entitled to a safe working environment—even employees who work in potentially dangerous workplaces. If Melissa's employer expects its workers to come into contact with hazardous materials, then it is the employer's responsibility to provide the appropriate protective clothing or equipment. Employees also have the right to fair and unprejudiced treatment, to expect recognition and criticism, and the right to form unions; however, Melissa's employer did not infringe on any of these rights. https://www.findlaw.com/employment/employment-discrimination/employees-rights-101.html",
+      "sources": [
+        "SOURCE: PD:021 Explain the rights of workers",
+        "SOURCE: FindLaw. (2019, May 31). Employee rights 101. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 82,
+      "question": "Under which of the following circumstances should applicants send interview follow-up messages:",
+      "options": {
+        "A": "When they are sure they will get the job",
+        "B": "Only if they are interested in the job",
+        "C": "After every employment interview",
+        "D": "If they are convinced they are qualified"
+      },
+      "answer": "C",
+      "explanation": "After every employment interview. Job applicants should send follow-up messages (e.g., email) after every employment interview to thank the interviewer for considering them. Sending follow-up messages is a common courtesy to interviewers, but it also benefits the applicant. Even if the applicants are not hired at that time, they have created a favorable impression in the event that they apply for other positions with that business in the future. Applicants should always send follow-up messages, not only if they are interested in the job, sure they will get the job, or convinced they are qualified. 2022, from https://www.indeed.com/career-advice/interviewing/follow-up-email-examples-after- interview",
+      "sources": [
+        "SOURCE: PD:029 Write a follow-up letter after job interviews",
+        "SOURCE: Indeed. (2022, May 17). Follow-up email examples for after the interview. Retrieved August 17,"
+      ]
+    },
+    {
+      "number": 83,
+      "question": "When preparing cover letters for jobs, individuals who have very little work experience should stress their",
+      "options": {
+        "A": "activities.",
+        "B": "references.",
+        "C": "personality.",
+        "D": "education. Test 1267 FINANCE CLUSTER EXAM 13 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Education. Individuals should stress their education and achievements at school when they have very little work experience. Prospective employers are interested in finding out if the applicants have the training and ability to perform well on the job. If applicants explain that they have the educational background to do the work, prospective employers are often willing to interview them. Information about references is typically listed in a resume (rather than a cover letter). Cover letters usually do not contain information about an individual's personality or activities unless those activities relate directly to the job. 2022, from https://www.thebalancecareers.com/how-to-explain-a-gap-on-your-resume-2063188  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: PD:030 Write a letter of application",
+        "SOURCE: Doyle, A. (2020, July 3). How to explain an employment gap on your résumé. Retrieved August 17,"
+      ]
+    },
+    {
+      "number": 84,
+      "question": "One of the main reasons why businesses participate in trade shows is to",
+      "options": {
+        "A": "research their market.",
+        "B": "promote their products.",
+        "C": "train their salespeople.",
+        "D": "meet their competitors."
+      },
+      "answer": "B",
+      "explanation": "Promote their products. One of the main reasons why businesses participate in trade shows is to promote their products to new and existing customers. Businesses display their products at trade shows and have staff on hand to answer questions. Trade shows offer an opportunity for businesses to present their products to many potential customers in one place and at one time. Businesses do not train their salespeople at trade shows. Although businesses may meet their competitors at trade shows, that is not the primary reason for participating. Businesses research their market before participating in trade shows. journals/periodicals, professional/trade associations, classes/seminars, trade shows, and mentors) August 17, 2022, from https://www.business2community.com/marketing/six-key-benefits-trade- shows-market-business-0973628",
+      "sources": [
+        "SOURCE: PD:036 Utilize resources that can contribute to professional development (e.g., trade",
+        "SOURCE: Leonard, J. (2022, July 14). Six key benefits trade shows have to market your business. Retrieved"
+      ]
+    },
+    {
+      "number": 85,
+      "question": "Leah's primary duties at TRN Bank involve soliciting borrowers and assisting them through the process of purchasing a home or office building. Which of the following is most likely Leah's job title:",
+      "options": {
+        "A": "Senior bank teller",
+        "B": "Controller",
+        "C": "Insurance underwriter",
+        "D": "Mortgage loan officer"
+      },
+      "answer": "D",
+      "explanation": "Mortgage loan officer. Mortgage loan officers work at lending institutions such as banks and mortgage companies. They solicit borrowers who are interested in purchasing homes, land, or commercial buildings. Mortgage loan officers oversee the application process, make sure that applicants submit the appropriate forms and paperwork, and assist in the loan closing process. Insurance underwriters are responsible for calculating the risk of loss, establishing premium rates, and designing policies to cover risk. Bank tellers work for deposit- taking institutions and perform duties such as checking account balances for customers and processing customers' bank transactions. A controller directs the preparation of financial reports such as balance sheets and income statements and is often in charge of the accounting and auditing functions for an entire company.",
+      "sources": [
+        "SOURCE: PD:152 Discuss employment opportunities in the finance industry",
+        "SOURCE: LAP-PD-152—Career Opportunities in Finance"
+      ]
+    },
+    {
+      "number": 86,
+      "question": "A worker who records, classifies, summarizes, analyzes, and communicates a business's financial information is a(n)",
+      "options": {
+        "A": "compliance analyst.",
+        "B": "accountant.",
+        "C": "bank manager.",
+        "D": "insurance agent."
+      },
+      "answer": "B",
+      "explanation": "Accountant. An accountant records, classifies, summarizes, analyzes, and communicates a business's financial information and business transactions for use in decision-making. A bank manager runs and operates a bank, while a compliance analyst may analyze financial records to make sure they are in accordance with legal requirements. A compliance analyst would not necessarily prepare financial records. An insurance agent sells insurance and does not typically prepare and examine financial records.",
+      "sources": [
+        "SOURCE: PD:152 Discuss employment opportunities in the finance industry",
+        "SOURCE: LAP-PD-152—Career Opportunities in Finance"
+      ]
+    },
+    {
+      "number": 87,
+      "question": "Troy is a finance manager for a small firm in town. Last night, he attended a cookout at his neighbor's house and met Melissa, who is the owner of a large financial-planning company. Troy and Melissa exchanged business cards, and they set up an appointment for the following week to discuss business opportunities. In what type of situation did Troy and Melissa form a professional business relationship?",
+      "options": {
+        "A": "Social gathering",
+        "B": "Educational setting",
+        "C": "Corporate environment",
+        "D": "Formal event"
+      },
+      "answer": "A",
+      "explanation": "Social gathering. Networking involves connecting with others who might help them accomplish their personal career and professional goals. By networking with others working in the same profession, finance professionals often learn about employment and continuing education opportunities as well as gain leads for prospective clients. Professional networking can occur under a variety of circumstances, while at work, during a professional association meeting, or in a social gathering, such as the cookout that Tony attended. Tony and Melissa did not meet at a formal event, in an educational setting, or in a corporate environment. (without being creepy about it). Retrieved August 17, 2022, from https://www.themuse.com/advice/how-to-network-at-social-event  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: PD:153 Discuss opportunities for building professional relationships in finance",
+        "SOURCE: Jackson-Wright, Q. (2020, June 19). How to turn any social event into a networking opportunity"
+      ]
+    },
+    {
+      "number": 88,
+      "question": "Hank would like to meet regularly in person with other financial planners in his geographic area to discuss trends and issues impacting their profession. Which of the following professional organizations would best meet Hank's needs:",
+      "options": {
+        "A": "Federal Organization of Financial Planners",
+        "B": "National Association of Professional Financial Advisors",
+        "C": "International Financial Planning Association",
+        "D": "Local Society of Financial Planning Professionals"
+      },
+      "answer": "D",
+      "explanation": "Local Society of Financial Planning Professionals. If Hank is interested in meeting other area financial planners in person regularly to discuss trends and issues impacting financial planning, he would be wise to join a local organization such as the Local Society of Financial Planning Professionals. Since the members work in close proximity to each other, they are more likely to hold face-to-face meetings on a regular basis. A national (federal) or international professional organization may not necessarily have a chapter in Hank's area. August 17, 2022, from https://www.educba.com/joining-a-professional-organization/",
+      "sources": [
+        "SOURCE: PD:153 Discuss opportunities for building professional relationships in finance",
+        "SOURCE: Shethna, J. (2021, March 23). 13 basic benefits of joining a professional organization. Retrieved"
+      ]
+    },
+    {
+      "number": 89,
+      "question": "Who typically reviews and approves the guidelines for running a corporation, which are also known as corporate governance policies?",
+      "options": {
+        "A": "The investors",
+        "B": "The management team",
+        "C": "The shareholders",
+        "D": "The board of directors Test 1267 FINANCE CLUSTER EXAM 14 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "The board of directors. A corporation's board of directors is responsible for approving and reviewing the corporate governance policies of the business. These corporate governance policies specify the guidelines and rules by which a corporation is directed and run. Although shareholders, the management team, and the investors are affected by these rules, it is the job of the board to approve and review them. https://corporatefinanceinstitute.com/resources/careers/jobs/board-of-directors/",
+      "sources": [
+        "SOURCE: PD:213 Discuss the importance of corporate governance in business",
+        "SOURCE: Corporate Finance Institute. (2022, January 30). Board of directors. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 90,
+      "question": "Which of the following is a positive characteristic for the members of a corporation's board of directors to possess:",
+      "options": {
+        "A": "Independent thinking",
+        "B": "Indecisiveness",
+        "C": "Single-minded attitude",
+        "D": "Conformity"
+      },
+      "answer": "A",
+      "explanation": "Independent thinking. It is important for members of a corporation's board of directors to be able to think independently. This involves questioning current policies and proposed actions so that the board as a whole acts in the best interests of the corporation and its shareholders. Board members should also be open-minded and willing to listen to suggestions and different opinions so they can make informed, thoughtful decisions. Conformity often involves following or agreeing with others to “fit in” with the group. Conformity, indecisiveness, and a single-minded attitude can lead to decision-making practices that do not look out for the best interests of the corporation and its shareholders. transparency, internal and external audit functions) from https://www.praxonomy.com/blog/4-characteristics-of-an-effective-board/",
+      "sources": [
+        "SOURCE: PD:214 Describe the components of a well-governed company (e.g., board of directors, reporting,",
+        "SOURCE: Duenas, C. (2022, July 26). Four characteristics of an effective board. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 91,
+      "question": "A business letter that presents its message in as few words as possible would be described as having",
+      "options": {
+        "A": "clarity.",
+        "B": "conciseness.",
+        "C": "courtesy.",
+        "D": "completeness."
+      },
+      "answer": "B",
+      "explanation": "Conciseness. Being concise means being specific and brief. Unnecessary words and phrases should be eliminated. Completeness means the business letter contains all pertinent information. Clarity means the content of the business letter is clear and easily understood. Courtesy means polite behavior. from https://writingcenter.uagc.edu/writing-clearly-concisely",
+      "sources": [
+        "SOURCE: CO:133 Write business letters",
+        "SOURCE: University of Arizona Global Campus. (2022). Writing clearly & concisely. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 92,
+      "question": "Which employee reports directly to a corporation's board of directors?",
+      "options": {
+        "A": "Accounting manager",
+        "B": "Vice president of operations",
+        "C": "Chief executive officer",
+        "D": "Director of sales"
+      },
+      "answer": "C",
+      "explanation": "Chief executive officer. The board of directors is the group of people chosen to govern the activities of a corporation. The board members are elected by the corporation's shareholders. The corporation's chief executive officer (CEO) reports directly to the board of directors. The vice president of operations is most likely to report to the CEO. The accounting manager and director of sales are mid-level managers. The accounting manager is most likely to report to the vice president of finance, and the director of sales is most likely to report to the vice president of marketing. https://www.investopedia.com/articles/basics/03/022803.asp  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: PD:302 Identify the factors that impact governance structures",
+        "SOURCE: Investopedia. (2022, May 19). The basics of corporate structure. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 93,
+      "question": "Which of the following factors differentiates the governance structure of a small business from a large business:",
+      "options": {
+        "A": "The impact of governance policies",
+        "B": "The need for a board of directors",
+        "C": "The number of owners",
+        "D": "The presence of investors"
+      },
+      "answer": "C",
+      "explanation": "The number of owners. Organizations of all sizes need governance, but governance structures can vary based on the size of the organization. One difference is the number of owners. A large, publicly listed corporation has many owners, while a small- or medium-sized company likely has one or few shareholders. However, the need for a board of directors does not change based on the size of the company; small companies can benefit from a board of directors as much as large companies. Furthermore, all companies are impacted by governance policies, regardless of size. Finally, organizations of any size can have investors. 17, 2022, from http://vi.is/files/844786923Mette%20Neville%2018.02.05%20pdf.pdf",
+      "sources": [
+        "SOURCE: PD:302 Identify the factors that impact governance structures",
+        "SOURCE: Neville, M. (n.d.). Corporate governance in small and medium-sized companies. Retrieved August"
+      ]
+    },
+    {
+      "number": 94,
+      "question": "To manage potential risks resulting from unethical conduct, many companies build internal infrastructures that promote and enforce ethical practices. This internal infrastructure is likely to include appropriate audit procedures, a code of conduct, and a __________ policy.",
+      "options": {
+        "A": "monetary",
+        "B": "whistleblower",
+        "C": "constituent",
+        "D": "credit"
+      },
+      "answer": "B",
+      "explanation": "Whistleblower. One way to manage potential risks resulting from unethical conduct is to build an internal infrastructure that promotes and enforces ethical practices and offers incentives to behave ethically. This internal infrastructure typically includes appropriate audit procedures, a code of conduct, a committee to develop the code, training for employees about the code, and a whistleblower policy. A whistleblower policy encourages and enables employees to report unethical behavior or actions without fear of negative repercussions such as demotion or firing. A credit policy is a guideline for a business to follow in controlling the use of payment plans that allow customers to purchase now and pay later. Monetary policy is the government policy that determines the amount of money that will be in circulation and the level of interest rates. Constituent policies are public policies that apply to the government or nation as a whole. Constituent policies include national security, foreign affairs, diplomacy, etc. https://www.investopedia.com/terms/w/whistleblower.asp",
+      "sources": [
+        "SOURCE: RM:041 Explain the role of ethics in risk management",
+        "SOURCE: Kenton, W. (2022, March 27). What is a whistleblower? Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 95,
+      "question": "What is the relationship between ethics and risk management?",
+      "options": {
+        "A": "Risk management prevents ethical behavior.",
+        "B": "Ethics and risk management are the same.",
+        "C": "Ethics and risk management rely on one another.",
+        "D": "Risk management is generally unethical."
+      },
+      "answer": "C",
+      "explanation": "Ethics and risk management rely on one another. Ethics are the basic principles that govern behavior. Risk management is a business activity that involves the planning, controlling, preventing, and limiting of business losses and enhancing possibilities for gain. Ethics and risk management rely on one another because managing risks is ethical and unethical behavior is risky. However, ethics are not the same as risk management. Risk management does not prevent ethical behavior; rather, it encourages it. Risk management is not generally unethical. 17, 2022, from https://hbr.org/2016/11/simple-ethics-rules-for-better-risk-management",
+      "sources": [
+        "SOURCE: RM:041 Explain the role of ethics in risk management",
+        "SOURCE: Disparte, D. (2016, November 8). Simple ethics rules for better risk management. Retrieved August"
+      ]
+    },
+    {
+      "number": 96,
+      "question": "Using appropriate software to protect confidential data that are stored on a company's computer systems is an important part of managing",
+      "options": {
+        "A": "physical safety risks.",
+        "B": "security risks.",
+        "C": "natural disasters.",
+        "D": "environmental hazards. Test 1267 FINANCE CLUSTER EXAM 15 Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Security risks. Risk management is a business activity that involves planning, controlling, preventing, and establishing procedures to limit business losses. Businesses use technology to minimize security risks. One way that businesses control security risks is by installing firewalls on computer networks to prevent computer hackers from obtaining confidential financial data (e.g., customers' credit card numbers). Natural disasters include occurrences such as hurricanes, tornadoes, and floods. Physical safety risks involve threats to a person's well-being and may include environmental hazards such as air pollution and water toxins. https://blog.radware.com/security/cloudsecurity/2019/05/managing-security-risks-in-the-cloud/  Copyright © 2023 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: RM:042 Describe the use of technology in risk management",
+        "SOURCE: Smith, D. (2019, May 8). Managing security risks in the cloud. Retrieved August 17, 2022, from"
+      ]
+    },
+    {
+      "number": 97,
+      "question": "Advancements in technology have had big implications for risk management. For example, real-time reporting has helped teams __________ the time between when a risk is documented and when the report reaches people who can act on that information.",
+      "options": {
+        "A": "monetize",
+        "B": "decrease",
+        "C": "increase",
+        "D": "escalate"
+      },
+      "answer": "B",
+      "explanation": "Decrease. Technology facilitates risk management by decreasing the time it takes for key personnel to be alerted of any issues. Many companies use technological tools like risk dashboards and automated processes to make this communication immediate. With technology, risk management communication lag time is not increased, escalated, or monetized. Retrieved August 17, 2022, from https://tensix.com/what-risk-management-technology-should-you- use/",
+      "sources": [
+        "SOURCE: RM:042 Describe the use of technology in risk management",
+        "SOURCE: Ten Six Consulting. (2018, February 1). What risk management technology should you use?"
+      ]
+    },
+    {
+      "number": 98,
+      "question": "To reduce the risk of future legal problems, a company might require its business partners to sign a formal",
+      "options": {
+        "A": "warrant.",
+        "B": "premium.",
+        "C": "invoice.",
+        "D": "contract."
+      },
+      "answer": "D",
+      "explanation": "Contract. A contract is an agreement between two or more parties stating that one party is to do something in return for something provided by the other party. By putting the terms of an agreement or business arrangement in a written contract that both parties sign, the business reduces the risk of misunderstanding about what is expected and what will be provided. When agreements are not documented and a problem occurs, legal action may be required, which can be costly to the business. An invoice is a bill. A premium is a fee for an insurance policy. A warrant is a legal document issued by authorities that requires an individual or business to take a certain action. August 17, 2022, from https://www.thebalancesmb.com/basics-of-business-contracts-and- agreements-397811",
+      "sources": [
+        "SOURCE: RM:043 Discuss legal considerations affecting risk management",
+        "SOURCE: Murray, J. (2020, December 29). The basics of business contracts and agreements. Retrieved"
+      ]
+    },
+    {
+      "number": 99,
+      "question": "Which of the following is a legal result of implementing risk management procedures:",
+      "options": {
+        "A": "Increased liability exposure",
+        "B": "Decreased employee satisfaction",
+        "C": "Less workplace safety regulation",
+        "D": "Avoidance of negligence lawsuits"
+      },
+      "answer": "D",
+      "explanation": "Avoidance of negligence lawsuits. Risk management practices reduce the chance that a company will be faced with negligence lawsuits. Risk management reduces liability exposure; it does not increase it. Decreased employee satisfaction is not a legal result of risk management procedures. Risk management practices do not lessen workplace safety regulations—risk management ensures that companies are following all workplace safety regulations. from https://www.osler.com/en/resources/governance/2014/risk-management/6-benefits-of-a-risk- management-program",
+      "sources": [
+        "SOURCE: RM:043 Discuss legal considerations affecting risk management",
+        "SOURCE: Ritchie, L. (2014, October 27). 6 benefits of a risk management program. Retrieved August 17, 2022,"
+      ]
+    },
+    {
+      "number": 100,
+      "question": "Which of the following is an example of a material resource:",
+      "options": {
+        "A": "A long-term employee",
+        "B": "A marketing-research study",
+        "C": "A bank loan",
+        "D": "A piece of manufacturing equipment Finance Cluster Exam ACT – Accounting Applications Series Event BFS – Business Finance Series Event FCE – Financial Consulting Event FTDM – Financial Services Team Decision Making Event CAUTION: Posting these materials on a website is a copyright violation. This comprehensive exam was developed by MBA Research exclusively for DECA’s 2022-2023 Competitive Events Program. Items have been randomly selected from the MBA Research Test-Item Bank and represent a variety of instructional areas. Performance indicators for this exam are at the prerequisite, career-sustaining, and specialist levels. A descriptive test key, including question sources and answer rationale, has been provided to the DECA chartered association advisor. Copyright © 2023 by Marketing & Business Administration Research and Curriculum Center®, Columbus, Ohio (dba MBA Research). Each individual test item contained herein is the exclusive property of MBA Research. Items are licensed to DECA only for use as configured within this exam, in its entirety. Use of individual items for any purpose other than as specifically authorized is prohibited. Possession of this exam, without written authorization, under any other circumstances is a copyright violation. Posting to inter- or intranet sites is specifically forbidden unless written permission is obtained prior to posting. Report violations to DECA at 703.860.5000 and MBA Research at 800.448.0398. Permission for reprinting is granted to DECA chartered associations authorized by DECA Inc. DECA Inc. will impose sanctions on chapters and chartered associations for violations of this policy up to and including disqualification of competitors and chapters from further participation. KEY Test Number 1267 Test 1267 FINANCE"
+      },
+      "answer": "D",
+      "explanation": "A piece of manufacturing equipment. Material resources are the equipment and supplies that businesses need to produce and/or sell their goods and services, including manufacturing equipment. A marketing-research study is an example of an informational resource. A bank loan is an example of a financial resource. A long- term employee is an example of a human resource.",
+      "sources": [
+        "SOURCE: SM:001 Explain the concept of management",
+        "SOURCE: LAP-SM-001—Manage This! (Concept of Management)"
+      ]
+    }
+  ]
+}

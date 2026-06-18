@@ -1,0 +1,83 @@
+[
+  {
+    "slug": "ep-2018",
+    "title": "Entrepreneurship 2018 ICDC",
+    "file": "EP 2018.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2018.json"
+  },
+  {
+    "slug": "ep-2019",
+    "title": "Entrepreneurship 2019 ICDC",
+    "file": "EP 2019.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2019.json"
+  },
+  {
+    "slug": "ep-2020",
+    "title": "Entrepreneurship 2020 ICDC",
+    "file": "EP 2020.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2020.json"
+  },
+  {
+    "slug": "ep-2021",
+    "title": "Entrepreneurship 2021 ICDC",
+    "file": "EP 2021.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2021.json"
+  },
+  {
+    "slug": "ep-2022",
+    "title": "Entrepreneurship 2022 ICDC",
+    "file": "EP 2022.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2022.json"
+  },
+  {
+    "slug": "ep-2023",
+    "title": "Entrepreneurship 2023 ICDC",
+    "file": "EP 2023.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2023.json"
+  },
+  {
+    "slug": "ep-2024",
+    "title": "Entrepreneurship 2024 ICDC",
+    "file": "EP 2024.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2024.json"
+  },
+  {
+    "slug": "ep-2025",
+    "title": "Entrepreneurship 2025 ICDC",
+    "file": "EP 2025.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2025.json"
+  },
+  {
+    "slug": "ep-2026",
+    "title": "Entrepreneurship 2026 ICDC",
+    "file": "EP 2026.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/ep/ep-2026.json"
+  }
+]

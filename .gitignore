@@ -6,3 +6,11 @@ server/.env
 *firebase-adminsdk*.json
 serviceAccount*.json
 
+
+# Dependencies — never commit
+node_modules/
+
+# Stress-test fake-profile tooling — local only, never deploy
+scripts/gen_fake_profiles.mjs
+scripts/clean_fake_profiles.mjs
+scripts/fake-profiles-manifest.json

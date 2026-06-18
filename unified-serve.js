@@ -47,7 +47,8 @@ const MIME = {
 function safePath(urlPath) {
   // Strip query/hash, decode, prevent traversal
   let p = decodeURIComponent(urlPath.split("?")[0].split("#")[0]);
-  if (p === "/" || p === "") p = "/index.html";
+  // Root serves the study tool directly (the React landing was removed).
+  if (p === "/" || p === "" || p === "/index.html") p = "/app.html";
   const abs = path.normalize(path.join(ROOT, p));
   if (!abs.startsWith(ROOT)) return null;
   return abs;
@@ -96,7 +97,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, "0.0.0.0", () => {
-  console.log(`[unified] DECA Marketing site + API on :${PORT}`);
+  console.log(`[unified] ClusterPrep site + API on :${PORT}`);
   console.log(`[unified] root: ${ROOT}`);
   console.log(`[unified] api handler loaded: ${Boolean(apiListener)}`);
 });

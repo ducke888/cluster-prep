@@ -1,0 +1,1607 @@
+{
+  "file": "EP 2021.pdf",
+  "question_count": 100,
+  "answered_count": 100,
+  "questions": [
+    {
+      "number": 1,
+      "question": "The owner of the Vidal Boutique verbally offers to sell Briele's original hat designs in the shop and to give her a 50% commission on the sale of the hats. Briele verbally agrees to deliver two new hats for the shop to sell each week. Briele and the boutique owner's agreement is an example of a(n) __________ contract.",
+      "options": {
+        "A": "voidable C. express",
+        "B": "",
+        "C": "express B. implied",
+        "D": "executed"
+      },
+      "answer": "C",
+      "explanation": "Express. Since both parties have verbally expressed or agreed to what they will do, an express contract exists. An implied contract is not a formal agreement, but an understanding that develops from conducting business with another party. A voidable contract exists when one party has committed fraud or misrepresentation; there is no indication of misconduct in the situation described. An executed contract only exists after both parties have met their obligations. 2020, from https://www.upcounsel.com/express-contra",
+      "sources": [
+        "SOURCE: BL:002 Describe the nature of legally binding contracts",
+        "SOURCE: UpCounsel. (2020). Express contract: Everything you need to know. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 2,
+      "question": "Which of the following prevents individuals other than the holder from making, selling, or using an invention:",
+      "options": {
+        "A": "Trademark C. Copyright",
+        "B": "",
+        "C": "Copyright B. Patent",
+        "D": "Trade secret"
+      },
+      "answer": "B",
+      "explanation": "Patent. There are three primary protections for intellectual property: patents, trademarks, and copyrights. Patents provide legal protection for an invention, meaning that the patent holder can legally exclude other entities from making, selling, or using the patented invention. A trademark is a symbol, design, or word used by a producer to identify a good or service and registered with the government to prevent use by others. A copyright provides legal protection for books and other artistic works. A trade secret is undisclosed information within a particular business or industry. There is no legal protection for trade secrets. from https://www.upcounsel.com/intellectual-property-protection",
+      "sources": [
+        "SOURCE: BL:051 Describe methods used to protect intellectual property",
+        "SOURCE: UpCounsel. (2020, June 23). Intellectual property protection. Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 3,
+      "question": "Allison just started her own photography business. She will be working alone, and she doesn't anticipate many business expenses or lawsuits. Which type of business ownership is best for Allison?",
+      "options": {
+        "A": "Sole proprietorship C. Corporation",
+        "B": "",
+        "C": "Corporation B. Limited liability company (LLC)",
+        "D": "Partnership"
+      },
+      "answer": "A",
+      "explanation": "Sole proprietorship. Sole proprietorships are businesses with just one owner. They are typically the easiest type of business to start. However, the business owner is legally responsible for all debts and lawsuits. Since Allison is starting a business by herself and doesn't expect many lawsuits, a sole proprietorship is ideal for her. A partnership is similar to a sole proprietorship, except that it involves two business owners. A corporation is a separate legal entity owned by shareholders. The corporation itself is responsible for debts and legal actions. Corporations are complex and usually recommended for much larger businesses than Allison's. Limited liability companies (LLCs) combine features of corporations and partnerships. They make more sense for business owners who have a large amount of debt or a higher risk of being sued. from http://www.nolo.com/legal-encyclopedia/learn-about-business-ownership-structures- 29785.html",
+      "sources": [
+        "SOURCE: BL:003 Explain types of business ownership",
+        "SOURCE: Laurence, B. (2020). Learn about business ownership structures. Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 4,
+      "question": "Which of the following is the type of tax that businesses are required to collect from customers when they purchase certain goods or services:",
+      "options": {
+        "A": "Corporate C. Estate",
+        "B": "",
+        "C": "Estate B. Income",
+        "D": "Sales"
+      },
+      "answer": "D",
+      "explanation": "Sales. Sales taxes are monies charged on sales of certain goods and services by state and/or local governments. The tax amount varies by location. After the business collects the sales tax from customers for their purchases, it pays the monies to the appropriate government agency. Income taxes are monies that the business withholds from its employees' wages. Estate taxes are monies that are collected from a person's estate upon his/her death. Corporations rather than customers pay corporate taxes. http://www.investopedia.com/terms/s/salestax.asp",
+      "sources": [
+        "SOURCE: BL:009 Explain the nature of tax regulations on business",
+        "SOURCE: Kagan, J. (2020, May 31). Sales tax definition. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 5,
+      "question": "Loggins Forestry and Mill Company sells wood to Henderson Wood Products. Henderson sells the wood to Franklin Construction Company, who uses the wood to build homes and office buildings. What is the channel of distribution for the wood products?",
+      "options": {
+        "A": "Agent to industrial user to retailer to consumer",
+        "B": "Producer to industrial user to consumer",
+        "C": "Agent to wholesaler to consumer",
+        "D": "Producer to industrial distributor to industrial user"
+      },
+      "answer": "D",
+      "explanation": "Producer to industrial distributor to industrial user. In the example, Loggins is the producer because it grows the trees and mills the timber into usable units. Henderson is the industrial distributor (wholesaler) because it sells smaller amounts of the wood products to users such as the Franklin Construction Company. Franklin uses the wood products to build homes and office buildings. Homes and buildings are sold to the ultimate consumers. Agents are businesses or individuals who assist in the sale and/or promotion of products but do not buy them from the producer. Retailers purchase finished goods to resell to the consumer.",
+      "sources": [
+        "SOURCE: CM:001 Explain the nature and scope of channel management",
+        "SOURCE: LAP-CM-002—Chart Your Channels (Channel Management)"
+      ]
+    },
+    {
+      "number": 6,
+      "question": "Wingo's sells the products it produces through its own catalog, which is a form of ___________ distribution.",
+      "options": {
+        "A": "direct C. middleman",
+        "B": "",
+        "C": "middleman B. indirect",
+        "D": "industrial"
+      },
+      "answer": "A",
+      "explanation": "Direct. Direct distribution is a channel of distribution in which goods and services move directly from the producer to the consumer or industrial user. Indirect distribution is where goods and services move from the producer to the channel members and then to consumers or industrial users. Industrial and middleman are not terms that are used to describe businesses that sell products directly to consumer or end users.",
+      "sources": [
+        "SOURCE: CM:003 Explain the nature of channels of distribution",
+        "SOURCE: LAP-CM-003—Channel It (Channels of Distribution)"
+      ]
+    },
+    {
+      "number": 7,
+      "question": "A business deciding to sell custom-made items directly to consumers is an example of selecting a distribution channel based on the",
+      "options": {
+        "A": "product. C. price.",
+        "B": "",
+        "C": "price. B. market.",
+        "D": "location."
+      },
+      "answer": "A",
+      "explanation": "Product. When selecting a distribution channel, businesses often consider several factors. One of these factors is the type of product. For some products, it is more effective for the business to sell them directly to consumers rather than through several channel members. For example, a business that sells custom- made items that meet a customer's specific requirements, or that need to be installed, probably would sell directly to consumers. Using an intermediary would make it more complicated because instructions would need to be passed back and forth between the business and the customer by way of the intermediary. A business deciding to sell custom-made items directly to consumers is not an example of selecting a distribution channel based on the market, the price, or the location. business. Retrieved August 25, 2020, from https://www.thebalancesmb.com/choose-best- distribution-channel-for-your-business-3502272",
+      "sources": [
+        "SOURCE: CM:010 Select channels of distribution",
+        "SOURCE: Waksman, K. (2020, January 3). How to choose the right distribution channel for your"
+      ]
+    },
+    {
+      "number": 8,
+      "question": "Which of the following helps the reader find specific elements of a formal report:",
+      "options": {
+        "A": "Table of contents C. Executive summary",
+        "B": "",
+        "C": "Executive summary B. Title page",
+        "D": "Conclusion"
+      },
+      "answer": "A",
+      "explanation": "Table of contents. The table of contents is in the front of the report, and it directs readers to areas of the report that are of particular interest to them. A title page identifies the report's subject, author(s), and the place and location of preparation. A short synopsis of the report is called an executive summary. The conclusion summarizes the main points based solely on the report's findings. from https://penandthepad.com/purpose-table-contents-6690372.html",
+      "sources": [
+        "SOURCE: CO:009 Prepare complex written reports",
+        "SOURCE: Benjamin, A. (n.d.). What is the purpose of a table of contents? Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 9,
+      "question": "What should a successful brand promise be able to do?",
+      "options": {
+        "A": "Convey a high-quality image C. Customize the product for each customer",
+        "B": "",
+        "C": "Customize the product for each customer B. Clarify the company's processes",
+        "D": "Communicate an appealing benefit"
+      },
+      "answer": "D",
+      "explanation": "Communicate an appealing benefit. A brand promise is a business's agreement (spoken or unspoken) with customers that it will consistently meet their expectations and deliver on its brand characteristics and values. Before the business can deliver on its brand promise, it must have a product that offers an appealing benefit—one that persuades the target market to buy. For example, FedEx provides delivery services. The company's brand promise focuses on reliability. Therefore, FedEx promises to get its customers' packages to their destinations in a reliable manner—safely, quickly, and courteously—every time, which is an appealing benefit for most customers. A procedure is the step-by-step process that a person follows when performing a specific task. Customization involves making the product unique for each customer. Customization, a high-quality image, and the process by which the business delivers its products may be elements of a company's brand promise. August 25, 2020, from https://hingemarketing.com/blog/story/elements-of-a-successful- brand-4-brand-promise1",
+      "sources": [
+        "SOURCE: CR:001 Identify company's brand promise",
+        "SOURCE: Frederiksen, L. (2020, April 27). Elements of a successful brand 4: Brand promise. Retrieved"
+      ]
+    },
+    {
+      "number": 10,
+      "question": "Which of the following is an example of an uninsurable risk:",
+      "options": {
+        "A": "Fire C. Customer buying habits",
+        "B": "",
+        "C": "Customer buying habits B. Business interruption",
+        "D": "Personal injury"
+      },
+      "answer": "C",
+      "explanation": "Customer buying habits. Buying habits can change quickly and for many unpredictable reasons; therefore, insurance companies will not assume risk coverage. The other alternatives are considered insurable risks which can be covered by various types of insurance policies.",
+      "sources": [
+        "SOURCE: EC:011 Determine factors affecting business risk",
+        "SOURCE: LAP-EC-003—Lose, Win, or Draw (Business Risk)"
+      ]
+    },
+    {
+      "number": 11,
+      "question": "Which of the following is an example of a government regulation that affects a business's working conditions:",
+      "options": {
+        "A": "Minimum wage C. Zoning laws",
+        "B": "",
+        "C": "Zoning laws B. Food inspection",
+        "D": "Price supports Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 2"
+      },
+      "answer": "A",
+      "explanation": "Minimum wage. Government regulation of business includes regulating working conditions provided by businesses. One such regulation involves minimum-wage laws that specify the lowest hourly wage that businesses can pay workers. Zoning laws are intended to protect business property. The inspection of food is intended to protect consumers. Government price supports maintain the price of a good or service to enable the producers to earn a profit.",
+      "sources": [
+        "SOURCE: EC:008 Determine the relationship between government and business",
+        "SOURCE: LAP-EC-016—Regulate and Protect (Government and Business)"
+      ]
+    },
+    {
+      "number": 12,
+      "question": "You are the manager of a small-scale manufacturing company. You are faced with the decision to buy newer, more expensive equipment that is highly efficient, or to continue using the older, less efficient equipment. Your company would need to increase _________ to make up the cost of the purchase of the new equipment.",
+      "options": {
+        "A": "workers C. managers",
+        "B": "",
+        "C": "managers B. output",
+        "D": "advertising"
+      },
+      "answer": "B",
+      "explanation": "Output. Increased output would lead to increased sales. It is usually the desire for increased output and efficiency that causes businesses to purchase new production equipment. Typically when a company buys new equipment, it does not need to hire new workers. Increasing the number of managers would have no effect in offsetting the cost of the new equipment. Increases in advertising would mean greater overhead expenditures, which also would not offset the cost of the equipment. https://www.financial-dictionary.info/terms/economic-output/",
+      "sources": [
+        "SOURCE: EC:077 Describe the concept of economies of scale",
+        "SOURCE: Herold, T. (2020). What is economic output? Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 13,
+      "question": "Which of the following are secondary dimensions of diversity:",
+      "options": {
+        "A": "Family status, ethnicity, and communication style",
+        "B": "Religion, work experience, and gender",
+        "C": "Income, family status, and education level",
+        "D": "Work experience, nationality, and age"
+      },
+      "answer": "C",
+      "explanation": "Income, family status, and education level. Secondary dimensions of diversity are differences that may change at various points throughout one's lifetime and include such characteristics as language, religion, income, geographic location, family status, communication style, and education level. Primary dimensions of diversity are inborn differences that cannot be changed and affect a person's entire life and include such characteristics as age, gender, race/ethnicity, nationality, physical traits, and abilities (both mental and physical).",
+      "sources": [
+        "SOURCE: EI:033 Exhibit cultural sensitivity",
+        "SOURCE: LAP-EI-033—Getting To Know You (Cultural Sensitivity)"
+      ]
+    },
+    {
+      "number": 14,
+      "question": "Rob has a job interview this afternoon. In the morning, he goes over his other job offers to figure out which job he will accept (and what the salary and benefits are) if this employer doesn't offer him a position. Rob is developing his",
+      "options": {
+        "A": "role. C. walk-away point.",
+        "B": "",
+        "C": "walk-away point. B. BATNA.",
+        "D": "style."
+      },
+      "answer": "B",
+      "explanation": "BATNA. Rob is developing his Best Alternative to a Negotiated Agreement, also known as his BATNA. If this job interview doesn't result in an offer, Rob is prepared with another option. Rob's BATNA also gives him leverage if he needs to negotiate salary or benefits. He won't feel pressured to take whatever the employer offers him because he knows he has another alternative. Rob is not developing his role— knowing your role is primarily useful in group negotiations, where different group members may take on different roles (such as \"good cop\" or \"bad cop\"). The walk-away point is the point at which it is no longer feasible or profitable to do business with the other party. This is also useful for Rob to determine before his interview, but it's not what he's doing in this example. Style refers to the way a person negotiates. Although everyone has a negotiating style, this is not what Rob is determining.",
+      "sources": [
+        "SOURCE: EI:062 Demonstrate negotiation skills",
+        "SOURCE: LAP-EI-062—Make It a Win-Win (Negotiation in Business)"
+      ]
+    },
+    {
+      "number": 15,
+      "question": "The first step toward becoming a leader is",
+      "options": {
+        "A": "believing you can do it. C. becoming a manager.",
+        "B": "",
+        "C": "becoming a manager. B. being a role model.",
+        "D": "demonstrating empathy."
+      },
+      "answer": "A",
+      "explanation": "Believing you can do it. Everyone, regardless of position, can become a leader. The first step is believing you can do it. Leaders are often role models, but this isn't a quality someone needs to have before becoming a leader. Managers can be leaders, but it isn't necessary for a leader to have a position of authority. In fact, some experts argue that many people in management positions are actually ineffective leaders. Empathy is certainly an important characteristic for a leader to have, but it isn't the first step.",
+      "sources": [
+        "SOURCE: EI:009 Explain the concept of leadership",
+        "SOURCE: LAP-EI-016—Lead the Way (Concept of Leadership)"
+      ]
+    },
+    {
+      "number": 16,
+      "question": "When determining venture-creation opportunities, entrepreneurs must first",
+      "options": {
+        "A": "conduct research. C. identify staffing needs.",
+        "B": "",
+        "C": "identify staffing needs. B. obtain financing.",
+        "D": "select a location."
+      },
+      "answer": "A",
+      "explanation": "Conduct research. A venture opportunity is a circumstance that presents itself as a favorable means of starting a new business. Entrepreneurs often look for venture-creation opportunities by doing research. The research might involve networking, watching trends, or reading journals and reports. After the entrepreneur assesses and screens a venture-opportunity for its potential, s/he would obtain financing, identify staffing needs, and select a location for the business. August 25, 2020, from https://www.investopedia.com/articles/financial-theory/11/how- venture-capitalists-make-investment-choices.asp",
+      "sources": [
+        "SOURCE: EN:004 Determine opportunities for venture creation",
+        "SOURCE: McClure, B. (2020, April 9). How venture capitalists make investment choices. Retrieved"
+      ]
+    },
+    {
+      "number": 17,
+      "question": "Which of the following statements is true regarding stakeholder expectations:",
+      "options": {
+        "A": "Each group of stakeholders has different needs and expectations.",
+        "B": "Stakeholder expectations are always financially driven.",
+        "C": "All stakeholders want to exert authority over employees.",
+        "D": "Stakeholder expectations always come second to customer needs."
+      },
+      "answer": "A",
+      "explanation": "Each group of stakeholders has different needs and expectations. Stakeholders are people who are affected by a project's or business's success or failure. The needs and expectations of different groups of stakeholders depend on the individual perspectives of those stakeholders. Stakeholder expectations are not always financially driven. All stakeholders do not necessarily want to exert authority over employees; furthermore, employees are stakeholders. Stakeholder expectations do not always come second to customer needs; customers are stakeholders, and their expectations are considered alongside other stakeholders. Retrieved August 25, 2020, from https://www.projectcentral.com/blog/manage-expectations/",
+      "sources": [
+        "SOURCE: EI:113 Determine stakeholder expectations",
+        "SOURCE: McHale, B. (2019, September 3). How to manage expectations during your project."
+      ]
+    },
+    {
+      "number": 18,
+      "question": "Why is it important to share the best techniques for performing a job task with your coworkers?",
+      "options": {
+        "A": "It can reduce your work responsibilities. C. It will convince your boss to promote you.",
+        "B": "",
+        "C": "It will convince your boss to promote you. B. Your coworkers will consider you an expert.",
+        "D": "It builds good working relationships."
+      },
+      "answer": "D",
+      "explanation": "It builds good working relationships. Helping your coworkers builds trust and teamwork, which improves your working relationships. Employees who share their knowledge build a stronger team and a positive work environment. Being helpful doesn't necessarily cause your coworkers to view you as an expert or convince your boss to promote you. When you teach your coworkers the best techniques, your team is likely to work more efficiently, but it doesn't reduce your work responsibilities. 2020, from https://www.indeed.com/career-advice/starting-new-job/how-to-build-good- working-relationships",
+      "sources": [
+        "SOURCE: EI:115 Share best practices with key individuals and groups",
+        "SOURCE: Indeed. (2020, February 4). How to build good working relationships. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 19,
+      "question": "Which of the following sets of characteristics best describes careers in entrepreneurship:",
+      "options": {
+        "A": "Unpredictable, low-risk C. Expensive, low-energy, relaxed",
+        "B": "",
+        "C": "Expensive, low-energy, relaxed B. Routine, predictable",
+        "D": "Innovative, risky, time-intensive"
+      },
+      "answer": "D",
+      "explanation": "Innovative, risky, time-intensive. Starting and maintaining a business is no easy task. Entrepreneurs must be hardworking, passionate, innovative, and willing to take risks for their companies. Entrepreneurship is inherently risky, time-intensive, expensive, and dynamic. A career in entrepreneurship promises to be unpredictable and nonroutine, since starting a business requires engaging in a variety of different activities. Entrepreneurship is not low-risk, predictable, low-energy, relaxed, or routine. 25, 2020, from https://www.monster.com/career-advice/article/entrepreneur-traits",
+      "sources": [
+        "SOURCE: EN:039 Describe the nature of entrepreneurship",
+        "SOURCE: Bortz, D. (2020). 9 traits of successful entrepreneurs you should develop. Retrieved August"
+      ]
+    },
+    {
+      "number": 20,
+      "question": "The entrepreneurs best equipped to work long hours and overcome obstacles are ones who possess",
+      "options": {
+        "A": "passion for their work. C. technological skills.",
+        "B": "",
+        "C": "technological skills. B. financial knowledge.",
+        "D": "confidence."
+      },
+      "answer": "A",
+      "explanation": "Passion for their work. Entrepreneurs who are passionate about their work find it easier to work the long hours required. They are also more likely to overcome obstacles out of a desire to continue doing what they love. Confidence can help an entrepreneur overcome challenges, but it does not necessarily help him/her work long hours. Financial knowledge can help an entrepreneur overcome financial obstacles, but it may not help an entrepreneur solve other problems or deal with long work hours. Technological skills are very useful in solving some problems, but they don't help an entrepreneur personally work for long periods of time. Retrieved August 25, 2020, from https://www.thebalancesmb.com/successful-owners- character-traits-2951855",
+      "sources": [
+        "SOURCE: EN:040 Explain the role requirements of entrepreneurs and owners",
+        "SOURCE: Gregory, A. (2019, November 20). 10 character traits of successful small business owners."
+      ]
+    },
+    {
+      "number": 21,
+      "question": "Ariana wants to promote her handcrafted jewelry in several different countries. Promoting her products in multiple countries is most likely to result in",
+      "options": {
+        "A": "exposure to new markets. C. fewer cultural barriers.",
+        "B": "",
+        "C": "fewer cultural barriers. B. reduced financial risk.",
+        "D": "fewer compliance challenges."
+      },
+      "answer": "A",
+      "explanation": "Exposure to new markets. When a business expands internationally, it often gains exposure to new markets for its products. When international customers discover and enjoy that new business's products, sales often increase. A business operating in several different countries will have more cultural barriers to deal with because customer preferences, traditions, and trends vary from country to country. When a business operates in many countries, it faces more compliance challenges since it must deal with a greater number and types of regulations imposed by different countries (e.g., ingredients and packaging used for products). Business expansion into international markets exposes a business to more financial risk since different currencies, tariffs, and shipping fees often reduce profits. Retrieved August 25, 2020, from http://smallbusiness.chron.com/advantages-disadvantages- international-franchises-22488.html",
+      "sources": [
+        "SOURCE: EN:041 Describe small-business opportunities in international trade",
+        "SOURCE: Arthur, L. (2019, January 28). The advantages and disadvantages of international franchises."
+      ]
+    },
+    {
+      "number": 22,
+      "question": "What is the first step in entrepreneurial discovery?",
+      "options": {
+        "A": "Determining the risks and rewards C. Analyzing the feasibility of an idea",
+        "B": "",
+        "C": "Analyzing the feasibility of an idea B. Screening the product ideas",
+        "D": "Identifying an unmet want or need"
+      },
+      "answer": "D",
+      "explanation": "Identifying an unmet want or need. Entrepreneurial discovery is the process of detecting and matching product and market opportunities with one another in a manner that satisfies the market and the business. This requires the entrepreneur or small-business owner to conduct research to discover what the market needs or wants. Screening ideas and analyzing the feasibility of an idea are steps that occur after identifying a want or need. Determining risks and rewards are considerations when conducting a feasibility analysis. 2020, from https://www.bizjournals.com/bizjournals/how-to/marketing/2016/12/how-to-grow- your-market-by-identifying-unmet-needs.html",
+      "sources": [
+        "SOURCE: EN:001 Explain the need for entrepreneurial discovery",
+        "SOURCE: Wood, U. (2016). How to grow your market by identifying unmet needs. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 23,
+      "question": "A person who is a high achiever is often positively viewed by others as a",
+      "options": {
+        "A": "follower. C. leader.",
+        "B": "",
+        "C": "leader. B. show-off.",
+        "D": "risk-taker. Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 3"
+      },
+      "answer": "C",
+      "explanation": "Leader. A person who is a high achiever is often viewed as a leader because of his/her strong work ethic and achievements. Being considered a show-off is not a positive attribute. Followers usually do not achieve at a high level. A person that achieves at a high level usually takes moderate risks to ensure success and would not necessarily be viewed as a risk-taker.",
+      "sources": [
+        "SOURCE: EI:027 Develop an achievement orientation",
+        "SOURCE: LAP-EI-027—High Hopes (Developing an Achievement Orientation)"
+      ]
+    },
+    {
+      "number": 24,
+      "question": "What question should an entrepreneur ask regarding the timing of a new product release?",
+      "options": {
+        "A": "Should I move the product through direct or indirect channels?",
+        "B": "Is the market willing and able to pay for the product?",
+        "C": "How much money should I allocate for next month's advertising?",
+        "D": "What is the optimal break-even point for the product?"
+      },
+      "answer": "B",
+      "explanation": "Is the market willing and able to pay for the product? If the market doesn't want or can't afford the product at a particular time, the entrepreneur risks financial losses by releasing the product. Many reasons can affect the market's decision to buy, such as poor economic conditions. In some situations, it might be better to wait to release the product—perhaps when economic conditions improve and people have more money to spend. The use of direct or indirect channels is influenced by product type and is a distribution consideration. The amount of money allocated to advertising is a promotional budgeting issue. Break- even points affect pricing decisions. 25, 2020, from https://smallbusiness.chron.com/importance-timing-new-product-launch- 66014.html",
+      "sources": [
+        "SOURCE: EN:005 Assess opportunities for venture creation",
+        "SOURCE: Kokemuller, N. (2020). The importance of timing for a new product launch. Retrieved August"
+      ]
+    },
+    {
+      "number": 25,
+      "question": "The technical or logistical section of the feasibility study includes information about",
+      "options": {
+        "A": "what the target market wants. C. chain of command.",
+        "B": "",
+        "C": "chain of command. B. potential profitability.",
+        "D": "where the work will happen."
+      },
+      "answer": "D",
+      "explanation": "Where the work will happen. The technical or logistical section of the feasibility study includes information about where the work will happen, what materials will be needed, etc. Potential profitability is discussed in the financials section. Chain of command belongs in the organizational section. Information about the target market is found in the market analysis section.",
+      "sources": [
+        "SOURCE: EN:038 Determine feasibility of venture ideas",
+        "SOURCE: LAP-EN-038—Explore the Possibilities (Conducting Feasibility Studies)"
+      ]
+    },
+    {
+      "number": 26,
+      "question": "Jacob, a new business owner, is developing an inventory list of items to sell to customers. What type of planning activity is Jacob focusing on?",
+      "options": {
+        "A": "Human resources C. Financial",
+        "B": "",
+        "C": "Financial B. Operational",
+        "D": "Knowledge management"
+      },
+      "answer": "B",
+      "explanation": "Operational. To be successful, new business owners should carefully plan every aspect of their startups. Operational planning involves setting up the day-to-day activities for continued business functioning. In the example, Jacob needs to determine the types and quantities of goods to keep in stock, which is an operations (purchasing) activity. Financial planning involves setting up the way the business will handle its financial activities. The human resources function focuses on the business's staffing needs. Knowledge management involves leveraging the expertise, insight, and information of internal and external resources to help an organization achieve its goals. Retrieved August 25, 2020, from https://www.projectmanager.com/blog/operational-planning- make-operation-plan",
+      "sources": [
+        "SOURCE: EN:007 Describe entrepreneurial planning considerations",
+        "SOURCE: Weber, J.L. (2019, December 16). Operational planning: How to make an operations plan."
+      ]
+    },
+    {
+      "number": 27,
+      "question": "Which of the following is a business opportunity that requires a person to purchase the right to sell an established good or service under the parent company's name:",
+      "options": {
+        "A": "Incorporation C. Foreign",
+        "B": "",
+        "C": "Foreign B. Franchise",
+        "D": "Brokerage"
+      },
+      "answer": "B",
+      "explanation": "Franchise. The requirements (e.g., time, money) that a person needs to start a business differ and usually depend on the nature of the business. For example, when a person opens a franchise, s/he usually purchases the right to operate under the parent company's name. This fee may run several hundred to several thousands of dollars. Depending on the nature of the business, the franchisee may be required to use certain vendors or purchase specific, expensive equipment. When a person incorporates a business, s/he establishes a corporation, or forms a company, using a specific legal structure. A foreign business opportunity occurs in another country. A brokerage is a type of firm that acts as an intermediary (agent) on behalf of a buyer. from http://www.franchise.org/what-is-a-franchise",
+      "sources": [
+        "SOURCE: EN:009 Assess start-up requirements",
+        "SOURCE: International Franchise Association. (n.d.). What is a franchise? Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 28,
+      "question": "A small-business owner might register for trademark protection for the company's",
+      "options": {
+        "A": "computer software. C. trade secret.",
+        "B": "",
+        "C": "trade secret. B. invention.",
+        "D": "logo."
+      },
+      "answer": "D",
+      "explanation": "Logo. A trademark is legal protection granted by the government to the owner, usually a business, of a distinctive symbol, mark, name, or motto. A company's logo may include a distinctive symbol, mark, or name, or a combination of the elements. A patent legally protects an invention. A trade secret is undisclosed information that is valuable to a business (e.g., customer lists). A copyright legally protects the owner of computer software. Enhancing your rights through federal registration. Retrieved August 25, 2020, from https://www.uspto.gov/sites/default/files/documents/BasicFacts.pdf",
+      "sources": [
+        "SOURCE: EN:013 Select strategies to protect intellectual property",
+        "SOURCE: United States Patent and Trademark Office. (2020, February). Protecting your trademark:"
+      ]
+    },
+    {
+      "number": 29,
+      "question": "What is a primary factor that small-business owners should consider when deciding to hire additional staff members?",
+      "options": {
+        "A": "Training methods C. Payroll expenses",
+        "B": "",
+        "C": "Payroll expenses B. Interview techniques",
+        "D": "Product standards"
+      },
+      "answer": "C",
+      "explanation": "Payroll expenses. A small-business owner considers many factors when determining if s/he should hire an employee. Payroll tends to be the largest expense for a business, so the small-business owner must determine how much or if s/he can afford to pay an employee. Payroll expenses include the employee's salary, taxes, health and disability insurance, benefits, etc. After the small-business owner decides to hire additional staff, s/he can determine the appropriate interview techniques and training methods to use. Product standards are a product management consideration rather than a staffing consideration. Retrieved August 25, 2020, from https://primepay.com/blog/running-payroll-small-business- ultimate-guide",
+      "sources": [
+        "SOURCE: EN:018 Explain considerations in making the decision to hire staff",
+        "SOURCE: PrimePay. (2019, March 11). Running payroll for small business: The ultimate guide."
+      ]
+    },
+    {
+      "number": 30,
+      "question": "What is a possible downside of obtaining investment from venture capitalists?",
+      "options": {
+        "A": "The increased chance of failure C. The slow rate of growth",
+        "B": "",
+        "C": "The slow rate of growth B. Repaying the money",
+        "D": "Sharing company ownership"
+      },
+      "answer": "D",
+      "explanation": "Sharing company ownership. When a startup receives funding from a venture capitalist, investors own equity shares in the company. This means there are fewer shares to sell, and the investors might also have a share in decision-making. Startups do not have to repay the money from venture capitalists. Venture capital can help a startup grow quickly, rather than slowly. Obtaining investment from venture capitalists does not increase the chance of failure. 2020, from https://www.thehartford.com/business-insurance/strategy/business- financing/venture-capital",
+      "sources": [
+        "SOURCE: EN:019 Describe considerations in selecting capital resources",
+        "SOURCE: The Hartford. (2020). Advantages vs. disadvantages of venture capital. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 31,
+      "question": "Sally wants to incorporate her company and contracts a law firm to handle the legal aspects of the process. This is an example of",
+      "options": {
+        "A": "outsourcing. C. staffing.",
+        "B": "",
+        "C": "staffing. B. exporting.",
+        "D": "designating."
+      },
+      "answer": "A",
+      "explanation": "Outsourcing. Outsourcing is acquiring assistance from outside organizations or consultants to obtain goods and services to perform primary business activities. Forming a corporation is complex, so it is important to make sure that the appropriate legal forms are correct. If the business does not complete the legal activities correctly, the government may fine the corporation. A knowledgeable attorney ensures that the business follows the proper procedures and legal forms are accurate. Exporting, staffing, and designating do not describe the process of contracting a law firm to handle a legal issue. 2020, from https://www.entrepreneur.com/article/204652",
+      "sources": [
+        "SOURCE: EN:022 Use external resources to supplement entrepreneur's expertise",
+        "SOURCE: Jackson, N.M. (2020). How to build a better business with outsourcing. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 32,
+      "question": "Looking at problems from various points of view helps a small-business owner develop",
+      "options": {
+        "A": "practical arguments. C. unnecessary conflicts.",
+        "B": "",
+        "C": "unnecessary conflicts. B. creative solutions.",
+        "D": "unpredictable results."
+      },
+      "answer": "B",
+      "explanation": "Creative solutions. Creative problem solving is the process of finding solutions to issues or obstacles (problems) by generating unique ideas or approaches. To generate unique ideas or approaches, small- business owners use creative-thinking techniques, which often involve looking at problems or issues from different points of view. For example, a business might have a problem with a distribution process. The owner might look at the problem from a shipping department employee's perspective, a customer's perspective, or an intermediary's perspective to find a way to solve the problem. Business owners do not look at problems from various points of view to develop arguments, conflicts, or unpredictable results. August 25, 2020, from https://www.cleverism.com/why-creativity-is-so-crucial-for- entrepreneurs/",
+      "sources": [
+        "SOURCE: EN:029 Use creative problem-solving in business activities/decisions",
+        "SOURCE: Belyh, A. (2019, September 20). Why creativity is so crucial for entrepreneurs? Retrieved"
+      ]
+    },
+    {
+      "number": 33,
+      "question": "Finemart's bookkeeper journalizes the business's income and expenditures at the time they occur even if no money changes hands at that time. Finemart uses the __________ accounting method to record transactions.",
+      "options": {
+        "A": "cash C. managerial",
+        "B": "",
+        "C": "managerial B. accrual",
+        "D": "tax"
+      },
+      "answer": "B",
+      "explanation": "Accrual. Businesses using the accrual accounting method journalize income and expenditures at the time they occur even if no money changes hands at that time. This means that the business enters the amount of a transaction into the appropriate journal when a customer makes a credit purchase, or when the business orders goods from a supplier. Businesses using the cash accounting method record income and expenditures at the time the money changes hands. This means that the business enters the amount of a transaction into one of its journals on the day the money is received from a customer or paid out to a creditor. Managerial accounting involves reporting financial data to internal users. Tax accounting involves recording transactions for tax purposes. Finemart does not use the cash accounting method, and there is no indication that it is using managerial accounting or tax accounting to record transactions, either.",
+      "sources": [
+        "SOURCE: FI:085 Explain the concept of accounting",
+        "SOURCE: LAP-FI-085—Show Me the Money (Nature of Accounting)"
+      ]
+    },
+    {
+      "number": 34,
+      "question": "Which of the following is a source of cash that businesses include in a cash flow statement:",
+      "options": {
+        "A": "Payables C. Loans",
+        "B": "",
+        "C": "Loans B. Expenses",
+        "D": "Assets"
+      },
+      "answer": "C",
+      "explanation": "Loans. When preparing a cash flow statement, a business considers the main sources of cash, which are loans and customers. If businesses do not have enough cash coming in from sales to customers, they often borrow money from banks or other lending institutions. Loans are a source of cash flowing in to the business, but they are also cash flowing out when repayments are due. Expenses and payables are listed on a cash budget as cash flowing out of the business. Assets are anything of value that a business owns. 2020, from https://www.investopedia.com/investing/what-is-a-cash-flow-statement/",
+      "sources": [
+        "SOURCE: FI:092 Prepare cash flow statements",
+        "SOURCE: Murphy, C. (2020, August 13). Understanding the cash flow statement. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 35,
+      "question": "Which of the following are listed as long-term assets on a balance sheet:",
+      "options": {
+        "A": "Land, cash, and mortgage C. Vehicles, insurance, and accounts payable",
+        "B": "",
+        "C": "Vehicles, insurance, and accounts payable B. Buildings, vehicles, and capital equipment",
+        "D": "Capital equipment, mortgage, and inventory"
+      },
+      "answer": "B",
+      "explanation": "Buildings, vehicles, and capital equipment. A balance sheet is a financial statement that captures the financial condition of the business at that particular moment. The balance sheet shows a business's assets, liabilities, and owner's equity. Long-term assets are items of value—buildings, vehicles, and capital equipment—that businesses use to generate revenue for more than a year. Inventory and cash are listed as current or short-term assets, which involve levels that tend to fluctuate. The mortgage is a long-term liability, and accounts payable (e.g., insurance premiums) are current liabilities.",
+      "sources": [
+        "SOURCE: FI:093 Explain the nature of balance sheets",
+        "SOURCE: LAP-FI-093—The Right Balance (The Nature of Balance Sheets)"
+      ]
+    },
+    {
+      "number": 36,
+      "question": "If you want to analyze your business's income statement, what basic calculation should you use?",
+      "options": {
+        "A": "Expenses minus income C. Profit minus income",
+        "B": "",
+        "C": "Profit minus income B. Income minus expenses",
+        "D": "Income minus profit Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 4"
+      },
+      "answer": "B",
+      "explanation": "Income minus expenses. The basic calculation used to analyze an income statement is “income minus expenses.” If the outcome is positive, the business has a profit. If the outcome is negative, the business has a loss. Expenses minus income, profit minus income, and income minus profit are not calculations that are used to analyze an income statement.",
+      "sources": [
+        "SOURCE: FI:094 Describe the nature of income statements",
+        "SOURCE: LAP-FI-094—Watch Your Bottom Line (Income Statements)"
+      ]
+    },
+    {
+      "number": 37,
+      "question": "Which of the following is an example of a business obtaining funds through equity financing:",
+      "options": {
+        "A": "Borrowing money from friends C. Selling stock to investors",
+        "B": "",
+        "C": "Selling stock to investors B. Obtaining credit from vendors",
+        "D": "Negotiating loans with banks"
+      },
+      "answer": "C",
+      "explanation": "Selling stock to investors. Equity financing involves giving others a share of the business in exchange for receiving capital. Equity financing is not a loan that must be repaid. An example of equity financing is selling stock to investors. The investors pay a certain amount for stock and then share in the company's profits. If the business fails, the investors lose their money. Borrowing money from friends, obtaining credit from vendors, or negotiating loans with banks are examples of obtaining funds through debt financing. https://www.investopedia.com/terms/e/equityfinancing.asp",
+      "sources": [
+        "SOURCE: FI:031 Explain sources of financial assistance",
+        "SOURCE: Banton, C. (2020, July 1). Equity financing. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 38,
+      "question": "An established company has achieved a steady, positive cash flow. Which of the following types of funding is it most likely to rely on for unexpected expenses:",
+      "options": {
+        "A": "Collateral C. Venture capital",
+        "B": "",
+        "C": "Venture capital B. A business line of credit",
+        "D": "The company's capital structure"
+      },
+      "answer": "B",
+      "explanation": "A business line of credit. An established company with a positive cash flow is most likely to rely on a business line of credit for any unexpected expenses. Many businesses maintain a business line of credit as a flexible funding tool to pay for unanticipated business expenses. A company with a positive cash flow has little need to use collateral or venture capital for funding. Collateral refers to property that a borrower offers to a lender to secure a loan. Venture capital refers to financing that investors provide to startup companies and small businesses that have long-term growth potential. Capital structure refers to a company's mix of financing, usually a combination of debt and equity. August 25, 2020, from https://bizfluent.com/list-6787756-purposes-business-finance-.html",
+      "sources": [
+        "SOURCE: FI:339 Describe the financial needs of a business at different stages of its development",
+        "SOURCE: Vitez, O. (2017, September 26). What are the purposes of business finance? Retrieved"
+      ]
+    },
+    {
+      "number": 39,
+      "question": "If a business gains ground on its competitors, which of the following benefits is it experiencing:",
+      "options": {
+        "A": "Increased expenses C. Increased market share",
+        "B": "",
+        "C": "Increased market share B. Increased profits",
+        "D": "Increased productivity"
+      },
+      "answer": "C",
+      "explanation": "Increased market share. Increased market share is a benefit that a business may include in a cost- benefit analysis. It means that the business has gained ground on its competitors. Increased profits and increased productivity are also benefits a business may include in a cost-benefit analysis, but they do not necessarily relate to the competition. Increased expenses are a disadvantage, not a benefit.",
+      "sources": [
+        "SOURCE: FI:357 Describe the nature of cost-benefit analysis",
+        "SOURCE: LAP-FI-357—Running the Numbers (Cost-Benefit Analysis)"
+      ]
+    },
+    {
+      "number": 40,
+      "question": "Which of the following is an example of a variable expense:",
+      "options": {
+        "A": "Equipment leases C. Packaging/Shipping costs",
+        "B": "",
+        "C": "Packaging/Shipping costs B. Rent/Mortgage",
+        "D": "Salaries"
+      },
+      "answer": "C",
+      "explanation": "Packaging/Shipping costs. Packaging and shipping costs are a variable expense because they change along with levels of production or sales. Rent/Mortgage, equipment leases, and salaries are fixed expenses; they do not change along with fluctuations in production or sales levels.",
+      "sources": [
+        "SOURCE: FI:099 Develop company's/department's budget",
+        "SOURCE: LAP-FI-099—Build Your Game Plan (Developing a Company/Department Budget)"
+      ]
+    },
+    {
+      "number": 41,
+      "question": "Which of the following financial analysis methods is used to show the relationship of each component to the total within a single financial statement:",
+      "options": {
+        "A": "Vertical analysis C. Industry analysis",
+        "B": "",
+        "C": "Industry analysis B. Horizontal analysis",
+        "D": "Fundamental analysis"
+      },
+      "answer": "A",
+      "explanation": "Vertical analysis. Vertical analysis is often used to show the relationship of each component to the total within a single financial statement. Horizontal analysis is a comparison of the same items on a company's financial statements for two or more periods. Businesses often compare their financial results with industry standards or averages to determine how well they are actually performing. Fundamental analysis involves studying all aspects of a company in an effort to understand its intrinsic value. etc.) https://www.investopedia.com/terms/v/vertical_analysis.asp",
+      "sources": [
+        "SOURCE: FI:334 Describe types of financial statement analysis (e.g., ratio analysis, trend analysis,",
+        "SOURCE: Grant, M. (2020, July 27). Vertical analysis. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 42,
+      "question": "Which of the following is an example of an employee-assistance program:",
+      "options": {
+        "A": "Compensation",
+        "B": "Career and education planning",
+        "C": "Training on the use of dangerous power equipment",
+        "D": "Corrective action"
+      },
+      "answer": "B",
+      "explanation": "Career and education planning. Career and education planning is an example of an employee-assistance program a company may offer. Employee-assistance programs are part of the HR management activity of employee relations. Compensation is pay for work completed, not extra assistance. Training on the use of dangerous power equipment is a compliance issue. Corrective action is a training and development issue that occurs when an employee's performance is not up to standard.",
+      "sources": [
+        "SOURCE: HR:410 Discuss the nature of human resources management",
+        "SOURCE: LAP-HR-035—People Pusher (Nature of Human Resources Management)"
+      ]
+    },
+    {
+      "number": 43,
+      "question": "Before selecting new employees, employers should take time to determine",
+      "options": {
+        "A": "retirement plans. C. job specifications.",
+        "B": "",
+        "C": "job specifications. B. advancement options.",
+        "D": "physical characteristics."
+      },
+      "answer": "C",
+      "explanation": "Job specifications. Before selecting new employees, employers need to take time to determine what qualifications are needed for successful job performance. This is accomplished by reviewing an existing job description and translating the job responsibilities into needed skills, knowledge, and personality characteristics: job specifications. When selecting new employees, employers do not consider advancement options, physical characteristics, or retirement plans. from https://www.thebalancecareers.com/how-to-develop-a-job-description-1918538",
+      "sources": [
+        "SOURCE: HR:356 Select and hire new employees",
+        "SOURCE: Heathfield, S. (2019, June 25). How to develop a job description. Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 44,
+      "question": "Why is it important to provide an overview of an initial training session with staff members before training begins?",
+      "options": {
+        "A": "It gives staff members the opportunity to study before training begins.",
+        "B": "It lets staff members know what to expect during the training.",
+        "C": "It enables staff members to succeed in the training sessions.",
+        "D": "It helps staff members decide if they need the training."
+      },
+      "answer": "B",
+      "explanation": "It lets staff members know what to expect during the training. It's a good idea to let staff members know what an initial training session involves so they understand the purpose and what will be required of them. Initial training sessions typically provide information and instruction and do not require participants to study. Telling staff what to expect during training gives them a frame of reference but does not ensure staff member success with training. Training sessions do not evaluate staff members' performance. Managers, not employees, typically determine whether staff members require training or not. August 25, 2020, from https://bizfluent.com/how-4555347-conduct-training-session- effectively.html",
+      "sources": [
+        "SOURCE: HR:392 Train staff",
+        "SOURCE: McQuerrey, L. (2019, July 24). How to conduct a training session effectively. Retrieved"
+      ]
+    },
+    {
+      "number": 45,
+      "question": "The last step in handling employee grievances should be to __________ the problem.",
+      "options": {
+        "A": "identify C. follow up",
+        "B": "",
+        "C": "follow up B. analyze",
+        "D": "consider"
+      },
+      "answer": "C",
+      "explanation": "Follow up. After allowing employees time to adjust to the solution, you should follow up on the situation to determine if the solution is effective and to what degree results have been achieved. Failure to do so would waste the time and energy previously devoted to resolving the problem. Identifying the real problem is the first step in handling employee grievances. This step should include gathering all available information about the situation and analyzing it. Considering solutions to the problem is the next step, followed by selecting the best solution, implementing the solution, and following up. Retrieved August 25, 2020, from http://blog.tracksmart.com/6-steps-successful-conflict- resolution-workplace/",
+      "sources": [
+        "SOURCE: HR:366 Handle employee complaints and grievances",
+        "SOURCE: TrackSmart. (2017, February 27). 6 steps to successful conflict resolution in the workplace."
+      ]
+    },
+    {
+      "number": 46,
+      "question": "Which of the following guidelines would be the most appropriate for a supervisor to follow when administering remedial action:",
+      "options": {
+        "A": "Take action in the presence of the employee's coworkers.",
+        "B": "Resume a normal attitude toward the employee as quickly as possible.",
+        "C": "Let personnel handle minor problems with employees.",
+        "D": "Delay taking action so that the connection between the infraction and the penalty becomes blurred."
+      },
+      "answer": "B",
+      "explanation": "Resume a normal attitude toward the employee as quickly as possible. While the supervisor may find this difficult to do, it is important because expecting further problems with the employee may actually cause them to occur. The immediate supervisor should handle disciplinary action, particularly minor problems. Action should be taken promptly so that the connection between the infraction and the penalty does not become blurred. Remedial action should be taken in private, without coworkers present so that the employee's dignity and her/his status in the organization can be preserved. 2020, from https://www.ziprecruiter.com/blog/how-to-take-corrective-actions-with-employees/",
+      "sources": [
+        "SOURCE: HR:369 Explain the nature of remedial action",
+        "SOURCE: Krumrie, M. (n.d.). How to take corrective actions with employees. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 47,
+      "question": "Which of the following is a requirement for good decision-making:",
+      "options": {
+        "A": "A college degree C. At least three options",
+        "B": "",
+        "C": "At least three options B. Data",
+        "D": "Money Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 5"
+      },
+      "answer": "B",
+      "explanation": "Data. Good decision-making requires data. One cannot make a wise choice without having input that gives some insight into the potential outcomes. Good decision-making does not necessarily require a college degree or money. Sometimes, there are only two options from which to choose—but it is still possible to make a good decision.",
+      "sources": [
+        "SOURCE: IM:012 Describe the need for marketing data",
+        "SOURCE: LAP-IM-012—Data Do It (Need for Marketing Data)"
+      ]
+    },
+    {
+      "number": 48,
+      "question": "Which of the following best describes the type of company that benefits most from marketing research:",
+      "options": {
+        "A": "Large corporations with plans to change marketing strategies",
+        "B": "Any business wanting to improve its decision-making abilities",
+        "C": "Small businesses who wish to expand their operations",
+        "D": "Nonprofit organizations interested in their competition"
+      },
+      "answer": "B",
+      "explanation": "Any business wanting to improve its decision-making abilities. Businesses of all sorts and sizes conduct marketing research for many reasons, including to change their marketing strategies, expand their operations, or learn about their competition. Regardless of the specific purpose, any business would benefit from marketing research because it informs and improves the business's decision-making abilities.",
+      "sources": [
+        "SOURCE: IM:010 Explain the nature of marketing research",
+        "SOURCE: LAP-IM-010—Seek and Find (Marketing Research)"
+      ]
+    },
+    {
+      "number": 49,
+      "question": "Which of the following is an example of communicating with customers:",
+      "options": {
+        "A": "Sponsoring a charity event C. Choosing a store to distribute products",
+        "B": "",
+        "C": "Choosing a store to distribute products B. Creating a new product",
+        "D": "Developing a marketing plan"
+      },
+      "answer": "A",
+      "explanation": "Sponsoring a charity event. Sponsorship is a common way to communicate with customers. Creating a new product, choosing a store to distribute products, and developing a marketing plan are elements of product/service management, channel management, and market planning, respectively. They are marketing activities but not directly related to communicating with the customer.",
+      "sources": [
+        "SOURCE: MK:001 Explain marketing and its importance in a global economy",
+        "SOURCE: LAP-MK-004—Have It Your Way! (Nature of Marketing)"
+      ]
+    },
+    {
+      "number": 50,
+      "question": "Marketers plan where they need to go and how to get there efficiently in order to",
+      "options": {
+        "A": "lay out their strategies. C. measure their success.",
+        "B": "",
+        "C": "measure their success. B. achieve satisfying connections.",
+        "D": "agree upon a goal."
+      },
+      "answer": "B",
+      "explanation": "Achieve satisfying connections. Agreeing upon a goal, laying out their strategies, and measuring their success are steps marketers take toward reaching their ultimate aim of providing satisfying connections between producers and customers.",
+      "sources": [
+        "SOURCE: MP:001 Explain the concept of marketing strategies",
+        "SOURCE: LAP-MP-002—Pick the Mix (Nature of Marketing Strategies)"
+      ]
+    },
+    {
+      "number": 51,
+      "question": "General Motors' attempt to meet the needs of specific groups of consumers by offering trucks, large cars, and compact cars is an example of __________ segmentation.",
+      "options": {
+        "A": "demographic C. geographic",
+        "B": "",
+        "C": "geographic B. educational",
+        "D": "market"
+      },
+      "answer": "D",
+      "explanation": "Market. Market segmentation is the division of a total market into smaller, more specific groups. General Motors is targeting several specific markets within the vehicle market. Geographic segmentation is the division of a market on the basis of where consumers are located. Demographic segmentation is the division of a market on the basis of characteristics people have in common that affect their purchasing power. Educational level is a demographic characteristic.",
+      "sources": [
+        "SOURCE: MP:003 Explain the concept of market and market identification",
+        "SOURCE: LAP-MP-003—Have We Met? (Market Identification)"
+      ]
+    },
+    {
+      "number": 52,
+      "question": "What is the relationship between shareholders and the board of directors?",
+      "options": {
+        "A": "The board of directors represents the shareholders.",
+        "B": "The shareholders pay dividends to the board of directors.",
+        "C": "The shareholders make decisions for the board of directors.",
+        "D": "The board of directors holds the shareholders accountable."
+      },
+      "answer": "A",
+      "explanation": "The board of directors represents the shareholders. A company's board of directors represents the interests of the shareholders through the board's management of the company. The shareholders often have a role in electing the board members. The shareholders do not pay dividends to the board of directors. The shareholders also do not make decisions for the board members; rather, board members make decisions on behalf of the shareholders. The board of directors does not hold the shareholders accountable; rather, the shareholders hold the board of directors accountable. reporting, transparency, internal and external audit functions) http://www.investopedia.com/terms/c/corporategovernance.asp",
+      "sources": [
+        "SOURCE: PD:214 Describe the components of a well-governed company (e.g., board of directors,",
+        "SOURCE: Chen, J. (2020, April 12). Corporate governance definition. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 53,
+      "question": "One reason it is important for a business to develop a marketing plan is that the plan",
+      "options": {
+        "A": "increases the business's financial security in an unpredictable environment.",
+        "B": "reduces the need to implement corrective action or contingency plans.",
+        "C": "provides guidelines for personnel to meet the company's objectives.",
+        "D": "allows the business to focus on short-term goals instead of long-term goals."
+      },
+      "answer": "C",
+      "explanation": "Provides guidelines for personnel to meet the company's objectives. A marketing plan is a set of procedures or strategies designed to attract target customers to a business. A comprehensive marketing plan identifies the specific actions and activities that a company will use to attract its target customers. Therefore, the marketing plan provides guidance for employees who are carrying out the marketing activities. Because internal and external factors change, a marketing plan does not reduce the need for a business to develop corrective action or contingency plans, nor does it increase its financial security. Marketing plans contain both short-term and long-term goals. https://smallbusiness.chron.com/purposes-marketing-plan- 61663.html#:~:text=on%20company%20strategy.- ,Objectives,strategies%20to%20increase%20customer%20base",
+      "sources": [
+        "SOURCE: MP:018 Develop marketing plan",
+        "SOURCE: Kokemuller, N. (2020). Purposes of a marketing plan. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 54,
+      "question": "When translating performance measures for marketing activities into financial outcomes, which outcome usually is of most importance to management?",
+      "options": {
+        "A": "Tax level C. Net profit",
+        "B": "",
+        "C": "Net profit B. Interest rate",
+        "D": "Unit price"
+      },
+      "answer": "C",
+      "explanation": "Net profit. The financial outcomes of marketing activities are of importance to the management of the business. Since it costs money to implement marketing activities, management wants to know if the results are worth the cost involved. An important outcome is net profit, which is the money left after the cost-of-goods expense and the operating expense are each subtracted from the total income. If marketing expenses significantly reduce net profit rather than help increase net profit, management might reevaluate the performance of the marketing activities. Interest rate, tax level, and unit price are not the most important financial outcomes. https://www.investopedia.com/terms/n/net_margin.asp",
+      "sources": [
+        "SOURCE: MP:021 Translate performance measures into financial outcomes",
+        "SOURCE: Murphy, C. (2020, August 19). Net profit margin. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 55,
+      "question": "What are important considerations in establishing hardware/software specifications for a business?",
+      "options": {
+        "A": "User needs, mobility, delivery terms, and technical support",
+        "B": "Capabilities, compatibility, reliability, and cost",
+        "C": "Security, social media policies, performance, and licensing",
+        "D": "Strategic planning, training, upgrades, and cost"
+      },
+      "answer": "B",
+      "explanation": "Capabilities, compatibility, reliability, and cost. Businesses establish specifications for selecting hardware/software systems to provide consistency and compatibilities among users; to maintain a clean, productive system/network environment; to enable the computer system to grow with evolving technology; and to provide a basis for maintaining system operability and reliability. Important considerations in establishing hardware/software specifications include user needs, capabilities, ease of use, compatibility, mobility, technical support, security, performance, cost, licensing, reliability, upgrades/updates, and training. While delivery terms, social media policies, and strategic planning may be considered at some point in establishing specifications or selecting specific hardware/software, they are not significant considerations in establishing hardware/software specifications. 2020, from https://www.bizfilings.com/toolkit/research-topics/office-hr/assessing-computer- needs-for-your-business",
+      "sources": [
+        "SOURCE: NF:091 Establish specifications for selecting hardware/software systems",
+        "SOURCE: Business Filings. (2020). Assessing computer needs for your business. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 56,
+      "question": "Reiki is searching the company's extensive database for sales records of certain products to determine where, when, and how they were purchased. She hopes to find patterns that could help determine ways to increase sales. Reiki is currently using",
+      "options": {
+        "A": "sales strategy. C. data mining.",
+        "B": "",
+        "C": "data mining. B. data cleansing.",
+        "D": "sales techniques."
+      },
+      "answer": "C",
+      "explanation": "Data mining. Data mining is the process of searching through data files to detect patterns that can be used to help answer specific strategic questions. Data cleansing involves detecting, fixing, and/or removing inaccurate or incomplete data. Reiki is not using sales strategy or sales techniques; she is analyzing information to develop sales strategy and techniques. https://www.investopedia.com/terms/d/datamining.asp",
+      "sources": [
+        "SOURCE: NF:148 Discuss the nature of data mining",
+        "SOURCE: Twin, A. (2029, August 18). Data mining. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 57,
+      "question": "What is the best way for David to protect his small company's business records from natural disasters such as fires and floods?",
+      "options": {
+        "A": "Store copies of the records in another facility or site",
+        "B": "Keep the records in unlocked file cabinets in the facility's warehouse",
+        "C": "Delegate an employee to ensure that the records are continually updated",
+        "D": "Purchase insurance from a reputable source Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 6"
+      },
+      "answer": "A",
+      "explanation": "Store copies of the records in another facility or site. By keeping copies of business records in another facility or storing them on web-based databases, the business has another set (backup) of records if the originals are destroyed. Keeping the original records on-site, delegating an employee to update the records, and purchasing insurance will not protect the company's business records from natural disasters.",
+      "sources": [
+        "SOURCE: NF:001 Describe the nature of business records",
+        "SOURCE: LAP-NF-001—Record It (Business Records)"
+      ]
+    },
+    {
+      "number": 58,
+      "question": "Ashley owns a small hardware shop. Every month, she reviews her inventory lists to see which products are popular and which are not. Using this information, Ashley is able to order the appropriate amount of each product for her store. This is an example of the importance of",
+      "options": {
+        "A": "ignoring inventory when ordering. C. stocking a diverse array of products.",
+        "B": "",
+        "C": "stocking a diverse array of products. B. over-purchasing certain products.",
+        "D": "monitoring internal records."
+      },
+      "answer": "D",
+      "explanation": "Monitoring internal records. Monitoring internal records for business information is an important practice for business owners. By tracking records such as inventory, business owners can gain valuable business information such as which products are doing well and which products are less popular. This example demonstrated the importance of monitoring internal records, not over-purchasing certain products, stocking a diverse array of products, or ignoring inventory when ordering. control? Retrieved August 25, 2020, from https://www.lindsayandbrownell.com/internal- control-monitoring-are-you-in-control/",
+      "sources": [
+        "SOURCE: NF:014 Monitor internal records for business information",
+        "SOURCE: Lindsay & Brownell, LLP. (2017, September 25). Internal control monitoring-Are you in"
+      ]
+    },
+    {
+      "number": 59,
+      "question": "When a business has too much inventory on hand for an extended period of time, what type of business cost increases?",
+      "options": {
+        "A": "Holding C. Production",
+        "B": "",
+        "C": "Production B. Maintenance",
+        "D": "Stockout"
+      },
+      "answer": "A",
+      "explanation": "Holding. The money it takes to keep inventory in stock is called holding cost. Holding costs include storage space, taxes, and insurance. By minimizing its holding costs, a business is taking steps to reduce its overall operating costs. Maintenance costs are expenses associated with the upkeep of the business's facility and equipment. Production costs are expenses associated with the creation of goods and services. Stockout costs are associated with running out of needed inventory and are considered in terms of lost money and sales, lost productivity, and lost customer satisfaction.",
+      "sources": [
+        "SOURCE: OP:189 Explain the nature of operations",
+        "SOURCE: LAP-OP-189—Smooth Operations (Nature of Operations)"
+      ]
+    },
+    {
+      "number": 60,
+      "question": "Using a locked mailbox, implementing a “last person out” policy, and numbering building keys are all examples of policies and procedures designed to",
+      "options": {
+        "A": "determine which employees can and can't be trusted.",
+        "B": "prevent employees from stealing from the workplace.",
+        "C": "foster a positive workplace culture for employees.",
+        "D": "maintain the physical security of a workplace."
+      },
+      "answer": "D",
+      "explanation": "Maintain the physical security of a workplace. Maintaining the physical security of the workplace is important for businesses of all shapes and sizes. Using a locked mailbox, implementing a “last person out” policy, and numbering building keys are all ways that companies can keep their workspaces secure. Using a locked mailbox protects sensitive company information from being stolen or damaged. A “last person out” policy ensures that the workplace is shut down properly and securely at the end of each workday. Numbering building keys helps companies keep track of their keys and prevent them from being copied. These policies and procedures are not designed to prevent employees from stealing from the workplace, foster a positive workplace culture for employees, or to determine which employees can and can't be trusted. environment August 25, 2020, from https://nevadasmallbusiness.com/keep-workplace-safe-and-secure/",
+      "sources": [
+        "SOURCE: OP:157 Establish policies and procedures to maintain physical security of the work",
+        "SOURCE: Nevada Small Business. (2020). Office and workplace security—An overview. Retrieved"
+      ]
+    },
+    {
+      "number": 61,
+      "question": "Molly purchases raw materials for a factory that changes the shape or appearance of those materials through a process known as",
+      "options": {
+        "A": "transformation. C. specification.",
+        "B": "",
+        "C": "specification. B. affirmation.",
+        "D": "negotiation."
+      },
+      "answer": "A",
+      "explanation": "Transformation. To transform something means to change its shape or appearance. An affirmation is a positive statement about a present or desired strength. Specifications are standards or requirements that are established and described in detail prior to purchasing a good or service. Negotiation is the process of one party reaching an agreement with another party to meet specific needs and wants.",
+      "sources": [
+        "SOURCE: OP:015 Explain the nature and scope of purchasing",
+        "SOURCE: LAP-OP-002—Buy Right (Purchasing)"
+      ]
+    },
+    {
+      "number": 62,
+      "question": "Calculate the percentage of deliveries made on time if a business placed 160 orders within a six-month period, and 144 of the orders arrived within the desired time frame.",
+      "options": {
+        "A": "85% C. 75%",
+        "B": "",
+        "C": "75% B. 90%",
+        "D": "80%"
+      },
+      "answer": "B",
+      "explanation": "90%. Businesses evaluate their vendors to determine how well they are performing. If a vendor is performing lower than a business expects, then the business can take corrective action. One measure that a business considers is delivery times. To determine the percentage of orders that were delivered on time, divide the number of orders delivered on time by the number of orders placed (144 / 160 = .90 or 90%). 2020, from https://www.lumatrak.com/scoring-supplier-on-time-delivery-best-practice/",
+      "sources": [
+        "SOURCE: OP:162 Evaluate vendor performance",
+        "SOURCE: Lumatrak. (2020). Scoring supplier on-time delivery best practice. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 63,
+      "question": "When is it more economical for a business to lease rather than to buy a facility?",
+      "options": {
+        "A": "When mortgage money is plentiful C. When credit standing is high",
+        "B": "",
+        "C": "When credit standing is high B. When interest rates are low",
+        "D": "When available cash is limited"
+      },
+      "answer": "D",
+      "explanation": "When available cash is limited. Many new businesses have limited amounts of cash available to cover the costs of purchasing property, which usually include a down payment, closing costs, taxes, etc. On the other hand, the initial cash expense for leasing is often limited to a security deposit and the first rent payment. When cash is limited, it is usually more economical for businesses to lease rather than buy a facility because it saves them money. If businesses have sufficient cash, it is more economical in the long run for them to buy rather than lease, especially when interest rates are low, their credit standing is high, and mortgage money is plentiful. each. Retrieved August 25, 2020, from https://www.valuepenguin.com/small- business/buying-vs-leasing-commercial-real-estate",
+      "sources": [
+        "SOURCE: OP:028 Negotiate lease or purchase of facility",
+        "SOURCE: Miller, M. (2020, August 13). Buying vs leasing commercial real estate: Pros and cons of"
+      ]
+    },
+    {
+      "number": 64,
+      "question": "If a company's sales decrease steadily over time, it might decide to control spending by",
+      "options": {
+        "A": "increasing stock. C. monitoring investments.",
+        "B": "",
+        "C": "monitoring investments. B. reducing payroll.",
+        "D": "adjusting interest rates."
+      },
+      "answer": "B",
+      "explanation": "Reducing payroll. A budget is an estimation of income and expenses. Businesses use budgets to control their money. When a company has less income flowing into the business than anticipated, it often needs to adjust the budget by reducing expenses (money that flows out of the business). Sometimes, when sales drop steadily over time, the business needs to cut payroll costs, which are usually a business's highest expense. To reduce payroll expenses, the business might need to reduce employees' salaries or lay off workers. Increasing stock would increase the business's expenses, which is not an appropriate way to control spending. When a company monitors its investments, it is not actively controlling its spending. The government, rather than businesses, adjusts interest rates. https://www.wisegeek.com/what-is-budget-control.htm",
+      "sources": [
+        "SOURCE: OP:030 Use budgets to control operations",
+        "SOURCE: Tatum, M. (2020, August 11). What is budget control? Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 65,
+      "question": "To effectively manage a supply chain, companies should",
+      "options": {
+        "A": "ignore underperforming suppliers and distributors.",
+        "B": "monitor the performance of all supply chain partners.",
+        "C": "introduce frequent changes to the production process.",
+        "D": "launch new products through multiple suppliers."
+      },
+      "answer": "B",
+      "explanation": "Monitor the performance of all supply chain partners. To ensure the efficient production and distribution of products, companies should monitor the performance of all supply chain partners on a consistent basis. Companies should not ignore underperforming vendors—they should work with them to resolve the problem(s) or else replace them. Companies must be careful when introducing new innovations or changes to the production process. Introducing change too quickly can overwhelm the supply chain, resulting in failure to meet production quotas. Companies should stick with a single supplier when launching a new product in order to avoid overcomplicating the process. August 25, 2020, from http://www.enterpriseappstoday.com/supply-chain- management/slideshows/13-ways-to-improve-your-supply-chain-management.html",
+      "sources": [
+        "SOURCE: OP:303 Discuss the nature of supply chain management",
+        "SOURCE: Schiff, J. (2016, February 17). 13 ways to improve your supply chain management. Retrieved"
+      ]
+    },
+    {
+      "number": 66,
+      "question": "What is Claire doing when she reviews a report that compares the purchase transactions of the company's four largest customers?",
+      "options": {
+        "A": "Conducting a sales analysis C. Organizing an inventory report",
+        "B": "",
+        "C": "Organizing an inventory report B. Preparing a purchasing forecast",
+        "D": "Analyzing service performance"
+      },
+      "answer": "A",
+      "explanation": "Conducting a sales analysis. Businesses collect information to analyze all of their business functions. Sales are typically a business's primary source of income. Businesses review many aspects of sales to analyze and compare product movement, customer activity, salesperson performance, etc. Claire is not preparing a purchasing forecast, organizing an inventory report, or analyzing service performance. http://smallbusiness.chron.com/define-sales-analysis-5258.html",
+      "sources": [
+        "SOURCE: OP:327 Discuss the nature of business analysis",
+        "SOURCE: Nielsen, L. (2020). Define sales analysis. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 67,
+      "question": "Every __________ is the result of a process.",
+      "options": {
+        "A": "project C. input",
+        "B": "",
+        "C": "input B. activity",
+        "D": "outcome"
+      },
+      "answer": "D",
+      "explanation": "Outcome. Process thinking is a philosophy that emphasizes a documented, standardized set of steps to accomplish an outcome. Every outcome is the result of a process. Activities are breakdowns of processes. Inputs go into a process, rather than being the result of a process. A project can be made up of many processes, but every project is not necessarily the result of a process. August 25, 2020, from https://tallyfy.com/process-thinking/",
+      "sources": [
+        "SOURCE: OP:474 Discuss business process thinking and its impact",
+        "SOURCE: Pearson, S. (2020). Importance of process thinking in business management. Retrieved"
+      ]
+    },
+    {
+      "number": 68,
+      "question": "An Internet and cable provider is considering whether to implement a new process that would require its customer service agents to work the phone lines for 24 hours a day instead of the previous 12 hours a day. What type of factor will most likely impact the design of this new process?",
+      "options": {
+        "A": "Human C. Technological",
+        "B": "",
+        "C": "Technological B. Regulatory",
+        "D": "Environmental Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 7"
+      },
+      "answer": "A",
+      "explanation": "Human. People can have a large impact on the design of a process. Stress, employee morale, and fatigue are common human factors that can influence process design. If the Internet and cable company wants to increase its customer service phone line hours, it will need to consider that its employees may not be able to take on any extra work or may become fatigued from the extra hours. Regulatory and environmental factors that affect process design include government regulations and the political or social environment surrounding a company. Technological factors include the cost of necessary equipment or technology. 2020, from https://bizfluent.com/list-7444011-factors-affect-process-design.html",
+      "sources": [
+        "SOURCE: OP:475 Describe the factors that influence business process design",
+        "SOURCE: Taylor, H. (2017, September 26). Factors that affect process design. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 69,
+      "question": "Improved performance, reduced costs, increased profitability, and competitive advantage are most likely to be reasons why a business may choose to engage in",
+      "options": {
+        "A": "community outreach. C. human resources management.",
+        "B": "",
+        "C": "human resources management. B. anti-harassment training.",
+        "D": "business process change."
+      },
+      "answer": "D",
+      "explanation": "Business process change. There are several reasons why a company may choose to engage in business process change, including the need to improve performance, reduce costs, increase profits, or regain a competitive advantage. These benefits are not necessarily results of anti-harassment training, human resources management, or community outreach. from https://www.thehackettgroup.com/business-process-change/",
+      "sources": [
+        "SOURCE: OP:476 Explain the causes of business process changes",
+        "SOURCE: The Hackett Group. (2020). Enabling business process change. Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 70,
+      "question": "Fostering efficiency in the production process is a goal of",
+      "options": {
+        "A": "managerial accounting. C. human resources management.",
+        "B": "",
+        "C": "human resources management. B. supply chain management.",
+        "D": "information technology."
+      },
+      "answer": "B",
+      "explanation": "Supply chain management. A supply chain is a complex system that links manufacturers, distributers, and customers. One of the primary goals of supply chain management is to foster efficiency in the production process so that goods can be readily available for customers when they need them. This is not a primary goal of managerial accounting, human resources management, or information technology. Managerial accounting is the process of analyzing financial information to help achieve organizational goals. Human resources management is a system for overseeing and protecting all the people within an organization. Information technology refers to the maintenance and use of an organization's computer systems, software, networks, and all other technologies. Retrieved August 25, 2020, from https://www.demandsolutions.com/ds-blog/abstracts/three- goals-of-supply-chain-management-explained/",
+      "sources": [
+        "SOURCE: OP:443 Explain the concept of supply chain",
+        "SOURCE: Demand Solutions. (2020, July 28). Three goals of supply chain management explained."
+      ]
+    },
+    {
+      "number": 71,
+      "question": "Which of the following statements regarding the relationship between a business and its supply chain is true:",
+      "options": {
+        "A": "A business's supply chain has very little impact on the business's overall success.",
+        "B": "If a business's supply chain is poorly managed, customer satisfaction is likely to suffer.",
+        "C": "Effective supply chain management results in lower customer satisfaction.",
+        "D": "Supply chains with organizational problems tend to boost members' overall success."
+      },
+      "answer": "B",
+      "explanation": "If a business's supply chain is poorly managed, customer satisfaction is likely to suffer. A business's supply chain has a large impact on the business's overall success. One of the ways that poor supply chain management can negatively impact a business is through decreasing customer satisfaction. Companies that can't effectively distribute their products to consumers will likely lose many of their customers. Effective supply chain management, on the other hand, generally results in higher customer satisfaction because products are distributed quickly and effectively. Supply chains with organizational problems tend to hurt business success, not boost it. Retrieved August 25, 2020, from https://www.conveyco.com/critical-role-supply-chain- customer-satisfaction/",
+      "sources": [
+        "SOURCE: OP:477 Explain the impact of supply chain on business performance",
+        "SOURCE: Romaine, E. (2017, April 17). The critical role of the supply chain in customer satisfaction."
+      ]
+    },
+    {
+      "number": 72,
+      "question": "After Courtney finds the man's order, she lets him know it will arrive later that afternoon. He seems to be pleased, so Courtney knows she did the right thing. Which step of problem solving does this situation illustrate?",
+      "options": {
+        "A": "Determine possible solutions C. Define the problem",
+        "B": "",
+        "C": "Define the problem B. Evaluate the solution",
+        "D": "State and check assumptions"
+      },
+      "answer": "B",
+      "explanation": "Evaluate the solution. Courtney knows that her solution to the problem was the right one because the customer is satisfied with what she did, and the missing order has been tracked down. This is the last step of problem solving. She has already defined the problem, stated her assumptions, and determined possible solutions to be at the end of the process.",
+      "sources": [
+        "SOURCE: PD:077 Demonstrate problem-solving skills",
+        "SOURCE: LAP-PD-077—No Problem (Demonstrating Problem-Solving Skills)"
+      ]
+    },
+    {
+      "number": 73,
+      "question": "In a business, who is responsible for determining how much money a CEO should make?",
+      "options": {
+        "A": "The vice president C. All of the employees",
+        "B": "",
+        "C": "All of the employees B. The previous CEO",
+        "D": "The board of directors"
+      },
+      "answer": "D",
+      "explanation": "The board of directors. A company's board of directors governs its affairs and ensures that shareholders' needs are met. One of the responsibilities of a board of directors is to be responsible for hiring and compensating a company's CEO. The previous CEO, all of the employees, and the vice president are not in charge of determining how much money a CEO will make. 2020, from https://yourbusiness.azcentral.com/corporate-governance-objectives-17344.html",
+      "sources": [
+        "SOURCE: PD:213 Discuss the importance of corporate governance in business",
+        "SOURCE: Nordemeyer, B. (2019, August 22) Corporate governance objectives. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 74,
+      "question": "What is a business usually better able to do when it selects a certain target market?",
+      "options": {
+        "A": "Eliminate ethical dilemmas",
+        "B": "Control expenses and increase profits",
+        "C": "Focus marketing decisions on a specific group of people",
+        "D": "Change the variable-cost margin to quickly achieve break-even point"
+      },
+      "answer": "C",
+      "explanation": "Focus marketing decisions on a specific group of people. The purpose of identifying a target market is to narrow the market down to only those consumers who are the most likely to buy a business's product. This information is helpful in making many marketing decisions—from product development to pricing strategies. Selecting a target market will not eliminate ethical dilemmas. Selecting a target market might help a business increase profits but would not necessarily help it control expenses. Changing the variable-cost margin is an operational decision unrelated to the selection of a target market. company? Retrieved August 25, 2020, from https://smallbusiness.chron.com/identifying- target-market-important-company-76792.html",
+      "sources": [
+        "SOURCE: MP:005 Select target market",
+        "SOURCE: Hubbard, L. (2019, February 19). Why is identifying the target market so important to a"
+      ]
+    },
+    {
+      "number": 75,
+      "question": "Which of the following factors differentiates the governance structure of a small business from a large business:",
+      "options": {
+        "A": "The number of owners C. The impact of governance policies",
+        "B": "",
+        "C": "The impact of governance policies B. The need for a board of directors",
+        "D": "The presence of investors"
+      },
+      "answer": "A",
+      "explanation": "The number of owners. Organizations of all sizes need governance, but governance structures can vary based on the size of the organization. One difference is the number of owners. A large, publicly listed corporation has many owners, while a small- or medium-sized company likely has one or few shareholders. However, the need for a board of directors does not change based on the size of the company; small companies can benefit from a board of directors as much as large companies. Furthermore, all companies are impacted by governance policies, regardless of size. Finally, organizations of any size can have investors. August 25, 2020, from http://vi.is/files/844786923Mette%20Neville%2018.02.05%20pdf.pdf",
+      "sources": [
+        "SOURCE: PD:302 Identify the factors that impact governance structures",
+        "SOURCE: Neville, M. (n.d.). Corporate governance in small and medium-sized companies. Retrieved"
+      ]
+    },
+    {
+      "number": 76,
+      "question": "Which of the following statements regarding corporate governance is true:",
+      "options": {
+        "A": "All companies need a board of directors to perform corporate governance.",
+        "B": "Small organizations do not need corporate governance.",
+        "C": "Corporate governance can benefit organizations of any size.",
+        "D": "Large companies are better at monitoring corporate governance."
+      },
+      "answer": "C",
+      "explanation": "Corporate governance can benefit organizations of any size. While small organizations might not have to follow the same regulations or take the same type of structured approach, they can still benefit from corporate governance. They do not, however, necessarily need a board of directors. Large companies are not necessarily better at monitoring corporate governance. https://www.investopedia.com/terms/c/corporategovernance.asp#:~:text=Corporate%20gove rnance%20is%20the%20structure,primary%20force%20influencing%20corporate%20govern ance",
+      "sources": [
+        "SOURCE: PD:302 Identify the factors that impact governance structures",
+        "SOURCE: Chen, J. (2020, April 12). Corporate governance definition. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 77,
+      "question": "TRISM Co. sets an organizational goal to gain 100 new clients. To do so, each sales rep must contact five prospects per week. This is an example of",
+      "options": {
+        "A": "designing an organizational structure.",
+        "B": "aligning personal goals with company goals.",
+        "C": "establishing performance standards.",
+        "D": "generating new product ideas."
+      },
+      "answer": "C",
+      "explanation": "Establishing performance standards. Performance standards are mechanisms used to track, monitor, and measure success. When employees have performance standards that are aligned with organizational goals, it is much more likely that the company will accomplish those goals. Contacting five prospects per week is a performance standard that is in line with TRISM Co.'s organizational goals. This is not an example of aligning personal goals with company goals, designing an organizational structure, or generating new product ideas. August 25, 2020, from https://bizfluent.com/how-5829148-set-employee-performance- standards.html",
+      "sources": [
+        "SOURCE: PD:256 Establish performance standards to meet organizational goals",
+        "SOURCE: Ahmed, A. (2019, August 27). How to set employee performance standards. Retrieved"
+      ]
+    },
+    {
+      "number": 78,
+      "question": "Which of the following markets is characterized by a large number of buyers and sellers, none of whom has a significant influence on price:",
+      "options": {
+        "A": "Monopoly C. Pure competition",
+        "B": "",
+        "C": "Pure competition B. Oligopoly",
+        "D": "Monopolistic competition"
+      },
+      "answer": "C",
+      "explanation": "Pure competition. Pure competition is a market in which there are a great many buyers and sellers of nearly identical products and who have very little control over pricing. Monopolistic competition occurs when there are large numbers of buyers and sellers with heterogeneous products. An oligopoly exists when there are few sellers, and entry into the market is difficult. A monopoly exists when there is one seller of a product and no close substitutes.",
+      "sources": [
+        "SOURCE: PI:001 Explain the nature and scope of the pricing function",
+        "SOURCE: LAP-PI-001—The Price Is Right (Nature of Pricing)"
+      ]
+    },
+    {
+      "number": 79,
+      "question": "During periods when employment is high and the nation's outlook is optimistic, selling prices of products tend to increase. This is an example of selling prices affected by",
+      "options": {
+        "A": "supply and demand. C. competition.",
+        "B": "",
+        "C": "competition. B. economic conditions.",
+        "D": "government regulation. Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 8"
+      },
+      "answer": "B",
+      "explanation": "Economic conditions. High employment and an optimistic outlook are characteristic of good economic conditions. When economic conditions are good, selling prices will tend to increase. Competition, government regulation, and supply and demand are other external factors that affect selling prices. consumer goods? Retrieved August 25, 2020, from https://www.investopedia.com/ask/answers/042815/which-economic-factors-most-affect- demand-consumer-goods.asp",
+      "sources": [
+        "SOURCE: PI:002 Explain factors affecting pricing decisions",
+        "SOURCE: Maverick, J.B. (2020, March 12). Which economic factors most affect the demand for"
+      ]
+    },
+    {
+      "number": 80,
+      "question": "What do businesses usually consider during the process of determining the initial feasibility of a new product idea?",
+      "options": {
+        "A": "Need for the product C. Complexity of the product",
+        "B": "",
+        "C": "Complexity of the product B. Value of promotion",
+        "D": "Type of packaging"
+      },
+      "answer": "A",
+      "explanation": "Need for the product. An important question to consider when determining the feasibility of a new idea is if there is an actual need for the product. The idea might be innovative and interesting, but if the product serves no useful purpose or has a very limited market, it may not be feasible to develop it. Businesses try to screen out product ideas that are impractical or have limited use because they will be difficult to sell. The complexity of the idea is not usually a factor because many complex products are useful, popular, and profitable. Promotion and packaging are factors that a business considers after it decides to move forward with a new product idea. 2020, from https://www.productplan.com/how-to-know-if-your-product-idea-is-a-winner/",
+      "sources": [
+        "SOURCE: PM:129 Determine initial feasibility of product idea",
+        "SOURCE: Semick, J. (2020). The 5 ways to know if your product idea is a winner. Retrieved August 25,"
+      ]
+    },
+    {
+      "number": 81,
+      "question": "Which of the following is an example of a product line:",
+      "options": {
+        "A": "A double cheeseburger C. An automobile tire",
+        "B": "",
+        "C": "An automobile tire B. Notebooks, scratch pads, and stationery",
+        "D": "Candy, games, and shampoo"
+      },
+      "answer": "B",
+      "explanation": "Notebooks, scratch pads, and stationery. A product line is a group of related product items. Notebooks, scratch pads, and stationery are all paper products. A double cheeseburger and an automobile tire are examples of product items. A product item is an individual good, service, or idea that a business offers for sale. Candy, games, and shampoo are product items that might be part of a business's product mix—the assortment of products that a business offers in order to meet its market's needs and its company's goals.",
+      "sources": [
+        "SOURCE: PM:003 Explain the concept of product mix",
+        "SOURCE: LAP-PM-003—Mix and Match (The Nature of Product Mix)"
+      ]
+    },
+    {
+      "number": 82,
+      "question": "Marketing a lower priced version of an item in a product line under a different brand name than the higher priced version enables the business to",
+      "options": {
+        "A": "contract the product mix.",
+        "B": "avoid damage to brand reputation and image.",
+        "C": "confuse buyers resulting in negative net gain.",
+        "D": "offset expenses of adding a new product line."
+      },
+      "answer": "B",
+      "explanation": "Avoid damage to brand reputation and image. A downward product-mix strategy allows a lower priced product to be added to an existing line. To avoid damage to brand reputation and image, the new product may be marketed under a different brand name. The business plans to increase revenues by utilizing its experience in distribution and promotion strategies. Marketing the new product under a different brand name limits customer confusion and expands the product mix. https://smallbusiness.chron.com/product-mix-639.html",
+      "sources": [
+        "SOURCE: PM:006 Plan product mix",
+        "SOURCE: Suttle, R. (2019, February 12). What is a product mix? Retrieved August 26, 2020, from"
+      ]
+    },
+    {
+      "number": 83,
+      "question": "A business should consider eliminating a specific customer service when the service",
+      "options": {
+        "A": "is being used by a majority of the business's customers.",
+        "B": "becomes essential to completing the sale of some items.",
+        "C": "is making a larger profit than ever before.",
+        "D": "becomes too expensive, or no longer serves the intended purpose."
+      },
+      "answer": "D",
+      "explanation": "Becomes too expensive, or no longer serves the intended purpose. If the service has proved profitable, management would want to continue that service as it is. When the service is being used by a great number of customers, the service should be kept, since changes might disrupt customer usage. If the service becomes an essential element in the completion of the sale of some items, the business would be unwise to alter it until that need no longer exists. Positioning/Image)",
+      "sources": [
+        "SOURCE: PM:013 Explain the role of customer service in positioning/image",
+        "SOURCE: LAP-PM-001—Customer Service Supersized (The Role of Customer Service in"
+      ]
+    },
+    {
+      "number": 84,
+      "question": "Internal factors that affect a company's promotional decisions include the",
+      "options": {
+        "A": "product, technology, and market. C. product, its price, and distribution.",
+        "B": "",
+        "C": "product, its price, and distribution. B. environment and market demand.",
+        "D": "economy, distribution, and price."
+      },
+      "answer": "C",
+      "explanation": "Product, its price, and distribution. These are considered internal factors that affect promotional decisions because they are factors within the business. The other alternatives are made up of external factors— factors from outside the business that have a bearing on promotional decisions.",
+      "sources": [
+        "SOURCE: PR:001 Explain the role of promotion as a marketing function",
+        "SOURCE: LAP-PR-002—Razzle Dazzle (Nature of Promotion)"
+      ]
+    },
+    {
+      "number": 85,
+      "question": "Under which of the following circumstances is the response to direct email likely to be the highest:",
+      "options": {
+        "A": "The postal mail service delivers the ad on time.",
+        "B": "The delivered ad is strictly informational in nature.",
+        "C": "Recipients have given the advertiser permission to send the ad.",
+        "D": "The advertiser sends out an unsolicited ad to thousands of recipients."
+      },
+      "answer": "C",
+      "explanation": "Recipients have given the advertiser permission to send the ad. Opt-in email marketing usually has a higher response rate because the recipients have actually expressed an interest in receiving information about the business's products. People do respond to unsolicited emails but in smaller numbers than with opt-in email marketing. Direct email is not delivered via the postal mail service, but rather over computer networks. Recipients are most likely to respond to direct email that provides them an offer such as a coupon or a discount, rather than just information.",
+      "sources": [
+        "SOURCE: PR:007 Explain types of advertising media",
+        "SOURCE: LAP-PR-003—Ad-quipping Your Business (Types of Advertising Media)"
+      ]
+    },
+    {
+      "number": 86,
+      "question": "What is a benefit to businesses of positive word-of-mouth communication?",
+      "options": {
+        "A": "Decreased operating expense C. Increased product mix",
+        "B": "",
+        "C": "Increased product mix B. Decreased advertising costs",
+        "D": "Increased sales"
+      },
+      "answer": "D",
+      "explanation": "Increased sales. Word-of-mouth communication is promotion and publicity for a business provided by customers who tell others of their satisfaction with the business. This type of positive communication often leads to increased sales for the business because it attracts new customers. When satisfied customers tell others about their positive experiences, they are encouraging others to buy from the business. This will not decrease advertising costs because the business still needs to advertise. Advertising is an operating expense. Word-of-mouth communication does not increase the product mix, which is the particular assortment of goods and services that a business offers in order to meet the needs of its market and its company goals. from https://work.chron.com/advantages-wordofmouth-marketing- 3567.html#:~:text=Builds%20Brand&text=Using%20word%2Dof%2Dmouth%20marketing%2 0helps%20build%20positive%20feelings%20about,company%20while%20establishing%20y our%20brand",
+      "sources": [
+        "SOURCE: PR:247 Describe word-of-mouth channels used to communicate with targeted audiences",
+        "SOURCE: Wagner, N. (2020). The advantages of word-of-mouth marketing. Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 87,
+      "question": "What is an example of a company using a direct marketing channel?",
+      "options": {
+        "A": "Creating an ad that is promoted on social media",
+        "B": "Hiring a research company to conduct marketing surveys",
+        "C": "Advertising products in a popular magazine",
+        "D": "Responding to customer ideas and requests via email"
+      },
+      "answer": "D",
+      "explanation": "Responding to customer ideas and requests via email. Direct marketing occurs when a company connects with the end user or customer. Hiring a research company to conduct marketing surveys, advertising products in magazines, and creating ads to promote on social media are considered indirect marketing because the company is not directly interacting with the end user. http://www.mplans.com/articles/direct-marketing-fundamentals/",
+      "sources": [
+        "SOURCE: PR:089 Explain the nature of direct marketing channels",
+        "SOURCE: Berry, T. (2020). Direct marketing fundamentals. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 88,
+      "question": "Which of the following is a type of sales promotion that provides customers with immediate rewards:",
+      "options": {
+        "A": "Product displays C. Loyalty programs",
+        "B": "",
+        "C": "Loyalty programs B. Mail-in rebates",
+        "D": "Price-off deals"
+      },
+      "answer": "D",
+      "explanation": "Price-off deals. Price-off deals involve discounting the prices of goods and services for a short period of time. Because customers save money by buying the products during the sale, they receive an immediate reward—a good or service that they want or need at a discounted price. A rebate is a return of part of the price a customer pays for a good or service and usually is offered by the product's manufacturer. Loyalty programs reward repeat customers by offering incentives (e.g., free item) to maintain their loyalty to the business. Although rebates and loyalty programs provide rewards, customers must usually wait to receive them. Product displays exhibit merchandise and do not provide rewards. them). Retrieved August 25, 2020, from https://www.vendhq.com/blog/sales-promotion/",
+      "sources": [
+        "SOURCE: PR:249 Identify communications channels used in sales promotion",
+        "SOURCE: Nicasio, F. (2019, September 9). 7 types of sales promotions in retail (and how to implement"
+      ]
+    },
+    {
+      "number": 89,
+      "question": "Which of the following is a public relations activity that involves dealing with government officials:",
+      "options": {
+        "A": "Advising C. Counseling",
+        "B": "",
+        "C": "Counseling B. Lobbying",
+        "D": "Writing"
+      },
+      "answer": "B",
+      "explanation": "Lobbying. Many large businesses and industry organizations that are affected by government rules and regulations often use the public relations activity of lobbying to deal with government officials. Lobbying involves monitoring pending legislation, working with lawmakers to explain the industry's position, and encouraging the passage of legislation that is favorable to the industry. The goal of lobbying is to establish good relations with government to benefit the business or industry. Advising and counseling are public relations activities that involve working with management of the business. Writing is usually the responsibility of copywriters. https://www.agilitypr.com/resources/pr-glossary/public-relations-activities/",
+      "sources": [
+        "SOURCE: PR:252 Identify types of public-relations activities",
+        "SOURCE: Agility PR Solutions. (2020). Public relations activities. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 90,
+      "question": "Which of the following is a process that weeds out defective products after they've been created:",
+      "options": {
+        "A": "Quality control C. Quality improvement",
+        "B": "",
+        "C": "Quality improvement B. Quality assurance",
+        "D": "Quality command"
+      },
+      "answer": "A",
+      "explanation": "Quality control. Quality control is a process that weeds out defective products after they’ve been created. It is sometimes referred to as quality inspection. Quality assurance is an organization-wide system that businesses use to ensure that products meet quality standards; it includes quality control, but its scope is much bigger than just that. Quality improvement involves an organization’s willingness to change and adapt for the purpose of maintaining quality. Quality command is not a common aspect of quality management.",
+      "sources": [
+        "SOURCE: QM:001 Explain the nature of quality management",
+        "SOURCE: LAP-QM-001—Keep It Quality (Nature of Quality Management)"
+      ]
+    },
+    {
+      "number": 91,
+      "question": "Risk should be managed",
+      "options": {
+        "A": "through the purchase of insurance. C. after an incident has occurred.",
+        "B": "",
+        "C": "after an incident has occurred. B. on a case-by-case basis.",
+        "D": "as a part of business strategy. Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT EXAM 9"
+      },
+      "answer": "D",
+      "explanation": "As a part of business strategy. Enterprise risk management is a plan-based business strategy that aims to identify, assess, and prepare for risks across the organization. Therefore, according to this concept, risk should be managed as a part of overall business strategy. Risk should not be managed on a case- by-case basis because it will not be unified toward supporting the business's overall goals. After an incident has occurred, it is too late to manage risks. While purchasing insurance is one way to manage some risks, it does not cover all of the risks that can affect a business. from https://www.investopedia.com/terms/e/enterprise-risk-management.asp",
+      "sources": [
+        "SOURCE: RM:062 Discuss the nature of enterprise risk management (ERM)",
+        "SOURCE: Kenton, W. (2019, July 2). Enterprise risk management (ERM). Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 92,
+      "question": "It is particularly challenging for companies to assess external business risks because such risks are",
+      "options": {
+        "A": "often the result of poor corporate governance.",
+        "B": "primarily due to factors within the company itself.",
+        "C": "generally unpredictable and out of the companies' control.",
+        "D": "usually predictable and in the companies' control."
+      },
+      "answer": "C",
+      "explanation": "Generally unpredictable and out of the companies' control. External business risks such as natural disasters, economic downturns, and changes in legal regulations are generally unpredictable and out of a company's control. External business risks are the result of factors outside of a business, not the result of factors within the company itself (such as poor corporate governance). August 25, 2020, from https://www.investopedia.com/ask/answers/061015/how-do-modern- companies-assess-business-risk.asp",
+      "sources": [
+        "SOURCE: RM:094 Assess business risks",
+        "SOURCE: Beers, B. (2018, September 8). How do modern companies assess business risk? Retrieved"
+      ]
+    },
+    {
+      "number": 93,
+      "question": "Stimulating demand for goods is one of the responsibilities of which of the following marketing functions:",
+      "options": {
+        "A": "Selling C. Distribution",
+        "B": "",
+        "C": "Distribution B. Financing",
+        "D": "Risk management"
+      },
+      "answer": "A",
+      "explanation": "Selling. Skilled salespeople can create desire for new or established products through the use of planned, personalized communication. Financing is a business function that involves understanding the financial concepts used in making business decisions. Distribution is a function that is responsible for moving, storing, locating, and/or transferring ownership of goods or services. Risk management is not a marketing function.",
+      "sources": [
+        "SOURCE: SE:017 Explain the nature and scope of the selling function",
+        "SOURCE: LAP-SE-017—Sell Away (The Nature and Scope of Selling)"
+      ]
+    },
+    {
+      "number": 94,
+      "question": "Which part of the business plan describes a company's pricing policies?",
+      "options": {
+        "A": "Situational analysis C. Marketing plan",
+        "B": "",
+        "C": "Marketing plan B. Financial plan",
+        "D": "Segment analysis"
+      },
+      "answer": "C",
+      "explanation": "Marketing plan. A business plan is a set of procedures or strategies that outlines how a person plans to take an idea and turn it into an organized effort to produce and/or distribute goods and services. The business plan consists of three basic components—a business description and situational analysis, a marketing plan, and a financial plan. Pricing policies are discussed in the marketing plan. Segment analysis is part of the business description and situational analysis.",
+      "sources": [
+        "SOURCE: SM:007 Explain the nature of business plans",
+        "SOURCE: LAP-SM-007—Plan Now, Succeed Later (Nature of Business Plans)"
+      ]
+    },
+    {
+      "number": 95,
+      "question": "The objectives that managers develop for a business to attain are also intended to serve as operating",
+      "options": {
+        "A": "requirements. C. regulations.",
+        "B": "",
+        "C": "regulations. B. standards.",
+        "D": "guidelines."
+      },
+      "answer": "D",
+      "explanation": "Guidelines. A business's objectives are designed to serve as guidelines for daily operating activities. Once an objective is developed, the business can design jobs and activities that will make it possible to attain the objective. Objectives are goals to be attained rather than strict standards or requirements to be met, or regulations to follow. August 25, 2020, from https://smallbusiness.chron.com/importance-setting-business- objectives-4724.html",
+      "sources": [
+        "SOURCE: SM:008 Develop company goals/objective",
+        "SOURCE: Woodruff, J. (2019, February 12). The importance of setting business objectives. Retrieved"
+      ]
+    },
+    {
+      "number": 96,
+      "question": "Which of the following is a promotion-related question that a business might ask in order to adjust its marketing mix in response to environmental changes:",
+      "options": {
+        "A": "Which channels of distribution will we use? C. Is our product aimed at a specific market?",
+        "B": "",
+        "C": "Is our product aimed at a specific market? B. To whom should we offer discounts?",
+        "D": "What laws affect our advertising?"
+      },
+      "answer": "D",
+      "explanation": "What laws affect our advertising? This is a promotion-related question because advertising is a form of promotion. All businesses need to be familiar with the laws forbidding deceptive practices in advertising. Asking to whom we should offer discounts is a price-related question. Asking whether the product is aimed at a specific market is a product-related question. Asking what channels of distribution will be used is a place-related question. from https://www.tutor2u.net/business/reference/external-environment-introduction",
+      "sources": [
+        "SOURCE: SM:011 Explain external planning considerations",
+        "SOURCE: Riley, J. (2018). External environment: Introduction (GCSE). Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 97,
+      "question": "A business had a net profit of $76,000 last year on sales of $680,000 and this year had a net profit of $84,000 on sales of $700,000. What is the percent of increase in net profit?",
+      "options": {
+        "A": "1.5% C. 1%",
+        "B": "",
+        "C": "1% B. .5%",
+        "D": "2%"
+      },
+      "answer": "C",
+      "explanation": "1%. Businesses compare their operating results from year to year to determine if their net profit is increasing, decreasing, or staying the same. In this example, first calculate last year's percent of net profit based on sales by dividing the amount of net profit by total sales ($76,000 / $680,000 = 0.111 or 11%). Then, calculate this year's percent of net profit based on sales ($84,000 / $700,000 = 0.120 or 12%). To determine the percent of increase from last year to this year, subtract last year's percent from this year's percent (12% - 11% = 1%). https://www.investopedia.com/terms/n/net_margin.asp",
+      "sources": [
+        "SOURCE: SM:005 Analyze operating results in relation to budget/industry",
+        "SOURCE: Murphy, C. (2020, August 19). Net profit margin. Retrieved August 25, 2020, from"
+      ]
+    },
+    {
+      "number": 98,
+      "question": "Key performance indicators used to assess business performance should align with the business's",
+      "options": {
+        "A": "corporate culture. C. goals and objectives.",
+        "B": "",
+        "C": "goals and objectives. B. operating expenses.",
+        "D": "payroll and benefits."
+      },
+      "answer": "C",
+      "explanation": "Goals and objectives. A common way to assess the performance of a business plan is to develop and use key performance indicators. Key performance indicators are an effective way to track, measure, and improve business results. Aligning key performance indicators with business goals and objectives can help an organization stay focused on the aspects of the business that are most important to it. Key performance indicators are not necessarily aligned with a business's operating expenses, corporate culture, or payroll and benefits. from https://www.investopedia.com/terms/k/kpi.asp#:~:text=Key%20performance%20indicators% 20(KPIs)%20refer,businesses%20within%20the%20same%20sector",
+      "sources": [
+        "SOURCE: SM:006 Track performance of business plan",
+        "SOURCE: Twin, A. (2020, August 15). Key performance indicators (KPIs). Retrieved August 25, 2020,"
+      ]
+    },
+    {
+      "number": 99,
+      "question": "Tyrone, a new employee, had to attend daily training sessions for his first two weeks on the job. He learned a lot about the company and his new role, but he didn't retain much of it over time. This example demonstrates that",
+      "options": {
+        "A": "training sessions are useless for most employees.",
+        "B": "knowledge is fleeting and hard to hold onto.",
+        "C": "learning and knowledge are the same thing.",
+        "D": "learning doesn't always lead to knowledge."
+      },
+      "answer": "D",
+      "explanation": "Learning doesn't always lead to knowledge. Learning and knowledge are related, but they are not the same. Learning is the process of being exposed to new concepts and skills; knowledge is the information that is internalized and mastered through learning. Unfortunately, learning does not always lead to knowledge—much of what we learn is forgotten. In this way, learning—not knowledge—is fleeting. Businesses, therefore, should be mindful about how they train their employees. Training should always attempt to lead to maximum knowledge retention. Not all training sessions are useless, but many do not lead to maximum knowledge retention. you should care. Retrieved August 25, 2020, from https://www.learningsolutionsmag.com/articles/2079/the-difference-between-learning-and- knowledge-and-why-you-should-care",
+      "sources": [
+        "SOURCE: SM:094 Describe relationship among innovation, learning, and change",
+        "SOURCE: Leaman, C. (2016, October 5). The difference between learning and knowledge, and why"
+      ]
+    },
+    {
+      "number": 100,
+      "question": "Change management strategies often fail because",
+      "options": {
+        "A": "they don't include everyone in the change process.",
+        "B": "employees dedicate too much time to the change process.",
+        "C": "competitors have implemented the changes already.",
+        "D": "low-level employees are given too much responsibility. Test 1230 ENTREPRENEURSHIP AND SMALL BUSINESS MANAGEMENT"
+      },
+      "answer": "A",
+      "explanation": "They don't include everyone in the change process. Change affects an entire organization. Employees of all levels should be included and utilized in a strategy for change. Failure to include certain members of an organization in a change process can lead to distrust and low morale among those that are excluded. To be successful, change management must include everyone. Change management strategies do not generally fail because employees dedicate too much time to the change process, competitors have already implemented the changes, or low-level employees are given too much responsibility. strategies fail. Retrieved August 25, 2020, from https://www.forbes.com/sites/brentgleeson/2016/12/07/leading-change-6-reasons-change- management-strategies-fail/#3b3a8e915d9e",
+      "sources": [
+        "SOURCE: SM:095 Explain the nature of change management",
+        "SOURCE: Gleeson, B. (2016, December 7). Leading change: 6 reasons change management"
+      ]
+    }
+  ]
+}

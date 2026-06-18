@@ -1,4 +1,4 @@
-// DECA Marketing Study — single-page app.
+// ClusterPrep — single-page app (DECA Marketing Cluster Exam practice).
 // - Username-based profiles (no password). Data scoped per user in localStorage.
 // - All Tests → click card → take quiz → answers + explanations
 // - My Stats → topic breakdown of wrong answers, most-missed topic, paste
@@ -15,6 +15,8 @@ const state = {
   revealAll: false,
   user: null,                 // current username (or null)
   exams: {},                  // cache of loaded exam JSONs, keyed by slug
+  cluster: "marketing",       // active DECA cluster (marketing | bma)
+  crossCluster: false,        // Same-code practice: pull same-PI-code Qs from other clusters too
 };
 
 // Performance-indicator code prefix → topic name (matches DECA blueprint).
@@ -27,16 +29,21 @@ const TOPICS = {
   EI: "Emotional Intelligence",
   EN: "Entrepreneurship",
   FI: "Financial Analysis",
+  FM: "Financial-Information Management",
   HR: "Human Resources Management",
   IM: "Marketing-Information Management",
+  KM: "Knowledge Management",
   MP: "Market Planning",
   MK: "Marketing",
   NF: "Information Management",
   OP: "Operations",
   PI: "Pricing",
+  PJ: "Project Management",
   PM: "Product/Service Management",
   PD: "Professional Development",
   PR: "Promotion",
+  QM: "Quality Management",
+  RM: "Risk Management",
   SE: "Selling",
   SM: "Strategic Management",
 };
@@ -112,6 +119,9 @@ async function init() {
     }
   }
   wireChrome();
+  state.cluster = localStorage.getItem("deca-imce:cluster") || "marketing";
+  if (!CLUSTERS[state.cluster]) state.cluster = "marketing";
+  state.crossCluster = localStorage.getItem("deca-imce:crossCluster") === "1";
   await applyResetEpochIfChanged();
   // Hydrate current user from localStorage.
   state.user = localStorage.getItem("deca-imce:current-user") || null;
@@ -130,7 +140,7 @@ async function init() {
   }
 
   try {
-    const res = await fetch("data/index.json", { cache: "no-store" });
+    const res = await fetch(activeCluster().indexUrl, { cache: "no-store" });
     if (!res.ok) throw new Error("Could not load index.json");
     state.index = await res.json();
     restoreMockIfPresent();
@@ -142,6 +152,7 @@ async function init() {
     </div>`;
     return;
   }
+  refreshClusterUI();
   render();
 }
 
@@ -162,8 +173,24 @@ function wireChrome() {
   document.getElementById("login-form").addEventListener("submit", e => {
     e.preventDefault();
     const name = document.getElementById("login-input").value.trim();
+    const pass = document.getElementById("login-pass").value;
     if (!name) return;
-    loginAs(name);
+    if (loginMode === "signup") {
+      const pass2 = document.getElementById("login-pass2").value;
+      if (pass.length < 4) { setLoginMsg("Password must be at least 4 characters.", "err"); return; }
+      if (pass !== pass2) { setLoginMsg("Passwords don't match.", "err"); return; }
+    }
+    loginAs(name, pass, loginMode);
+  });
+  document.getElementById("login-toggle").addEventListener("click", () => {
+    setLoginMode(loginMode === "signup" ? "login" : "signup");
+    document.getElementById("login-input").focus();
+  });
+  document.getElementById("login-forgot").addEventListener("click", () => {
+    const el = document.getElementById("login-msg");
+    el.className = "login-msg";
+    el.innerHTML = 'Forgot your password? Email the admin to reset it: ' +
+      '<a href="mailto:aryan.khu09@gmail.com">aryan.khu09@gmail.com</a>';
   });
 }
 
@@ -208,52 +235,198 @@ function updateActiveNav(route) {
 //                       PROFILE / AUTH
 // ================================================================
 
+// Login modal mode: "login" (default) or "signup" (create account).
+let loginMode = "login";
+
+function setLoginMode(mode) {
+  loginMode = mode;
+  const isSignup = mode === "signup";
+  document.getElementById("login-title").textContent = isSignup ? "Create an account" : "Log in";
+  document.getElementById("login-sub").textContent = isSignup
+    ? "Pick a username and password. This works on any device you log in from."
+    : "Enter your username and password.";
+  document.getElementById("login-go").textContent = isSignup ? "Create account" : "Log in";
+  document.getElementById("login-toggle").textContent = isSignup
+    ? "Already have an account? Log in"
+    : "New here? Create an account";
+  // Confirm-password field + forgot link only make sense in their mode.
+  document.getElementById("login-pass2").classList.toggle("hidden", !isSignup);
+  document.getElementById("login-pass").setAttribute("autocomplete", isSignup ? "new-password" : "current-password");
+  document.getElementById("login-forgot").classList.toggle("hidden", isSignup);
+  setLoginMsg("", "");
+}
+
 function openLoginModal() {
   const modal = document.getElementById("login-modal");
   modal.classList.remove("hidden");
-  const input = document.getElementById("login-input");
-  input.value = "";
-  input.focus();
+  document.getElementById("login-input").value = "";
+  document.getElementById("login-pass").value = "";
+  document.getElementById("login-pass2").value = "";
+  setLoginMode("login");
+  document.getElementById("login-input").focus();
+}
 
-  // Known-users chips for quick switch.
-  const knownBox = document.getElementById("known-users");
-  const users = getKnownUsers();
-  if (users.length === 0) {
-    knownBox.innerHTML = "";
-  } else {
-    knownBox.innerHTML =
-      `<span style="color:var(--muted);font-size:.85rem;margin-right:6px">Existing profiles:</span>` +
-      users.map(u => `<button type="button" class="chip" data-user="${escapeAttr(u)}">${escapeHtml(u)}</button>`).join("");
-    knownBox.querySelectorAll(".chip").forEach(c => {
-      c.addEventListener("click", () => loginAs(c.getAttribute("data-user")));
-    });
-  }
+function setLoginMsg(text, kind) {
+  const el = document.getElementById("login-msg");
+  if (!el) return;
+  el.textContent = text || "";
+  el.className = "login-msg" + (kind ? " " + kind : "");
 }
 
 function closeLoginModal() {
   document.getElementById("login-modal").classList.add("hidden");
 }
 
-function loginAs(name) {
+// ---- Credentials (client-side password gate) ----
+// This is a static client app, so the gate stops casual "type a name and
+// you're in" access — it is not cryptographically bulletproof. Passwords are
+// stored as a salted SHA-256 hash under the user-scoped `:auth` key, which
+// rides the existing cloud sync to every device automatically.
+//
+// Built-in defaults keep the three pre-existing passwordless profiles
+// reachable. The first successful login upgrades the plaintext default into a
+// stored salted hash.
+const DEFAULT_PASSWORDS = { aryan: "aryan123", rohit: "rohit123", shreyas: "shreyas123" };
+
+function authKey(user) { return `deca-imce:user:${user}:auth`; }
+
+function randomSaltHex() {
+  const a = new Uint8Array(16);
+  crypto.getRandomValues(a);
+  return Array.from(a, b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function hashPassword(salt, password) {
+  const data = new TextEncoder().encode(`${salt}:${password}`);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function makeCredential(password) {
+  const salt = randomSaltHex();
+  return { v: 1, salt, hash: await hashPassword(salt, password) };
+}
+
+async function verifyCredential(cred, password) {
+  if (!cred || !cred.salt || !cred.hash) return false;
+  return (await hashPassword(cred.salt, password)) === cred.hash;
+}
+
+function readLocalCredential(user) {
+  try { return JSON.parse(localStorage.getItem(authKey(user)) || "null"); }
+  catch { return null; }
+}
+function writeLocalCredential(user, cred) {
+  localStorage.setItem(authKey(user), JSON.stringify(cred));
+}
+
+// Look up an existing credential WITHOUT applying any remote snapshot to local
+// storage — so a wrong password never hydrates another user's data onto this
+// device. Checks local first, then a direct cloud read.
+async function fetchStoredCredential(user) {
+  const local = readLocalCredential(user);
+  if (local) return local;
+  try {
+    const backend = await awaitSyncBackend();
+    if (backend && backend.ready) {
+      const srv = await backend.getProfile(user);
+      const raw = srv && srv.data && srv.data[authKey(user)];
+      if (raw) { try { return JSON.parse(raw); } catch {} }
+    }
+  } catch (e) { console.warn("[auth] credential fetch failed:", e); }
+  return null;
+}
+
+async function loginAs(name, password, mode = "login") {
   const clean = name.toLowerCase().replace(/[^a-z0-9_.-]/g, "").slice(0, 40);
-  if (!clean) {
-    alert("Username must have letters or numbers.");
-    return;
-  }
-  localStorage.setItem("deca-imce:current-user", clean);
-  state.user = clean;
-  addKnownUser(clean);
-  closeLoginModal();
-  refreshAuthUI();
-  // Pull from server first so switching to a profile on a new device hydrates
-  // that user's existing progress before we decide whether to import seeds.
-  (async () => {
+  if (!clean) { setLoginMsg("Username must have letters or numbers.", "err"); return; }
+  if (!password) { setLoginMsg("Enter your password.", "err"); return; }
+
+  const goBtn = document.getElementById("login-go");
+  if (goBtn) goBtn.disabled = true;
+  setLoginMsg("Checking…", "");
+
+  try {
+    const stored = await fetchStoredCredential(clean);
+    const isDefault = !!DEFAULT_PASSWORDS[clean];
+    const accountExists = !!stored || isDefault;
+    let cred, isNew = false;
+
+    if (mode === "signup") {
+      // Create account — refuse if the username is already taken.
+      if (accountExists) {
+        setLoginMsg("That username is already taken. Log in instead.", "err");
+        return;
+      }
+      cred = await makeCredential(password);
+      isNew = true;
+    } else if (stored) {
+      // Existing account — password must match.
+      if (!(await verifyCredential(stored, password))) {
+        setLoginMsg("Incorrect password. Try again.", "err");
+        return;
+      }
+      cred = stored;
+    } else if (isDefault) {
+      // Pre-existing passwordless profile with a known default password.
+      if (password !== DEFAULT_PASSWORDS[clean]) {
+        setLoginMsg("Incorrect password. Try again.", "err");
+        return;
+      }
+      cred = await makeCredential(password); // upgrade default → salted hash
+    } else {
+      // No such account — don't silently create one in login mode.
+      setLoginMsg("No account with that username. Tap “Create an account” to sign up.", "err");
+      return;
+    }
+
+    // Auth passed — commit the session.
+    localStorage.setItem("deca-imce:current-user", clean);
+    state.user = clean;
+    writeLocalCredential(clean, cred);
+    addKnownUser(clean);
+    closeLoginModal();
+    refreshAuthUI();
+
+    // Pull from server first so switching to a profile on a new device hydrates
+    // that user's existing progress before we decide whether to import seeds.
     await syncProfilePull(clean);
+    // Pull may have replaced local keys with the remote snapshot; re-assert the
+    // credential so a freshly-set/upgraded password isn't lost, then push.
+    writeLocalCredential(clean, cred);
     cleanupAutoImportedRohitCodes(clean);
     await maybeImportSeed(clean);
     syncProfilePushDebounced(clean, 500);
     render();
-  })();
+  } catch (e) {
+    console.error("[auth] login failed:", e);
+    setLoginMsg("Something went wrong. Try again.", "err");
+  } finally {
+    if (goBtn) goBtn.disabled = false;
+  }
+}
+
+// Reset / change the current account's password (requires the current one).
+async function changePassword() {
+  if (!state.user) return;
+  const user = state.user;
+  const stored = readLocalCredential(user) || await fetchStoredCredential(user);
+  if (stored) {
+    const cur = prompt("Enter your CURRENT password:");
+    if (cur == null) return;
+    const ok = (await verifyCredential(stored, cur)) ||
+               (DEFAULT_PASSWORDS[user] && cur === DEFAULT_PASSWORDS[user]);
+    if (!ok) { alert("Current password is incorrect."); return; }
+  }
+  const next = prompt("Enter a NEW password (at least 4 characters):");
+  if (next == null) return;
+  if (next.length < 4) { alert("Password must be at least 4 characters."); return; }
+  const again = prompt("Re-enter the new password:");
+  if (again == null) return;
+  if (next !== again) { alert("Passwords didn't match. Nothing changed."); return; }
+  writeLocalCredential(user, await makeCredential(next));
+  syncProfilePushDebounced(user, 300);
+  alert("Password updated.");
 }
 
 // ================================================================
@@ -1279,7 +1452,6 @@ const TOPIC_GUIDES_V2 = {
   },
 };
 
-const TOPIC_GUIDES = TOPIC_GUIDES_V2;
 
 
 
@@ -1289,6 +1461,141 @@ const ICDC_WEIGHT_TABLE = {
   IM: 16, MP: 5, MK: 1, NF: 3, OP: 4, PI: 4, PM: 15, PD: 5, PR: 13,
   SE: 8, SM: 0,
 };
+
+// ================================================================
+//              CLUSTERS — multi-cluster support
+// ================================================================
+// Each DECA cluster has its own exam index, study guides, and ICDC blueprint
+// weighting. state.cluster selects which set is live; switching reloads the
+// matching exam index and re-renders. Exam slugs are unique per cluster, so
+// per-user progress / wrong-answer stats stay naturally separated.
+// BMA blueprint weighting (≈ questions per 100-question exam), derived from the
+// actual instructional-area frequency across the 2017-2026 BMA exams.
+const BMA_WEIGHTS = {
+  OP: 20, EI: 11, CO: 9, FI: 8, NF: 8, EC: 7, SM: 7, PD: 6,
+  PJ: 5, KM: 4, BL: 4, RM: 3, CR: 2, QM: 2, HR: 1, MK: 1, EN: 1,
+};
+// Hospitality & Tourism blueprint (≈ questions per 100-q exam), from PI-prefix
+// frequency across the 2017-2026 H&T exams.
+const HT_WEIGHTS = {
+  NF: 13, OP: 12, EI: 10, FI: 8, CR: 8, PD: 7, EC: 7, CO: 6, PM: 6, SE: 5,
+  BL: 3, PR: 3, SM: 2, HR: 2, MK: 1, MP: 1, PI: 1, EN: 1, QM: 1, RM: 1, IM: 1,
+};
+// Entrepreneurship blueprint (≈ questions per 100-q exam), from PI frequency
+// across the 2018-2026 EP exams.
+const EP_WEIGHTS = {
+  EN: 14, OP: 13, FI: 9, SM: 7, EI: 6, PR: 6, PD: 6, MP: 5, HR: 5, BL: 4,
+  NF: 4, PM: 4, EC: 3, CM: 3, IM: 2, PI: 2, RM: 2, CR: 1, MK: 1, CO: 1, SE: 1, QM: 1,
+};
+// Finance blueprint (≈ per 100-q exam), from the 2017-2026 Finance exams.
+const FIN_WEIGHTS = {
+  FI: 21, PD: 11, EI: 9, FM: 7, NF: 6, EC: 6, OP: 6, BL: 6, CO: 6, RM: 5,
+  CR: 4, EN: 1, HR: 1, MK: 1, SM: 1,
+};
+// Personal Financial Literacy blueprint (≈ per 100-q exam), from the 2017-2026 PFL exams.
+const PFL_WEIGHTS = {
+  FI: 33, PD: 12, BL: 3, EC: 3, CR: 1, SE: 1, EI: 1, OP: 1, EN: 1, SM: 1, NF: 1, PM: 1, HR: 1,
+};
+const CLUSTERS = {
+  marketing: {
+    id: "marketing",
+    name: "Marketing",
+    short: "Marketing",
+    indexUrl: "data/index.json",
+    blurb: "Marketing Cluster Exam practice",
+    get guides() { return TOPIC_GUIDES_V2; },
+    get weights() { return ICDC_WEIGHT_TABLE; },
+  },
+  bma: {
+    id: "bma",
+    name: "Business Management & Administration",
+    short: "Business Mgmt & Admin",
+    indexUrl: "data/bma/index.json",
+    blurb: "Business Management & Administration Cluster practice",
+    get guides() { return window.TOPIC_GUIDES_BMA || {}; },
+    get weights() { return BMA_WEIGHTS; },
+  },
+  ht: {
+    id: "ht",
+    name: "Hospitality & Tourism",
+    short: "Hospitality & Tourism",
+    indexUrl: "data/ht/index.json",
+    blurb: "Hospitality & Tourism Cluster Exam practice",
+    get guides() { return window.TOPIC_GUIDES_HT || {}; },
+    get weights() { return HT_WEIGHTS; },
+  },
+  fin: {
+    id: "fin",
+    name: "Finance",
+    short: "Finance",
+    indexUrl: "data/fin/index.json",
+    blurb: "Finance Cluster Exam practice",
+    get guides() { return window.TOPIC_GUIDES_FIN || {}; },
+    get weights() { return FIN_WEIGHTS; },
+  },
+  ep: {
+    id: "ep",
+    name: "Entrepreneurship",
+    short: "Entrepreneurship",
+    indexUrl: "data/ep/index.json",
+    blurb: "Entrepreneurship Cluster Exam practice",
+    get guides() { return window.TOPIC_GUIDES_EP || {}; },
+    get weights() { return EP_WEIGHTS; },
+  },
+  pfl: {
+    id: "pfl",
+    name: "Personal Financial Literacy",
+    short: "Personal Financial Literacy",
+    indexUrl: "data/pfl/index.json",
+    blurb: "Personal Financial Literacy Exam practice",
+    get guides() { return window.TOPIC_GUIDES_PFL || {}; },
+    get weights() { return PFL_WEIGHTS; },
+  },
+};
+const CLUSTER_ORDER = ["marketing", "bma", "fin", "ep", "ht", "pfl"];
+function activeClusterId() { return CLUSTERS[state.cluster] ? state.cluster : "marketing"; }
+function activeCluster() { return CLUSTERS[activeClusterId()]; }
+function activeGuides() { return activeCluster().guides || {}; }
+function activeWeights() { return activeCluster().weights || {}; }
+
+function refreshClusterUI() {
+  const slot = document.getElementById("cluster-slot");
+  if (slot) {
+    const cur = activeClusterId();
+    slot.innerHTML = `
+      <span class="cluster-ico" aria-hidden="true">◆</span>
+      <select id="cluster-select" aria-label="Choose DECA cluster">
+        ${CLUSTER_ORDER.map(id => `<option value="${id}" ${id === cur ? "selected" : ""}>${escapeHtml(CLUSTERS[id].short)}</option>`).join("")}
+      </select>`;
+    const sel = document.getElementById("cluster-select");
+    if (sel) sel.addEventListener("change", () => switchCluster(sel.value));
+  }
+  // Reflect the active cluster in the brand subtitle so it's obvious which
+  // cluster you're studying.
+  const sub = document.querySelector(".brand .sub");
+  if (sub) {
+    const c = activeCluster();
+    const n = (state.index || []).filter(e => e.available !== false && !e._mock).length;
+    sub.textContent = `${c.blurb}${n ? ` — ${n} tests` : ""}`;
+  }
+}
+
+async function switchCluster(id) {
+  if (!CLUSTERS[id] || id === state.cluster) return;
+  state.cluster = id;
+  localStorage.setItem("deca-imce:cluster", id);
+  try {
+    const res = await fetch(activeCluster().indexUrl, { cache: "no-store" });
+    state.index = res.ok ? await res.json() : [];
+  } catch { state.index = []; }
+  refreshClusterUI();
+  // Land on the test list so the switch is immediately visible.
+  if (location.hash && location.hash !== "#/" && location.hash !== "#") {
+    location.hash = "#/";   // hashchange → render()
+  } else {
+    render();
+  }
+}
 
 // ---- One-shot import of a named seed file for a specific user ----
 // Maps username -> seed JSON path. The seed is keyed by exam slug:
@@ -1468,16 +1775,37 @@ function refreshAuthUI() {
   } else {
     slot.classList.remove("nologin");
     const initial = state.user.slice(0, 2);
+    // Account actions collapse into a dropdown behind the avatar chip so the
+    // top bar stays a single clean row (no wrapping).
     slot.innerHTML = `
-      <span class="user-chip" title="Logged in">
-        <span class="avatar">${escapeHtml(initial)}</span>
-        ${escapeHtml(state.user)}
-      </span>
-      <button class="nav-btn" id="switch-user">Switch</button>
-      <button class="nav-btn" id="logout-btn">Log out</button>
+      <div class="user-menu">
+        <button class="user-chip" id="user-menu-btn" aria-haspopup="true" aria-expanded="false" title="Account">
+          <span class="avatar">${escapeHtml(initial)}</span>
+          <span class="user-name">${escapeHtml(state.user)}</span>
+          <span class="user-caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="user-menu-pop hidden" id="user-menu-pop" role="menu">
+          <button class="user-menu-item" id="change-pass" role="menuitem">Change password</button>
+          <button class="user-menu-item" id="switch-user" role="menuitem">Switch user</button>
+          <button class="user-menu-item danger" id="logout-btn" role="menuitem">Log out</button>
+        </div>
+      </div>
     `;
-    document.getElementById("switch-user").addEventListener("click", openLoginModal);
-    document.getElementById("logout-btn").addEventListener("click", logout);
+    const menuBtn = document.getElementById("user-menu-btn");
+    const pop = document.getElementById("user-menu-pop");
+    const closeMenu = () => { pop.classList.add("hidden"); menuBtn.setAttribute("aria-expanded", "false"); };
+    menuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = pop.classList.toggle("hidden");
+      menuBtn.setAttribute("aria-expanded", open ? "false" : "true");
+    });
+    document.addEventListener("click", (e) => {
+      if (!pop.classList.contains("hidden") && !e.target.closest(".user-menu")) closeMenu();
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+    document.getElementById("change-pass").addEventListener("click", () => { closeMenu(); changePassword(); });
+    document.getElementById("switch-user").addEventListener("click", () => { closeMenu(); openLoginModal(); });
+    document.getElementById("logout-btn").addEventListener("click", () => { closeMenu(); logout(); });
   }
 }
 
@@ -1760,12 +2088,12 @@ function refreshStreakUI() {
   refreshCountdownUI();
 }
 
-// --------- ICDC 2026 countdown ---------
-// DECA ICDC 2026 runs Apr 25–28, 2026 in Atlanta, GA. The Marketing Cluster Exam
-// (IMCE) is typically administered Sunday morning of competition. We target
-// Sun Apr 26, 2026 at 8:00 AM Eastern (12:00 UTC) as the exam moment.
+// --------- ICDC 2027 countdown ---------
+// Next DECA ICDC runs Apr 17–20, 2027 in Anaheim, CA. The Marketing Cluster Exam
+// (IMCE) is typically administered the Sunday morning of competition. We target
+// Sun Apr 18, 2027 at 8:00 AM Pacific (15:00 UTC) as the exam moment.
 // If the published schedule differs, update ICDC_EXAM_ISO below.
-const ICDC_EXAM_ISO = "2026-04-26T12:00:00Z"; // 8:00 AM EDT
+const ICDC_EXAM_ISO = "2027-04-18T15:00:00Z"; // 8:00 AM PDT, Anaheim
 function countdownParts() {
   const target = new Date(ICDC_EXAM_ISO).getTime();
   const diff = target - Date.now();
@@ -1777,16 +2105,21 @@ function countdownParts() {
 }
 function countdownBadgeHtml() {
   const p = countdownParts();
+  const title = "Countdown to DECA ICDC 2027 — Marketing Cluster Exam, Sun Apr 18 2027, Anaheim, CA";
   if (p.done) {
-    return `<a href="#/countdown" class="icdc-pill" title="DECA ICDC Marketing Cluster Exam">
+    return `<a href="#/countdown" class="icdc-pill" title="${title}">
       <span class="icdc-ico">🏆</span>
       <span class="icdc-txt">ICDC — good luck!</span>
     </a>`;
   }
   const urgent = p.d <= 7 ? "urgent" : "";
-  return `<a href="#/countdown" class="icdc-pill ${urgent}" title="Click for full countdown to the DECA ICDC Marketing Cluster Exam (Sun Apr 26 2026, 8:00 AM EDT)">
-    <span class="icdc-ico">⏱</span>
-    <span class="icdc-txt">ICDC in <strong>${p.d}d ${p.h}h ${p.m}m</strong></span>
+  // Days-based label (not a live-ticking clock); the full /countdown page has H:M:S.
+  const label = p.d >= 1
+    ? `ICDC 2027 in <strong>${p.d} ${p.d === 1 ? "day" : "days"}</strong>`
+    : `ICDC <strong>${p.h}h ${p.m}m</strong> away`;
+  return `<a href="#/countdown" class="icdc-pill ${urgent}" title="${title}">
+    <span class="icdc-ico">⏳</span>
+    <span class="icdc-txt">${label}</span>
   </a>`;
 }
 function refreshCountdownUI() {
@@ -1828,7 +2161,7 @@ function renderCountdown() {
       <div class="countdown-inner">
         <div class="countdown-eyebrow">
           <span class="cd-dot"></span>
-          <span>DECA ICDC 2026 · Atlanta, GA</span>
+          <span>DECA ICDC 2027 · Anaheim, CA</span>
         </div>
         <h1 class="countdown-title">
           ${initial.done ? "It's go time." : "Marketing Cluster Exam in"}
@@ -1843,7 +2176,7 @@ function renderCountdown() {
           <div class="cd-unit"><div class="cd-num cd-num-seconds" id="cd-s">${pad(initial.s)}</div><div class="cd-lbl">seconds</div></div>
         </div>
         <div class="countdown-target">
-          Target: Sun, Apr 26 2026 · 8:00 AM EDT
+          Target: Sun, Apr 18 2027 · 8:00 AM PDT
         </div>
         <div class="word-loader" aria-hidden="true">
           <div class="wl-grid" id="wl-grid"></div>
@@ -2136,7 +2469,7 @@ function renderWelcome() {
     <div class="welcome-inner">
       <div class="welcome-eyebrow">
         <span class="dot"></span>
-        DECA Marketing · Cluster Exam prep
+        ClusterPrep · Marketing Cluster Exam prep
       </div>
       <h1 class="welcome-title">
         <span class="accent">Ready to take</span><br />
@@ -2204,6 +2537,23 @@ function renderWelcome() {
 //                          HOME
 // ================================================================
 
+// Sort exams newest-first: year-stamped exams (e.g. "bma-2026", "Marketing
+// 2024 ICDC") descending by year on top, then undated sample exams below
+// (ascending by exam number).
+function examYear(e) {
+  const m = String(`${e.slug} ${e.title || ""}`).match(/(20\d{2})/);
+  return m ? parseInt(m[1], 10) : 0;
+}
+function examNum(e) {
+  const m = String(e.title || e.slug).match(/(\d+)/);
+  return m ? parseInt(m[1], 10) : 0;
+}
+function byRecency(a, b) {
+  const ya = examYear(a), yb = examYear(b);
+  if (ya !== yb) return yb - ya;
+  return examNum(a) - examNum(b) || String(a.title || "").localeCompare(String(b.title || ""));
+}
+
 function renderHome() {
   state.currentExam = null;
   state.currentSlug = null;
@@ -2213,7 +2563,7 @@ function renderHome() {
 
   // Only show real, available exams on home — hide mock slugs and any
   // unavailable parses (e.g. PNG-only exams that never parsed cleanly).
-  const realIndex = state.index.filter(e => !e._mock && e.available !== false);
+  const realIndex = state.index.filter(e => !e._mock && e.available !== false).sort(byRecency);
   const mockSnap = loadMockSnapshot();
   const mockBanner = mockSnap ? `
     <div class="mock-banner">
@@ -2276,7 +2626,7 @@ function renderHome() {
     const q = search.value.trim().toLowerCase();
     const filtered = state.index.filter(e =>
       e.title.toLowerCase().includes(q) || e.slug.includes(q)
-    );
+    ).sort(byRecency);
     grid.innerHTML = filtered.map(cardHtml).join("") ||
       `<div class="empty">No tests match "${escapeHtml(q)}"</div>`;
     bindCardClicks();
@@ -2289,7 +2639,7 @@ function loginBannerIfNeeded() {
   if (state.user) return "";
   return `
     <div class="banner">
-      <div>You're not logged in. Log in with a username to save progress and see wrong-answer stats.</div>
+      <div>You're not logged in. Log in to save progress and see wrong-answer stats.</div>
       <button class="btn primary small" id="banner-login">Log in</button>
     </div>
   `;
@@ -2432,6 +2782,66 @@ async function getExam(slug) {
   }
   state.exams[slug] = data;
   return data;
+}
+
+// ---- Cross-cluster same-code practice (opt-in) ----
+// Load + cache an exam by its index meta (works for ANY cluster, since the
+// meta carries its own `json` path). Slugs are unique across clusters, so the
+// shared state.exams cache is safe.
+async function getExamByMeta(meta) {
+  if (state.exams[meta.slug]) return state.exams[meta.slug];
+  const res = await fetch(meta.json, { cache: "no-store" });
+  if (!res.ok) throw new Error(res.statusText);
+  const data = await res.json();
+  for (const q of data.questions) {
+    q.code = extractCode(q.sources || []);
+    q.topic = q.code ? TOPICS[q.code.split(":")[0]] || null : null;
+  }
+  state.exams[meta.slug] = data;
+  return data;
+}
+
+// Lazy-load (and cache) every cluster's exam index.
+async function loadAllClusterIndexes() {
+  if (state._allClusterIndex) return state._allClusterIndex;
+  const out = {};
+  await Promise.all(CLUSTER_ORDER.map(async (cid) => {
+    try {
+      const r = await fetch(CLUSTERS[cid].indexUrl, { cache: "no-store" });
+      out[cid] = r.ok ? await r.json() : [];
+    } catch { out[cid] = []; }
+  }));
+  state._allClusterIndex = out;
+  return out;
+}
+
+// Gather same-PI-code questions from OTHER clusters, deduped against the
+// caller's `seenStems` set (so identical bank items don't repeat). Skips any
+// cluster whose blueprint doesn't list this prefix (avoids loading exams that
+// can't contain it). Each result is tagged with its source cluster.
+async function crossClusterSameCode(prefix, seenStems) {
+  const idx = await loadAllClusterIndexes();
+  const active = activeClusterId();
+  const out = [];
+  for (const cid of CLUSTER_ORDER) {
+    if (cid === active) continue;
+    const weights = CLUSTERS[cid].weights || {};
+    if (!(prefix in weights)) continue; // this cluster has no questions of this code
+    for (const meta of (idx[cid] || [])) {
+      if (meta.available === false) continue;
+      let exam;
+      try { exam = await getExamByMeta(meta); } catch { continue; }
+      for (const q of exam.questions) {
+        const p = q.code ? q.code.split(":")[0] : null;
+        if (p !== prefix) continue;
+        const key = (q.question || "").toLowerCase().replace(/\s+/g, " ").trim();
+        if (!key || seenStems.has(key)) continue;
+        seenStems.add(key);
+        out.push({ slug: meta.slug, title: meta.title, number: q.number, code: q.code, cluster: cid });
+      }
+    }
+  }
+  return out;
 }
 
 function isMockSlug(slug) { return typeof slug === "string" && slug.startsWith("_mock_"); }
@@ -2788,11 +3198,11 @@ async function renderStats() {
     app.innerHTML = `
       <div class="stats-head">
         <h2>My Stats</h2>
-        <p class="hint">Log in with a username to see per-user stats and paste codes you got wrong.</p>
+        <p class="hint">Log in to see per-user stats and paste codes you got wrong.</p>
       </div>
       <div class="panel" style="text-align:center">
         <p>No profile is logged in yet.</p>
-        <button class="btn primary" id="stats-login">Log in with a username</button>
+        <button class="btn primary" id="stats-login">Log in</button>
       </div>
     `;
     document.getElementById("stats-login").addEventListener("click", openLoginModal);
@@ -3319,11 +3729,11 @@ async function renderStudy(prefix, _qnum) {
     app.innerHTML = `
       <div class="stats-head">
         <h2>Study</h2>
-        <p class="hint">Log in with a username to see a personalized study plan based on your wrongs.</p>
+        <p class="hint">Log in to see a personalized study plan based on your wrongs.</p>
       </div>
       <div class="panel" style="text-align:center">
         <p>Log in first to unlock per-topic study guides and targeted practice.</p>
-        <button class="btn primary" id="study-login">Log in with a username</button>
+        <button class="btn primary" id="study-login">Log in</button>
       </div>
     `;
     document.getElementById("study-login").addEventListener("click", openLoginModal);
@@ -3337,20 +3747,22 @@ async function renderStudy(prefix, _qnum) {
   await Promise.all(availableSlugs.map(s => getExam(s).catch(() => null)));
 
   // Aggregate: per topic prefix we track TWO counts.
-  //   wrongCount    = historical "most missed" count — built from the original
-  //                   LOG TEST wrongs only, so re-doing a question correctly
-  //                   on the site does NOT decrement it. This is what drives
-  //                   the sidebar sort order and the "Most missed topic" KPI —
-  //                   you missed it, that's history; the ranking shouldn't
-  //                   reshuffle just because you've since fixed some.
+  //   wrongCount    = historical "most missed" count — built from BOTH log-test
+  //                   wrongs AND on-site (progress) wrongs, so every miss the
+  //                   user has made counts toward the ranking. Re-doing a
+  //                   question correctly on the site does NOT decrement it, so
+  //                   the sidebar sort order stays stable — you missed it,
+  //                   that's history; the ranking shouldn't reshuffle just
+  //                   because you've since fixed some. This drives the sidebar
+  //                   sort order and the "Most missed topic" KPI.
   //   wrongQs       = the list of questions STILL effectively wrong (original
   //                   log-test pick if user hasn't retried, their site pick if
   //                   they have). This is what the "Review wrongs" tab shows
   //                   so the "N to review" counter ticks down as they nail
   //                   questions one by one.
   const byTopic = {};
-  for (const code of Object.keys(TOPIC_GUIDES)) {
-    byTopic[code] = { prefix: code, name: TOPIC_GUIDES[code].name, wrongCount: 0, total: 0, wrongQs: [], allQs: [] };
+  for (const code of Object.keys(activeGuides())) {
+    byTopic[code] = { prefix: code, name: activeGuides()[code].name, wrongCount: 0, total: 0, wrongQs: [], allQs: [] };
   }
   byTopic._OTHER = { prefix: "_OTHER", name: "Other / Uncoded", wrongCount: 0, total: 0, wrongQs: [], allQs: [] };
 
@@ -3396,10 +3808,17 @@ async function renderStudy(prefix, _qnum) {
       const bucket = byTopic[codePrefix] || byTopic._OTHER;
       bucket.total++;
       bucket.allQs.push({ slug: meta.slug, title: meta.title, number: q.number, code: q.code });
-      // "wrongCount" = LOG test wrong only — historical, never decrements,
-      // drives the sidebar ranking.
+      // "wrongCount" = how many questions the user has MISSED in this topic.
+      // Counts BOTH imported LOG TEST wrongs and on-site (progress) wrongs, so
+      // the sidebar ranking reflects everything they've gotten wrong — not just
+      // imported logs. Historical: it never decrements when a question is later
+      // fixed, so the order stays stable instead of reshuffling mid-session.
       const logChosen = logSel[q.number];
       if (logChosen && q.answer && logChosen !== q.answer) {
+        bucket.wrongCount++;
+      }
+      const siteChosenForCount = siteSel[q.number];
+      if (siteChosenForCount && q.answer && siteChosenForCount !== q.answer) {
         bucket.wrongCount++;
       }
       // "wrongQs" = effective still-wrong stems (deduped).
@@ -3438,8 +3857,8 @@ async function renderStudy(prefix, _qnum) {
       if (a.prefix === "_OTHER" && b.prefix !== "_OTHER") return 1;
       if (b.prefix === "_OTHER" && a.prefix !== "_OTHER") return -1;
       if (b.wrongCount !== a.wrongCount) return b.wrongCount - a.wrongCount;
-      const aw = ICDC_WEIGHT_TABLE[a.prefix] || 0;
-      const bw = ICDC_WEIGHT_TABLE[b.prefix] || 0;
+      const aw = activeWeights()[a.prefix] || 0;
+      const bw = activeWeights()[b.prefix] || 0;
       return bw - aw;
     });
 
@@ -3469,6 +3888,21 @@ async function renderStudy(prefix, _qnum) {
     </aside>
   `;
 
+  // Opt-in: on the Same-code practice tab, fold in same-PI-code questions from
+  // OTHER clusters (deduped vs this cluster's questions). Loaded here (async)
+  // so they render in one pass and share the normal answer wiring below.
+  if (activePrefix && activePrefix !== "_OTHER" && sub === "all" && state.crossCluster) {
+    const topic = byTopic[activePrefix];
+    const seen = new Set();
+    for (const it of topic.allQs) {
+      const ex = state.exams[it.slug];
+      const q = ex && ex.questions.find(x => x.number === it.number);
+      if (q) seen.add(normStem(q.question));
+    }
+    try { topic.crossQs = await crossClusterSameCode(activePrefix, seen); }
+    catch { topic.crossQs = []; }
+  }
+
   let mainHtml = "";
   if (!activePrefix) {
     mainHtml = renderStudyOverview(topicList);
@@ -3492,6 +3926,12 @@ async function renderStudy(prefix, _qnum) {
         const s = el.getAttribute("data-sub");
         location.hash = `#/study/${activePrefix}/${s}`;
       });
+    });
+    const crossCb = document.getElementById("cross-cluster-cb");
+    if (crossCb) crossCb.addEventListener("change", () => {
+      state.crossCluster = crossCb.checked;
+      localStorage.setItem("deca-imce:crossCluster", crossCb.checked ? "1" : "0");
+      render(); // re-render Study; renderStudy lazy-loads cross-cluster Qs when on
     });
     document.querySelectorAll(".study-q .opt").forEach(el => {
       el.addEventListener("click", () => {
@@ -3553,563 +3993,18 @@ async function renderStudy(prefix, _qnum) {
     if (sub === "cards" && document.getElementById("fc-card")) {
       wireFlashcards(byTopic[activePrefix]);
     }
-    // AI Tutor sub-tab: wire chat + auto-kickoff the lesson on first open.
-    if (sub === "tutor" && document.getElementById("study-tutor")) {
-      wireStudyTutor(byTopic[activePrefix]);
-    }
   }
 
   // Clean up any legacy floating tutor UI from previous builds.
   document.querySelectorAll(".tutor-fab, .tutor-panel").forEach(el => el.remove());
 }
 
-// ================================================================
-//                          AI TUTOR
-// ================================================================
-// Floating "Ask the tutor" button + chat panel. Talks to the Node proxy
-// at TUTOR_BASE (default http://localhost:3001). The proxy enforces a
-// $1/user/day cap. We also store a client-side cache of today's spend so
-// the UI can disable the button before hitting the server.
-// Sync server base URL. Priority:
-//   1. window.__TUTOR_BASE__ override (set in index.html for production deploys)
-//   2. Same host the page is loaded from, port 3001 (so 192.168.x.x:8765 → 192.168.x.x:3001)
-//   3. localhost:3001 as last-resort fallback
-function __decaDefaultBase() {
-  try {
-    const loc = window.location;
-    const h = loc && loc.hostname;
-    // HTTPS deploys (Render, custom domains) serve the API on the same origin
-    // via unified-serve.js — no custom port needed.
-    if (loc && loc.protocol === "https:") return loc.origin;
-    // LAN (e.g. 192.168.x.x:8765) → same host, port 3001 where server.js runs
-    if (h && h !== "localhost" && h !== "127.0.0.1" && h !== "") {
-      return `${loc.protocol}//${h}:3001`;
-    }
-  } catch {}
-  return "http://localhost:3001";
-}
-const TUTOR_BASE = window.__TUTOR_BASE__ || __decaDefaultBase();
-const LB_BASE = window.__LB_BASE__ || TUTOR_BASE;
 // Bump this epoch when you want every user's localStorage stats wiped on their
 // next page load. Client compares against localStorage and, if different,
 // nukes every deca-imce:* key except login identity + the epoch marker itself.
 // Server has its own epoch too (POST /api/admin/reset-all bumps it) and the
 // client takes max(localConst, server).
 const RESET_EPOCH_LOCAL = 6;
-
-// Per-topic tutor state. Each study topic keeps its own conversation so the
-// student can switch topics without losing context on the previous one.
-// Shape: state._studyTutor[prefix] = { messages: [], loading, budget, covered: [] }
-// Ordered list of concept names for a topic, derived from TOPIC_GUIDES_V2
-// <strong>…</strong> terms. This becomes the "lesson plan" checklist the
-// tutor ticks off, and is also sent to the AI as its syllabus.
-function tutorConceptList(prefix) {
-  const g = TOPIC_GUIDES[prefix];
-  const out = [];
-  const seen = new Set();
-  if (g && Array.isArray(g.sections)) {
-    for (const sec of g.sections) {
-      for (const item of (sec.items || [])) {
-        // Grab every <strong>...</strong> in the item (there can be several)
-        const re = /<strong>([^<]+)<\/strong>/g;
-        let m;
-        while ((m = re.exec(String(item))) !== null) {
-          const name = m[1].trim().replace(/\s+/g, " ");
-          if (name.length < 2 || name.length > 60) continue;
-          // Skip "bold for emphasis" non-concepts (all-caps, mid-sentence fragments)
-          if (/^[0-9.$%\s]+$/.test(name)) continue;
-          const key = name.toLowerCase();
-          if (seen.has(key)) continue;
-          seen.add(key);
-          out.push(name);
-        }
-      }
-    }
-  }
-  return out.slice(0, 30);
-}
-
-// Fuzzy match: is the AI-taught concept name in our canonical list?
-// Handles case, punctuation, plurals, "-ing/-ed" endings, and partial
-// wording ("Reducing Guesswork" ↔ "reduce guesswork").
-function matchConceptToList(aiName, list) {
-  const STOP = new Set(["the","a","an","of","and","or","in","on","for","to","is","are","be","with","by","as","at","from","that","this","it","its","vs","via"]);
-  const stem = (w) => w.replace(/(ingly|ing|edly|ed|ies|es|s|ly)$/,"");
-  const tokens = (s) =>
-    (String(s).toLowerCase().match(/[a-z0-9]+/g) || [])
-      .filter(t => t.length > 1 && !STOP.has(t))
-      .map(stem);
-  // Exact-squash match first (cheapest)
-  const squash = (s) => String(s).toLowerCase().replace(/[^a-z0-9]/g,"");
-  const aSquash = squash(aiName);
-  for (const c of list) {
-    const b = squash(c);
-    if (b && (aSquash === b || aSquash.includes(b) || b.includes(aSquash))) return c;
-  }
-  // Token overlap fallback
-  const aTok = tokens(aiName);
-  if (!aTok.length) return null;
-  let best = null, bestScore = 0;
-  for (const c of list) {
-    const cTok = tokens(c);
-    if (!cTok.length) continue;
-    const aSet = new Set(aTok);
-    const overlap = cTok.filter(t => aSet.has(t)).length;
-    const score = overlap / Math.min(cTok.length, aTok.length);
-    if (score > bestScore && score >= 0.5) { bestScore = score; best = c; }
-  }
-  return best;
-}
-
-function tutorStateKey(prefix) {
-  return `deca-imce:user:${userScope()}:tutor:${prefix}`;
-}
-function loadTutorState(prefix) {
-  try {
-    const raw = localStorage.getItem(tutorStateKey(prefix));
-    if (!raw) return null;
-    const v = JSON.parse(raw);
-    if (!v || typeof v !== "object") return null;
-    return {
-      messages: Array.isArray(v.messages) ? v.messages : [],
-      covered: Array.isArray(v.covered) ? v.covered : [],
-    };
-  } catch { return null; }
-}
-function commitTutorState(prefix) {
-  const t = state._studyTutor && state._studyTutor[prefix];
-  if (!t) return;
-  try {
-    localStorage.setItem(tutorStateKey(prefix), JSON.stringify({
-      messages: t.messages,
-      covered: t.covered,
-    }));
-    // Nudge Firebase sync so this carries across devices
-    try { syncProfilePushDebounced && syncProfilePushDebounced(); } catch {}
-  } catch {}
-}
-
-function studyTutorState(prefix) {
-  if (!state._studyTutor) state._studyTutor = {};
-  if (!state._studyTutor[prefix]) {
-    const persisted = loadTutorState(prefix) || {};
-    const t = {
-      messages: persisted.messages || [],
-      covered: persisted.covered || [],
-      loading: false,
-      budget: null,
-    };
-    // Re-scan all past AI messages with the (possibly improved) matcher so the
-    // checklist catches concepts that slipped through earlier, and collapses
-    // duplicates onto canonical names.
-    const list = tutorConceptList(prefix);
-    const canonical = new Set();
-    const nonCanonical = [];
-    const scan = (text) => {
-      const re = /\*\*Concept:\*\*\s*([^\n]+)/g;
-      let m;
-      while ((m = re.exec(text)) !== null) {
-        const c = matchConceptToList(m[1], list);
-        if (c) canonical.add(c);
-        else nonCanonical.push(m[1].trim());
-      }
-    };
-    for (const msg of t.messages) if (msg.role === "assistant") scan(msg.content || "");
-    for (const c of (persisted.covered || [])) {
-      const m = matchConceptToList(c, list);
-      if (m) canonical.add(m);
-      else if (!nonCanonical.includes(c)) nonCanonical.push(c);
-    }
-    t.covered = [...canonical, ...nonCanonical];
-    state._studyTutor[prefix] = t;
-    // Persist the cleaned-up list so Firebase picks up the normalized form.
-    try { commitTutorState(prefix); } catch {}
-  }
-  return state._studyTutor[prefix];
-}
-
-// Build a kickoff user message that seeds the teach→quiz loop. We feed the
-// model a tight list of DECA terms for this topic (from TOPIC_GUIDES) so it
-// picks content that's actually on the exam instead of generic marketing.
-function buildTutorKickoff(topic, guide, covered) {
-  const list = tutorConceptList(topic.prefix);
-  const remaining = list.filter(c => !covered.includes(c));
-  const planList = list.map((c, i) =>
-    `${i+1}. ${c}${covered.includes(c) ? " ✓ (already covered — DO NOT repeat)" : ""}`
-  ).join("\n");
-  const nextUp = remaining.slice(0, 6).join(", ") || "(no items left — tell the student they've completed the topic)";
-  return (
-    `I'm studying the DECA Marketing Cluster topic "${topic.name}" (code prefix ${topic.prefix}).\n\n` +
-    `Here is the full lesson plan for this topic, in order:\n${planList}\n\n` +
-    `Next uncovered concepts to teach (in this order): ${nextUp}.\n\n` +
-    `Teach the FIRST uncovered concept now using the **Concept:** / **Quiz:** format from your system instructions. Auto-advance after I answer — no "ready?" prompts.`
-  );
-}
-
-// Seed the topic tutor: auto-send kickoff prompt so the AI starts teaching
-// the moment the student opens the tab (no clicking "Send" first).
-async function wireStudyTutor(topic) {
-  if (!state.user) {
-    const host = document.getElementById("study-tutor");
-    if (host) host.innerHTML = `
-      <div class="empty" style="padding:28px">
-        <h3>Log in to use the AI tutor</h3>
-        <p class="hint">The tutor is scoped per-user with a $1/day spending cap.</p>
-        <button class="btn primary" id="tutor-login">Log in</button>
-      </div>`;
-    document.getElementById("tutor-login")?.addEventListener("click", openLoginModal);
-    return;
-  }
-  renderStudyTutorPanel(topic);
-  // Pull today's budget so the bar is accurate.
-  refreshStudyTutorBudget(topic);
-  // If the conversation is empty, kick off the first lesson automatically.
-  const t = studyTutorState(topic.prefix);
-  if (t.messages.length === 0 && !t.loading) {
-    const guide = TOPIC_GUIDES[topic.prefix];
-    const kickoff = buildTutorKickoff(topic, guide, t.covered);
-    // Record that we sent the kickoff but hide it from the visible chat.
-    t.hiddenKickoff = kickoff;
-    sendStudyTutorMessage(topic, kickoff, { hidden: true });
-  }
-}
-
-function renderStudyTutor(topic, guide) {
-  return `
-    <div class="study-tutor-wrap" id="study-tutor">
-      <div class="empty" style="padding:24px">Starting your lesson…</div>
-    </div>
-  `;
-}
-
-function renderStudyTutorPanel(topic) {
-  const host = document.getElementById("study-tutor");
-  if (!host) return;
-  const t = studyTutorState(topic.prefix);
-  const cap = t.budget ? t.budget.cap : 1;
-  const spent = t.budget ? t.budget.spent : 0;
-  const remaining = t.budget ? t.budget.remaining : cap;
-  const pct = Math.min(100, Math.round((spent / cap) * 100));
-
-  // Hide the kickoff message from view — the student should just see the AI
-  // teaching, not the scaffolding prompt. Everything after that is shown.
-  const visible = t.messages.filter(m => !m._hidden);
-
-  const MAX_CHARS = 2000;
-
-  const msgs = visible.length === 0 && !t.loading ? `
-    <div class="st-welcome">
-      <div class="st-logo" aria-hidden="true">
-        <svg viewBox="0 0 48 48" width="56" height="56">
-          <defs>
-            <linearGradient id="stLogoGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#c4b5fd"/>
-              <stop offset="1" stop-color="#6d28d9"/>
-            </linearGradient>
-          </defs>
-          <rect x="1" y="1" width="46" height="46" rx="12" fill="#0a0a0a" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
-          <path d="M6 24c11.44 0 18-6.56 18-18 0 11.44 6.56 18 18 18-11.44 0-18 6.56-18 18 0-11.44-6.56-18-18-18z" fill="url(#stLogoGrad)"/>
-        </svg>
-      </div>
-      <div class="st-welcome-text">
-        <h4>Hi ${escapeHtml(state.user || "there")},</h4>
-        <h3>Ready to study ${escapeHtml(topic.name)}?</h3>
-        <p>I'll teach a concept, then quiz you. Answer, ask follow-ups, or use the shortcuts below.</p>
-      </div>
-    </div>
-  ` : visible.map(m => `
-    <div class="st-msg st-msg-${m.role}">
-      ${m.role === "assistant"
-        ? `<div class="st-avatar st-avatar-ai" aria-hidden="true">
-             <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="currentColor"/></svg>
-           </div>`
-        : `<div class="st-avatar st-avatar-user" aria-hidden="true">${escapeHtml((state.user || "Y").slice(0,1).toUpperCase())}</div>`}
-      <div class="st-bubble">${m.role === "assistant" ? mdLite(m.content) : escapeHtml(m.content)}</div>
-    </div>
-  `).join("");
-
-  const typing = t.loading ? `
-    <div class="st-msg st-msg-assistant">
-      <div class="st-avatar st-avatar-ai" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="currentColor"/></svg>
-      </div>
-      <div class="st-bubble st-typing"><span></span><span></span><span></span></div>
-    </div>
-  ` : "";
-
-  // Quick-action chips — only meaningful once the AI has taught something.
-  const hasLesson = visible.some(m => m.role === "assistant");
-  const chips = hasLesson && !t.loading ? `
-    <div class="st-chips">
-      <button class="st-chip" data-action="dontknow"><span class="st-chip-dot" style="background:#f472b6"></span>I don't know — teach me</button>
-      <button class="st-chip" data-action="next"><span class="st-chip-dot" style="background:#60a5fa"></span>Next concept</button>
-      <button class="st-chip" data-action="harder"><span class="st-chip-dot" style="background:#fbbf24"></span>Quiz me harder</button>
-      <button class="st-chip" data-action="restart"><span class="st-chip-dot" style="background:#a78bfa"></span>Start over</button>
-    </div>
-  ` : `
-    <div class="st-chips">
-      <button class="st-chip" data-action="dontknow"><span class="st-chip-dot" style="background:#f472b6"></span>Teach me the basics</button>
-      <button class="st-chip" data-action="harder"><span class="st-chip-dot" style="background:#fbbf24"></span>Quiz me</button>
-    </div>
-  `;
-
-  // Lesson-plan checklist — ALWAYS derive `covered` fresh from the actual
-  // chat messages using the current matcher. Don't trust stored `t.covered`
-  // (it may have stale entries from an older matcher). This makes checklist
-  // fixes propagate instantly on reload.
-  const conceptList = tutorConceptList(topic.prefix);
-  const coveredCanon = new Set();
-  const extraCovered = []; // AI-taught concepts that didn't match anything on the plan
-  const conceptRe = /\*\*\s*Concept[:\s]*\s*([^\n*]+?)\s*(?:\*\*|\n|$)/gi;
-  for (const msg of t.messages) {
-    if (msg.role !== "assistant") continue;
-    let m;
-    while ((m = conceptRe.exec(msg.content || "")) !== null) {
-      const canonical = matchConceptToList(m[1], conceptList);
-      if (canonical) coveredCanon.add(canonical.toLowerCase());
-      else {
-        const trimmed = m[1].trim();
-        if (trimmed && !extraCovered.includes(trimmed)) extraCovered.push(trimmed);
-      }
-    }
-  }
-  // Sync t.covered so persistence stays in sync (so other devices also see it)
-  t.covered = [...conceptList.filter(c => coveredCanon.has(c.toLowerCase())), ...extraCovered];
-  const doneCount = conceptList.filter(c => coveredCanon.has(c.toLowerCase())).length;
-  const planItems = conceptList.map(c => {
-    const done = coveredCanon.has(c.toLowerCase());
-    return `<li class="${done ? "done" : ""}">
-      <span class="st-plan-check">${done ? "✓" : "○"}</span>
-      <span class="st-plan-name">${escapeHtml(c)}</span>
-    </li>`;
-  }).join("");
-  const planOpen = t.planOpen ? "open" : "";
-  const checklist = conceptList.length ? `
-    <details class="st-plan" ${planOpen ? "open" : ""} id="st-plan">
-      <summary>
-        <span class="st-plan-label">Lesson plan</span>
-        <span class="st-plan-progress">${doneCount} / ${conceptList.length} covered</span>
-        <div class="st-plan-barwrap"><span class="st-plan-bar" style="width:${conceptList.length ? Math.round(doneCount/conceptList.length*100) : 0}%"></span></div>
-      </summary>
-      <ul class="st-plan-list">${planItems}</ul>
-    </details>
-  ` : "";
-
-  // Prevent the "scroll all the way up then back down" jump on every message
-  // send. Two things combine to cause it:
-  //  1. Rebuilding host.innerHTML momentarily empties the panel → document
-  //     shrinks → browser clamps scrollY to the new (smaller) max.
-  //  2. Browser scroll-anchoring can't track identity across a full innerHTML
-  //     replace, so it gives up and the clamped scrollY sticks.
-  // Fix: lock the host's height to its current rendered height before the
-  // rebuild so the document never shrinks, AND lock window.scrollY across
-  // the next several frames as a belt-and-suspenders guarantee.
-  const prevScrollY = window.scrollY || document.documentElement.scrollTop || 0;
-  const prevHeight = host.offsetHeight;
-  if (prevHeight > 0) {
-    host.style.minHeight = prevHeight + "px";
-  }
-  const prevScrollBehavior = document.documentElement.style.scrollBehavior;
-  document.documentElement.style.scrollBehavior = "auto";
-  const lockScroll = () => {
-    let frames = 0;
-    const tick = () => {
-      if (Math.abs(window.scrollY - prevScrollY) > 1) {
-        window.scrollTo({ top: prevScrollY, left: 0, behavior: "auto" });
-      }
-      if (++frames < 12) requestAnimationFrame(tick);
-      else {
-        host.style.minHeight = "";
-        document.documentElement.style.scrollBehavior = prevScrollBehavior;
-      }
-    };
-    requestAnimationFrame(tick);
-  };
-  lockScroll();
-
-  host.innerHTML = `
-    <div class="st-card">
-      <div class="st-head">
-        <div class="st-head-left">
-          <span class="st-dot"></span>
-          <strong>AI Tutor</strong>
-          <span class="st-topic">${escapeHtml(topic.name)}</span>
-        </div>
-        <div class="st-budget" title="Per-user daily spend cap — resets midnight UTC">
-          <div class="st-budget-bar"><span style="width:${pct}%"></span></div>
-          <span class="st-budget-text">$${spent.toFixed(3)} / $${cap.toFixed(2)}</span>
-        </div>
-      </div>
-      ${checklist}
-      <div class="st-body" id="st-body">
-        ${msgs}
-        ${typing}
-      </div>
-      ${chips}
-      <form class="st-form" id="st-form">
-        <div class="st-composer">
-          <textarea id="st-input" rows="2" maxlength="${MAX_CHARS}"
-            placeholder="Type your answer, or ask a follow-up… (Enter to send, Shift+Enter for newline)"
-            ${remaining <= 0 ? "disabled" : ""}></textarea>
-          <div class="st-composer-foot">
-            <div class="st-model-pill">
-              <span class="st-model-dot"></span>
-              Claude Haiku 4.5
-            </div>
-            <div class="st-composer-right">
-              <span class="st-charcount" id="st-charcount">0 / ${MAX_CHARS}</span>
-              <button type="submit" class="st-send" aria-label="Send" ${remaining <= 0 ? "disabled" : ""}>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                Send
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
-      ${remaining <= 0 ? `<div class="st-cap">You've hit today's $${cap.toFixed(2)} cap. Resets at midnight UTC.</div>` : ""}
-    </div>
-  `;
-
-  const form = host.querySelector("#st-form");
-  const input = host.querySelector("#st-input");
-  const counter = host.querySelector("#st-charcount");
-  const updateCounter = () => {
-    const len = input.value.length;
-    counter.textContent = `${len} / ${MAX_CHARS}`;
-    counter.classList.toggle("st-charcount-warn", len > MAX_CHARS * 0.9);
-    counter.classList.toggle("st-charcount-over", len >= MAX_CHARS);
-  };
-  input.addEventListener("input", updateCounter);
-  form.addEventListener("submit", e => { e.preventDefault(); sendStudyTutorMessage(topic, input.value); input.value = ""; updateCounter(); });
-  input.addEventListener("keydown", e => {
-    if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); sendStudyTutorMessage(topic, input.value); input.value = ""; updateCounter(); }
-  });
-  host.querySelectorAll(".st-chip[data-action]").forEach(btn => {
-    btn.addEventListener("click", () => onStudyTutorAction(topic, btn.getAttribute("data-action")));
-  });
-  // Remember whether the plan panel is open across re-renders
-  const planEl = host.querySelector("#st-plan");
-  if (planEl) {
-    planEl.addEventListener("toggle", () => { t.planOpen = planEl.open; });
-  }
-
-  const body = host.querySelector("#st-body");
-  if (body) {
-    // Jump to bottom *instantly*. The panel has `scroll-behavior: smooth` in
-    // CSS, which on a fresh innerHTML rebuild would animate scrollTop from 0
-    // → scrollHeight — making the conversation appear to "scroll all the way
-    // up then back down" on every message send. Temporarily override it.
-    const prev = body.style.scrollBehavior;
-    body.style.scrollBehavior = "auto";
-    body.scrollTop = body.scrollHeight;
-    // Restore on next frame so future user-initiated scrolls stay smooth.
-    requestAnimationFrame(() => { body.style.scrollBehavior = prev; });
-  }
-}
-
-function onStudyTutorAction(topic, action) {
-  const t = studyTutorState(topic.prefix);
-  const guide = TOPIC_GUIDES[topic.prefix];
-  if (action === "restart") {
-    t.messages = [];
-    t.covered = [];
-    t.loading = false;
-    commitTutorState(topic.prefix);
-    renderStudyTutorPanel(topic);
-    const kickoff = buildTutorKickoff(topic, guide, t.covered);
-    sendStudyTutorMessage(topic, kickoff, { hidden: true });
-    return;
-  }
-  if (action === "next") {
-    // Manual skip — tell AI to move on without grading the current quiz.
-    sendStudyTutorMessage(topic,
-      "Skip — move to the next concept on the plan. Don't ask, don't wait. Just teach it.");
-    return;
-  }
-  if (action === "dontknow") {
-    sendStudyTutorMessage(topic,
-      "I don't know the answer. Please reveal it and explain why, then ask me a fresh quiz question on the same concept so I can lock it in.");
-    return;
-  }
-  if (action === "harder") {
-    sendStudyTutorMessage(topic,
-      "That was easy — give me a harder DECA-style scenario question on the same concept. One question only, no answer yet.");
-    return;
-  }
-}
-
-async function refreshStudyTutorBudget(topic) {
-  const t = studyTutorState(topic.prefix);
-  try {
-    const r = await fetch(`${TUTOR_BASE}/api/tutor/budget?user=${encodeURIComponent(state.user || "_guest")}`);
-    if (r.ok) { t.budget = await r.json(); renderStudyTutorPanel(topic); }
-  } catch {
-    t.budget = { cap: 1, spent: 0, remaining: 1 };
-    renderStudyTutorPanel(topic);
-  }
-}
-
-// opts.hidden: don't show this user message to the student (kickoff/next-concept seeds)
-async function sendStudyTutorMessage(topic, text, opts = {}) {
-  text = (text || "").trim();
-  if (!text) return;
-  const t = studyTutorState(topic.prefix);
-  if (t.loading) return;
-  t.messages.push({ role: "user", content: text, _hidden: !!opts.hidden });
-  t.loading = true;
-  renderStudyTutorPanel(topic);
-  try {
-    const r = await fetch(`${TUTOR_BASE}/api/tutor`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        user: state.user || "_guest",
-        topic: topic.name,
-        // Send the FULL message history (including hidden seeds) to the server.
-        messages: t.messages.map(m => ({ role: m.role, content: m.content })),
-      }),
-    });
-    const data = await r.json();
-    if (!r.ok) {
-      t.messages.push({
-        role: "assistant",
-        content: data.message || data.error || "Sorry, the tutor is unavailable right now.",
-      });
-    } else {
-      t.messages.push({ role: "assistant", content: data.text || "(empty reply)" });
-      t.budget = { cap: data.capUSD, spent: data.spentTodayUSD, remaining: data.remainingUSD };
-      // Auto-extract every **Concept:** in the reply and tick them off the plan.
-      const list = tutorConceptList(topic.prefix);
-      const re = /\*\*Concept:\*\*\s*([^\n]+)/g;
-      let m;
-      while ((m = re.exec(data.text || "")) !== null) {
-        const canonical = matchConceptToList(m[1], list) || m[1].trim();
-        if (!t.covered.includes(canonical)) t.covered.push(canonical);
-      }
-    }
-    commitTutorState(topic.prefix);
-  } catch (e) {
-    t.messages.push({
-      role: "assistant",
-      content: `Can't reach the tutor server. Start it with:\n\n  cd server && ANTHROPIC_API_KEY=... node server.js`,
-    });
-  }
-  t.loading = false;
-  renderStudyTutorPanel(topic);
-  // Mark streak activity — the tutor counts as study engagement.
-  try { recordStreakActivity(topic.prefix); } catch {}
-}
-
-// Very small markdown subset for tutor replies: **bold**, newlines, bullets.
-function mdLite(s) {
-  let out = escapeHtml(s);
-  out = out.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-  out = out.replace(/`([^`]+)`/g, "<code>$1</code>");
-  // Lists
-  out = out.replace(/(^|\n)- (.+)/g, "$1• $2");
-  out = out.replace(/\n/g, "<br>");
-  return out;
-}
 
 function renderStudyOverview(topicList) {
   // "Wrongs to review" KPI uses wrongQs.length (the effective still-wrong
@@ -4125,7 +4020,7 @@ function renderStudyOverview(topicList) {
     <div class="study-overview">
       <div class="stats-head">
         <h2>Study Plan</h2>
-        <p class="hint">Topics are ranked by how many questions you've missed. Click one on the left to dive in.</p>
+        <p class="hint">Topics are ranked by how many questions you've missed — <strong>your most-missed topic shows at the top</strong> and they descend from there. Click one on the left to dive in.</p>
       </div>
       <div class="kpi-row">
         <div class="kpi accent">
@@ -4151,7 +4046,7 @@ function renderStudyOverview(topicList) {
       </div>
       <div class="panel">
         <h3>How to use this tab</h3>
-        <p class="panel-sub">For each topic you'll see three sub-pages:</p>
+        <p class="panel-sub">The topic list on the left is personalized to you: <strong>your most-missed topics show at the top</strong>, ordered by how many questions you've gotten wrong (on-site answers and imported test logs both count). For each topic you'll see three sub-pages:</p>
         <ol>
           <li><strong>Study guide</strong> — concise notes with key terms, concepts, and common traps.</li>
           <li><strong>Review wrongs</strong> — every question you've missed with that code prefix, so you can re-attempt.</li>
@@ -4164,8 +4059,8 @@ function renderStudyOverview(topicList) {
 
 function renderStudyTopic(topic, sub) {
   if (!topic) return `<div class="empty">Unknown topic.</div>`;
-  const guide = TOPIC_GUIDES[topic.prefix];
-  const weight = ICDC_WEIGHT_TABLE[topic.prefix];
+  const guide = activeGuides()[topic.prefix];
+  const weight = activeWeights()[topic.prefix];
   const blueprint = typeof weight === "number"
     ? `<div class="blueprint"><strong>ICDC blueprint:</strong> ≈${weight} question${weight === 1 ? "" : "s"} per exam</div>`
     : "";
@@ -4180,15 +4075,11 @@ function renderStudyTopic(topic, sub) {
     <div class="sub-tabs">
       <button class="${sub === "guide" ? "active" : ""}" data-sub="guide">Study guide</button>
       <button class="${sub === "cards" ? "active" : ""}" data-sub="cards">Flashcards</button>
-      <button class="${sub === "tutor" ? "active" : ""}" data-sub="tutor">AI Tutor <span class="count">✦</span></button>
       <button class="${sub === "missed" ? "active" : ""}" data-sub="missed">Review wrongs <span class="count">${topic.wrongQs.length}</span></button>
       <button class="${sub === "all" ? "active" : ""}" data-sub="all">Same-code practice <span class="count">${topic.allQs.length - topic.wrongQs.length}</span></button>
     </div>
   `;
 
-  if (sub === "tutor") {
-    return head + renderStudyTutor(topic, guide);
-  }
   if (sub === "cards") {
     return head + renderFlashcards(guide, topic);
   }
@@ -4208,9 +4099,24 @@ function renderStudyTopic(topic, sub) {
   if (sub === "all") {
     const wrongSet = new Set(topic.wrongQs.map(q => `${q.slug}:${q.number}`));
     const rest = topic.allQs.filter(q => !wrongSet.has(`${q.slug}:${q.number}`));
-    return head + renderStudyQuestionList(rest,
-      rest.length === 0 ? "No other practice questions with this code are available." : null,
+    const toggle = `
+      <label class="cross-toggle">
+        <input type="checkbox" id="cross-cluster-cb" ${state.crossCluster ? "checked" : ""} />
+        <span>Include same-code (<strong>${escapeHtml(topic.prefix)}</strong>) questions from other clusters</span>
+      </label>`;
+    let body = renderStudyQuestionList(rest,
+      rest.length === 0 ? "No other practice questions with this code are available in this cluster." : null,
       { showPrevious: false });
+    if (state.crossCluster) {
+      const cross = topic.crossQs || [];
+      if (cross.length) {
+        body += `<div class="cross-divider">From other clusters · <strong>${cross.length}</strong> more ${escapeHtml(topic.prefix)} question${cross.length === 1 ? "" : "s"} <span class="hint">— deduplicated; practice only, doesn't affect this cluster's stats</span></div>`;
+        body += renderStudyQuestionList(cross, null, { showPrevious: false });
+      } else {
+        body += `<div class="cross-divider hint">No additional same-code questions found in other clusters.</div>`;
+      }
+    }
+    return head + toggle + body;
   }
   // Default: study guide
   return head + renderStudyGuide(guide, topic);
@@ -4373,7 +4279,7 @@ function renderFlashcards(guide, topic) {
 }
 
 function wireFlashcards(topic) {
-  const guide = TOPIC_GUIDES[topic.prefix];
+  const guide = activeGuides()[topic.prefix];
   const fullDeck = buildFlashcardDeck(guide);
   if (fullDeck.length === 0) return;
 
@@ -4592,14 +4498,14 @@ function wireFlashcards(topic) {
 // they later study Pricing alone.
 
 function buildMegaFlashcardDeck(selectedPrefixes) {
-  const allPrefixes = Object.keys(TOPIC_GUIDES);
+  const allPrefixes = Object.keys(activeGuides());
   const prefixes = (selectedPrefixes && selectedPrefixes.length)
-    ? selectedPrefixes.filter(p => TOPIC_GUIDES[p])
+    ? selectedPrefixes.filter(p => activeGuides()[p])
     : allPrefixes;
   const cards = [];
   const seen = new Set();
   for (const prefix of prefixes) {
-    const guide = TOPIC_GUIDES[prefix];
+    const guide = activeGuides()[prefix];
     if (!guide) continue;
     for (const sec of guide.sections || []) {
       for (const item of sec.items || []) {
@@ -4621,7 +4527,7 @@ function buildMegaFlashcardDeck(selectedPrefixes) {
 
 function renderMegaFlashcards(selectedPrefixes) {
   const fullDeck = buildMegaFlashcardDeck(selectedPrefixes);
-  const allPrefixes = Object.keys(TOPIC_GUIDES);
+  const allPrefixes = Object.keys(activeGuides());
   const activePrefixes = (selectedPrefixes && selectedPrefixes.length) ? selectedPrefixes : allPrefixes;
   const scopeLabel = (selectedPrefixes && selectedPrefixes.length)
     ? `${selectedPrefixes.length} topic${selectedPrefixes.length === 1 ? "" : "s"}`
@@ -5226,7 +5132,13 @@ function setStudyState(slug, qNum, patch) {
   // (today counter, weekly counter, accuracy, streak — all of it). We ALWAYS
   // overwrite both the selection and the timestamp so re-attempting a
   // previously-answered question still shows up in "today's activity".
-  if (patch && patch.chosen) {
+  //
+  // EXCEPTION: cross-cluster Same-code practice questions (slugs NOT in the
+  // active cluster's index) must stay pure practice — never mirror them into
+  // another cluster's progress bucket or the leaderboard activity, or they'd
+  // pollute that cluster's stats. They still persist in the study: bucket above.
+  const inActiveCluster = !!(state.index && state.index.some(e => e.slug === slug));
+  if (patch && patch.chosen && inActiveCluster) {
     try {
       const pKey = progressKey(slug);
       const prev = (() => {
@@ -5670,7 +5582,12 @@ async function reportLeaderboard(payload) {
     const backend = await awaitSyncBackend();
     if (!backend || !backend.ready) return;
     const { user, ...entry } = payload;
-    await backend.putLeaderboardEntry(user, entry);
+    // Per-cluster leaderboards: key the doc by "<cluster>__<user>" and tag the
+    // entry so reads can filter to the active cluster and show the real name.
+    const cluster = activeClusterId();
+    entry.cluster = cluster;
+    entry.name = user;
+    await backend.putLeaderboardEntry(`${cluster}__${user}`, entry);
   } catch (e) { console.warn("[lb] report failed:", e); }
 }
 
@@ -5718,6 +5635,8 @@ function renderStatsLeaderboard(selfPayload) {
 
 function qbankClassify(slug) {
   if (/^icdc/i.test(slug)) return "icdc";
+  // Cluster exams (bma-2026, fin-2021, mkt-2018, …) are all ICDC exams.
+  if (/^(bma|ht|fin|ep|pfl|mkt)-\d{4}$/i.test(slug)) return "icdc";
   if (/^state/i.test(slug)) return "state";
   if (/^sample/i.test(slug)) return "sample";
   return "other";
@@ -5750,27 +5669,47 @@ function qbankShuffle(arr, seed) {
 async function renderQuestionBank() {
   app.innerHTML = `<div class="empty">Loading question bank…</div>`;
 
-  // Load every available exam so we can pool every question.
-  const slugs = state.index.filter(e => e.available).map(e => e.slug);
-  await Promise.all(slugs.map(s => getExam(s).catch(() => null)));
-
   // Persist filter state on `state` so tab switches don't wipe it.
   if (!state.qbank) state.qbank = qbankDefaultFilters();
   const f = state.qbank;
 
-  // Build the full pool.
+  // Gather exam metas — the active cluster, plus (opt-in) every other cluster.
+  const cross = !!state.crossCluster;
+  const metas = state.index
+    .filter(e => e.available !== false)
+    .map(m => ({ ...m, cluster: activeClusterId() }));
+  if (cross) {
+    const allIdx = await loadAllClusterIndexes();
+    for (const cid of CLUSTER_ORDER) {
+      if (cid === activeClusterId()) continue;
+      for (const m of (allIdx[cid] || [])) {
+        if (m.available === false) continue;
+        metas.push({ ...m, cluster: cid });
+      }
+    }
+  }
+  // Load every needed exam so we can pool every question.
+  await Promise.all(metas.map(m => getExamByMeta(m).catch(() => null)));
+
+  // Build the pool. When cross-cluster is on, dedup the shared item bank by
+  // stem (active cluster wins — its metas come first).
   const pool = [];
   const topicCounts = {};
   const typeCounts = { icdc: 0, state: 0, sample: 0, other: 0 };
-  for (const meta of state.index) {
-    if (!meta.available) continue;
+  const seenStem = new Set();
+  for (const meta of metas) {
     const exam = state.exams[meta.slug];
     if (!exam) continue;
     const examType = qbankClassify(meta.slug);
-    typeCounts[examType] = (typeCounts[examType] || 0) + exam.questions.length;
     for (const q of exam.questions) {
+      if (cross) {
+        const stem = (q.question || "").toLowerCase().replace(/\s+/g, " ").trim();
+        if (seenStem.has(stem)) continue;
+        seenStem.add(stem);
+      }
       const prefix = q.code ? q.code.split(":")[0] : "_OTHER";
       topicCounts[prefix] = (topicCounts[prefix] || 0) + 1;
+      typeCounts[examType] = (typeCounts[examType] || 0) + 1;
       pool.push({
         slug: meta.slug,
         title: meta.title,
@@ -5778,6 +5717,7 @@ async function renderQuestionBank() {
         code: q.code,
         prefix,
         examType,
+        cluster: meta.cluster,
       });
     }
   }
@@ -5810,8 +5750,8 @@ async function renderQuestionBank() {
   // flashcard mode we show THIS on each chip instead of the question
   // count, so the chip and the deck size match.
   const flashcardCounts = {};
-  for (const p of Object.keys(TOPIC_GUIDES)) {
-    flashcardCounts[p] = buildFlashcardDeck(TOPIC_GUIDES[p]).length;
+  for (const p of Object.keys(activeGuides())) {
+    flashcardCounts[p] = buildFlashcardDeck(activeGuides()[p]).length;
   }
 
   // Build topic chip options sorted by count desc. In flashcard mode,
@@ -5830,7 +5770,7 @@ async function renderQuestionBank() {
     });
 
   const topicChips = topicsSorted.map(p => {
-    const name = (TOPIC_GUIDES[p] && TOPIC_GUIDES[p].name) || (p === "_OTHER" ? "Other / Uncoded" : p);
+    const name = (activeGuides()[p] && activeGuides()[p].name) || (p === "_OTHER" ? "Other / Uncoded" : p);
     const active = f.topics.includes(p);
     const count = isFlashMode ? (flashcardCounts[p] || 0) : (topicCounts[p] || 0);
     return `<button class="qb-chip ${active ? "active" : ""}" data-topic="${escapeHtml(p)}" title="${isFlashMode ? count + " flashcard" + (count === 1 ? "" : "s") : count + " question" + (count === 1 ? "" : "s")}">
@@ -5937,6 +5877,10 @@ async function renderQuestionBank() {
         <input type="checkbox" id="qb-prev" ${f.showPrevious ? "checked" : ""} />
         <span class="qb-toggle-label">🗂️ Show previous attempts</span>
       </label>
+      <label class="qb-toggle" title="Pool questions from every DECA cluster (shared item bank), deduplicated. Practice only — answers don't affect any cluster's stats.">
+        <input type="checkbox" id="qb-cross" ${cross ? "checked" : ""} />
+        <span class="qb-toggle-label">🌐 All clusters</span>
+      </label>
       <div class="qbank-count">
         ${filtered.length.toLocaleString()} question${filtered.length === 1 ? "" : "s"}
         ${paged.length < filtered.length ? ` <span class="hint" style="margin-left:6px">(showing first ${paged.length})</span>` : ""}
@@ -6006,6 +5950,12 @@ async function renderQuestionBank() {
   if (randEl) randEl.addEventListener("change", () => { f.randomize = randEl.checked; rerender(); });
   const prevEl = document.getElementById("qb-prev");
   if (prevEl) prevEl.addEventListener("change", () => { f.showPrevious = prevEl.checked; rerender(); });
+  const crossEl = document.getElementById("qb-cross");
+  if (crossEl) crossEl.addEventListener("change", () => {
+    state.crossCluster = crossEl.checked;
+    localStorage.setItem("deca-imce:crossCluster", crossEl.checked ? "1" : "0");
+    rerender();
+  });
   const clearBtn = document.getElementById("qb-clear");
   if (clearBtn) clearBtn.addEventListener("click", () => {
     // Preserve the current mode — the user explicitly asked to clear
@@ -6021,7 +5971,7 @@ async function renderQuestionBank() {
     // can be built from). Leaving the array empty also means "all", but
     // some users want the explicit visual confirmation that every chip
     // is active.
-    f.topics = Object.keys(TOPIC_GUIDES);
+    f.topics = Object.keys(activeGuides());
     rerender();
   });
   const moreBtn = document.getElementById("qb-more");
@@ -6124,7 +6074,7 @@ async function renderLeaderboardPage() {
     <section class="leaderboard-page">
       <div class="stats-head" style="margin-bottom:14px">
         <h2>Leaderboard</h2>
-        <p class="hint">Live rankings across everyone studying. You're logged in as <strong>${escapeHtml(state.user)}</strong>.</p>
+        <p class="hint">Live rankings across everyone studying — showing the <strong>top 100 players</strong>. You're logged in as <strong>${escapeHtml(state.user)}</strong>.</p>
       </div>
       ${renderStatsLeaderboard(payload)}
     </section>
@@ -6214,14 +6164,21 @@ async function hydrateLeaderboard(selfPayload) {
 function _redrawLeaderboardWindow() {
   const mount = document.getElementById("lb-body");
   const sub = document.getElementById("lb-subtitle");
-  const raw = state._lbRawRows || [];
+  // Filter to the active cluster and surface the real username (the Firestore
+  // doc id is "<cluster>__<user>"). Legacy rows with no cluster tag are treated
+  // as Marketing and keep their plain-username doc id.
+  const _cl = activeClusterId();
+  const raw = (state._lbRawRows || [])
+    .filter(r => (r.cluster || "marketing") === _cl)
+    .map(r => ({ ...r, user: r.name || r.user }));
   const win = state.lbWindow || "all";
   const rows = _lbRowsForWindow(raw, win);
   const winLabel = {today:"today", week:"this week", month:"this month", all:"all time"}[win];
   if (sub) {
+    const clusterName = activeCluster().short;
     sub.textContent = win === "all"
-      ? "Ranked by total questions answered (site, pasted codes, and test logs all count equally)."
-      : `Ranked by questions answered ${winLabel}. Users with zero activity in this window are hidden.`;
+      ? `${clusterName} cluster · top 100 players, ranked by total questions answered (site, pasted codes, and test logs all count equally).`
+      : `${clusterName} cluster · top 100, ranked by questions answered ${winLabel}. Users with zero activity in this window are hidden.`;
   }
   if (rows.length === 0) {
     mount.innerHTML = `<div class="empty" style="padding:24px">
@@ -6232,7 +6189,7 @@ function _redrawLeaderboardWindow() {
   }
   const me = (state.user || "").toLowerCase();
   const podium = rows.slice(0, 3);
-  const rest = rows.slice(3, 50);
+  const rest = rows.slice(3, 100);
   const podiumHtml = `
     <div class="lb-podium">
       ${podium.map((r, i) => `
@@ -6268,7 +6225,7 @@ function _redrawLeaderboardWindow() {
     <div class="lb-you" style="margin-top:12px">
       You're not on the ${winLabel} board yet. ${win === "all" ? "Answer some questions" : `Answer some questions ${winLabel}`} and your rank will appear here.
     </div>
-  ` : myRank >= 50 ? `
+  ` : myRank >= 100 ? `
     <div class="lb-you" style="margin-top:12px">
       Your rank: <strong>#${myRank + 1}</strong> · ${(rows[myRank].answered || 0).toLocaleString()} answered
     </div>

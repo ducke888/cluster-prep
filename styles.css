@@ -38,12 +38,11 @@ a { color: var(--accent); }
 .topbar {
   background: var(--card);
   border-bottom: 1px solid var(--border);
-  /* Grid: nav column is natural-width (auto); brand is shrinkable (1fr
-     with min 0 so ellipsis kicks in). This prevents the two columns
-     from ever overlapping — nav always claims exactly what its buttons
-     need, and the brand fills whatever's left. */
+  /* Two columns: brand is content-sized (auto) so the logo never compresses;
+     nav gets the rest (minmax(0,1fr)) and its buttons wrap WITHIN that column
+     when tight — they can't overlap the brand because it's a separate column. */
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
   padding: 10px 18px;
   position: sticky;
@@ -51,17 +50,16 @@ a { color: var(--accent); }
   z-index: 10;
   box-shadow: var(--shadow);
   gap: 16px;
-  flex-wrap: nowrap;
   min-height: 56px;
 }
-/* Brand must be allowed to shrink (and its h1/sub get ellipsis) so nav wins. */
+/* Brand never shrinks — the logo must always render at full size. The text
+   block beside it (h1/sub) truncates / hides at narrow widths instead. */
 .brand {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   min-width: 0;
-  overflow: hidden;
 }
 .brand > div { min-width: 0; overflow: hidden; }
 .brand h1 { font-size: 1.05rem; margin: 0; letter-spacing: .2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -93,8 +91,11 @@ a { color: var(--accent); }
 #nav {
   display: flex;
   align-items: center;
-  gap: 6px;
-  flex-wrap: nowrap;
+  gap: 6px 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   /* Nav sits in the grid's auto column so it always gets its natural
      width. No overflow/scroll needed — if the viewport ever gets too
      tight, the brand column (minmax(0,1fr)) truncates with ellipsis
@@ -118,6 +119,36 @@ a { color: var(--accent); }
 .nav-btn.active { background: var(--red); color: #fff; border-color: var(--red); }
 .nav-btn.login { background: var(--red); color: #fff; border-color: var(--red); }
 .nav-btn.login:hover { filter: brightness(1.1); }
+
+/* Cluster switcher — the prominent "which DECA cluster" dropdown. */
+.cluster-slot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 14%, var(--card));
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.cluster-slot .cluster-ico { color: var(--accent); font-size: .7rem; line-height: 1; }
+.cluster-slot select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-size: .85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  padding-right: 16px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M2 3.5L5 6.5L8 3.5' fill='none' stroke='%23a78bfa' stroke-width='1.5' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.cluster-slot select:focus { outline: none; }
+.cluster-slot select option { background: var(--card); color: var(--ink); }
+@media (max-width: 760px) { .cluster-slot { padding-left: 8px; } .cluster-slot select { font-size: .8rem; } }
 
 .auth-slot {
   display: flex;
@@ -425,6 +456,7 @@ main {
 }
 .login-form {
   display: flex;
+  flex-direction: column;
   gap: 8px;
 }
 .login-form input {
@@ -439,6 +471,32 @@ main {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(11,61,145,.15);
 }
+.login-msg {
+  min-height: 1.1em;
+  margin-top: 10px;
+  font-size: .85rem;
+  font-weight: 600;
+}
+.login-msg.err { color: var(--bad); }
+.login-msg.ok { color: var(--accent); }
+.login-msg a { color: var(--accent); font-weight: 700; }
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.linkbtn {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--accent);
+  font-size: .85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.linkbtn:hover { text-decoration: underline; }
 .known-users {
   margin-top: 14px;
   display: flex;
@@ -719,6 +777,33 @@ main {
 .sub-tabs button.active .count { background: var(--red); color: #fff; }
 
 /* Toolbar that sits above the "Review wrongs" question list */
+/* Cross-cluster same-code practice toggle + divider. */
+.cross-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 14px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  font-size: .9rem;
+  color: var(--ink-2);
+  cursor: pointer;
+  user-select: none;
+}
+.cross-toggle input { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; }
+.cross-toggle strong { color: var(--ink); }
+.cross-divider {
+  margin: 22px 0 12px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border-2);
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+.cross-divider .hint { font-weight: 400; }
+
 .wrongs-toolbar {
   display: flex;
   align-items: center;
@@ -1206,14 +1291,16 @@ a:hover { color: var(--ink); }
 
 /* Dark theme: keep the purple gradient logo as-is (no overrides). */
 
-/* Nav pill (minimal chrome — the pill is inside the grid's auto
-   column, so it sizes to its content. No scroll/overflow needed. */
+/* Nav pill (minimal chrome). Lives in the grid's flexible column; if its
+   buttons don't fit they WRAP to another row inside the pill — never
+   overflowing onto the brand/logo. */
 #nav {
   padding: 3px;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  flex-wrap: nowrap !important;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  row-gap: 4px;
 }
 .nav-btn {
   border: none;
@@ -1640,6 +1727,43 @@ main { max-width: 1100px; }
   border: 1px solid var(--border-2);
   box-shadow: none;
 }
+
+/* Account dropdown (collapses Password/Switch/Log out so the bar stays 1 row) */
+.user-menu { position: relative; display: inline-flex; }
+.user-chip { cursor: pointer; gap: 7px; }
+.user-chip:hover { background: var(--card-2); border-color: var(--accent); }
+.user-caret { font-size: .65rem; color: var(--muted); }
+.user-menu-pop {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 172px;
+  background: var(--card);
+  border: 1px solid var(--border-2);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0,0,0,.5);
+  padding: 5px;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.user-menu-pop.hidden { display: none; }
+.user-menu-item {
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: .88rem;
+  padding: 9px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.user-menu-item:hover { background: var(--card-2); }
+.user-menu-item.danger { color: var(--bad); }
+.user-menu-item.danger:hover { background: color-mix(in srgb, var(--bad) 16%, var(--card)); }
 
 /* Modal */
 .modal-backdrop { background: rgba(0,0,0,.75); }
@@ -2608,12 +2732,12 @@ main { max-width: 1100px; }
 }
 .countdown-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 .cd-orb {
-  position: absolute; border-radius: 50%; filter: blur(80px);
-  opacity: 0.55; animation: cd-float 12s ease-in-out infinite;
+  position: absolute; border-radius: 50%; filter: blur(90px);
+  opacity: 0.38; animation: cd-float 12s ease-in-out infinite;
 }
-.cd-orb-1 { width: 420px; height: 420px; background: #7c3aed; top: -100px; left: -80px; }
-.cd-orb-2 { width: 320px; height: 320px; background: #22d3ee; bottom: -80px; right: -60px; animation-delay: -4s; }
-.cd-orb-3 { width: 260px; height: 260px; background: #f472b6; top: 40%; right: 20%; animation-delay: -8s; opacity: 0.35; }
+.cd-orb-1 { width: 420px; height: 420px; background: #6d28d9; top: -100px; left: -80px; }
+.cd-orb-2 { width: 320px; height: 320px; background: #4c1d95; bottom: -80px; right: -60px; animation-delay: -4s; }
+.cd-orb-3 { width: 260px; height: 260px; background: #8b5cf6; top: 40%; right: 20%; animation-delay: -8s; opacity: 0.28; }
 @keyframes cd-float {
   0%,100% { transform: translate(0,0) scale(1); }
   50%     { transform: translate(30px,-40px) scale(1.1); }
@@ -2640,8 +2764,8 @@ main { max-width: 1100px; }
 }
 .cd-dot {
   width: 8px; height: 8px; border-radius: 50%;
-  background: #22d3ee;
-  box-shadow: 0 0 12px #22d3ee;
+  background: #a78bfa;
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.5);
   animation: cd-pulse 1.5s ease-in-out infinite;
 }
 @keyframes cd-pulse {
@@ -2756,8 +2880,8 @@ main { max-width: 1100px; }
     box-shadow .45s ease;
 }
 .word-loader .wl-cell.on {
-  background: #22d3ee;
-  box-shadow: 0 0 12px rgba(34, 211, 238, 0.55);
+  background: #a78bfa;
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.4);
   transform: scale(1);
   opacity: 1;
 }

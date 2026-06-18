@@ -10,8 +10,8 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
-<title>DECA Marketing Cluster Study</title>
-<link rel="stylesheet" href="styles.css?v=20260424-mobilestudy" />
+<title>ClusterPrep — Marketing Cluster Exam practice</title>
+<link rel="stylesheet" href="styles.css?v=20260618-qbxc2" />
 </head>
 <body>
 <header class="topbar">
@@ -25,12 +25,26 @@
           </linearGradient>
         </defs>
         <rect x="0" y="0" width="40" height="40" rx="9" fill="url(#logoGrad)"/>
-        <polyline points="8,28 16,20 22,24 32,10" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="32" cy="10" r="2.8" fill="#fff"/>
+        <g stroke="#ddd6fe" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.65">
+          <path d="M20 11 L11.4 17.2 L14.7 27.3 L25.3 27.3 L28.6 17.2 Z"/>
+          <line x1="20" y1="20" x2="20" y2="11"/>
+          <line x1="20" y1="20" x2="11.4" y2="17.2"/>
+          <line x1="20" y1="20" x2="14.7" y2="27.3"/>
+          <line x1="20" y1="20" x2="25.3" y2="27.3"/>
+          <line x1="20" y1="20" x2="28.6" y2="17.2"/>
+        </g>
+        <g fill="#fff">
+          <circle cx="20" cy="11" r="2.1"/>
+          <circle cx="11.4" cy="17.2" r="2.1"/>
+          <circle cx="14.7" cy="27.3" r="2.1"/>
+          <circle cx="25.3" cy="27.3" r="2.1"/>
+          <circle cx="28.6" cy="17.2" r="2.1"/>
+          <circle cx="20" cy="20" r="3.1" fill="#ede9fe"/>
+        </g>
       </svg>
     </a>
     <div>
-      <h1>DECA Marketing</h1>
+      <h1>ClusterPrep</h1>
       <p class="sub">Marketing Cluster Exam practice &mdash; 38 tests, ~3,800 questions</p>
     </div>
   </div>
@@ -40,6 +54,7 @@
     <button id="nav-study" class="nav-btn" data-route="study">Study</button>
     <button id="nav-qbank" class="nav-btn" data-route="qbank">Question Bank</button>
     <button id="nav-leaderboard" class="nav-btn" data-route="leaderboard">Leaderboard</button>
+    <span id="cluster-slot" class="cluster-slot"></span>
     <span id="countdown-slot"></span>
     <span id="streak-slot"></span>
     <div id="auth-slot" class="auth-slot">
@@ -56,17 +71,22 @@
 <div id="login-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="login-title">
   <div class="modal-backdrop" data-close></div>
   <div class="modal-box">
-    <h3 id="login-title">Log in with a username</h3>
-    <p class="modal-sub">
-      No password needed. Pick any name (e.g. <code>aryank</code>). Your answers
-      and stats are saved under this name on this browser.
-    </p>
+    <h3 id="login-title">Log in</h3>
+    <p class="modal-sub" id="login-sub">Enter your username and password.</p>
     <form id="login-form" class="login-form">
-      <input id="login-input" type="text" maxlength="40" placeholder="Your username"
-             autocomplete="off" autocapitalize="off" spellcheck="false" required />
-      <button type="submit" class="btn primary">Enter</button>
+      <input id="login-input" type="text" maxlength="40" placeholder="Username"
+             autocomplete="username" autocapitalize="off" spellcheck="false" required />
+      <input id="login-pass" type="password" maxlength="100" placeholder="Password"
+             autocomplete="current-password" required />
+      <input id="login-pass2" type="password" maxlength="100" placeholder="Confirm password"
+             autocomplete="new-password" class="hidden" />
+      <button type="submit" class="btn primary" id="login-go">Log in</button>
     </form>
-    <div id="known-users" class="known-users"></div>
+    <div id="login-msg" class="login-msg" role="status" aria-live="polite"></div>
+    <div class="login-links">
+      <button type="button" class="linkbtn" id="login-toggle">New here? Create an account</button>
+      <button type="button" class="linkbtn" id="login-forgot">Forgot password?</button>
+    </div>
     <button class="btn ghost modal-close" data-close>Cancel</button>
   </div>
 </div>
@@ -142,6 +162,11 @@
     window.dispatchEvent(new Event("deca-sync-ready"));
   }
 </script>
-<script src="app.js?v=20260424-mobilestudy"></script>
+<script src="bma-guides.js?v=20260618-qbxc2"></script>
+<script src="ht-guides.js?v=20260618-qbxc2"></script>
+<script src="fin-guides.js?v=20260618-qbxc2"></script>
+<script src="ep-guides.js?v=20260618-qbxc2"></script>
+<script src="pfl-guides.js?v=20260618-qbxc2"></script>
+<script src="app.js?v=20260618-qbxc2"></script>
 </body>
 </html>

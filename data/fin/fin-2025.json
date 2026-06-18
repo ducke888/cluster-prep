@@ -1,0 +1,1607 @@
+{
+  "file": "FI 2025.pdf",
+  "question_count": 100,
+  "answered_count": 100,
+  "questions": [
+    {
+      "number": 1,
+      "question": "Business expenses that do not vary with changes in sales volume are called __________ expenses.",
+      "options": {
+        "A": "direct",
+        "B": "net",
+        "C": "fixed",
+        "D": "variable"
+      },
+      "answer": "C",
+      "explanation": "Fixed. Examples of fixed expenses that do not go up or down with changes in sales volume include insurance, taxes, and rent. Variable expenses are those that change as sales volume changes. Direct expenses are variable expenses that are often controllable. Net expenses are the business's total expenses.",
+      "sources": [
+        "SOURCE: OP:024 Explain the nature of overhead/operating costs",
+        "SOURCE: LAP-OP-024—Watch Your (Over) Head (Overhead/Operating Costs)"
+      ]
+    },
+    {
+      "number": 2,
+      "question": "What two elements are necessary for effective two-way communication to take place?",
+      "options": {
+        "A": "Sharing and understanding",
+        "B": "Telling and informing",
+        "C": "Words and meaning",
+        "D": "Sharing and caring"
+      },
+      "answer": "A",
+      "explanation": "Sharing and understanding. Sharing means that there must be one who sends the message and one who reacts to it. Understanding means that both sender and receiver grasp the same message. Telling/Informing is a one-way process. All messages have words, but meanings are generally not included. Personal beliefs and attitudes determine if you care about a message or not. August 9, 2024, from https://www.indeed.com/career-advice/career-development/two-way- communication",
+      "sources": [
+        "SOURCE: CO:147 Explain the nature of effective verbal communications",
+        "SOURCE: Indeed. (2023, March 10). What is two-way communication? Importance and examples. Retrieved"
+      ]
+    },
+    {
+      "number": 3,
+      "question": "The most common headings on a stock table include the 52-week high and low, the stock symbol, the estimated dividend per share, the yield percentage/rate of return, the volume/sales for the day, the closing price for the day, the net change, and the",
+      "options": {
+        "A": "price-earnings ratio.",
+        "B": "earnings per share.",
+        "C": "stockholder's equity.",
+        "D": "net income."
+      },
+      "answer": "A",
+      "explanation": "Price-earnings ratio. Most stock tables include the price-earnings ratio, or PE ratio for short. The price-earnings ratio is determined by dividing the last closing price of the stock by the earnings per share. Investors often study the PE ratio to get an idea of whether the stock is overvalued or undervalued, compared to competitors. The earnings per share (EPS), net income, and stockholders' equity are not typically found on the stock table. The earnings per share tells investors how much profit goes to each share of common stock. The net income is the money remaining after operating expenses are subtracted from gross profit. The stockholders' equity is equal to assets minus liabilities. https://www.investopedia.com/articles/investing/093014/stock-quotes-explained.asp",
+      "sources": [
+        "SOURCE: FI:275 Interpret securities table",
+        "SOURCE: Hayes, A. (2022, January 17). How to understand a stock quote. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 4,
+      "question": "As opposed to financial accountants, managerial accountants primarily",
+      "options": {
+        "A": "report externally.",
+        "B": "hire internally.",
+        "C": "hire externally.",
+        "D": "report internally."
+      },
+      "answer": "D",
+      "explanation": "Report internally. While financial accounting is mainly focused on reporting financial transactions to outside entities such as investors, lenders, and governing organizations, managerial accounting is focused on reporting financial information internally to aid decision-making. Managerial accountants do not play a significant role in the hiring of employees, regardless of whether they are internal or external hires. https://corporatefinanceinstitute.com/resources/accounting/managerial-accounting",
+      "sources": [
+        "SOURCE: FI:660 Explain the nature of managerial accounting",
+        "SOURCE: Corporate Finance Institute. (2024). Managerial accounting. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 5,
+      "question": "Which of the following businesses best represents an innovative entrepreneurial endeavor:",
+      "options": {
+        "A": "Opening a new pizza franchise",
+        "B": "Developing and selling a new wood-cutting device",
+        "C": "Starting a clothing business online",
+        "D": "Buying a small local coffee shop from its founder"
+      },
+      "answer": "B",
+      "explanation": "Developing and selling a new wood-cutting device. An innovative entrepreneurial endeavor is one that involves creating or inventing something new to sell in the marketplace, such as a new wood-cutting device. A coffee shop, a pizza franchise, and an online clothing store all sell commonly known products and are not examples of innovative endeavors because nothing new is being developed or invented. from https://graduate.northeastern.edu/resources/importance-of-innovation  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: EN:039 Describe the nature of entrepreneurship",
+        "SOURCE: Purcell, W. (2019, October 31). The importance of innovation in business. Retrieved August 9, 2024,"
+      ]
+    },
+    {
+      "number": 6,
+      "question": "A well-prepared new employee orientation program should",
+      "options": {
+        "A": "outline the employer's specific financial goals.",
+        "B": "set aside time to negotiate the employees' salary requirements.",
+        "C": "communicate the employer's philosophy and expectations.",
+        "D": "verify the new employees' job qualifications."
+      },
+      "answer": "C",
+      "explanation": "Communicate the employer's philosophy and expectations. A good orientation program sets the tone for the new hire's experience with the company. It answers basic questions for new employees and helps them feel welcome and comfortable in their new surroundings. It often involves giving tours to familiarize the employees with the facilities, completing the required paperwork, distributing employee handbooks, and introducing them to their new colleagues. A very important aspect of orientation is to communicate the employer's philosophy and behavioral expectations so the employee can adapt accordingly. The purpose of the orientation session is not to go over specific financial goals. Job qualifications are verified during the interview process. Salaries are negotiated after the employer extends the job offer and before the candidate (new employee) accepts the offer. Retrieved August 9, 2024, from https://smallbusiness.chron.com/benefits-new-employee-orientation- programs-1281.html",
+      "sources": [
+        "SOURCE: HR:360 Orient new employees",
+        "SOURCE: Wroblewski, M.T. (2019, May 17). What are the benefits of new employee orientation programs?"
+      ]
+    },
+    {
+      "number": 7,
+      "question": "Tank's Trucking Company is focusing on eliminating waste and creating more value with fewer resources. Which of the following methodologies is Tank's Trucking Company using:",
+      "options": {
+        "A": "Sustainability",
+        "B": "Six sigma",
+        "C": "Lean",
+        "D": "Activity-based costing Test 1305 FINANCE CLUSTER EXAM 2 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "C",
+      "explanation": "Lean. Lean is a production practice that focuses on eliminating wasteful processes that do not add value. It increases implementation speeds and productivity. Six sigma is a set of strategies that focuses on limiting defects and variability to improve process control. Its focus is on quality rather than speed and waste elimination. Activity-based costing is a strategy for assigning overhead costs in a logical manner. Tank's Trucking Company is not necessarily focused on costing methods. Finally, sustainability is the management of social, environmental, and financial demands to minimize impact on the environment or society. Eliminating waste could be a part of sustainability, but creating more value with fewer resources is not related to sustainability. activity-based costing [ABC], six sigma) https://asq.org/quality-resources/six-sigma",
+      "sources": [
+        "SOURCE: FM:016 Discuss non-traditional uses for financial information (e.g., lean, sustainability reporting,",
+        "SOURCE: American Society for Quality. (2024). What is six sigma? Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 8,
+      "question": "Which of the following best describes the purpose of corporate governance:",
+      "options": {
+        "A": "To create a favorable image for the company",
+        "B": "To make hiring and firing decisions for entry-level employees",
+        "C": "To improve relations with company stockholders",
+        "D": "To ensure that companies are held to high ethical standards"
+      },
+      "answer": "D",
+      "explanation": "To ensure that companies are held to high ethical standards. Corporate governance is important because it holds companies accountable for their behavior and helps organizations avoid financial, legal, and ethical pitfalls. The purpose of corporate governance is not to create a favorable image for the company, to make hiring and firing decisions for entry-level employees, or to improve relations with company stockholders. examples. Retrieved August 12, 2024, from https://www.investopedia.com/terms/c/corporategovernance.asp",
+      "sources": [
+        "SOURCE: PD:213 Discuss the importance of corporate governance in business",
+        "SOURCE: Chen, J. (2023, October 31). Corporate governance: Definition, principles, models, and"
+      ]
+    },
+    {
+      "number": 9,
+      "question": "Tom runs a company that produces pencils. To stay in business, Tom must",
+      "options": {
+        "A": "have a distribution plan.",
+        "B": "make a profit.",
+        "C": "employ a sales force.",
+        "D": "order more machinery."
+      },
+      "answer": "B",
+      "explanation": "Make a profit. A business will not survive unless it makes a profit—the monetary reward a business owner receives for taking the risk involved in investing in a business. The other alternatives are steps Tom may take if his business is successful.  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: EC:010 Identify factors affecting a business's profit",
+        "SOURCE: LAP-EC-910—Risk Rewarded (Factors Affecting Profit)"
+      ]
+    },
+    {
+      "number": 10,
+      "question": "Which of the following would help Erica effectively communicate her self-confidence during a job interview:",
+      "options": {
+        "A": "Speaking in a very low tone of voice",
+        "B": "Making appropriate eye contact with the interviewer",
+        "C": "Listening to the interviewer without interrupting",
+        "D": "Wearing casual clothes to the interview"
+      },
+      "answer": "B",
+      "explanation": "Making appropriate eye contact with the interviewer. Appropriate eye contact means looking people in the eye without staring fixedly at them. People who are self-confident are not afraid to look others in the eye. They also speak in a moderate tone of voice that can easily be heard without being loud. Speaking in a very low tone is more likely to indicate timidity than self-confidence. Listening without interrupting demonstrates courtesy and good manners, but not necessarily self-confidence. Wearing casual clothes to a job interview indicates poor judgment rather than self-confidence.",
+      "sources": [
+        "SOURCE: EI:007 Explain the nature of effective communications",
+        "SOURCE: LAP-EI-140—More Than Just Talk (Effective Communication)"
+      ]
+    },
+    {
+      "number": 11,
+      "question": "Which of the following job tasks is most likely to fall within the finance industry:",
+      "options": {
+        "A": "Advertising products",
+        "B": "Growing a business",
+        "C": "Investigating fraud",
+        "D": "Planning a vacation"
+      },
+      "answer": "C",
+      "explanation": "Investigating fraud. Any job that involves the management of money is considered a finance job. When you’re working in finance, you might investigate fraud, help someone with their taxes, or handle the finances of a large company. Entrepreneurs, rather than those within the finance industry, are often responsible for growing a business, sometimes from small operations to organizations that employ thousands of workers. Advertising products is a task that typically falls to those with careers in marketing. Planning a vacation—as well as helping guests at a resort and working at a restaurant, for example—are responsibilities within the hospitality and tourism industry.",
+      "sources": [
+        "SOURCE: PD:152 Discuss employment opportunities in the finance industry",
+        "SOURCE: LAP-PD-152—Career Opportunities in Finance"
+      ]
+    },
+    {
+      "number": 12,
+      "question": "Using Customer Relationship Management (CRM) technology and an effective CRM strategy can increase a business's revenues by",
+      "options": {
+        "A": "raising prices of products.",
+        "B": "allowing for a larger sales staff.",
+        "C": "lowering prices of products.",
+        "D": "providing better customer service."
+      },
+      "answer": "D",
+      "explanation": "Providing better customer service. Customer relationship management (CRM) technology manages a company's interactions with current and potential customers, helps companies understand their customer groups, stores and analyzes data about past interactions with customers, and helps companies respond to shifting customer desires. Because CRM technology will help a company understand customers' needs, the company can in turn provide better customer service. CRM doesn't relate to the increase or decrease in the price of products. Using CRM technology doesn't necessarily correlate to the size of a company's sales staff. data. Retrieved August 12, 2024, from https://www.cio.com/article/272365/what-is-crm-software-for- managing-customer-data.html",
+      "sources": [
+        "SOURCE: CR:024 Use Customer Relationship Management (CRM) technology",
+        "SOURCE: Fruhlinger, J., & Wailgum, T. (2018, August 13). What is CRM? Software for managing customer"
+      ]
+    },
+    {
+      "number": 13,
+      "question": "Even when things are not going well for Mark, he still believes everything will work out all right. Mark has a(n) __________ attitude.",
+      "options": {
+        "A": "positive",
+        "B": "indifferent",
+        "C": "superior",
+        "D": "negative"
+      },
+      "answer": "A",
+      "explanation": "Positive. A positive attitude is an outlook that focuses on the good side of things. People with positive attitudes feel good about themselves, their jobs, and other people. They are better able to weather life's problems because they believe things will work out all right in the end. An indifferent attitude is one that expresses lack of interest. A negative attitude is an outlook that focuses on the bad side of things. A superior attitude is displayed by those who feel they are better than others.  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: EI:019 Exhibit a positive attitude",
+        "SOURCE: LAP-EI-019—Opt for Optimism (Positive Attitude)"
+      ]
+    },
+    {
+      "number": 14,
+      "question": "The Farside Corporation wants to encourage its workforce to better achieve governance objectives. Which tactic should the company use to motivate its employees and improve the distribution of wealth throughout the corporation?",
+      "options": {
+        "A": "Cash incentives",
+        "B": "Profit-sharing",
+        "C": "Flexible scheduling",
+        "D": "Team building Test 1305 FINANCE CLUSTER EXAM 3 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Profit-sharing. Employees are key in the achievement of governance objectives. Businesses use many different tactics to encourage or motivate their workers to reach those objectives and goals. Profit-sharing is a good tactic to adopt if the company seeks to improve employee motivation by improving the distribution of wealth throughout the corporation. Cash incentives, team building, and flexible scheduling may improve overall employee motivation, but they do not improve the distribution of wealth throughout the corporation. Retrieved August 12, 2024, from https://www.investopedia.com/terms/p/profitsharingplan.asp",
+      "sources": [
+        "SOURCE: PD:301 Ascertain employee's role in achieving governance objectives",
+        "SOURCE: Kenton, W. (2024, May 22). Profit-sharing plan: What it is and how it works, with examples."
+      ]
+    },
+    {
+      "number": 15,
+      "question": "A real rate of return on an investment is different from a nominal rate of return in that a real rate of return",
+      "options": {
+        "A": "less accurately measures investment performance.",
+        "B": "does not subtract taxes and inflation.",
+        "C": "adjusts profit for the effects of inflation.",
+        "D": "is often higher than a nominal rate of return."
+      },
+      "answer": "C",
+      "explanation": "Adjusts profit for the effects of inflation. The real rate of return is the annual percentage of profit earned on an investment, adjusted for inflation and taxes. As a result, real rate of return is a more accurate measure of an investment's performance than a nominal rate of return—which does not subtract taxes and inflation. Nominal rates are usually always higher than real rates. The only exception is during rare periods of deflation. August 9, 2024, from https://www.investopedia.com/terms/r/realrateofreturn.asp",
+      "sources": [
+        "SOURCE: FI:077 Explain types of investments",
+        "SOURCE: Hargrave, M. (2022, June 5). Real rate of return: Definition, how it's used, and example. Retrieved"
+      ]
+    },
+    {
+      "number": 16,
+      "question": "Which of the following is a project that might need to be monitored:",
+      "options": {
+        "A": "Fixing up your car",
+        "B": "Developing your professional skills",
+        "C": "Becoming a better person",
+        "D": "Improving customer service"
+      },
+      "answer": "A",
+      "explanation": "Fixing up your car. A project is any type of undertaking or task that has a distinct beginning and end. Fixing up a car has a distinct beginning and end, unlike developing your professional skills, becoming a better person, and improving customer service.",
+      "sources": [
+        "SOURCE: OP:520 Monitor projects and take corrective actions",
+        "SOURCE: LAP-OP-520—Check Your (Project) Pulse (Monitoring Projects and Taking Corrective Actions)"
+      ]
+    },
+    {
+      "number": 17,
+      "question": "A person who is a high achiever is often positively viewed by others as a",
+      "options": {
+        "A": "leader.",
+        "B": "risk-taker.",
+        "C": "follower.",
+        "D": "show-off."
+      },
+      "answer": "A",
+      "explanation": "Leader. A person who is a high achiever is often viewed as a leader because of their strong work ethic and achievements. Being considered a show-off is not a positive attribute. Followers usually do not achieve at a high level. A person that achieves at a high level usually takes moderate risks to ensure success and would not necessarily be viewed as a risk-taker.",
+      "sources": [
+        "SOURCE: EI:027 Develop an achievement orientation",
+        "SOURCE: LAP-EI-027—High Hopes (Developing an Achievement Orientation)"
+      ]
+    },
+    {
+      "number": 18,
+      "question": "When Gabriela’s parents passed away, their assets were transferred to her. Those assets were taxed by the federal government according to their current market value. This is an example of a(n) __________ tax.",
+      "options": {
+        "A": "estate",
+        "B": "tax",
+        "C": "excise",
+        "D": "income"
+      },
+      "answer": "A",
+      "explanation": "Estate. An estate tax is a tax placed on the transfer of assets, or estate, of a deceased person to an identified beneficiary. When Gabriela received her parents’ estate after their passing, those assets were taxed by the government in the form of an estate tax. Income tax is the portion of a person’s earnings from a salary or wages that is owed to the government. A person’s estate is not considered income. Excise taxes are taxes charged to specific goods but are not levied on an entire estate. Property tax is a tax on the value of a property or piece of land owned by a person or organization. While a physical estate may be subject to property tax, the tax on the transfer of that estate to another entity is considered an estate tax, not a property tax. Retrieved August 12, 2024, from https://www.investopedia.com/terms/e/estatetax.asp  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: BL:134 Discuss the effect of tax laws and regulations on financial transactions",
+        "SOURCE: Kagan, J. (2024, April 22). Estate tax: Rates, exclusions, and impact on gift and inheritance taxes."
+      ]
+    },
+    {
+      "number": 19,
+      "question": "We need creativity in communication because",
+      "options": {
+        "A": "not everyone communicates the same way.",
+        "B": "people get tired of the usual communication methods.",
+        "C": "email makes communication very difficult.",
+        "D": "most people don't know how to communicate."
+      },
+      "answer": "A",
+      "explanation": "Not everyone communicates the same way. We need creativity in communication because not everyone communicates the same way. For example, there are cultural differences in nonverbal communication that may require you to get creative when sending and receiving messages from certain people. Most people know the basics of communication and don't necessarily get tired of the usual methods. Email can make communication more difficult, but it can also make it easier.",
+      "sources": [
+        "SOURCE: PD:012 Demonstrate appropriate creativity",
+        "SOURCE: LAP-PD-012—Imagine That (Demonstrating Creativity)"
+      ]
+    },
+    {
+      "number": 20,
+      "question": "Employees who serve customers efficiently help control expenses by",
+      "options": {
+        "A": "decreasing volume.",
+        "B": "reducing complaints.",
+        "C": "improving morale.",
+        "D": "increasing returns."
+      },
+      "answer": "B",
+      "explanation": "Reducing complaints. Treating customers in a professional manner often helps control business expenses. When employees serve customers efficiently, the customers are not likely to have complaints. Since handling complaints is an expense to the business, this effort saves money. Serving customers efficiently may increase volume rather than decrease it. Improved morale may result from serving customers efficiently, but it will not control expenses. Hopefully, efficient service will reduce returns; however, its impact cannot be specified.",
+      "sources": [
+        "SOURCE: OP:025 Explain employee's role in expense control",
+        "SOURCE: LAP-OP-025—Buck Busters (Employee Role in Expense Control)"
+      ]
+    },
+    {
+      "number": 21,
+      "question": "Why is it important for a person pursuing any type of business career to develop self-confidence?",
+      "options": {
+        "A": "The business field is very competitive.",
+        "B": "Managing others requires leadership skills.",
+        "C": "It helps a person become trustworthy.",
+        "D": "Complex financial concepts are challenging to learn. Test 1305 FINANCE CLUSTER EXAM 4 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "A",
+      "explanation": "The business field is very competitive. Self-confidence helps a person accomplish their career goals because they can handle setbacks and disappointments. People who believe in themselves are able to persist and reach their goals. Behaving in ethical and reliable ways helps a person become trustworthy regardless of their self- confidence level. Many business careers do not require an employee to manage others or learn complex financial concepts.",
+      "sources": [
+        "SOURCE: PD:025 Explain employment opportunities in business",
+        "SOURCE: LAP-PD-025—Go for It! (Careers in Business)"
+      ]
+    },
+    {
+      "number": 22,
+      "question": "Social responsibility should be part of the objectives of __________ businesses.",
+      "options": {
+        "A": "all",
+        "B": "specialized",
+        "C": "nonprofit",
+        "D": "government"
+      },
+      "answer": "A",
+      "explanation": "All. Social responsibility is the duty of businesses to contribute to the well-being of society. Government, specialized, and nonprofit businesses would be included in those businesses that should be socially responsible.",
+      "sources": [
+        "SOURCE: EC:070 Explain the role of business in society",
+        "SOURCE: LAP-EC-070—Business Connections (Business and Society)"
+      ]
+    },
+    {
+      "number": 23,
+      "question": "Which of the following is a type of credit card that can be used to make purchases from a variety of participating businesses:",
+      "options": {
+        "A": "Retail store",
+        "B": "Bank",
+        "C": "Hotel",
+        "D": "Petroleum"
+      },
+      "answer": "B",
+      "explanation": "Bank. Bank credit cards can be used at any business that is affiliated with the system. This gives cardholders a wide range of businesses from which to choose. Retail store, hotel, and petroleum cards are issued by individual companies and may be used only at their facilities.  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:002 Explain the purposes and importance of credit",
+        "SOURCE: LAP-FI-002—Give Credit Where Credit Is Due (Credit and Its Importance)"
+      ]
+    },
+    {
+      "number": 24,
+      "question": "What should you do if a financial client reports a problem with their portfolio?",
+      "options": {
+        "A": "Waive the client's fees for their next five transactions.",
+        "B": "Apologize and resolve the problem immediately.",
+        "C": "Call the client back later after they have calmed down.",
+        "D": "Ask the manager to return the client's call."
+      },
+      "answer": "B",
+      "explanation": "Apologize and resolve the problem immediately. Finance professionals are most likely to build customer loyalty and retention if they resolve any client problems and complaints as soon as possible. Waiting until later to deal with the problem is unwise; while waiting for a call back, the client may become even more upset than they already are. Before involving a manager, finance professionals should attempt to resolve their clients' problems themselves. While waiving the client's fees for future transactions can benefit the client, doing so doesn't necessarily resolve the client's problem. must ask their clients. Retrieved August 12, 2024, from https://excellamarketing.com/advisor- resources/how-to-build-loyalty",
+      "sources": [
+        "SOURCE: CR:012 Explain the responsibilities of finance professionals in providing client services",
+        "SOURCE: Excella. (2018). How to build loyalty through the annual client review: Four questions all advisors"
+      ]
+    },
+    {
+      "number": 25,
+      "question": "Which of the following is a loss prevention technique that a hotel might use to protect itself against theft:",
+      "options": {
+        "A": "Crisis management plans",
+        "B": "Fire sprinklers",
+        "C": "Security cameras",
+        "D": "Carbon monoxide detectors"
+      },
+      "answer": "C",
+      "explanation": "Security cameras. Many businesses, including hotels, use video surveillance, security guards, physical locks, or data encryption to prevent theft. Fire sprinklers, carbon monoxide detectors, and crisis management plans are important tools in risk management, but they don't necessarily prevent theft. 2024, from https://www.investopedia.com/terms/r/risk-control.asp",
+      "sources": [
+        "SOURCE: RM:058 Discuss the nature of risk control (i.e., internal and external)",
+        "SOURCE: Kenton, W. (2023, May 4). Risk control: What it is, how it works, example. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 26,
+      "question": "Which of the following is a common challenge for financial-information management:",
+      "options": {
+        "A": "Managerial accountants prepare financial information for use by external stakeholders.",
+        "B": "Many financial data are stored in custom, task-specific software and are not easily accessible.",
+        "C": "Financial-information management's focus is on protection of customer financial data.",
+        "D": "Financial managers typically use Microsoft Office applications for financial recordkeeping."
+      },
+      "answer": "B",
+      "explanation": "Many financial data are stored in custom, task-specific software and are not easily accessible. Financial- information management involves accessing, processing, maintaining, evaluating, and disseminating financial data to assist in business decision-making, as well as supporting budgeting activities and storing and protecting customer financial information. Challenges for financial-information management include inadequate information, multiple master sources of data, inaccuracies, inefficiencies, and disparate data structures. Unfortunately, many companies house their financial data in custom, task-specific software, making it difficult for others in the organization to access that data if they do not have that specialized software. Financial managers may use Microsoft Office applications to prepare reports, but they don't typically use such software for financial recordkeeping. Financial accountants, not managerial accountants, prepare financial information for use by external stakeholders. cure. Retrieved August 12, 2024, from https://www.m-files.com/5-startling-stats-about-information- management-in-the-financial-services-industry-3",
+      "sources": [
+        "SOURCE: FM:002 Explain the nature and scope of the financial-information management function",
+        "SOURCE: M-Files. (2022, October 18). Financial services in chaos? 5 stats & the information management"
+      ]
+    },
+    {
+      "number": 27,
+      "question": "Lower premiums and the ability to control the claims process are advantages of",
+      "options": {
+        "A": "traditional liability insurance policies.",
+        "B": "standard insurance companies.",
+        "C": "reinsurance carriers.",
+        "D": "captive insurance companies."
+      },
+      "answer": "D",
+      "explanation": "Captive insurance companies. Organizations (i.e., corporations, industry/professional/trade associations) often form their own insurance companies, which are known as captive insurance companies. Primary advantages of forming captive insurance companies are that the founding organizations control the premium rates and the claims process. If the organizations obtain insurance through the traditional or standard insurance industry, they have no control over the premium amounts they pay or the ways in which their claims are processed. Reinsurance carriers sell insurance to primary insurance carriers to protect the primary carriers from unexpected, catastrophic losses. https://www.wise-geek.com/what-is-captive-insurance.htm  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: RM:043 Discuss legal considerations affecting risk management",
+        "SOURCE: Wallace, O. (2024, February 21). What is captive insurance? Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 28,
+      "question": "Which of the following is an example of an internal control mechanism impacting an organization's governance:",
+      "options": {
+        "A": "Compliance laws",
+        "B": "Regulatory guidelines",
+        "C": "Union contracts",
+        "D": "Segregation of duties Test 1305 FINANCE CLUSTER EXAM 5 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Segregation of duties. Segregation of duties, or segregation of control, is an internal control mechanism that divides responsibilities between board members so that no one person has excessive power, authority, or responsibility. Union contracts and regulatory guidelines (as well as compliance laws) are examples of external control mechanisms impacting an organization's governance. transparency, internal and external audit functions) from https://smallbusiness.chron.com/three-types-corporate-governance-mechanisms-66711.html",
+      "sources": [
+        "SOURCE: PD:214 Describe the components of a well-governed company (e.g., board of directors, reporting,",
+        "SOURCE: Davoren, J. (n.d.). Three types of corporate governance mechanisms. Retrieved August 12, 2024,"
+      ]
+    },
+    {
+      "number": 29,
+      "question": "A company does not emphasize the importance of fairness and respect. Which of the following risks is most likely to occur:",
+      "options": {
+        "A": "Employees will be at risk of injury.",
+        "B": "Unhappy employees might leave the company.",
+        "C": "The company might go bankrupt.",
+        "D": "Important details might slip through the cracks."
+      },
+      "answer": "B",
+      "explanation": "Unhappy employees might leave the company. When employees feel that they are not being treated fairly, they might not want to continue contributing to the success of the company. Employee turnover presents many problems. A lack of fairness and respect is not directly related to whether or not important details might slip through the cracks, whether the company will go bankrupt, or whether employees will be at risk of injury.",
+      "sources": [
+        "SOURCE: RM:041 Explain the role of ethics in risk management",
+        "SOURCE: LAP-RM-041—Manage Risk the Right Way (Ethics in Risk Management)"
+      ]
+    },
+    {
+      "number": 30,
+      "question": "Why do stock prices tend to fall during a recession?",
+      "options": {
+        "A": "Sponsorships become more common.",
+        "B": "Unemployment decreases.",
+        "C": "Profits are expected to drop.",
+        "D": "Bonds are a less stable investment."
+      },
+      "answer": "C",
+      "explanation": "Profits are expected to drop. A recession is a period of economic decline. During a recession, profits are generally anticipated to drop, making stocks less valuable. Unemployment tends to increase during a recession. Sponsorships are not typically related to recessions or general stock prices. Bonds are generally a more stable investment compared to stocks at every point in the business cycle. August 12, 2024, from https://www.economicshelp.org/blog/541/economics/relationship-between- stock-market-and-economy",
+      "sources": [
+        "SOURCE: FI:574 Describe the relationship between economic conditions and financial markets",
+        "SOURCE: Pettinger, T. (2018, December 9). Relationship between stock market and economy. Retrieved"
+      ]
+    },
+    {
+      "number": 31,
+      "question": "When a customer complains about a product, the employee should",
+      "options": {
+        "A": "ask the manager to answer the complaint.",
+        "B": "ask another employee to handle the situation.",
+        "C": "handle the complaint according to company policy.",
+        "D": "defend themselves."
+      },
+      "answer": "C",
+      "explanation": "Handle the complaint according to company policy. Over 90% of customer complaints can easily be corrected immediately by the employee, who should never argue with a customer. Occasionally, a fellow worker can be of assistance, but few customer complaints need to be handled by a manager.",
+      "sources": [
+        "SOURCE: CR:010 Handle customer/client complaints",
+        "SOURCE: LAP-CR-010—Righting Wrongs (Handling Customer Complaints)"
+      ]
+    },
+    {
+      "number": 32,
+      "question": "An annual audit is an example of a __________ internal control.",
+      "options": {
+        "A": "detective",
+        "B": "reconciliation",
+        "C": "preventative",
+        "D": "corrective"
+      },
+      "answer": "A",
+      "explanation": "Detective. Businesses use a variety of internal accounting controls to ensure the reliability of accounting systems and compliance with financial laws and regulations. Detective controls such as annual audits are meant to help identify existing financial problems. Preventive controls are designed to prevent errors or fraud from happening. Corrective controls are intended to correct errors after they are identified. Reconciliation is a comparison of a business's internal accounting records to external records of some kind. from https://bizfluent.com/info-8046701-types-internal-controls.html  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: BL:148 Discuss the nature and scope of compliance in the finance industry",
+        "SOURCE: Furlong, M. (2019, January 25). What are the types of internal controls? Retrieved August 12, 2024,"
+      ]
+    },
+    {
+      "number": 33,
+      "question": "Which of the following is categorized as owner's equity on a company's balance sheet:",
+      "options": {
+        "A": "Capital equipment",
+        "B": "Accounts receivable",
+        "C": "Inventory",
+        "D": "Retained earnings"
+      },
+      "answer": "D",
+      "explanation": "Retained earnings. A balance sheet is a financial statement that captures the financial condition of the business at that particular moment. Owner's equity is the amount an owner has invested in the business plus or minus profits and losses. Retained earnings are a component of owner's equity because they are the income left after paying dividends to stockholders. Inventory and accounts receivable are categorized as current or short-term assets on a balance sheet because the levels of inventory and income from sales tend to fluctuate. Capital equipment, buildings, and vehicles are listed as long-term assets on a balance sheet because they are assets that generate revenue for more than a year.",
+      "sources": [
+        "SOURCE: FI:093 Explain the nature of balance sheets",
+        "SOURCE: LAP-FI-093—The Right Balance (The Nature of Balance Sheets)"
+      ]
+    },
+    {
+      "number": 34,
+      "question": "Production processes that rely heavily on expensive equipment and materials are __________ processes.",
+      "options": {
+        "A": "standardized",
+        "B": "intermittent",
+        "C": "capital-intensive",
+        "D": "labor-intensive"
+      },
+      "answer": "C",
+      "explanation": "Capital-intensive. Capital-intensive production processes rely heavily on the use of expensive equipment and materials rather than on the activities of workers. Facilities that generate electrical power are examples of capital-intensive production processes because they use expensive equipment but few workers. Intermittent production processes periodically stop and restart at a later time. Labor-intensive production processes cannot take place without skilled workers. Standardized production processes require simple, repetitive tasks.",
+      "sources": [
+        "SOURCE: OP:017 Explain the concept of production",
+        "SOURCE: LAP-OP-017—Can You Make It? (Nature of Production)"
+      ]
+    },
+    {
+      "number": 35,
+      "question": "When a business uses its budget to monitor and avoid excessive spending, it is using the budget as a(n)",
+      "options": {
+        "A": "financial control tool.",
+        "B": "business plan.",
+        "C": "operating plan.",
+        "D": "performance evaluation. Test 1305 FINANCE CLUSTER EXAM 6 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "A",
+      "explanation": "Financial control tool. When a business uses its budget to monitor spending activities, it can help ensure that an activity or department does not exceed the planned budget. A performance evaluation would need to consider more than spending to determine if a business activity is successful or not. A business plan is a broad overview of a business's future plans and includes more than budgetary information. A budget used as an operating plan is used to plan spending and forecast profits so managers can successfully carry out a company's business objectives. https://www.dummies.com/article/business-careers-money/business/accounting/general- accounting/cost-accounting-budgeting-basics-166823",
+      "sources": [
+        "SOURCE: FI:662 Discuss the nature of cost accounting budgets",
+        "SOURCE: Boyd, K. (2016, March 26). Cost accounting: Budgeting basics. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 36,
+      "question": "An insurance company is different from a bank in that an insurance company",
+      "options": {
+        "A": "accepts short-term deposits and makes long-term loans.",
+        "B": "is not considered a financial institution.",
+        "C": "is part of a centralized clearing and payment system.",
+        "D": "insures its customers against certain risks."
+      },
+      "answer": "D",
+      "explanation": "Insures its customers against certain risks. An insurance company is a financial institution that insures its customers against certain risks. In return for the insurance of these risks, such as a car accident or house fire, their customers pay regular insurance premiums. Banks and insurance companies are both considered financial institutions. Banks, not insurance companies, accept short-term deposits and make long-term loans. Banks are part of a centralized clearing and payment system, whereas insurance companies are not. August 12, 2024, from https://www.investopedia.com/articles/personal-finance/070715/insurance- companies-vs-banks-separate-and-not-equal.asp  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:336 Describe the role of financial institutions",
+        "SOURCE: Thangavelu, P. (2021, June 19). Insurance companies vs. banks: What's the difference? Retrieved"
+      ]
+    },
+    {
+      "number": 37,
+      "question": "By installing firewalls on its computer networks, a business can protect its online customers' credit card information from",
+      "options": {
+        "A": "investment scams.",
+        "B": "tax evasion.",
+        "C": "trade barriers.",
+        "D": "identity theft."
+      },
+      "answer": "D",
+      "explanation": "Identity theft. Identity theft is a fraud that occurs when an individual pretends to be another person to obtain money or some other type of benefit. With the widespread use of the internet, hackers try to break into a business's computer system or website to steal customers' financial information, such as bank account numbers or credit card information, which they then use to illegally obtain money or goods. To reduce the risk of identity theft due to computer hackers, businesses install firewalls, which are computer programs that secure and protect their computer networks from unauthorized users. Tax evasion occurs when an individual or business inaccurately reports or fails to pay taxes. An investment scam is a deceptive plan to use others' money for personal gain. A trade barrier is an action that blocks or restricts the exchange of goods or services. 12, 2024, from https://smallbusiness.chron.com/responsibility-businesses-prevent-identity-theft- 17047.html",
+      "sources": [
+        "SOURCE: FM:003 Explain the role of ethics in financial-information management",
+        "SOURCE: Root, G.N. (n.d.). What is the responsibility of businesses to prevent identity theft? Retrieved August"
+      ]
+    },
+    {
+      "number": 38,
+      "question": "Which of the following is an example of an uninsurable risk:",
+      "options": {
+        "A": "Fire",
+        "B": "Business interruption",
+        "C": "Customer buying habits",
+        "D": "Personal injury"
+      },
+      "answer": "C",
+      "explanation": "Customer buying habits. Buying habits can change quickly and for many unpredictable reasons; therefore, insurance companies will not assume risk coverage. The other alternatives are considered insurable risks that can be covered by various types of insurance policies.",
+      "sources": [
+        "SOURCE: EC:011 Determine factors affecting business risk",
+        "SOURCE: LAP-EC-911—Lose, Win, or Draw (Business Risk)"
+      ]
+    },
+    {
+      "number": 39,
+      "question": "By using a central data repository for financial information, companies receive",
+      "options": {
+        "A": "up-to-date data.",
+        "B": "slower responses to queries.",
+        "C": "less predictability.",
+        "D": "inconsistent data."
+      },
+      "answer": "A",
+      "explanation": "Up-to-date data. A central data repository is a singular storage location for all of an organization's data. Companies use central data repositories for their financial information because it provides benefits to consistency, collaboration, and visibility. Central data repositories have several benefits for companies, including keeping data up to date and consistent, faster responses to queries, better predictability, and improved analysis. Inconsistent data, slower responses to queries, and less predictability are not intended results of a central data repository. https://www.premier-international.com/articles/8-benefits-of-a-central-data-repository",
+      "sources": [
+        "SOURCE: FM:011 Describe the use of technology in the financial-information management function",
+        "SOURCE: Novak, S. (n.d.). 8 benefits of a central data repository. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 40,
+      "question": "Zoe is looking to save some money so that she can purchase a $600 camera in 2 years. With her current account, she earns 3% quarterly interest. How much should Zoe invest so she can buy the camera in 2 years?",
+      "options": {
+        "A": "$565",
+        "B": "$637",
+        "C": "$574",
+        "D": "$715"
+      },
+      "answer": "A",
+      "explanation": "$565. If Zoe wants to buy a $600 camera in 2 years, she should invest $565. The formula for calculating compound interest for present value is Present Value = Future Value / [1 + (Discount Rate/n)](n X t). In this scenario, the future value is $600 and the discount rate is 3% (.03 as a decimal). The \"n\" refers to the number of compounding periods per year, and the \"t\" refers to the number of years. Because Zoe's account earns quarterly interest, \"n\" is 4. The \"t\" is 2 because she wants to buy the camera in 2 years. After inputting all this information, the equation is 600 / [1 + (.03 / 4)](4 X 2). After solving the equations in the brackets, we are left with 600 / (1.0075)8. Next, raising 1.0075 to the eighth power is the same as multiplying it by itself eight times, which equals 1.062. Then, divide the future value of $600 by 1.062 to get the quotient of $565. https://www.financialmentor.com/calculator/present-value-calculator  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:238 Calculate the time value of money",
+        "SOURCE: Financial Mentor. (2024). Present value calculator - NPV. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 41,
+      "question": "What type of variance analysis involves determining the difference between the standard costs and the actual costs of raw materials used for production?",
+      "options": {
+        "A": "Purchase price",
+        "B": "Material yield",
+        "C": "Selling price",
+        "D": "Fixed overhead"
+      },
+      "answer": "A",
+      "explanation": "Purchase price. A variance is the difference between an established standard and the actual outcome. It is important for a business to monitor variances in the price of raw materials because they affect its bottom line. When a vendor increases the prices that it charges for raw materials, it costs the business (manufacturer) more money to produce an item. The business may need to find a vendor that charges less for the materials or parts, or it may need to increase its selling price—the amount that the business charges its customers for the finished good. Fixed overhead costs are expenses that do not change in relation to changes in sales volume and include things such as rent and employee salaries. Material yield analysis involves analyzing variances in the number of materials/products that are supposed to be used/sold with the actual number of materials/products that have been used/sold in a certain time frame. https://www.accountingtools.com/articles/what-is-variance-analysis.html",
+      "sources": [
+        "SOURCE: FI:661 Discuss the use of variance analysis in managerial accounting",
+        "SOURCE: Bragg, S. (2023, December 1). Variance analysis definition. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 42,
+      "question": "Peyton asks Ann to write a letter of recommendation to a potential employer. Which of the following networking techniques is Peyton using:",
+      "options": {
+        "A": "Opportunistic",
+        "B": "Organizational",
+        "C": "Grapevine",
+        "D": "Referral Test 1305 FINANCE CLUSTER EXAM 7 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Referral. Networking is the process of exchanging information with others for the purpose of professional or business development or advancement. An element of networking often involves asking an influential person to write a formal referral (recommendation) to a potential employer. A person who gains professional development information from a club or organization in which they belong is engaging in organizational networking. When a person obtains professional development information from people they meet by chance, it is known as opportunistic networking. The grapevine is an oral communication in which information is passed around the company but is not formally announced or verified. https://www.indeed.com/career-advice/career-development/how-to-ask-for-referrals",
+      "sources": [
+        "SOURCE: PD:037 Use networking techniques to identify employment opportunities",
+        "SOURCE: Indeed. (2022, July 22). How to ask for referrals. Retrieved August 9, 2024, from"
+      ]
+    },
+    {
+      "number": 43,
+      "question": "Which of the following tasks falls under the scope of compliance:",
+      "options": {
+        "A": "Meeting clients' financial needs",
+        "B": "Creating financial legislation",
+        "C": "Advertising new financial products",
+        "D": "Designing organizational controls"
+      },
+      "answer": "D",
+      "explanation": "Designing organizational controls. Compliance is fulfilling the requirements of the law. In the finance industry, compliance includes designing controls, which are the mechanisms and rules for guiding financial professionals. Organizational controls are an important way to ensure compliance. Meeting clients' financial needs, advertising financial products, and creating financial legislation are not included in the scope of compliance. August 12, 2024, from https://www.investopedia.com/terms/c/compliancedepartment.asp",
+      "sources": [
+        "SOURCE: BL:148 Discuss the nature and scope of compliance in the finance industry",
+        "SOURCE: Hargrave, M. (2020, October 31). Compliance department: Definition, role, and duties. Retrieved"
+      ]
+    },
+    {
+      "number": 44,
+      "question": "A student group suggests that a university raise money for a new recreational facility by holding a concert featuring a controversial band that has been banned from some venues. What form of risk management should the university undertake in this situation?",
+      "options": {
+        "A": "Transfer liability through a contract holding the band liable",
+        "B": "Cover the risk in the event budget",
+        "C": "Purchase insurance that transfers the risk to the insurance company",
+        "D": "Avoid the risk by contracting with another band"
+      },
+      "answer": "D",
+      "explanation": "Avoid the risk by contracting with another band. The best way to manage the risk in this situation is to avoid it by choosing another band. The university would probably want to avoid the negative publicity and other actions that could result from the group's appearance. Insurance would transfer the risk, but that would not insure against negative publicity. It is doubtful that the band would assume liability for adverse actions. If the event is designed to raise money, it would not make sense to cover the risk in the event budget. 2024, from https://www.eden.gov.uk/leisure-culture-and-events/events/event-organisation/risk- assessment-for-events  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: SM:076 Conduct a risk assessment of an event",
+        "SOURCE: Westmorland & Furness Council. (2024, April 24). Risk assessment for events. Retrieved August 9,"
+      ]
+    },
+    {
+      "number": 45,
+      "question": "Corporate governance is primarily concerned with __________ desires.",
+      "options": {
+        "A": "CEO",
+        "B": "competitor",
+        "C": "vendor",
+        "D": "stakeholder"
+      },
+      "answer": "D",
+      "explanation": "Stakeholder. Corporate governance is the system of rules and practices that control the company. Corporate governance revolves around balancing the desires of the stakeholders in a company. Corporate governance is not just concerned with CEO or vendor desires; instead, it focuses on the desires of all stakeholders, including customers, financiers, the community, the government, and managers. Corporate governance is not necessarily concerned with competitor desires. examples. Retrieved August 12, 2024, from https://www.investopedia.com/terms/c/corporategovernance.asp",
+      "sources": [
+        "SOURCE: PD:213 Discuss the importance of corporate governance in business",
+        "SOURCE: Chen, J. (2023, October 31). Corporate governance: Definition, principles, models, and"
+      ]
+    },
+    {
+      "number": 46,
+      "question": "An employee accidentally learns that several coworkers will be fired in the near future. What should the employee do with that information?",
+      "options": {
+        "A": "Report it to managers",
+        "B": "Tell the coworkers",
+        "C": "Verify the information",
+        "D": "Keep it confidential"
+      },
+      "answer": "D",
+      "explanation": "Keep it confidential. Employees sometimes learn information that they were not intended to know, such as information about coworkers being fired. In some cases, this information is confidential, and repeating it may harm the business or other employees. Employees have an obligation to behave ethically and keep this type of information confidential. Employees should not tell coworkers that they are being fired because it is not their responsibility, and the information may be incorrect. Employees probably will not be able to verify information about possible firings. If workers are going to be fired, managers will already have that information. August 9, 2024, from https://work.chron.com/legality-eavesdropping-workplace-15267.html",
+      "sources": [
+        "SOURCE: EI:038 Explain ethical considerations in providing information",
+        "SOURCE: Weedmark, D. (2019, February 20). The legality of eavesdropping in the workplace. Retrieved"
+      ]
+    },
+    {
+      "number": 47,
+      "question": "Which of the following is an example of an indirect cost:",
+      "options": {
+        "A": "Insurance",
+        "B": "Wages",
+        "C": "Commission",
+        "D": "Materials"
+      },
+      "answer": "A",
+      "explanation": "Insurance. Indirect costs are costs that cannot be directly allocated to a specific cost object. Wages, materials, and commissions can all be assigned to specific people, projects, or departments. However, insurance is an indirect cost because it is used by various departments, people, and projects. cost, differential cost, etc.) 12, 2024, from https://www.accountingtools.com/articles/the-difference-between-direct-costs-and- indirect-costs.html",
+      "sources": [
+        "SOURCE: FI:658 Describe types of costs used in managerial accounting (e.g., direct cost, indirect cost, sunk",
+        "SOURCE: Bragg, S. (2024, April 5). The difference between direct costs and indirect costs. Retrieved August"
+      ]
+    },
+    {
+      "number": 48,
+      "question": "The main objective of using marginal analysis in decision-making is to determine whether a business activity will result in a",
+      "options": {
+        "A": "net revenue smaller than marginal revenue.",
+        "B": "net revenue larger than marginal revenue.",
+        "C": "marginal revenue equal to or greater than marginal cost.",
+        "D": "marginal expense that is greater than marginal cost."
+      },
+      "answer": "C",
+      "explanation": "Marginal revenue equal to or greater than marginal cost. Marginal analysis, which involves determining whether the marginal revenue of a business activity will be equal to or greater than marginal cost or expense, is used to identify profitable options for an organization. If marginal cost is greater than marginal revenue, the activity is not likely to be profitable and should not be pursued. Net revenue cannot be determined until all transactions are measured and accounted for, so it cannot be used to analyze future business activities. 2024, from https://www.investopedia.com/ask/answers/042315/how-marginal-analysis-used-making- managerial-decision.asp",
+      "sources": [
+        "SOURCE: FI:659 Describe marginal analysis techniques and applications",
+        "SOURCE: Ross, S. (2021, July 31). How marginal analysis helps in managerial decisions. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 49,
+      "question": "Which of the following is an ethical issue resulting from internal risks:",
+      "options": {
+        "A": "Selecting an insurance company that considers paying fines a cost of doing business",
+        "B": "Boycotting the use of an insurance company that has a reputation for not correcting its mistakes",
+        "C": "Providing incomplete data for audits",
+        "D": "Revealing discounted expenses Test 1305 FINANCE CLUSTER EXAM 8 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "C",
+      "explanation": "Providing incomplete data for audits. Ethical risk management must be implemented by everyone in an organization to protect the company's credibility with its stakeholders. By providing incomplete data for audits, employees are acting unethically and risking the company's future existence. Revealing discounted expenses is an ethical action. Using or not using insurance companies represents external risks for a business.  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: RM:041 Explain the role of ethics in risk management",
+        "SOURCE: LAP-RM-041—Manage Risk the Right Way (Ethics in Risk Management)"
+      ]
+    },
+    {
+      "number": 50,
+      "question": "Which of the following statements about a board of directors is true:",
+      "options": {
+        "A": "Internal board members are not usually paid extra for their work with the board.",
+        "B": "A board of directors is nominated by shareholders.",
+        "C": "A board member won't be removed for breaking foundational or corporate rules.",
+        "D": "Every private company must have a board of directors."
+      },
+      "answer": "A",
+      "explanation": "Internal board members are not usually paid extra for their work with the board. A board of directors, an elected group of individuals who represent shareholders, is made up of internal and external members. Internal board members, or inside directors, have the interest of significant shareholders, officers, and employees in mind and add value to the board based on their experience within the company. Internal directors aren't usually compensated for their work with the board, because they are often already a high-ranking executive, major shareholder, or key stakeholder. A board of directors is nominated by a nominations committee. Shareholders elect a board of directors but don't have the power to nominate. Every public company must have a board of directors. While some private and nonprofit organizations also have a board, they are not required to. If a board member breaks foundational or corporate rules (such as abusing directional powers, using proprietary information for personal profit, etc.), they will in all likelihood be removed. functions 2024, from https://www.investopedia.com/terms/b/boardofdirectors.asp",
+      "sources": [
+        "SOURCE: PD:303 Describe the impact of governance processes on decision-making and management",
+        "SOURCE: Chen, J. (2024, February 19). Board of directors: What it is, what its role is. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 51,
+      "question": "Which of the following is a true statement about stock information resources:",
+      "options": {
+        "A": "It is very difficult to find stock information.",
+        "B": "There are very few stock information sources.",
+        "C": "Only wealthy investors have access to stock information.",
+        "D": "It has never been easier to find stock information."
+      },
+      "answer": "D",
+      "explanation": "It has never been easier to find stock information. A few short years ago, only professionals and wealthy investors had access to in-depth stock information. Now, there is a great deal of easy-to-find information, all available to the individual investor. 2024, from https://www.thebalancemoney.com/top-best-sources-of-investor-information-1979207",
+      "sources": [
+        "SOURCE: FI:274 Describe sources of securities information",
+        "SOURCE: Kuepper, J. (2021, October 31). The best investment information sources. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 52,
+      "question": "Timothy is taking a personal finance class at school. For homework one day, he is instructed to set a short-term financial goal for himself. Which of the following would be most relevant as a short-term goal for a high school student like Timothy:",
+      "options": {
+        "A": "Put $10,000 into a college savings account",
+        "B": "Save $50 for Christmas presents for his family",
+        "C": "Plan to become a senior-level executive by age 30",
+        "D": "Set $5,000 aside per year for retirement"
+      },
+      "answer": "B",
+      "explanation": "Save $50 for Christmas presents for his family. It's important to set both short-term and long-term financial goals to safeguard your financial health. Short-term financial goals are goals that will be completed or met in a matter of days, weeks, or months. Long-term financial goals, on the other hand, are goals that span several years—even decades. For a high school student such as Timothy, a relevant short-term goal would be saving money for an upcoming holiday. Saving for college and retirement are both long-term goals. Becoming a senior- level executive by age 30 is a long-term goal for a teenager. from https://www.nerdwallet.com/article/finance/how-to-set-financial-goals",
+      "sources": [
+        "SOURCE: FI:065 Set financial goals",
+        "SOURCE: Schwahn, L. (2023, July 18). How to set financial goals. Retrieved August 9, 2024,"
+      ]
+    },
+    {
+      "number": 53,
+      "question": "Dmitri is building a new website. Which of the following does he need to register to obtain a web address for his new site:",
+      "options": {
+        "A": "Site builder",
+        "B": "Domain name",
+        "C": "Street address",
+        "D": "Web host"
+      },
+      "answer": "B",
+      "explanation": "Domain name. The domain name that Dmitri registers will be the unique address of his new website. A web host allows a website owner to make their site accessible via the internet. A site builder is a program that includes templates and software used to create the layout and design of a website. Web addresses are usually picked based on a company name or other important identifier, rather than the company's street address. work? Retrieved August 21, 2024, from https://www.wpbeginner.com/beginners-guide/beginners- guide-what-is-a-domain-name-and-how-do-domains-work  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: NF:042 Create and post basic web page",
+        "SOURCE: WPBeginner. (2024, February 28). Beginner's guide: What is a domain name and how do domains"
+      ]
+    },
+    {
+      "number": 54,
+      "question": "Accepting blame for failure and credit for success is an indication of a person's",
+      "options": {
+        "A": "interpersonal skills.",
+        "B": "consideration.",
+        "C": "responsibility.",
+        "D": "initiative."
+      },
+      "answer": "C",
+      "explanation": "Responsibility. Responsible individuals are accountable for things that are within their control. Initiative is the ability and willingness to think or act without being told. Interpersonal skills are how a person gets along with others. Consideration means showing kindness or thoughtfulness to others.",
+      "sources": [
+        "SOURCE: EI:021 Demonstrate responsible behavior",
+        "SOURCE: LAP-EI-021—Make the Honor Role (Acting Responsibly)"
+      ]
+    },
+    {
+      "number": 55,
+      "question": "Employees from different departments participate in a group to solve problems related to the company's production processes. This is an example of a",
+      "options": {
+        "A": "standing committee.",
+        "B": "product team.",
+        "C": "quality circle.",
+        "D": "short-term committee."
+      },
+      "answer": "C",
+      "explanation": "Quality circle. A quality circle is a problem-solving group of coworkers who are given work situations or problems to study and discuss to recommend solutions to management. A standing committee works together for a common purpose over a long period of time (e.g., 3 years). A short-term committee has an immediate goal, such as planning a social event for employees. A product team consists of individuals who work together to develop, improve, and/or market a product. https://www.inc.com/encyclopedia/quality-circles.html",
+      "sources": [
+        "SOURCE: EI:045 Participate as a team member",
+        "SOURCE: Inc. (2020, February 6). Quality circles. Retrieved August 9, 2024, from"
+      ]
+    },
+    {
+      "number": 56,
+      "question": "What must a business be organized to do to be able to contribute to society?",
+      "options": {
+        "A": "Preserve the environment",
+        "B": "Sell an idea",
+        "C": "Hire an advisor",
+        "D": "Earn a profit Test 1305 FINANCE CLUSTER EXAM 9 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Earn a profit. The goal of business is to earn a profit. If businesses do not earn a profit, they will not be able to contribute to society. Businesses contribute to society in many ways, and most of these require money. For example, they create jobs and hire employees so members of the community have income to support themselves and their families. Businesses often allow employees to participate in certain community activities on company time, such as cleaning up a neighborhood. Businesses also donate money to support community programs. None of this would be possible if the business was not organized in a way that allowed it to earn a profit.",
+      "sources": [
+        "SOURCE: EC:103 Explain the organizational design of businesses",
+        "SOURCE: LAP-EC-103—Designed to Work (Organizational Design of Businesses)"
+      ]
+    },
+    {
+      "number": 57,
+      "question": "Objective setting, risk assessment, and risk response are all components of",
+      "options": {
+        "A": "enterprise risk management.",
+        "B": "channel-management plans.",
+        "C": "asset allocation strategies.",
+        "D": "conflict resolution policies."
+      },
+      "answer": "A",
+      "explanation": "Enterprise risk management. Enterprise risk management (ERM) is a comprehensive risk management strategy that involves planning for both physical and business risks. Steps involved in ERM include setting corporate objectives, assessing potential risks, and determining appropriate responses to risks. These are not primary steps in asset allocation strategies, channel-management plans, or conflict resolution policies. Asset allocation involves diversifying one's investments by type (equity, fixed-income, cash, etc.). Channel management is a process by which marketers ensure that products are distributed to customers efficiently and effectively. Conflict resolution is the process of resolving or ending a conflict. Retrieved August 12, 2024, from https://www.investopedia.com/terms/e/enterprise-risk- management.asp  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: RM:062 Discuss the nature of enterprise risk management (ERM)",
+        "SOURCE: Hayes, A. (2024, June 21). Enterprise risk management (ERM): What it is and how it works."
+      ]
+    },
+    {
+      "number": 58,
+      "question": "Which of the following is a technique that a business could use to analyze its customer financial information:",
+      "options": {
+        "A": "Determining who exceeded sales quotas",
+        "B": "Discovering which products sold the most",
+        "C": "Comparing profit ratios by region",
+        "D": "Tracking average product shipping delays"
+      },
+      "answer": "C",
+      "explanation": "Comparing profit ratios by region. Customer financial information can be useful in business decision-making when it is analyzed. One example of a technique that a business could use would be comparing profit ratios among different regions. This could tell the business which market segments are most profitable, which could inform future decisions. Tracking average product shipping delays, determining who exceeded sales quotas, and discovering which products sold the most are not examples of techniques used to analyze customer financial information. https://www.tableau.com/solutions/workbook/superstore-customer-analysis",
+      "sources": [
+        "SOURCE: FM:009 Describe techniques used to analyze customer financial information",
+        "SOURCE: Tableau. (2024). Analyze customer data to learn spending habits. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 59,
+      "question": "Which of the following most accurately describes the overall purpose of accounting:",
+      "options": {
+        "A": "To estimate and pay taxes",
+        "B": "To keep track of expenses",
+        "C": "To maintain financial information",
+        "D": "To keep track of income"
+      },
+      "answer": "C",
+      "explanation": "To maintain financial information. The primary purpose of accounting is to accurately record and maintain all financial transactions and information. When accounting is performed correctly, it helps individuals and businesses keep track of their financial situation and make informed financial decisions. Estimating and paying taxes, keeping track of income, and tracking expenses are just a few of the financial activities achieved through accurate accounting.",
+      "sources": [
+        "SOURCE: FI:085 Explain the concept of accounting",
+        "SOURCE: LAP-FI-085—Show Me the Money (Nature of Accounting)"
+      ]
+    },
+    {
+      "number": 60,
+      "question": "Which of the following is a true statement about carrying out scanning activities:",
+      "options": {
+        "A": "Information obtained from TV is unreliable.",
+        "B": "You must focus only on relevant information.",
+        "C": "You should avoid using surveys and focus groups.",
+        "D": "All information should be obtained in a formal manner."
+      },
+      "answer": "B",
+      "explanation": "You must focus only on relevant information. When conducting an environmental scan, you must focus only on relevant information. Information overload is all too easy to suffer in a modern world where knowledge is constantly available at the tips of our fingers. Scanning activities don't need to be formal—valuable information can be gathered through casual conversations with customers, vendors, etc. Information gathered from TV can be useful, too. Surveys and focus groups are great tools for gathering information for an environmental scan.",
+      "sources": [
+        "SOURCE: NF:015 Conduct an environmental scan to obtain business information",
+        "SOURCE: LAP-NF-015—Get the 4-1-1 (Conducting an Environmental Scan)"
+      ]
+    },
+    {
+      "number": 61,
+      "question": "Troy is a finance manager for a small firm in town. Last night, he attended a cookout at his neighbor's house and met Melissa, who is the owner of a large financial-planning company. Troy and Melissa exchanged business cards, and they set up an appointment for the following week to discuss business opportunities. In what type of situation did Troy and Melissa form a professional business relationship?",
+      "options": {
+        "A": "Formal event",
+        "B": "Social gathering",
+        "C": "Corporate environment",
+        "D": "Educational setting"
+      },
+      "answer": "B",
+      "explanation": "Social gathering. Networking involves connecting with others who might help them accomplish their personal career and professional goals. By networking with others working in the same profession, finance professionals often learn about employment and continuing education opportunities as well as gain leads for prospective clients. Professional networking can occur under a variety of circumstances, while at work, during a professional association meeting, or in a social gathering, such as the cookout that Tony attended. Tony and Melissa did not meet at a formal event, in an educational setting, or in a corporate environment. (without being creepy about it). Retrieved August 12, 2024, from https://www.themuse.com/advice/ how-to-network-at-social-event  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: PD:153 Discuss opportunities for building professional relationships in finance",
+        "SOURCE: Jackson-Wright, Q. (2020, June 19). How to turn any social event into a networking opportunity"
+      ]
+    },
+    {
+      "number": 62,
+      "question": "XRT Corporation uses a computer software application to measure how efficiently its management is using accounts receivable, inventory, and capital goods to generate sales. What type of financial ratio is the software calculating?",
+      "options": {
+        "A": "Profitability",
+        "B": "Asset utilization",
+        "C": "Market value",
+        "D": "Liquidity"
+      },
+      "answer": "B",
+      "explanation": "Asset utilization. Businesses use computer software applications to calculate various types of financial ratios. Businesses use many types of financial ratios to evaluate different aspects of their processes, including their profitability, performance, and efficiency. Asset-utilization ratios help businesses determine if they are using their assets, inventory, and cash in the most effective ways. If the asset-utilization analysis indicates low efficiency, then businesses can take steps to isolate and fix the problems. Financial analysts use market-value ratios to evaluate stocks and liquidity ratios to evaluate a business's ability to pay its short-term debts. Financial analysts use profitability ratios to evaluate the overall financial success of the business. http://www.netmba.com/finance/financial/ratios",
+      "sources": [
+        "SOURCE: FM:014 Demonstrate financial analysis applications",
+        "SOURCE: NetMBA. (2023). Financial ratios. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 63,
+      "question": "Which of the following is an important step to take to ensure a protest is peaceful and effective:",
+      "options": {
+        "A": "Argue against any opponents to your protest.",
+        "B": "Demonstrate your importance by using harsh, insulting language.",
+        "C": "Obtain your senator's permission before assembling the protest.",
+        "D": "Avoid violence and vandalism during the protest. Test 1305 FINANCE CLUSTER EXAM 10 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Avoid violence and vandalism during the protest. While most protests begin peacefully, passions can rise, and sometimes conflict occurs. To effectively communicate your message, you should avoid insults, violence, and vandalism. Therefore, you should not demonstrate your importance by using harsh, insulting language. You do not need to obtain your senator's permission before assembling the protest, though you might need to obtain a permit. You also should not argue against any opponents to your protest; rather, you should respectfully engage opponents in conversation about the issue.",
+      "sources": [
+        "SOURCE: BL:163 Comply with the spirit and intent of laws and regulations",
+        "SOURCE: LAP-BL-163—Laying Down the Law (Complying With the Spirit and Intent of Laws and Regulations)"
+      ]
+    },
+    {
+      "number": 64,
+      "question": "Patents, trademarks, and copyrights are all used to protect an individual or a company's",
+      "options": {
+        "A": "intellectual property.",
+        "B": "business equipment.",
+        "C": "tangible assets.",
+        "D": "financial assets."
+      },
+      "answer": "A",
+      "explanation": "Intellectual property. Intellectual property refers to intangible business assets resulting from thinking processes. The three main types of intellectual property are patents, trademarks, and copyrights. Patents, trademarks, and copyrights are issued to protect an individual's or a company's rights to the exclusive use of the intellectual property in question. Patents, trademarks, and copyrights do not protect tangible assets such as business equipment or financial holdings. from https://www.entrepreneur.com/encyclopedia/intellectual-property",
+      "sources": [
+        "SOURCE: BL:051 Describe methods used to protect intellectual property",
+        "SOURCE: Entrepreneur. (2024). Intellectual property. Retrieved August 9, 2024,"
+      ]
+    },
+    {
+      "number": 65,
+      "question": "When determining if it will approve a customer's loan application, a financial institution evaluates the customer's",
+      "options": {
+        "A": "employment opportunities.",
+        "B": "payment plan.",
+        "C": "credit score.",
+        "D": "personal goals."
+      },
+      "answer": "C",
+      "explanation": "Credit score. Credit scores are ratings that credit bureaus assign to an individual or business's credit history. Those who have consistently paid their credit cards, mortgages, loans, and other bills on time are more likely to have higher credit scores. Those who do not pay their bills on time or default on loans are likely to have low credit scores and may be refused loans or business credit. A financial institution is also likely to consider an applicant's liquid assets, debt ratio, current income, and employment status rather than their employment skills. The financial institution develops a payment plan after the customer's loan application has been approved. Financial institutions evaluate loan applicants by considering their own lending policies. https://www.thebalancemoney.com/the-importance-of-your-credit-score-1289630  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FM:009 Describe techniques used to analyze customer financial information",
+        "SOURCE: Vohwinkle, J. (2021, March 17). Why your credit score is important. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 66,
+      "question": "Businesses often evaluate and change their policies as a result of __________ customers.",
+      "options": {
+        "A": "satisfying their",
+        "B": "getting feedback from",
+        "C": "acquiring new",
+        "D": "creating good relations with"
+      },
+      "answer": "B",
+      "explanation": "Getting feedback from. Businesses use the comments, suggestions, and other feedback from customers to help them decide if certain policies need to be revised or changed. Feedback also helps businesses know if their policies are meeting customers' wants and needs. Businesses would not change policies that have helped them to acquire new customers, to satisfy current customers, or to create good relations with customers. August 9, 2024, from https://www.indeed.com/career-advice/career-development/customer-services- policies",
+      "sources": [
+        "SOURCE: CR:007 Interpret business policies to customers/clients",
+        "SOURCE: Indeed. (2023, February 3). How to create customer service policies in 7 steps (with tips). Retrieved"
+      ]
+    },
+    {
+      "number": 67,
+      "question": "Managerial accounting is different from financial accounting because managerial accounting",
+      "options": {
+        "A": "is a requirement for all companies.",
+        "B": "prepares reports for external users.",
+        "C": "takes a future approach.",
+        "D": "provides more general results."
+      },
+      "answer": "C",
+      "explanation": "Takes a future approach. Managerial accounting is different from financial accounting because managerial accounting takes a future approach, while financial accounting reviews and relies on historical data. Financial accounting is a requirement for all companies, while managerial accounting is not mandatory. Financial accounting provides more general results, but managerial accounting delivers specific data which can be modified by department, product, presentation, or information format. Managerial accounting reports are prepared for individuals within the organization, or internal users, while financial accounting reports are prepared for parties outside the business, or external users. https://xplaind.com/180841/managerial-accounting",
+      "sources": [
+        "SOURCE: FI:660 Explain the nature of managerial accounting",
+        "SOURCE: Jan, I. (2020, July 22). Managerial accounting. Retrieved August 12, 2024, from"
+      ]
+    },
+    {
+      "number": 68,
+      "question": "Which of the following is a specific goal:",
+      "options": {
+        "A": "Increasing sales",
+        "B": "Reducing costs by 5%",
+        "C": "Improving customer satisfaction",
+        "D": "Finding more customers"
+      },
+      "answer": "B",
+      "explanation": "Reducing costs by 5%. Reducing costs by 5% is a specific goal. It is easy to measure because it states a percentage. Finding more customers, increasing sales, and improving customer satisfaction are all general goals. These are difficult (or impossible) to measure because they are too vague.",
+      "sources": [
+        "SOURCE: MK:015 Discuss actions employees can take to achieve the company's desired results",
+        "SOURCE: LAP-MK-015—Act Now! (Employee Actions and Company Goals)"
+      ]
+    },
+    {
+      "number": 69,
+      "question": "Molly has money to invest, but she wants to be sure she doesn't lose her hard-earned money in a scam. Which of the following opportunities should Molly avoid:",
+      "options": {
+        "A": "The stock market",
+        "B": "Ponzi scheme",
+        "C": "Roth IRA",
+        "D": "401k"
+      },
+      "answer": "B",
+      "explanation": "Ponzi scheme. A Ponzi scheme is an investment scam that lures in new investors by promising high rates of return with little to no risk. Roth IRAs, 401ks, and the stock market are all legitimate ways for Molly to invest her money. 12, 2024, from https://www.investopedia.com/articles/investing/091115/6-ways-avoid-investment- ponzi-scheme.asp",
+      "sources": [
+        "SOURCE: BL:133 Discuss legal considerations in the finance industry",
+        "SOURCE: Giorgianni, A. (2023, December 8). 6 ways to avoid an investment Ponzi scheme. Retrieved August"
+      ]
+    },
+    {
+      "number": 70,
+      "question": "Jonas is a data scientist at a research firm. Part of his responsibilities include looking through his firm's databases and eliminating redundant data. Jonas is performing",
+      "options": {
+        "A": "data filtering.",
+        "B": "information scanning.",
+        "C": "data normalization.",
+        "D": "digital analysis. Test 1305 FINANCE CLUSTER EXAM 11 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "C",
+      "explanation": "Data normalization. Normalization is the process of efficiently organizing data in a database. There are two goals of the normalization process: eliminating redundant data and ensuring that data is stored in ways that make sense. By eliminating redundant data, Jonas is performing data normalization. Digital analysis involves analyzing and interpreting data for patterns, consistencies, or discrepancies. Data filtering involves refining data sets so that they can be more easily understood. Information scanning is not a term typically used in the business world. from https://www.lifewire.com/database-normalization-basics-1019735  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: NF:124 Demonstrate advanced database applications",
+        "SOURCE: Chapple, M. (2022, February 22). The basics of database normalization. Retrieved August 12, 2024,"
+      ]
+    },
+    {
+      "number": 71,
+      "question": "Why should an independent business consultant avoid using email to share a negative evaluation of an IT company with a client?",
+      "options": {
+        "A": "Using email can create reputational risk for them if it is shared with others.",
+        "B": "It is illegal to share negative information about other businesses via email.",
+        "C": "The email would legally be considered intentional slander or defamation.",
+        "D": "The email would make them appear negative and judgmental."
+      },
+      "answer": "A",
+      "explanation": "Using email can create reputational risk for them if it is shared with others. Email can easily be intercepted and shared with others, so it is typically wise to avoid using email to share confidential information. It is legal to share negative information about a company with others. Slander and defamation are intentional acts to damage an individual or organization and do not apply to the situation described. Since consultants are hired to give expert and honest evaluations, an unfavorable review of a company is not likely to cause the consultant to be perceived as a negative or judgmental individual. risk https://www.businessinsider.com/things-never-to-send-over-work-email-2017-4",
+      "sources": [
+        "SOURCE: CO:202 Explain how digital communications (e.g., email, text messages, chats) exposes business to",
+        "SOURCE: Cain, A. (2017, April 23). 11 things never to send over work email. Retrieved August 9, 2024, from"
+      ]
+    },
+    {
+      "number": 72,
+      "question": "One benefit of using technology in compliance is that technology is typically more __________ than maintaining manual compliance processes.",
+      "options": {
+        "A": "costly",
+        "B": "time-consuming",
+        "C": "efficient",
+        "D": "error prone"
+      },
+      "answer": "C",
+      "explanation": "Efficient. Technology can make compliance processes more efficient and effective. Manual compliance processes can be more costly, more time-consuming, and more error prone. modernize compliance. Retrieved August 12, 2024, from https://deloitte.wsj.com/riskandcompliance/ technology-a-powerful-tool-to-help-modernize-compliance-1543802532",
+      "sources": [
+        "SOURCE: BL:149 Describe the use of technology in compliance",
+        "SOURCE: Deloitte Risk & Compliance Journal. (2018, December 2). Technology: A powerful tool to help"
+      ]
+    },
+    {
+      "number": 73,
+      "question": "Self-control can help you develop a positive attitude by helping you",
+      "options": {
+        "A": "dwell on the fact that life is full of difficulties.",
+        "B": "substitute positive thoughts with negative ones.",
+        "C": "think before you make a response.",
+        "D": "eliminate negative ways of thinking."
+      },
+      "answer": "D",
+      "explanation": "Eliminate negative ways of thinking. You can use self-control to eliminate negative ways of thinking and to replace them with a positive approach. In other words, you substitute negative thoughts with positive ones. Thinking before you make a response will help you avoid problems but does not create a positive attitude. Dwelling on the fact that life is full of difficulties is a negative attitude.",
+      "sources": [
+        "SOURCE: EI:025 Demonstrate self-control",
+        "SOURCE: LAP-EI-014—Control Yourself! (Demonstrating Self-Control)"
+      ]
+    },
+    {
+      "number": 74,
+      "question": "Publicly traded companies are required by law to provide",
+      "options": {
+        "A": "stock research.",
+        "B": "yearly newsletters.",
+        "C": "company report cards.",
+        "D": "financial statements."
+      },
+      "answer": "D",
+      "explanation": "Financial statements. Publicly traded companies are required by law to provide financial statements to their shareholders every 90 days. Company report cards and yearly newsletters are not typical items that they are required to provide. Stock research is usually something that external sources provide to stockholders. Retrieved August 12, 2024, from https://www.investor.gov/introduction-investing/investing- basics/role-sec/laws-govern-securities-industry",
+      "sources": [
+        "SOURCE: FI:274 Describe sources of securities information",
+        "SOURCE: U.S. Securities and Exchange Commission. (n.d.). The laws that govern the securities industry."
+      ]
+    },
+    {
+      "number": 75,
+      "question": "Which of the following represents a primary business activity:",
+      "options": {
+        "A": "Supervising",
+        "B": "Marketing",
+        "C": "Scheduling",
+        "D": "Designing"
+      },
+      "answer": "B",
+      "explanation": "Marketing. Marketing is one of the primary business activities—as are financial analysis, human resources management, information management, operations, and strategic management. Scheduling, designing, and supervising can be tasks or processes within one or more of the primary business activities.  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: EC:071 Describe types of business activities",
+        "SOURCE: LAP-EC-071—Strictly Business (Business Activities)"
+      ]
+    },
+    {
+      "number": 76,
+      "question": "If a leader takes ownership of a problem, makes sure it is fixed, and takes steps to prevent it from happening again, they are demonstrating",
+      "options": {
+        "A": "flexibility.",
+        "B": "responsibility.",
+        "C": "social awareness.",
+        "D": "adaptability."
+      },
+      "answer": "B",
+      "explanation": "Responsibility. Fulfilling one's obligations in a dependable, reliable manner is known as responsibility, and it is an important leadership characteristic. When a leader is responsible, they take ownership of problems, make sure they are fixed, and take steps to prevent them from happening again. Flexibility, also called adaptability, is the ability to adapt to changes as they occur. Social awareness is the ability to know and understand others' emotions; it is part of emotional intelligence.",
+      "sources": [
+        "SOURCE: EI:009 Explain the concept of leadership",
+        "SOURCE: LAP-EI-909—Lead the Way (Concept of Leadership)"
+      ]
+    },
+    {
+      "number": 77,
+      "question": "What does “equity” refer to in a statement of changes in equity?",
+      "options": {
+        "A": "Property",
+        "B": "Earnings",
+        "C": "Debt",
+        "D": "Expenses Test 1305 FINANCE CLUSTER EXAM 12 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Earnings. A statement of changes in equity is a financial statement that shows how the owner's retained earnings have changed due to profits, dividend payments, and other factors such as changes to accounting policies and corrections of errors. Equity does not refer to expenses, property, or debt. simplified.com/financial/statements/statement-of-changes-in-equity",
+      "sources": [
+        "SOURCE: FI:630 Explain the nature of statements of changes in equity",
+        "SOURCE: Ali, A. (2020). Statement of changes in equity. Retrieved August 12, 2024, from https://accounting-"
+      ]
+    },
+    {
+      "number": 78,
+      "question": "What usually decreases when the economy is experiencing a period of contraction?",
+      "options": {
+        "A": "Interest rates",
+        "B": "Consumer spending",
+        "C": "Cost of living",
+        "D": "Unemployment"
+      },
+      "answer": "B",
+      "explanation": "Consumer spending. Business cycles are the periods of expansion and contraction in economic activities. During the contraction stage of the business cycle, product demand and consumer spending decrease, while unemployment and loan interest rates increase. Consumer spending decreases because people are concerned about the state of the economy. Also, many people may be out of work and not have money to spend. Interest rates increase during this time, which also increases the cost of living. Retrieved August 9, 2024, from https://www.investopedia.com/terms/b/businesscycle.asp",
+      "sources": [
+        "SOURCE: EC:081 Discuss the measure of consumer spending as an economic indicator",
+        "SOURCE: Achuthan, L. (2024, June 6). Business cycle: What it is, how to measure it, and its 4 phases."
+      ]
+    },
+    {
+      "number": 79,
+      "question": "Shireen is reviewing an article to determine if the data contained in it is accurate and current. In other words, Shireen is evaluating the",
+      "options": {
+        "A": "research procedure.",
+        "B": "hardware application.",
+        "C": "quality of information.",
+        "D": "type of statistics."
+      },
+      "answer": "C",
+      "explanation": "Quality of information. For information to be useful, it must be accurate and current. Therefore, businesses and individuals evaluate the quality of information they obtain to determine if it is relevant to the issue, accurate, and current. Information that is out of date or that includes errors will not be helpful. The business or individual might make poor decisions based on information that is of low quality. Businesses and individuals do not evaluate the research procedure, type of statistics, or hardware application to determine if data are accurate and current. from https://owl.purdue.edu/owl/research_and_citation/conducting_ research/evaluating_sources_of_information/index.html  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: NF:079 Evaluate quality and source of information",
+        "SOURCE: OWL Purdue Online Writing Lab. (2024). Evaluating sources: Introduction. Retrieved August 9, 2024,"
+      ]
+    },
+    {
+      "number": 80,
+      "question": "Which of the following statements regarding convergence and consolidation in the finance industry is true:",
+      "options": {
+        "A": "Financial companies often enjoy higher earnings as a result of convergence and consolidation.",
+        "B": "When multiple financial firms merge, they often end up with less capital to invest.",
+        "C": "A desire for lower costs has slowed the pace of convergence and consolidation.",
+        "D": "Technological advancements have increased the costs of offering new and different products."
+      },
+      "answer": "A",
+      "explanation": "Financial companies often enjoy higher earnings as a result of convergence and consolidation. Convergence within the finance industry typically involves financial providers from different financial sectors merging, such as a retail bank merging with an insurance company. Consolidation takes place when financial providers within the same institutional category merge, such as a retail bank merging with another retail bank. Some of the factors leading to convergence and consolidation in the finance industry are technology, liquidity constraints, a desire for increased profitability, and a desire for lower costs. Technological advancements have reduced the costs of offering new and different financial products. The convergence/consolidation of multiple financial companies usually results in more liquid capital to invest or to offer as loans for all companies involved. By merging, some financial firms (especially those converging with others within their financial sector) can achieve economies of scale, which result in reduced redundancy and lower costs for all involved. Finally, financial companies often enjoy higher earnings as a result of convergence and consolidation. August 12, 2024, from https://www.investopedia.com/terms/c/consolidate.asp",
+      "sources": [
+        "SOURCE: FI:573 Discuss the nature of convergence/consolidation in the finance industry",
+        "SOURCE: Kenton, W. (2020, November 27). Consolidate: What it means in business and finance. Retrieved"
+      ]
+    },
+    {
+      "number": 81,
+      "question": "Which of the following technologies is frequently used to provide a source for master data management in the finance industry:",
+      "options": {
+        "A": "ERP (Enterprise Resource Planning)",
+        "B": "SutiExpense Application",
+        "C": "Accounting systems",
+        "D": "Databases"
+      },
+      "answer": "A",
+      "explanation": "ERP (Enterprise Resource Planning). Master data management is made up of processes and tools that define and manage non-transactional data entities. In other words, it collects, pulls together, matches, consolidates, and distributes data throughout an organization. ERP is an example of a system that's intended to integrate all data and processes into a unified system. A key ingredient of most ERP systems is the use of a unified database that stores data for the system. Accounting systems do not provide a source for master data management. Their focus is on collecting and storing financial data for the accounting department. SutiExpense is a mobile expense management application used to monitor, manage, and simplify travel and expense recordkeeping. Users are able to attach receipts on the go from their smart phones, enabling them to save both time and money. 2024, from https://www.managementstudyguide.com/master-data-management-erp-system.htm",
+      "sources": [
+        "SOURCE: FM:011 Describe the use of technology in the financial-information management function",
+        "SOURCE: Management Study Guide. (n.d.). Master data management of an ERP system. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 82,
+      "question": "Corporate stocks, long-term government securities, state and local government bonds, and bank commercial loans are traded on the __________ market.",
+      "options": {
+        "A": "spot",
+        "B": "capital",
+        "C": "debt",
+        "D": "money"
+      },
+      "answer": "B",
+      "explanation": "Capital. Longer-term securities due to mature in more than 1 year are typically traded on the capital market. Examples of longer-term securities include corporate stocks (because they have no maturity date), long-term government securities, state and local government bonds, commercial loans, and mortgages. On the other hand, securities on the money market are due to mature in 1 year or less. Treasury bills, Eurodollars, and most certificates of deposit are traded on the money market. While bonds and loans are debt instruments, stocks are equity instruments. The spot market is a form of commodities market. commodities markets, etc.) 2024, from https://www.investopedia.com/terms/c/capitalmarkets.asp",
+      "sources": [
+        "SOURCE: FI:337 Explain types of financial markets (e.g., money market, capital market, insurance market,",
+        "SOURCE: Hayes, A. (2024, June 13). Capital markets: What they are and how they work. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 83,
+      "question": "Which of the following has accelerated the globalization of financial markets:",
+      "options": {
+        "A": "An expansion of protectionism practices",
+        "B": "The movement toward fixed exchange rates",
+        "C": "The reduction of government regulations",
+        "D": "A decrease in foreign access to domestic markets"
+      },
+      "answer": "C",
+      "explanation": "The reduction of government regulations. Liberalization and deregulation have enabled capital to flow more freely across national borders. Reducing the limits (e.g., quotas, tariffs) on foreign access to domestic markets encourages international investment and trade. Globalization has encouraged the movement toward floating exchange rates. Protectionism refers to government policies that are designed to protect domestic industries and businesses against foreign competition. 2024, from https://www.investopedia.com/articles/financial-theory/09/risk-free-rate-return.asp  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:575 Explain the nature and scope of financial globalization",
+        "SOURCE: Pologeorgis, N.A. (2023, August 20). The globalization of financial services. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 84,
+      "question": "What do bond yields typically do during an economic expansion?",
+      "options": {
+        "A": "Remain unchanged",
+        "B": "Gradually decrease",
+        "C": "Drop to near zero",
+        "D": "Increase Test 1305 FINANCE CLUSTER EXAM 13 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Increase. During an economic expansion, production, employment, income, sales, the demand for money, and interest rates rapidly increase. As a result, businesses borrow more money (at higher rates) to expand their operations. And, when businesses borrow more at higher interest rates, bond yields go up. 2024, from https://www.thebalancemoney.com/bonds-and-the-economy-417070",
+      "sources": [
+        "SOURCE: FI:574 Describe the relationship between economic conditions and financial markets",
+        "SOURCE: Kenny, T. (2022, May 31). How economic growth affects bond performance. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 85,
+      "question": "Lynnette works at Main Street Bank. Her primary job responsibility is to determine if the bank should lend funds to the bank's customers. Lynnette is working as a",
+      "options": {
+        "A": "bank agent.",
+        "B": "collections officer.",
+        "C": "chartered financial consultant.",
+        "D": "credit analyst."
+      },
+      "answer": "D",
+      "explanation": "Credit analyst. Credit analysts research and confirm loan applicants' employment, income, and credit history to ensure that the bank has the correct information. It is important to verify the accuracy of the loan applicants' information to reduce risks associated with loan defaults. This information helps credit analysts like Lynette determine if the bank should lend funds to customers. The collections function involves collecting past-due payments from customers. A chartered financial consultant is a licensed financial advisor with special certification in retirement and estate planning. A bank agent or agent bank is an intermediary in the banking industry.",
+      "sources": [
+        "SOURCE: PD:152 Discuss employment opportunities in the finance industry",
+        "SOURCE: LAP-PD-152—Career Opportunities in Finance"
+      ]
+    },
+    {
+      "number": 86,
+      "question": "Andreas is listening to his coworker Calliope present her idea for a marketing campaign to their manager. What could Andreas do to encourage and support Calliope during her presentation?",
+      "options": {
+        "A": "Avoid eye contact and act preoccupied",
+        "B": "Laugh and smile at everything Calliope says",
+        "C": "Nod, smile, and maintain eye contact",
+        "D": "Look down at the papers in front of him"
+      },
+      "answer": "C",
+      "explanation": "Nod, smile, and maintain eye contact. Listeners can support and encourage speakers by nodding, smiling, and maintaining eye contact with the speaker. Doing so demonstrates that the listener respects and values what the speaker has to say. Looking down at the papers in front of him, avoiding eye contact, and acting preoccupied would be disrespectful to Calliope. It would be inappropriate to laugh and smile at everything Calliope says. https://www.helpguide.org/articles/relationships-communication/effective-communication.htm",
+      "sources": [
+        "SOURCE: CO:082 Explain communication techniques that support and encourage a speaker",
+        "SOURCE: Helpguide.org. (2024, May 8). Effective communication. Retrieved August 9, 2024, from"
+      ]
+    },
+    {
+      "number": 87,
+      "question": "In 1970, the average college-educated worker in the United States made about $7,000 per year. This salary was considered enough to build a comfortable life for a family. Today, however, the poverty line in most states and provinces is well above $7,000—meaning that the average person would be practically homeless if the only income they had was $7,000 a year! What can account for this massive change in buying power over time?",
+      "options": {
+        "A": "Interest rates",
+        "B": "Deflation",
+        "C": "Compound interest",
+        "D": "Inflation"
+      },
+      "answer": "D",
+      "explanation": "Inflation. Inflation is the steady increase in the price of consumer goods and services over time. When prices for goods and services increase, salaries must also increase so that consumers can afford to maintain a comfortable standard of living. This example demonstrates the power of inflation on salaries over time. It does not demonstrate interest rates, compound interest, or deflation. Interest is the reward or cost of lending or borrowing money, usually figured as a percentage of the amount. Compound interest is simply interest earned on interest. Deflation is the opposite of inflation; it involves a steady decrease in the price of goods and services over time. Retrieved August 9, 2024, from https://www.investopedia.com/terms/i/inflation.asp",
+      "sources": [
+        "SOURCE: FI:062 Explain the time value of money",
+        "SOURCE: Fernando, J. (2024, July 31). Inflation: What it is, how it can be controlled, and extreme examples."
+      ]
+    },
+    {
+      "number": 88,
+      "question": "Which of the following is a cost driver that could affect the cost of internet service in a coffee shop:",
+      "options": {
+        "A": "Number of direct labor hours",
+        "B": "Number of ingredients per product",
+        "C": "Number of customers",
+        "D": "Number of products sold"
+      },
+      "answer": "C",
+      "explanation": "Number of customers. A cost driver is a variable that causally affects costs over time. Because internet service becomes more expensive as the number of people using it increases, the number of customers in a coffee shop drives the cost of the internet service. The number of products sold, the number of direct labor hours, and the number of ingredients per product could all be considered cost drivers but not specifically for the cost of internet service. 2024, from https://www.investopedia.com/terms/a/activity-cost-driver.asp  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: FI:663 Discuss the nature of cost allocation",
+        "SOURCE: Banton, C. (2023, August 31). Activity cost driver: Definition and examples. Retrieved August 12,"
+      ]
+    },
+    {
+      "number": 89,
+      "question": "Which of the following technologies has proven very successful in creating \"what-if\" scenarios in the finance industry:",
+      "options": {
+        "A": "Account reconciliation",
+        "B": "Digital dashboards",
+        "C": "Financial reporting and consolidation",
+        "D": "Time value of money calculators"
+      },
+      "answer": "B",
+      "explanation": "Digital dashboards. Digital dashboards are being used in the finance industry to deliver \"what-if\" scenarios based on handpicked combinations of monthly data such as line of business, FICO band, county, loan amount, and loan status. The dashboard is fed by a business intelligence and data warehousing environment supported by Microsoft products. The dashboards review the amounts and number of loans funded or in the pipeline and then view them by criteria selected by the user. Time value of money calculators are financial software that enables the user to calculate present value, future value, interest rate, payments, net present value, etc. Account reconciliation technology matches and compares figures from accounting records against external sources and reconciles internal account balances to subledgers. Financial reporting and consolidation technology is useful for large companies and overseas operations and is used to combine financial data from the company's subsidiaries. analysis. Retrieved August 12, 2024, from https://www.rib-software.com/en/blogs/bi-dashboard- design-principles-best-practices",
+      "sources": [
+        "SOURCE: RM:042 Describe the use of technology in risk management",
+        "SOURCE: RIB. (2024, June 12). 25 dashboard design principles & best practices to enhance your data"
+      ]
+    },
+    {
+      "number": 90,
+      "question": "Mapping, analyzing, redesigning, acquiring resources, and implementing are the steps companies follow when attempting to",
+      "options": {
+        "A": "start an advertising campaign.",
+        "B": "educate the public on their work.",
+        "C": "attract more talented workers.",
+        "D": "streamline work processes. Test 1305 FINANCE CLUSTER EXAM 14 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "D",
+      "explanation": "Streamline work processes. Streamlining a work process involves mapping the current process, analyzing it for potential issues, redesigning the process to be more efficient, acquiring the necessary resources, and implementing the change. Companies do not necessarily follow these steps when attempting to start an advertising campaign, attract more talented workers, or educate the public on their work. https://www.mindtools.com/pages/article/improving-business-processes.htm",
+      "sources": [
+        "SOURCE: OP:355 Streamline work processes",
+        "SOURCE: MindTools. (2024). Improving business processes. Retrieved August 9, 2024, from"
+      ]
+    },
+    {
+      "number": 91,
+      "question": "One activity of professional organizations and trade associations is to",
+      "options": {
+        "A": "develop wage regulations.",
+        "B": "test products.",
+        "C": "influence legislation.",
+        "D": "establish customer trends."
+      },
+      "answer": "C",
+      "explanation": "Influence legislation. Both professional organizations and trade associations frequently employ lobbyists who attempt to influence legislative decisions that will affect their members. The government develops wage regulations. These groups may report on product testing and customer trends, but they do not carry out these activities. journals/periodicals, professional/trade associations, classes/seminars, trade shows, and mentors) August 9, 2024, from https://www.syntheticturfcouncil.org/blogpost/2067109/486071/Why-is- advocacy-critical-for-trade-associations",
+      "sources": [
+        "SOURCE: PD:036 Utilize resources that can contribute to professional development (e.g., trade",
+        "SOURCE: Synthetic Turf Council. (2023, March 6). Why is advocacy critical for trade associations? Retrieved"
+      ]
+    },
+    {
+      "number": 92,
+      "question": "At the annual staff meeting, the company's sales manager announces that the bonus system is being suspended due to poor performance and profits. What communication style is the manager using?",
+      "options": {
+        "A": "Indirect",
+        "B": "Casual",
+        "C": "Formal",
+        "D": "Grapevine"
+      },
+      "answer": "C",
+      "explanation": "Formal. Formal communication generally takes place through established communication channels within a company's structure, like a staff meeting. It often involves serious topics such as pay changes with employees. Casual or informal communication often involves routine business discussions or personal or social topics and takes place outside of typical work activities. Grapevine communication is unofficial information passed from one person to another in writing or through conversation. Indirect communication involves passing information through intermediaries. For example, this type of communication occurs when a businessperson receives an email message from one person and forwards the same message to another person. August 9, 2024, from https://in.indeed.com/career-advice/career-development/formal-vs-informal- communication  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: CO:084 Employ communication styles appropriate to target audience",
+        "SOURCE: Indeed. (2023, August 11). Formal vs. informal business communication (with definitions). Retrieved"
+      ]
+    },
+    {
+      "number": 93,
+      "question": "Your boss asks you to prepare a report about current market trends. Which of the following is the most efficient way to obtain the needed information:",
+      "options": {
+        "A": "Customer interviews",
+        "B": "Online research",
+        "C": "A customer survey",
+        "D": "Library research"
+      },
+      "answer": "B",
+      "explanation": "Online research. One of the most convenient and efficient ways of obtaining information is an online search. Search engines such as Google and Bing make it easy to locate information using keywords and phrases. Using online searches gives you access to the widest selection of current information in many different formats. Library research can help provide reliable information, but it takes more time to conduct. Interviewing customers and conducting surveys are examples of primary research that can be costly and time-consuming to conduct. New York, NY: Pearson Education, Inc.",
+      "sources": [
+        "SOURCE: NF:078 Obtain needed information efficiently",
+        "SOURCE: Certo, S.C., & Certo, S.T. (2019). Modern management concepts and skills (15th ed.) [pp. 444-445]."
+      ]
+    },
+    {
+      "number": 94,
+      "question": "A main goal of customer experience management is creating",
+      "options": {
+        "A": "higher employee salaries.",
+        "B": "word-of-mouth promotion.",
+        "C": "new products.",
+        "D": "innovative technology."
+      },
+      "answer": "B",
+      "explanation": "Word-of-mouth promotion. A main goal of customer experience management is creating word-of-mouth promotion and referrals to other potential customers, or customer advocacy. Businesses want customers to have positive experiences with them and to tell their friends and family about it. CEM does not focus on technology, salaries, or new products.",
+      "sources": [
+        "SOURCE: CR:016 Discuss the nature of customer relationship management",
+        "SOURCE: LAP-CR-016—Know When to Hold 'Em (Nature of Customer Relationship Management)"
+      ]
+    },
+    {
+      "number": 95,
+      "question": "Which of the following statements contains the most relevant information to include in a business report about the specific market share of computer manufacturers during a particular time frame:",
+      "options": {
+        "A": "Pear Computers held the fifth highest share of the computer market in 2024.",
+        "B": "The CPU Company, Best Desktop, Pear, and Bell sold more computers in 2024 than other computer manufacturers.",
+        "C": "In 2024, The CPU Company held 27.6% of the market share, followed by Best Desktop, which held 24.3%.",
+        "D": "In 2024, The CPU Company shipped more computers than Best Desktop or Pear."
+      },
+      "answer": "C",
+      "explanation": "In 2024, The CPU Company held 27.6% of the market share, followed by Best Desktop, which held 24.3%. This option provides the most detailed information about market share during a specific time frame because it provides specific percentage amounts in relation to 1 year. The ability to read information and extract the most important facts is an important skill to possess. Businesspeople often need to extract the most important content from various documents and articles to analyze reports, complete projects, and make business decisions. August 9, 2024, from https://www.commercient.com/11-ways-data-integration-enhances-business- reporting",
+      "sources": [
+        "SOURCE: CO:055 Extract relevant information from written materials",
+        "SOURCE: HimadriLive. (2024, May 31). 11 ways data integration enhances business reporting. Retrieved"
+      ]
+    },
+    {
+      "number": 96,
+      "question": "Whenever Nasra has to make a difficult decision, she considers how her actions might affect other people and their feelings. As a result, she has developed higher",
+      "options": {
+        "A": "ethics.",
+        "B": "wages.",
+        "C": "productivity.",
+        "D": "profit margins."
+      },
+      "answer": "A",
+      "explanation": "Ethics. Nasra has developed higher ethics by considering how her actions might affect other people and their feelings. Showing empathy by considering other people and their feelings does not have a direct impact on productivity, wages, or profit margins.",
+      "sources": [
+        "SOURCE: EI:030 Show empathy for others",
+        "SOURCE: LAP-EI-030—Have a Heart (Showing Empathy for Others)"
+      ]
+    },
+    {
+      "number": 97,
+      "question": "Which of the following is an example of information that a manufacturing company keeps about its customers:",
+      "options": {
+        "A": "Expense reports",
+        "B": "Invoices",
+        "C": "Tax returns",
+        "D": "Payroll reports Test 1305 FINANCE CLUSTER EXAM 15 Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio"
+      },
+      "answer": "B",
+      "explanation": "Invoices. An invoice is a formal, printed record of a sale that includes all necessary information as to the buyer, the seller, items purchased, amounts, prices, delivery date, and credit or discount terms. Invoices can help a business track customer purchasing habits so it can plan future business activities. Tax returns are formal documents that are completed and returned to the government. Payroll reports contain data about employees' salaries and payment schedules. Expense reports contain information about the money sales personnel spend on behalf of the company to obtain or service its customers. August 9, 2024, from https://keap.com/small-business-automation-blog/business-management/how- to-keep-customer-records  Copyright © 2025 by MBA Research and Curriculum Center®, Columbus, Ohio",
+      "sources": [
+        "SOURCE: NF:002 Maintain customer records",
+        "SOURCE: Rosef-Ingram, I. (2022, January 13). 5 best ways to organize & keep customer records. Retrieved"
+      ]
+    },
+    {
+      "number": 98,
+      "question": "How can you make it easier to start the budgeting process by arranging and making sense of financial data?",
+      "options": {
+        "A": "Use budgeting software.",
+        "B": "Track transactions on paper.",
+        "C": "Refrain from involving others.",
+        "D": "Focus on the big picture."
+      },
+      "answer": "A",
+      "explanation": "Use budgeting software. It can be challenging to start the process of budgeting. Using software can help by organizing all data in one place and making it easier to track expenses. Focusing on the big picture will not necessarily help you start the budgeting process. Tracking transactions on paper is not necessarily the best way to arrange and make sense of financial data, because software can do so much more efficiently. Finally, it is a good idea to involve others in the budgeting process because they might have contributions that would be valuable to you. 12, 2024, from https://www.clevergirlfinance.com/budget-challenges",
+      "sources": [
+        "SOURCE: FM:013 Demonstrate budgeting applications",
+        "SOURCE: Brancato, K. (2024, March 11). 10 big budget challenges and how to tackle them. Retrieved August"
+      ]
+    },
+    {
+      "number": 99,
+      "question": "One method a business can use to prevent theft by employees and customers is to",
+      "options": {
+        "A": "establish a floor limit.",
+        "B": "hire security guards.",
+        "C": "purchase liability insurance.",
+        "D": "take frequent inventories."
+      },
+      "answer": "B",
+      "explanation": "Hire security guards. Guards can deter theft by walking through the business or by being positioned at exits. Guards also might help handle shoplifting situations. A floor limit is the maximum amount customers are permitted to charge on their credit cards without receiving authorization from the business. Liability insurance protects the business when accidents occur. Taking frequent inventories would identify inventory shrinkage. 2024, from https://smallbusiness.chron.com/workplace-health-safety-security-procedures-2608.html",
+      "sources": [
+        "SOURCE: OP:013 Explain routine security precautions",
+        "SOURCE: Shpak, S. (2019, February 12). Workplace health safety & security procedures. Retrieved August 9,"
+      ]
+    },
+    {
+      "number": 100,
+      "question": "A company's corporate governance is most often impacted by __________ expectations.",
+      "options": {
+        "A": "employee",
+        "B": "digital",
+        "C": "stakeholder",
+        "D": "legal Test 1305 FINANCE"
+      },
+      "answer": "C",
+      "explanation": "Stakeholder. Corporate governance and governance structures are influenced by the expectations of stakeholders, which can include investors, customers, the government, etc. While company leadership is often aware of and receptive to employee and legal expectations, those expectations do not typically impact corporate governance directly. Digital expectations is a fictitious term unrelated to corporate governance. examples. Retrieved August 12, 2024, from https://www.investopedia.com/terms/c/corporategovernance.asp",
+      "sources": [
+        "SOURCE: PD:302 Identify the factors that impact governance structures",
+        "SOURCE: Chen, J. (2023, October 31). Corporate governance: Definition, principles, models, and"
+      ]
+    }
+  ]
+}

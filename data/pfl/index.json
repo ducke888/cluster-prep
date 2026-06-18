@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "pfl-2017",
+    "title": "PFL 2017 ICDC",
+    "file": "PFL 2017.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2017.json"
+  },
+  {
+    "slug": "pfl-2018",
+    "title": "PFL 2018 ICDC",
+    "file": "PFL 2018.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2018.json"
+  },
+  {
+    "slug": "pfl-2019",
+    "title": "PFL 2019 ICDC",
+    "file": "PFl 2019.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2019.json"
+  },
+  {
+    "slug": "pfl-2020",
+    "title": "PFL 2020 ICDC",
+    "file": "PFL 2020.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2020.json"
+  },
+  {
+    "slug": "pfl-2021",
+    "title": "PFL 2021 ICDC",
+    "file": "PFl 2021.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2021.json"
+  },
+  {
+    "slug": "pfl-2022",
+    "title": "PFL 2022 ICDC",
+    "file": "PFL 2022.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2022.json"
+  },
+  {
+    "slug": "pfl-2023",
+    "title": "PFL 2023 ICDC",
+    "file": "PFL 2023.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2023.json"
+  },
+  {
+    "slug": "pfl-2024",
+    "title": "PFL 2024 ICDC",
+    "file": "PFL 2024.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2024.json"
+  },
+  {
+    "slug": "pfl-2025",
+    "title": "PFL 2025 ICDC",
+    "file": "PFL 2025.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2025.json"
+  },
+  {
+    "slug": "pfl-2026",
+    "title": "PFL 2026 ICDC",
+    "file": "PFL 2026.pdf",
+    "question_count": 100,
+    "answered_count": 100,
+    "available": true,
+    "json": "data/pfl/pfl-2026.json"
+  }
+]
