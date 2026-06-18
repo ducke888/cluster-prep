@@ -20,14 +20,10 @@ const ROOT = __dirname;
 // check; if it's missing we intercept createServer. Simpler: just require the
 // module and grab the requestListener it exposes. We added `module.exports`
 // support below; if absent, fall back to re-bundling logic inline.
-let apiListener = null;
-try {
-  // Prefer an exported listener if server.js chooses to expose one
-  const mod = require("./server/server.js");
-  if (typeof mod === "function") apiListener = mod;
-} catch (e) {
-  console.warn("[unified-serve] could not load server/server.js as a module:", e.message);
-}
+// The legacy Node API (server/server.js — tutor proxy + /api/profile + admin
+// reset) is intentionally NOT mounted. The client is Firestore-only now, and
+// that handler had an unauthenticated profile-write endpoint plus a weak
+// default admin-reset token. Any stray /api/* request is rejected below.
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -50,16 +46,23 @@ function safePath(urlPath) {
   // Root serves the study tool directly (the React landing was removed).
   if (p === "/" || p === "" || p === "/index.html") p = "/app.html";
   const abs = path.normalize(path.join(ROOT, p));
-  if (!abs.startsWith(ROOT)) return null;
+  // Strict containment: abs must be ROOT itself or a child of ROOT (a sibling
+  // dir whose name merely starts with ROOT must not pass).
+  if (abs !== ROOT && !abs.startsWith(ROOT + path.sep)) return null;
+  // Never serve server-side source, server state, build files, or VCS internals.
+  const rel = abs.slice(ROOT.length + 1);
+  if (rel === "unified-serve.js" || rel === "package.json" || rel === "package-lock.json" ||
+      rel === "render.yaml" || rel === ".gitignore" ||
+      rel.startsWith("server" + path.sep) || rel.startsWith(".git" + path.sep) ||
+      rel.startsWith("scripts" + path.sep)) return null;
   return abs;
 }
 
 const server = http.createServer(async (req, res) => {
-  // Route /api/* to the tutor/leaderboard/sync handler
+  // The legacy /api/* surface is retired (Firestore-only client). Reject it.
   if (req.url && req.url.startsWith("/api/")) {
-    if (apiListener) return apiListener(req, res);
-    res.writeHead(503, { "Content-Type": "application/json" });
-    return res.end(JSON.stringify({ error: "api not loaded" }));
+    res.writeHead(410, { "Content-Type": "application/json" });
+    return res.end(JSON.stringify({ error: "gone" }));
   }
 
   // Static file
@@ -82,6 +85,9 @@ const server = http.createServer(async (req, res) => {
     const isHtml = ext === ".html";
     const headers = {
       "Content-Type": MIME[ext] || "application/octet-stream",
+      "X-Content-Type-Options": "nosniff",
+      "X-Frame-Options": "DENY",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
     };
     if (isHtml) {
       headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0";
@@ -99,5 +105,5 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, "0.0.0.0", () => {
   console.log(`[unified] ClusterPrep site + API on :${PORT}`);
   console.log(`[unified] root: ${ROOT}`);
-  console.log(`[unified] api handler loaded: ${Boolean(apiListener)}`);
+  console.log(`[unified] legacy /api surface: retired (410)`);
 });

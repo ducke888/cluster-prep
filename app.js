@@ -291,10 +291,10 @@ function closeLoginModal() {
 // stored as a salted SHA-256 hash under the user-scoped `:auth` key, which
 // rides the existing cloud sync to every device automatically.
 //
-// Built-in defaults keep the three pre-existing passwordless profiles
-// reachable. The first successful login upgrades the plaintext default into a
-// stored salted hash.
-const DEFAULT_PASSWORDS = { aryan: "aryan123", rohit: "rohit123", shreyas: "shreyas123" };
+// NOTE: there are intentionally NO plaintext default passwords in this code.
+// (Shipping known passwords for seeded accounts would let anyone log in as
+// them.) Accounts are reachable only via their stored salted-hash credential;
+// an account with no stored credential must be (re-)created via sign-up.
 
 function authKey(user) { return `deca-imce:user:${user}:auth`; }
 
@@ -356,8 +356,7 @@ async function loginAs(name, password, mode = "login") {
 
   try {
     const stored = await fetchStoredCredential(clean);
-    const isDefault = !!DEFAULT_PASSWORDS[clean];
-    const accountExists = !!stored || isDefault;
+    const accountExists = !!stored;
     let cred, isNew = false;
 
     if (mode === "signup") {
@@ -375,13 +374,6 @@ async function loginAs(name, password, mode = "login") {
         return;
       }
       cred = stored;
-    } else if (isDefault) {
-      // Pre-existing passwordless profile with a known default password.
-      if (password !== DEFAULT_PASSWORDS[clean]) {
-        setLoginMsg("Incorrect password. Try again.", "err");
-        return;
-      }
-      cred = await makeCredential(password); // upgrade default → salted hash
     } else {
       // No such account — don't silently create one in login mode.
       setLoginMsg("No account with that username. Tap “Create an account” to sign up.", "err");
@@ -422,8 +414,7 @@ async function changePassword() {
   if (stored) {
     const cur = prompt("Enter your CURRENT password:");
     if (cur == null) return;
-    const ok = (await verifyCredential(stored, cur)) ||
-               (DEFAULT_PASSWORDS[user] && cur === DEFAULT_PASSWORDS[user]);
+    const ok = await verifyCredential(stored, cur);
     if (!ok) { alert("Current password is incorrect."); return; }
   }
   const next = prompt("Enter a NEW password (at least 4 characters):");
@@ -1833,6 +1824,8 @@ async function deleteAccount() {
   if (typed.trim() !== user) { alert("Name didn't match. Nothing was deleted."); return; }
 
   // Stop any pending/periodic push from re-creating the profile after we wipe it.
+  // _deletedUsers also blocks any push/report already in-flight past its guard.
+  _deletedUsers.add(user);
   clearTimeout(_syncState.pushTimer);
   delete _syncState.lastPushed[user];
 
@@ -5571,11 +5564,16 @@ async function syncProfilePull(user) {
   return false;
 }
 
+// Usernames deleted this session. The cloud writers below re-check this set
+// AFTER their awaits so an in-flight push/report can't resurrect a profile or
+// leaderboard doc that deleteAccount() just removed.
+const _deletedUsers = new Set();
+
 async function syncProfilePush(user) {
-  if (!user) return;
+  if (!user || _deletedUsers.has(user)) return;
   try {
     const backend = await awaitSyncBackend();
-    if (!backend || !backend.ready) return;
+    if (!backend || !backend.ready || _deletedUsers.has(user)) return;
     const snap = snapshotUserLocal(user);
     const serialized = JSON.stringify(snap);
     if (_syncState.lastPushed[user] === serialized) return; // no change
@@ -5637,11 +5635,12 @@ function computeLeaderboardPayload({ siteAnswered, siteCorrect, logAnswered, log
 }
 
 async function reportLeaderboard(payload) {
-  if (!state.user) return;
+  if (!state.user || _deletedUsers.has(payload && payload.user)) return;
   try {
     const backend = await awaitSyncBackend();
     if (!backend || !backend.ready) return;
     const { user, ...entry } = payload;
+    if (_deletedUsers.has(user)) return; // deleted mid-flight — don't recreate
     // Per-cluster leaderboards: key the doc by "<cluster>__<user>" and tag the
     // entry so reads can filter to the active cluster and show the real name.
     const cluster = activeClusterId();
