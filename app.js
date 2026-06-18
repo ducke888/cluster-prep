@@ -154,9 +154,9 @@ async function init() {
     restoreMockIfPresent();
   } catch (err) {
     app.innerHTML = `<div class="empty">
-      <h2>Couldn't load exam index</h2>
+      <h2>Couldn't load the exams</h2>
       <p>${escapeHtml(err.message)}</p>
-      <p>Serve the site over HTTP (e.g. <code>python3 -m http.server</code>).</p>
+      <p>Please check your connection and refresh the page.</p>
     </div>`;
     return;
   }
