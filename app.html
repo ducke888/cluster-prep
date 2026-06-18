@@ -11,7 +11,7 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <title>ClusterPrep — Marketing Cluster Exam practice</title>
-<link rel="stylesheet" href="styles.css?v=20260618-betapw" />
+<link rel="stylesheet" href="styles.css?v=20260618-tos" />
 </head>
 <body>
 <header class="topbar">
@@ -88,12 +88,14 @@
       <button type="button" class="linkbtn" id="login-forgot">Forgot password?</button>
     </div>
     <button class="btn ghost modal-close" data-close>Cancel</button>
-    <p class="login-privacy">By creating an account you agree to our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. For ages 13+.</p>
+    <p class="login-privacy">By creating an account you agree to our <a href="/terms.html" target="_blank" rel="noopener">Terms of Service</a> and <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. For ages 13+.</p>
   </div>
 </div>
 
 <footer class="foot">
   <span>Content is from MBA Research Center sample exams. For personal study use.</span>
+  <span class="foot-sep">·</span>
+  <a href="/terms.html" class="foot-link">Terms of Service</a>
   <span class="foot-sep">·</span>
   <a href="/privacy.html" class="foot-link">Privacy Policy</a>
 </footer>
@@ -108,7 +110,7 @@
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
   import {
-    getFirestore, doc, getDoc, setDoc, collection, getDocs, serverTimestamp
+    getFirestore, doc, getDoc, setDoc, deleteDoc, collection, getDocs, serverTimestamp
   } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
   const firebaseConfig = {
@@ -138,6 +140,12 @@
           updatedAt: serverTimestamp(),
         });
       },
+      async deleteProfile(user) {
+        await deleteDoc(doc(db, "profiles", user));
+      },
+      async deleteLeaderboardEntry(id) {
+        await deleteDoc(doc(db, "leaderboard", id));
+      },
       async listProfiles() {
         const snap = await getDocs(collection(db, "profiles"));
         return snap.docs.map(d => d.id);
@@ -165,11 +173,11 @@
     window.dispatchEvent(new Event("deca-sync-ready"));
   }
 </script>
-<script src="bma-guides.js?v=20260618-betapw"></script>
-<script src="ht-guides.js?v=20260618-betapw"></script>
-<script src="fin-guides.js?v=20260618-betapw"></script>
-<script src="ep-guides.js?v=20260618-betapw"></script>
-<script src="pfl-guides.js?v=20260618-betapw"></script>
-<script src="app.js?v=20260618-betapw"></script>
+<script src="bma-guides.js?v=20260618-tos"></script>
+<script src="ht-guides.js?v=20260618-tos"></script>
+<script src="fin-guides.js?v=20260618-tos"></script>
+<script src="ep-guides.js?v=20260618-tos"></script>
+<script src="pfl-guides.js?v=20260618-tos"></script>
+<script src="app.js?v=20260618-tos"></script>
 </body>
 </html>

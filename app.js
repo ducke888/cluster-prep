@@ -72,9 +72,17 @@ window.addEventListener("DOMContentLoaded", init);
 // Change ACCESS_PASSWORD to rotate access. To remove the gate entirely, flip
 // ACCESS_GATE_ENABLED to false.
 const ACCESS_GATE_ENABLED = true;
-const ACCESS_PASSWORD = "reedydeca";
+// The access password is never stored in source as plaintext — only its
+// SHA-256 hash lives here. The gate is still client-side (not real security),
+// but viewing source no longer hands a casual visitor the password.
+const ACCESS_PASSWORD_HASH = "3ca46f74f4c9856ae716cbe84dfb74739d2348797a30ee3c0b815a96fa627047";
+async function sha256Hex(str) {
+  const data = new TextEncoder().encode(str);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, "0")).join("");
+}
 function accessGranted() {
-  return localStorage.getItem("deca-access-granted") === ACCESS_PASSWORD;
+  return localStorage.getItem("deca-access-granted") === ACCESS_PASSWORD_HASH;
 }
 function showAccessGate() {
   const root = document.createElement("div");
@@ -95,10 +103,10 @@ function showAccessGate() {
   const input = root.querySelector("#gate-pw");
   const err = root.querySelector("#gate-err");
   input.focus();
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", async e => {
     e.preventDefault();
-    if (input.value === ACCESS_PASSWORD) {
-      localStorage.setItem("deca-access-granted", ACCESS_PASSWORD);
+    if (await sha256Hex(input.value) === ACCESS_PASSWORD_HASH) {
+      localStorage.setItem("deca-access-granted", ACCESS_PASSWORD_HASH);
       root.remove();
       init(); // boot the app now that we're authed
     } else {
@@ -112,8 +120,8 @@ async function init() {
   if (ACCESS_GATE_ENABLED && !accessGranted()) {
     // Allow ?pw=… in URL as a shortcut (tester can bookmark a link with the pw)
     const qs = new URLSearchParams(location.search);
-    if (qs.get("pw") === ACCESS_PASSWORD) {
-      localStorage.setItem("deca-access-granted", ACCESS_PASSWORD);
+    if (await sha256Hex(qs.get("pw") || "") === ACCESS_PASSWORD_HASH) {
+      localStorage.setItem("deca-access-granted", ACCESS_PASSWORD_HASH);
     } else {
       return showAccessGate();
     }
@@ -190,7 +198,7 @@ function wireChrome() {
     const el = document.getElementById("login-msg");
     el.className = "login-msg";
     el.innerHTML = 'Forgot your password? Email the admin to reset it: ' +
-      '<a href="mailto:aryan.khu09@gmail.com">aryan.khu09@gmail.com</a>';
+      '<a href="mailto:clusterprep@gmail.com">clusterprep@gmail.com</a>';
   });
 }
 
@@ -1788,6 +1796,7 @@ function refreshAuthUI() {
           <button class="user-menu-item" id="change-pass" role="menuitem">Change password</button>
           <button class="user-menu-item" id="switch-user" role="menuitem">Switch user</button>
           <button class="user-menu-item danger" id="logout-btn" role="menuitem">Log out</button>
+          <button class="user-menu-item danger" id="delete-acct" role="menuitem">Delete account</button>
         </div>
       </div>
     `;
@@ -1806,7 +1815,58 @@ function refreshAuthUI() {
     document.getElementById("change-pass").addEventListener("click", () => { closeMenu(); changePassword(); });
     document.getElementById("switch-user").addEventListener("click", () => { closeMenu(); openLoginModal(); });
     document.getElementById("logout-btn").addEventListener("click", () => { closeMenu(); logout(); });
+    document.getElementById("delete-acct").addEventListener("click", () => { closeMenu(); deleteAccount(); });
   }
+}
+
+// Permanently delete the signed-in account: every local key for the user, the
+// cloud profile doc, and each per-cluster leaderboard entry. Honors the
+// deletion right promised in the privacy policy. Irreversible.
+async function deleteAccount() {
+  const user = state.user;
+  if (!user) return;
+  const typed = prompt(
+    `This permanently deletes the account "${user}" and ALL of its study data — ` +
+    `on this device and in the cloud. This cannot be undone.\n\n` +
+    `Type your username to confirm:`);
+  if (typed == null) return;
+  if (typed.trim() !== user) { alert("Name didn't match. Nothing was deleted."); return; }
+
+  // Stop any pending/periodic push from re-creating the profile after we wipe it.
+  clearTimeout(_syncState.pushTimer);
+  delete _syncState.lastPushed[user];
+
+  // 1) Remove every local key for this user.
+  const pfx = PROFILE_KEYS(user);
+  const toKill = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith(pfx)) toKill.push(k);
+  }
+  toKill.forEach(k => localStorage.removeItem(k));
+  removeKnownUser(user);
+  localStorage.removeItem("deca-imce:current-user");
+  state.user = null;
+
+  // 2) Remove the cloud profile + every per-cluster leaderboard entry.
+  try {
+    const backend = await awaitSyncBackend();
+    if (backend && backend.ready && backend.deleteProfile) {
+      await backend.deleteProfile(user);
+      for (const cid of CLUSTER_ORDER) {
+        try { await backend.deleteLeaderboardEntry(`${cid}__${user}`); } catch {}
+      }
+    }
+  } catch (e) { console.warn("[delete] cloud delete failed:", e); }
+
+  alert(`Account "${user}" has been deleted.`);
+  refreshAuthUI();
+  render();
+}
+
+function removeKnownUser(name) {
+  const list = getKnownUsers().filter(u => u !== name);
+  localStorage.setItem("deca-imce:users", JSON.stringify(list));
 }
 
 function getKnownUsers() {
