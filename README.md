@@ -23,7 +23,7 @@ ClusterPrep is a study web app for DECA's cluster exams (the multiple-choice tes
 
 It's a single-page app with no build step — vanilla HTML/CSS/JS served by a tiny dependency-free Node server, with Firebase Firestore for cross-device sync and leaderboards.
 
-> **Live:** [clusterprep.site](https://clusterprep.site) (currently a private beta — access is gated)
+> **Live:** [clusterprep.site](https://clusterprep.site)
 
 ## Clusters covered
 
