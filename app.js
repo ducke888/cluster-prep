@@ -4063,7 +4063,7 @@ function renderStudyOverview(topicList) {
     <div class="study-overview">
       <div class="stats-head">
         <h2>Study Plan</h2>
-        <p class="hint">Topics are ranked by how many questions you've missed — <strong>your most-missed topic shows at the top</strong> and they descend from there. Click one on the left to dive in.</p>
+        <p class="hint"><strong>When logged in</strong>, topics are ranked by how many questions you've missed — your most-missed topic shows at the top — otherwise they're ordered by how heavily each topic is tested. Click one on the left to dive in.</p>
       </div>
       <div class="kpi-row">
         <div class="kpi accent">
@@ -4089,7 +4089,7 @@ function renderStudyOverview(topicList) {
       </div>
       <div class="panel">
         <h3>How to use this tab</h3>
-        <p class="panel-sub">The topic list on the left is personalized to you: <strong>your most-missed topics show at the top</strong>, ordered by how many questions you've gotten wrong (on-site answers and imported test logs both count). For each topic you'll see three sub-pages:</p>
+        <p class="panel-sub"><strong>When logged in</strong>, the topic list on the left is personalized to you: <strong>your most-missed topics show at the top</strong>, ordered by how many questions you've gotten wrong (on-site answers and imported test logs both count). Browsing as a guest, topics are ordered by how heavily each is tested. For each topic you'll see three sub-pages:</p>
         <ol>
           <li><strong>Study guide</strong> — concise notes with key terms, concepts, and common traps.</li>
           <li><strong>Review wrongs</strong> — every question you've missed with that code prefix, so you can re-attempt.</li>
