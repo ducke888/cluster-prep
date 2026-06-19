@@ -3779,21 +3779,10 @@ function removeManualAt(idx) {
 //   #/study/<prefix>/all    — topic: other practice questions (same prefix, not missed)
 
 async function renderStudy(prefix, _qnum) {
-  if (!state.user) {
-    app.innerHTML = `
-      <div class="stats-head">
-        <h2>Study</h2>
-        <p class="hint">Log in to see a personalized study plan based on your wrongs.</p>
-      </div>
-      <div class="panel" style="text-align:center">
-        <p>Log in first to unlock per-topic study guides and targeted practice.</p>
-        <button class="btn primary" id="study-login">Log in</button>
-      </div>
-    `;
-    document.getElementById("study-login").addEventListener("click", openLoginModal);
-    return;
-  }
-
+  // Guests (past the access gate) can browse Study too. With no account there
+  // are no tracked wrongs, so topics fall back to ICDC blueprint-weight order
+  // (most-tested first) and "Review wrongs" is simply empty. Login adds the
+  // personalized most-missed tracking.
   app.innerHTML = `<div class="empty">Loading study plan…</div>`;
 
   // Load everything so we can partition questions by topic and track wrongs.
@@ -6080,15 +6069,20 @@ async function renderQuestionBank() {
 // needing renderStats() to run.
 async function renderLeaderboardPage() {
   if (!state.user) {
+    // Guests (past the access gate) can VIEW the board — they just don't appear
+    // on it, so there's no payload to compute or report.
     app.innerHTML = `
-      <section class="panel" style="max-width:560px;margin:40px auto;text-align:center">
-        <h2>Leaderboard</h2>
-        <p class="hint">Log in to see rankings and show up on the board.</p>
-        <button class="btn primary" id="lb-login">Log in</button>
+      <section class="leaderboard-page">
+        <div class="stats-head" style="margin-bottom:14px">
+          <h2>Leaderboard</h2>
+          <p class="hint">Live rankings across everyone studying — showing the <strong>top 100 players</strong>. <button class="linkbtn" id="lb-guest-login">Log in</button> to appear on the board.</p>
+        </div>
+        ${renderStatsLeaderboard(null)}
       </section>
     `;
-    const btn = document.getElementById("lb-login");
-    if (btn) btn.addEventListener("click", openLoginModal);
+    const gb = document.getElementById("lb-guest-login");
+    if (gb) gb.addEventListener("click", openLoginModal);
+    hydrateLeaderboard(null);
     return;
   }
   app.innerHTML = `<div class="empty">Loading leaderboard…</div>`;
