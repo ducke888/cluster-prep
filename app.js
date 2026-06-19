@@ -67,10 +67,12 @@ window.addEventListener("hashchange", render);
 window.addEventListener("DOMContentLoaded", init);
 
 // ---------- Boot ----------
-// Invite-only password gate. Client-side only (not real security) — it just
-// stops casual visitors. Set to true to re-enable the private-beta wall;
-// false makes the whole app publicly accessible without a password.
-const ACCESS_GATE_ENABLED = false;
+// Invite-only password gate (password: "reedydeca", stored as a hash above).
+// Client-side only (not real security) — it just stops casual visitors.
+// Passing the gate does NOT require logging in: visitors then browse the whole
+// app as a guest (the guest banner reminds them progress isn't saved). Login
+// stays optional, only needed to save/sync progress. Set false to drop the gate.
+const ACCESS_GATE_ENABLED = true;
 // The access password is never stored in source as plaintext — only its
 // SHA-256 hash lives here. The gate is still client-side (not real security),
 // but viewing source no longer hands a casual visitor the password.
@@ -5948,6 +5950,7 @@ async function renderQuestionBank() {
 
   app.innerHTML = `
     <section class="qbank-page">
+      ${loginBannerIfNeeded()}
       <div class="qbank-head">
         <div class="qbank-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -5968,6 +5971,7 @@ async function renderQuestionBank() {
   `;
 
   // ---- Wire filter interactions ----
+  wireBannerButtons();
   const rerender = () => renderQuestionBank();
 
   // Mode tabs (Questions vs Mega Flashcards)
