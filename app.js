@@ -67,11 +67,10 @@ window.addEventListener("hashchange", render);
 window.addEventListener("DOMContentLoaded", init);
 
 // ---------- Boot ----------
-// Temporary invite-only password gate. This is client-side only (not real
-// security) — it just stops casual visitors. Share the password with testers.
-// Change ACCESS_PASSWORD to rotate access. To remove the gate entirely, flip
-// ACCESS_GATE_ENABLED to false.
-const ACCESS_GATE_ENABLED = true;
+// Invite-only password gate. Client-side only (not real security) — it just
+// stops casual visitors. Set to true to re-enable the private-beta wall;
+// false makes the whole app publicly accessible without a password.
+const ACCESS_GATE_ENABLED = false;
 // The access password is never stored in source as plaintext — only its
 // SHA-256 hash lives here. The gate is still client-side (not real security),
 // but viewing source no longer hands a casual visitor the password.
@@ -2692,7 +2691,7 @@ function loginBannerIfNeeded() {
   if (state.user) return "";
   return `
     <div class="banner">
-      <div>You're not logged in. Log in to save progress and see wrong-answer stats.</div>
+      <div>You're browsing as a guest — <strong>your progress and stats won't be saved.</strong> Log in or create a free account to keep your work across devices.</div>
       <button class="btn primary small" id="banner-login">Log in</button>
     </div>
   `;
