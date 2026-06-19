@@ -63,20 +63,6 @@ Every question carries its official answer key, explanation, and performance-ind
 | Hosting | Render, custom domain `clusterprep.site` |
 | Exam ingestion | Python + [PyMuPDF](https://pymupdf.readthedocs.io/) scripts that parse MBA Research-format exam PDFs |
 
-## Run it locally
-
-No dependencies to install — the server uses only Node built-ins.
-
-```bash
-git clone https://github.com/ducke888/cluster-prep.git
-cd cluster-prep
-node unified-serve.js          # serves on http://localhost:8765 (or $PORT)
-```
-
-Then open **http://localhost:8765**. The app loads `app.html` at the root.
-
-> The hosted site sits behind a private-beta password gate. Local runs hit the same gate — set it via the access-gate config in `app.js`.
-
 ## Project layout
 
 ```
